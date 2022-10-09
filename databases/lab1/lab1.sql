@@ -22,12 +22,6 @@ CREATE TABLE DrivingExams.dbo.InstructorsDrivingLicenses(
 	FOREIGN KEY (CNP) REFERENCES Instructors(CNP),
 );
 
-CREATE TABLE DrivingExams.dbo.SupervisorsDrivingLicenses(
-	Id int PRIMARY KEY IDENTITY(1,1),
-	CNP NVARCHAR(100) NOT NULL,
-	Category NVARCHAR(100) NOT NULL,
-)
-
 CREATE TABLE DrivingExams.dbo.Students(
 	CNP NVARCHAR(100) PRIMARY KEY,
 	Name NVARCHAR(100) NOT NULL,
@@ -47,7 +41,46 @@ CREATE TABLE DrivingExams.dbo.StudentsDrivingLicenses(
 );
 
 Create Table DrivingExams.dbo.Supervisors(
+	CNP NVARCHAR(100) Primary Key NOT NULL,
+	Name NVARCHAR(100) NOT NULL,
+
+);
+
+CREATE TABLE DrivingExams.dbo.SupervisorsDrivingLicenses(
 	Id int PRIMARY KEY IDENTITY(1,1),
 	CNP NVARCHAR(100) NOT NULL,
-	Name NVARCHAR(100) NOT NULL,
+	Category NVARCHAR(100) NOT NULL,
+	FOREIGN KEY (CNP) REFERENCES Supervisors(CNP),
+	FOREIGN KEY (Category) REFERENCES Categories(Category),
+)
+
+CREATE TABLE DrivingExams.dbo.TheoreticalExams(
+	Id int PRIMARY KEY IDENTITY (1,1),
+	CandidateCNP NVARCHAR(100) NOT NULL,
+	SupervisorCNP NVARCHAR(100) NOT NULL,
+	CandidateScore int NOT NULL,
+	ExamDate date NOT NULL,
+	Score int NOT NULL,
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
+	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP),
 );
+
+CREATE TABLE DrivingExams.dbo.PracticalExams(
+	Id int PRIMARY KEY IDENTITY (1,1),
+	CandidateCNP NVARCHAR(100) NOT NULL,
+	SupervisorCNP NVARCHAR(100) NOT NULL,
+	CandidateScore int NOT NULL,
+	ExamDate date NOT NULL,
+	Score int NOT NULL,
+	IsPassed bit NOT NULL,
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
+	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP),
+);
+
+CREATE TABLE DrivingExams.dbo.Results(
+	Id int IDENTITY (1,1),
+	CandidateCNP NVARCHAR(100) NOT NULL,
+	FinalResult bit NOT NULL,
+	PRIMARY KEY (Id,CandidateCNP),
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP)
+)
