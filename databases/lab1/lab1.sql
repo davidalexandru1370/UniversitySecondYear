@@ -1,4 +1,5 @@
 DECLARE @DB_NAME AS VARCHAR(100)='DrivingExams';
+alter database DrivingExams set single_user with rollback immediate
 DROP DATABASE DrivingExams;
 CREATE DATABASE DrivingExams;
 
@@ -28,8 +29,7 @@ CREATE TABLE DrivingExams.dbo.Students(
 	CurrentLesson int NOT NULL,
 	InstructorId int NOT NULL,
 	StartingDate DATE NOT NULL,
-	StudyingCategory NVARCHAR(100) NOT NULL,
-	FOREIGN KEY (InstructorId) REFERENCES Instructors(Id)
+	FOREIGN KEY (InstructorId) REFERENCES Instructors(Id) ON DELETE  NO ACTION
 );
 
 CREATE TABLE DrivingExams.dbo.StudentsDrivingLicenses(
@@ -72,15 +72,20 @@ CREATE TABLE DrivingExams.dbo.PracticalExams(
 	CandidateScore int NOT NULL,
 	ExamDate date NOT NULL,
 	Score int NOT NULL,
-	IsPassed bit NOT NULL,
 	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
 	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP),
 );
 
 CREATE TABLE DrivingExams.dbo.Results(
-	Id int IDENTITY (1,1),
+	Id int IDENTITY (1,1) PRIMARY KEY,
 	CandidateCNP NVARCHAR(100) NOT NULL,
 	FinalResult bit NOT NULL,
-	PRIMARY KEY (Id,CandidateCNP),
-	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP)
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
 )
+
+CREATE TABLE DrivingExams.dbo.Vehicles(
+	Id int IDENTITY (1,1) PRIMARY KEY,
+	CarPlate NVARCHAR(100) NOT NULL,
+	InstructorId int NOT NULL,
+	FOREIGN KEY (InstructorId) REFERENCES Instructors(Id),
+);
