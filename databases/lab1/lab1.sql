@@ -7,10 +7,19 @@ CREATE TABLE DrivingExams.dbo.Categories(
 	MandatoryLessons int NOT NULL,
 );
 
+CREATE TABLE DrivingExams.dbo.Instructors(
+	Id int PRIMARY KEY IDENTITY(1,1),
+	CNP NVARCHAR(100) UNIQUE NOT NULL,
+	Name NVARCHAR(100) NOT NULL,
+	VehiclePlate NVARCHAR(100) UNIQUE NOT NULL,
+);
+
 CREATE TABLE DrivingExams.dbo.InstructorsDrivingLicenses(
 	Id int PRIMARY KEY IDENTITY(1,1),
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
+	FOREIGN KEY (CNP) REFERENCES Categories(Category),
+	FOREIGN KEY (CNP) REFERENCES Instructors(CNP),
 );
 
 CREATE TABLE DrivingExams.dbo.SupervisorsDrivingLicenses(
@@ -18,13 +27,6 @@ CREATE TABLE DrivingExams.dbo.SupervisorsDrivingLicenses(
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
 )
-
-CREATE TABLE DrivingExams.dbo.Instructors(
-	Id int PRIMARY KEY IDENTITY(1,1),
-	Name NVARCHAR(100) NOT NULL,
-	CNP NVARCHAR(100) UNIQUE NOT NULL,
-	VehiclePlate NVARCHAR(100) UNIQUE NOT NULL,
-);
 
 CREATE TABLE DrivingExams.dbo.Students(
 	CNP NVARCHAR(100) PRIMARY KEY,
