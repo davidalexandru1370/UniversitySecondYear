@@ -27,6 +27,6 @@ public class Bicycle implements  IVehicle{
 
     @Override
     public String toString() {
-        return "type = Bycicle id = " + _id.toString() + " color = " + this._color.toString();
+        return "type = Bicycle id = " + _id.toString() + " color = " + this._color.toString();
     }
 }

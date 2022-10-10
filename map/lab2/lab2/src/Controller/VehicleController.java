@@ -6,8 +6,10 @@ import Model.IVehicle;
 import Model.Motorcycle;
 import Repository.IRepository;
 import Repository.IVehicleRepository;
+import Repository.RepositoryException;
 
 import java.util.List;
+import java.util.UUID;
 
 public class VehicleController {
     private IVehicleRepository _vehicleRepository;
@@ -18,6 +20,10 @@ public class VehicleController {
 
     public void add(IVehicle vehicle){
         _vehicleRepository.add(vehicle);
+    }
+
+    public void remove(UUID id) throws RepositoryException {
+        _vehicleRepository.delete(id);
     }
 
     public List<IVehicle> getAll(){
