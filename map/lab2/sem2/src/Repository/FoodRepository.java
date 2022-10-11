@@ -13,11 +13,12 @@ public class FoodRepository implements IFoodRepository{
     @Override
     public List<Entity> getAllWithWeightGreaterThan(int value) {
         List<Entity> result = new ArrayList<>(100);
-        for(Entity entity : _entities){
-            if(entity.getWeight() > value ){
-                result.add(entity);
-            }
-        }
+//        for(Entity entity : _entities){
+//            if(entity.getWeight() > value ){
+//                result.add(entity);
+//            }
+//        }
+        result = _entities.stream().filter(entity -> entity.getWeight() > value).toList();
         return result;
     }
 
