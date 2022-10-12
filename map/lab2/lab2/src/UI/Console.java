@@ -16,18 +16,24 @@ public class Console {
 //    1. Intr-o parcare exista masini, motociclete
 //    si biciclete. Sa se afiseze toate vehiculele
 //    de culoare rosie.
-    private VehicleController _vehicleController;
-    private Scanner _scanner = new Scanner(System.in);
+    private VehicleController vehicleController;
+    private Scanner scanner = new Scanner(System.in);
 
-    private enum _menuOptions{
+    private enum menuOptions{
         add,
         remove,
         searchByColor,
-        exit
+        exit;
+
+        private int value;
+
+        public int getValue(){
+            return value;
+        }
     }
 
     public Console(VehicleController controller){
-        _vehicleController = controller;
+        vehicleController = controller;
     }
 
     private void printMenu(){
@@ -47,30 +53,30 @@ public class Console {
             System.out.println("Press 3 for bicycle");
             System.out.println("Press 4 to go back");
             System.out.println("option=");
-            option = _scanner.nextInt();
+            option = scanner.nextInt();
 
         }
 
         System.out.println("color=");
-        String color = _scanner.next();
+        String color = scanner.next();
         switch (option){
             case (1) -> {
                 Car car = new Car(color);
-                _vehicleController.add(car);
+                vehicleController.add(car);
             }
             case (2) -> {
                 Motorcycle motorcycle = new Motorcycle(color);
-                _vehicleController.add(motorcycle);
+                vehicleController.add(motorcycle);
             }
             case (3) -> {
                 Bicycle bicycle = new Bicycle(color);
-                _vehicleController.add(bicycle);
+                vehicleController.add(bicycle);
             }
         }
     }
 
     private void printAllVehicles(){
-        List<IVehicle> vehicles = _vehicleController.getAll();
+        List<IVehicle> vehicles = vehicleController.getAll();
         for (IVehicle vehicle : vehicles){
             System.out.println(vehicle);
         }
@@ -78,8 +84,8 @@ public class Console {
 
     private void printAllVehiclesOfColor(){
         System.out.println("color=");
-        String color = _scanner.next();
-        List<IVehicle> vehicles = _vehicleController.getByColor(color);
+        String color = scanner.next();
+        List<IVehicle> vehicles = vehicleController.getByColor(color);
         for (IVehicle vehicle : vehicles){
             System.out.println(vehicle);
         }
@@ -88,8 +94,8 @@ public class Console {
     private void removeVehicle(){
         try{
             System.out.print("ID=");
-            UUID id = UUID.fromString( _scanner.next().trim());
-            _vehicleController.remove(id);
+            UUID id = UUID.fromString( scanner.next().trim());
+            vehicleController.remove(id);
         }
         catch(RepositoryException repositoryException){
             System.out.println(repositoryException.getMessage());
@@ -103,16 +109,16 @@ public class Console {
 
     }
     public void startConsole(){
-        _vehicleController.generateRandomVehicles(2);
+        vehicleController.generateRandomVehicles(2);
         int value = 0;
         while(value != 5){
             printMenu();
             try{
-                value = _scanner.nextInt();
+                value = scanner.nextInt();
             }
             catch(Exception ex){
                 System.out.println("Invalid input!");
-                _scanner.next();
+                scanner.next();
             }
             switch (value){
                 case (1) -> {

@@ -3,31 +3,31 @@ package Model;
 import java.util.UUID;
 
 public class Car implements IVehicle{
-    private String _color;
-    private UUID _id;
+    private String color;
+    private UUID id;
 
     @Override
     public String getColor() {
-        return _color;
+        return color;
     }
 
     @Override
     public void setColor(String color) {
-        _color = new String(color);
+        this.color = color;
     }
 
     @Override
     public UUID getId() {
-        return _id;
+        return id;
     }
 
     public Car(String color){
-        _color = color;
-        _id = UUID.randomUUID();
+        this.color = color;
+        id = UUID.randomUUID();
     }
 
     @Override
     public String toString() {
-        return "type = Car id = " + _id.toString() + " color = " + this._color.toString();
+        return "type = Car id = " + id.toString() + " color = " + this.color;
     }
 }
