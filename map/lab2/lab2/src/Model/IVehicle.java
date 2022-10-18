@@ -3,9 +3,9 @@ package Model;
 import java.util.UUID;
 
 public interface IVehicle {
-      public String getColor();
-      public void setColor(String color);
-      public UUID getId();
+       String getColor();
+       void setColor(String color);
+       UUID getId();
 
-      public String toString();
+       String toString();
 }

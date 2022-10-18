@@ -18,20 +18,7 @@ public class Console {
 //    de culoare rosie.
     private VehicleController vehicleController;
     private Scanner scanner = new Scanner(System.in);
-
-    private enum menuOptions{
-        add,
-        remove,
-        searchByColor,
-        exit;
-
-        private int value;
-
-        public int getValue(){
-            return value;
-        }
-    }
-
+    private MenuOptions menuOptions;
     public Console(VehicleController controller){
         vehicleController = controller;
     }
@@ -122,20 +109,20 @@ public class Console {
                 System.out.println("Invalid input!");
                 scanner.next();
             }
-            switch (value){
-                case (1) -> {
+            switch (MenuOptions.parseInt(value)){
+                case ADD -> {
                     addVehicle();
                 }
-                case (2) -> {
+                case DELETE -> {
                     removeVehicle();
                 }
-                case (3) -> {
+                case PRINTBYCOLOR -> {
                     printAllVehiclesOfColor();
                 }
-                case(4) -> {
+                case PRINTALL -> {
                     printAllVehicles();
                 }
-                case (5) -> {
+                case EXIT -> {
                     System.exit(0);
                 }
                 default -> {
