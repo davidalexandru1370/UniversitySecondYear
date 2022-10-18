@@ -1,10 +1,10 @@
 package Repository;
 
+import Exceptions.RepositoryException;
 import Model.IVehicle;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.function.Function;
 
 public interface IRepository<TElem> {
     void add(TElem vehicle);

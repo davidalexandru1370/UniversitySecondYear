@@ -1,45 +1,42 @@
 package Repository;
+import Exceptions.RepositoryException;
 import Model.IVehicle;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 public class VehicleRepository implements IVehicleRepository {
-    private ArrayList<IVehicle> entities = new ArrayList<IVehicle>(100);
+//    private ArrayList<IVehicle> entities = new ArrayList<IVehicle>(100);
+    private IVehicle[] entities = new IVehicle[100];
+    private int index = 0;
     @Override
     public void add(IVehicle vehicle) {
-        entities.add(vehicle);
+        entities[index]=vehicle;
+        index++;
+
     }
 
     @Override
     public void delete(UUID id) throws RepositoryException {
-        int index = 0;
-        for (IVehicle vehicle : entities){
-            if(vehicle.getId().compareTo(id)==0){
-                entities.remove(index);
-                return;
+        IVehicle[] newEntities = new IVehicle[100];
+        int newIndex = 0;
+        for (int it = 0 ; it < index; it ++){
+            IVehicle vehicle = entities[it];
+            if(vehicle.getId().compareTo(id) != 0){
+                    newEntities[newIndex++] = vehicle;
             }
-            index++;
+        }
+
+        if(newIndex != index){
+            entities = newEntities;
+            index = newIndex;
+            return;
         }
         throw new RepositoryException("Element with id = " + id +" does not exist!");
     }
 
     @Override
     public List<IVehicle> getAll() {
-        return entities;
+        return Arrays.stream(entities).toList().stream().filter(v -> v != null).toList();
     }
 
-    @Override
-    public List<IVehicle> getAllOfColor(String color) {
-        List<IVehicle> filteredList = new ArrayList<IVehicle>(100);
-        for (IVehicle vehicle: entities
-             ) {
-            if(Objects.equals(vehicle.getColor(), color))
-            filteredList.add(vehicle);
-        }
-        return filteredList;
-    }
 }

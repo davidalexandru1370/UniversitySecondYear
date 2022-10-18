@@ -1,13 +1,13 @@
 package UI;
 
 import Controller.VehicleController;
+import Exceptions.ElementNotFoundException;
 import Model.Bicycle;
 import Model.Car;
 import Model.IVehicle;
 import Model.Motorcycle;
-import Repository.RepositoryException;
+import Exceptions.RepositoryException;
 
-import java.awt.im.InputMethodRequests;
 import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
@@ -52,12 +52,12 @@ public class Console {
             System.out.println("Press 2 for motorcycle");
             System.out.println("Press 3 for bicycle");
             System.out.println("Press 4 to go back");
-            System.out.println("option=");
+            System.out.print("option=");
             option = scanner.nextInt();
 
         }
 
-        System.out.println("color=");
+        System.out.print("color=");
         String color = scanner.next();
         switch (option){
             case (1) -> {
@@ -83,11 +83,16 @@ public class Console {
     }
 
     private void printAllVehiclesOfColor(){
-        System.out.println("color=");
+        System.out.print("color=");
         String color = scanner.next();
-        List<IVehicle> vehicles = vehicleController.getByColor(color);
-        for (IVehicle vehicle : vehicles){
-            System.out.println(vehicle);
+        try{
+            List<IVehicle> vehicles = vehicleController.getByColor(color);
+            for (IVehicle vehicle : vehicles){
+                System.out.println(vehicle);
+            }
+        }
+        catch (ElementNotFoundException elementNotFoundException){
+            System.out.println(elementNotFoundException.getMessage());
         }
     }
 
@@ -102,16 +107,13 @@ public class Console {
         }
         catch(IllegalArgumentException ex){
             System.out.println("Invalid ID");
-            return;
         }
-
-
 
     }
     public void startConsole(){
         vehicleController.generateRandomVehicles(2);
         int value = 0;
-        while(value != 5){
+        while(true){
             printMenu();
             try{
                 value = scanner.nextInt();

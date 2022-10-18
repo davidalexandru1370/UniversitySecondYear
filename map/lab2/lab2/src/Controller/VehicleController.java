@@ -1,14 +1,16 @@
 package Controller;
 
+import Exceptions.ElementNotFoundException;
 import Model.Bicycle;
 import Model.Car;
 import Model.IVehicle;
 import Model.Motorcycle;
-import Repository.IRepository;
 import Repository.IVehicleRepository;
-import Repository.RepositoryException;
+import Exceptions.RepositoryException;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class VehicleController {
@@ -30,8 +32,17 @@ public class VehicleController {
         return _vehicleRepository.getAll();
     }
 
-    public List<IVehicle> getByColor(String color){
-        return _vehicleRepository.getAllOfColor(color);
+    public List<IVehicle> getByColor(String color)  {
+        List<IVehicle> filteredList = new ArrayList<IVehicle>(100);
+        for (IVehicle vehicle: getAll()
+        ) {
+            if(Objects.equals(vehicle.getColor(), color))
+                filteredList.add(vehicle);
+        }
+        if(filteredList.size()==0){
+            throw new ElementNotFoundException("Vehicle with color = " + color + " does not exist!");
+        }
+        return filteredList;
     }
 
     public void generateRandomVehicles(int count){

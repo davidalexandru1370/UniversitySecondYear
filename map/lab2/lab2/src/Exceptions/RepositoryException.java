@@ -1,4 +1,4 @@
-package Repository;
+package Exceptions;
 
 public class RepositoryException extends Exception {
     public RepositoryException(String message) {
