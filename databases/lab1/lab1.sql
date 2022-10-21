@@ -1,10 +1,10 @@
 --DECLARE @DB_NAME AS VARCHAR(100)='DrivingExams';
 --alter database DrivingExams set single_user with rollback immediate
 --DROP DATABASE DrivingExams;
-CREATE DATABASE DrivingExams9
+CREATE DATABASE DrivingExams
 
 go
-USE  DrivingExams9;
+USE  DrivingExams;
 go
 
 CREATE TABLE Categories(
