@@ -20,8 +20,6 @@ public class ProgramState {
         this.out = out;
         exeStack.push(program);
     }
-
-
     public void setStack(IStack<IStatement> exeStack){
         this.exeStack = exeStack;
     }

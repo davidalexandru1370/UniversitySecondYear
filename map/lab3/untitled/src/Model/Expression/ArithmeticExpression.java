@@ -8,9 +8,9 @@ import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.IntType;
 
 public class ArithmeticExpression implements IExpression {
-    private IExpression expression1;
-    private IExpression expression2;
-    private int operation;
+    private final IExpression expression1;
+    private final IExpression expression2;
+    private final int operation;
 
     public ArithmeticExpression(IExpression expression1, IExpression expression2, int operation) {
         this.expression1 = expression1;
