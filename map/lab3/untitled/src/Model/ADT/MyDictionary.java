@@ -1,9 +1,8 @@
 package Model.ADT;
 
-import Exceptions.KeyNotFound;
+import Exceptions.KeyNotFoundException;
 import Model.ADT.Interfaces.IDictionary;
 
-import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -18,7 +17,7 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
     @Override
     public void pop(Key key) {
         if(!dictionary.containsKey(key)){
-            throw new KeyNotFound("Invalid key!");
+            throw new KeyNotFoundException("Invalid key!");
         }
         dictionary.remove(key);
     }
@@ -31,7 +30,7 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
     @Override
     public Value get(Key key) {
         if(!dictionary.containsKey(key)){
-            throw  new KeyNotFound("Invalid key!");
+            throw  new KeyNotFoundException("Invalid key!");
         }
         return dictionary.get(key);
     }
