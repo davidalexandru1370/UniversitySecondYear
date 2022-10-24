@@ -3,7 +3,7 @@ package Model;
 import Model.ADT.Interfaces.IStack;
 import Model.Interfaces.IStatement;
 
-public class CompundStatement implements IStatement {
+public class CompoundStatement implements IStatement {
     IStatement first;
     IStatement second;
 

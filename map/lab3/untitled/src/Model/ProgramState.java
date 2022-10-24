@@ -4,16 +4,16 @@ import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
 import Model.Interfaces.IStatement;
-import com.sun.jdi.Value;
+import Model.Value.Interfaces.IValue;
 
 public class ProgramState {
     private IStack<IStatement> exeStack;
-    private IDictionary<String, Value> symbolTable;
-    private IList<Value> out;
+    private IDictionary<String, IValue> symbolTable;
+    private IList<IValue> out;
 
     public ProgramState(IStack<IStatement> exeStack,
-                        IDictionary<String,Value> symbolTable,
-                        IList<Value> out,
+                        IDictionary<String,IValue> symbolTable,
+                        IList<IValue> out,
                         IStatement program) {
         this.exeStack = exeStack;
         this.symbolTable = symbolTable;
@@ -30,19 +30,19 @@ public class ProgramState {
         return exeStack;
     }
 
-    public void setSymbolTable(IDictionary<String, Value> symbolTable) {
+    public void setSymbolTable(IDictionary<String, IValue> symbolTable) {
         this.symbolTable = symbolTable;
     }
 
-    public IDictionary<String, Value> getSymbolTable() {
+    public IDictionary<String, IValue> getSymbolTable() {
         return symbolTable;
     }
 
-    public IList<Value> getOut() {
+    public IList<IValue> getOut() {
         return out;
     }
 
-    public void setOut(IList<Value> out) {
+    public void setOut(IList<IValue> out) {
         this.out = out;
     }
 
