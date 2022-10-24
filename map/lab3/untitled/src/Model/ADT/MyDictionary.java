@@ -24,6 +24,11 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
     }
 
     @Override
+    public boolean isDefined(Key key) {
+        return dictionary.containsKey(key);
+    }
+
+    @Override
     public Value get(Key key) {
         if(!dictionary.containsKey(key)){
             throw  new KeyNotFound("Invalid key!");
