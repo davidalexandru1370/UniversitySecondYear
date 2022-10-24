@@ -1,6 +1,7 @@
-package Model.ADT.Interfaces;
+package Model.ADT;
 
 import Exceptions.KeyNotFound;
+import Model.ADT.Interfaces.IDictionary;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
