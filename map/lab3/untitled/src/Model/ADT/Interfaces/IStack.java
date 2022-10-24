@@ -1,2 +1,6 @@
-package Model.ADT.Interfaces;public interface IStack {
+package Model.ADT.Interfaces;
+
+public interface IStack<T> {
+    void push(T elem);
+    T pop();
 }
