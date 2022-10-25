@@ -1,12 +1,18 @@
 package View;
 
 import Controller.Controller;
+import Model.Expression.ValueExpression;
+import Model.Expression.VariableExpression;
+import Model.Statement.*;
+import Model.Statement.Interfaces.*;
+import Model.Value.IntValue;
+import Model.VariablesTypes.IntType;
 
 import java.util.Scanner;
 
 public class UI {
     private Controller controller;
-    private Scanner scanner;
+    private Scanner scanner = new Scanner(System.in);
     public UI(Controller controller) {
         this.controller = controller;
     }
@@ -20,7 +26,17 @@ public class UI {
     }
 
     void runProgram1(){
-
+        IStatement ex1 = new CompoundStatement(
+                new VariableDeclarationStatement("v",new IntType()),
+                new CompoundStatement(new AssignStatement("v",new ValueExpression(new IntValue(2))),
+                new PrintStatement(new VariableExpression("v"))));
+        controller.add(ex1);
+        try{
+            controller.allStep();
+        }
+        catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
     void runProgram2(){}
@@ -37,6 +53,7 @@ public class UI {
                     case 1 -> runProgram1();
                     case 2 -> runProgram2();
                     case 3 -> runProgram3();
+                    case 4 -> System.exit(0);
                     default -> System.out.println("Invalid input!");
                 }
             }

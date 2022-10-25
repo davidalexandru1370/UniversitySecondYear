@@ -3,6 +3,7 @@ package Model.Expression;
 import Exceptions.DivisionByZeroException;
 import Exceptions.OperandException;
 import Model.ADT.Interfaces.IDictionary;
+import Model.Expression.Interfaces.IExpression;
 import Model.Value.IntValue;
 import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.IntType;

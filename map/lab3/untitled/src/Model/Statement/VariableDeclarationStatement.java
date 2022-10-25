@@ -1,16 +1,17 @@
-package Model;
+package Model.Statement;
 
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
-import Model.Interfaces.IStatement;
+import Model.ProgramState;
+import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class VariableDeclarationStatement implements IStatement {
     private final String name;
-    private final IValue type;
+    private final IVariableType type;
 
-    public VariableDeclarationStatement(String name, IValue type) {
+    public VariableDeclarationStatement(String name, IVariableType type) {
         this.name = name;
         this.type = type;
     }
@@ -21,7 +22,7 @@ public class VariableDeclarationStatement implements IStatement {
         if (symbolTable.isDefined(name)){
             throw new InterpreterException(String.format("Variable %s already defined!\n",name));
         }
-        symbolTable.insert(name,type);
+        symbolTable.insert(name,type.getDefault());
         return state;
     }
 }

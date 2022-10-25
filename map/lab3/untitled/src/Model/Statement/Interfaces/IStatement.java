@@ -1,4 +1,4 @@
-package Model.Interfaces;
+package Model.Statement.Interfaces;
 
 import Model.ProgramState;
 

@@ -1,4 +1,4 @@
-package Model.Expression;
+package Model.Expression.Interfaces;
 
 import Model.ADT.Interfaces.IDictionary;
 import Model.Value.Interfaces.IValue;

@@ -3,7 +3,7 @@ package Model;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
-import Model.Interfaces.IStatement;
+import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 
 public class ProgramState {
@@ -12,7 +12,7 @@ public class ProgramState {
     private IList<IValue> out;
 
     public ProgramState(IStack<IStatement> exeStack,
-                        IDictionary<String,IValue> symbolTable,
+                        IDictionary<String, IValue> symbolTable,
                         IList<IValue> out,
                         IStatement program) {
         this.exeStack = exeStack;

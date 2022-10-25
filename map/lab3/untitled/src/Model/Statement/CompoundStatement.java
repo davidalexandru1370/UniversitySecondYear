@@ -1,11 +1,17 @@
-package Model;
+package Model.Statement;
 
 import Model.ADT.Interfaces.IStack;
-import Model.Interfaces.IStatement;
+import Model.ProgramState;
+import Model.Statement.Interfaces.IStatement;
 
 public class CompoundStatement implements IStatement {
     IStatement first;
     IStatement second;
+
+    public CompoundStatement(IStatement first, IStatement second){
+        this.first = first;
+        this.second = second;
+    }
 
     @Override
     public String toString() {

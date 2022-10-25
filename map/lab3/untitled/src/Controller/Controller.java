@@ -1,10 +1,15 @@
 package Controller;
 
 import Exceptions.ExecutionStackException;
-import Exceptions.RepositoryException;
+import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
-import Model.Interfaces.IStatement;
+import Model.ADT.MyDictionary;
+import Model.ADT.MyList;
+import Model.ADT.MyStack;
+import Model.Statement.Interfaces.IStatement;
 import Model.ProgramState;
+import Model.Value.Interfaces.IValue;
 import Repository.Interfaces.IRepository;
 
 public class Controller {
@@ -15,8 +20,11 @@ public class Controller {
         this.repository = repository;
     }
 
-    void add(ProgramState programState){
-        repository.add(programState);
+    public void add(IStatement statement){
+        IStack<IStatement> stack = new MyStack<IStatement>();
+        IDictionary<String, IValue> symbolTable = new MyDictionary<String,IValue>();
+        IList<IValue> out = new MyList<IValue>();
+        repository.add(new ProgramState(stack, symbolTable, out, statement));
     }
 
     ProgramState oneStep(ProgramState state) throws Exception {
@@ -32,6 +40,9 @@ public class Controller {
         ProgramState programState = repository.getCurrentProgram();
         while (programState.getExeStack().size() > 0){
             oneStep(programState);
+        }
+        for (IValue v : programState.getOut()){
+            System.out.println(v);
         }
     }
 

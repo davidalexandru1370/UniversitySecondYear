@@ -1,7 +1,8 @@
-package Model;
+package Model.Statement;
 
-import Model.Expression.IExpression;
-import Model.Interfaces.IStatement;
+import Model.Expression.Interfaces.IExpression;
+import Model.ProgramState;
+import Model.Statement.Interfaces.IStatement;
 
 public class PrintStatement implements IStatement {
     IExpression expression;

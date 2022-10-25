@@ -19,4 +19,8 @@ public class MyList<T> implements IList<T> {
         list.clear();
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return list.iterator();
+    }
 }

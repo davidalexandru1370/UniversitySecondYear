@@ -1,14 +1,13 @@
-package Model;
+package Model.Statement;
 
 import Exceptions.InterpreterException;
-import Exceptions.KeyNotFoundException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IStack;
-import Model.Expression.IExpression;
-import Model.Interfaces.IStatement;
+import Model.Expression.Interfaces.IExpression;
+import Model.ProgramState;
+import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
-import com.sun.jdi.Value;
 
 public class AssignStatement implements IStatement {
     String id;
@@ -28,16 +27,16 @@ public class AssignStatement implements IStatement {
         IDictionary<String, IValue> symbolTable = state.getSymbolTable();
 
         if (symbolTable.isDefined(id)){
-            IDictionary<String,IValue> symTable = state.getSymbolTable();
 
             IVariableType type = symbolTable.get(id).getType();
-            IValue value = expression.evaluate(symTable);
+            IValue value = expression.evaluate(symbolTable);
             if(!value.getType().equals(type)){
                 throw new InterpreterException("Invalid assignation!");
             }
-            if(!symTable.isDefined(id)){
-                throw new InterpreterException("Variable is not declared!");
-            }
+            symbolTable.insert(id,value);
+        }
+        else{
+            throw new InterpreterException(String.format("Variable %s is not defined",id));
         }
 
         return state;
