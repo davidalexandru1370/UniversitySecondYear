@@ -41,7 +41,7 @@ public class UI {
             System.out.println(ex.getMessage());
         }
     }
-
+    //
     void runProgram2(){
         IStatement ex2 = new CompoundStatement(
                 new VariableDeclarationStatement("a",new IntType()),
@@ -58,8 +58,13 @@ public class UI {
                                 new ArithmeticExpression(
                                         new VariableExpression(
                                                 "a"),
-                                        new ValueExpression(
-                                                new IntValue(1)),
+                                        new ArithmeticExpression(
+                                                new ArithmeticExpression(
+                                                        new ValueExpression(new IntValue(-4)),
+                                                        new ValueExpression(new IntValue(2)),
+                                                        "/"),
+                                                new ValueExpression(new IntValue(7)),
+                                                "+"),
                                         "+")),
                         new PrintStatement(new VariableExpression("b"))))));
         controller.add(ex2);
