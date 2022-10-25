@@ -11,9 +11,9 @@ import Model.VariablesTypes.IntType;
 public class ArithmeticExpression implements IExpression {
     private final IExpression expression1;
     private final IExpression expression2;
-    private final int operation;
+    private final String operation;
 
-    public ArithmeticExpression(IExpression expression1, IExpression expression2, int operation) {
+    public ArithmeticExpression(IExpression expression1, IExpression expression2, String operation) {
         this.expression1 = expression1;
         this.expression2 = expression2;
         this.operation = operation;
@@ -32,13 +32,13 @@ public class ArithmeticExpression implements IExpression {
                 n1 = int1.getValue();
                 n2 = int2.getValue();
                 switch (operation){
-                    case 1:
+                    case "+":
                         return new IntValue(n1 + n2);
-                    case 2:
+                    case "-":
                         return new IntValue(n1 - n2);
-                    case 3:
+                    case "*":
                         return new IntValue(n1 * n2);
-                    case 4:
+                    case "/":
                         if(n2 == 0){
                             throw new DivisionByZeroException("Can not divide by 0!");
                         }
