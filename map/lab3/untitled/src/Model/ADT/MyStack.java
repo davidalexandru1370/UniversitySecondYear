@@ -17,4 +17,9 @@ public class MyStack<T> implements IStack<T> {
     public T pop() throws EmptyStackException {
         return stack.pop();
     }
+
+    @Override
+    public int size() {
+        return stack.size();
+    }
 }
