@@ -14,8 +14,8 @@ import Model.VariablesTypes.IntType;
 import java.util.Scanner;
 
 public class UI {
-    private Controller controller;
-    private Scanner scanner = new Scanner(System.in);
+    private final Controller controller;
+    private final Scanner scanner = new Scanner(System.in);
     public UI(Controller controller) {
         this.controller = controller;
     }

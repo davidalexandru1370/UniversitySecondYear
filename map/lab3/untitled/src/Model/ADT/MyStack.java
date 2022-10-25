@@ -8,6 +8,10 @@ import java.util.Stack;
 public class MyStack<T> implements IStack<T> {
     Stack<T> stack = new Stack<T>();
 
+    public MyStack() {
+        stack = new Stack<T>();
+    }
+
     @Override
     public void push(T elem) {
         stack.push(elem);

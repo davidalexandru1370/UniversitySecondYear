@@ -7,7 +7,11 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MyList<T> implements IList<T> {
-    List<T> list = new ArrayList<T>();
+    private List<T> list = new ArrayList<T>();
+
+    public MyList() {
+        list = new ArrayList<T>();
+    }
 
     @Override
     public void add(T elem) {
