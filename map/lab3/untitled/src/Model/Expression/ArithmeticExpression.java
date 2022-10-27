@@ -53,4 +53,13 @@ public class ArithmeticExpression implements IExpression {
         }
         throw new OperandException("First operand is not integer!");
     }
+
+    @Override
+    public String toString() {
+        return "ArithmeticExpression{" +
+                "expression1=" + expression1 +
+                ", expression2=" + expression2 +
+                ", operation='" + operation + '\'' +
+                '}';
+    }
 }

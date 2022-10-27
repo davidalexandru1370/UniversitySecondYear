@@ -41,7 +41,11 @@ public class UI {
             System.out.println(ex.getMessage());
         }
     }
-    //
+    //int a;
+    //a=2+3*5;
+    //int b;
+    //b=a-4/2 + 7;
+    //Print(b)
     void runProgram2(){
         IStatement ex2 = new CompoundStatement(
                 new VariableDeclarationStatement("a",new IntType()),

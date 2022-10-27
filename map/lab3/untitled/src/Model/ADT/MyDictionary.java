@@ -38,4 +38,11 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
         }
         return dictionary.get(key);
     }
+
+    @Override
+    public String toString() {
+        return "MyDictionary{" +
+                "dictionary=" + dictionary +
+                '}';
+    }
 }

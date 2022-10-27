@@ -25,4 +25,12 @@ public class VariableDeclarationStatement implements IStatement {
         symbolTable.insert(name,type.getDefault());
         return state;
     }
+
+    @Override
+    public String toString() {
+        return "VariableDeclarationStatement{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }

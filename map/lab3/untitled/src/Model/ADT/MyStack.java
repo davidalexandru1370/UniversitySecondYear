@@ -26,4 +26,11 @@ public class MyStack<T> implements IStack<T> {
     public int size() {
         return stack.size();
     }
+
+    @Override
+    public String toString() {
+        return "MyStack{" +
+                "stack=" + stack +
+                '}';
+    }
 }

@@ -16,4 +16,11 @@ public class ValueExpression implements IExpression {
     public IValue evaluate(IDictionary<String, IValue> symbolsTable) throws Exception {
         return value;
     }
+
+    @Override
+    public String toString() {
+        return "ValueExpression{" +
+                "value=" + value +
+                '}';
+    }
 }
