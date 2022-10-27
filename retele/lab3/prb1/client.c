@@ -8,7 +8,7 @@
 //git
 int main() {
 	int c, cod;
-	//int32_t r;
+	int32_t r;
 	// Observatie: Deoarece dimensiunea tipului int difera de la platforma la platforma,
 	// (spre exemplu, in Borland C in DOS e reprezentat pe 2 octeti, iar in C sub Linux pe
 	// 4 octeti) este necesara utilizarea unor tipuri intregi standard. A se vedea
@@ -54,16 +54,14 @@ int main() {
 	//}
 
 	//cod = recv(c, &r, sizeof(int32_t), MSG_WAITALL);
-	int16_t ch = 1;
+	char ch = 1;
+	//printf("%d\n",r);
 	while(ch != 0){
-		cod = recv(c,&ch,sizeof(int16_t),MSG_WAITALL);
-		if(cod != sizeof(int)){
-			fprintf(stderr,"Eroare la primirea datelor de la client\n");
-			return 1;
-		}	
+		cod = recv(c,&ch,sizeof(char),MSG_WAITALL);
+		//printf("%c\n",(char)ch);
+		
 		printf("%c",(char)ch);
 	}
-	//printf("Serverul a returnat %d caractere spatiu in sirul trimis.\n", r);
 
 	close(c);
 }

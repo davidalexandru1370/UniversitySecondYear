@@ -30,7 +30,6 @@ void tratare() {
 	// (spre exemplu, in Borland C in DOS e reprezentat pe 2 octeti, iar in C sub Linux pe
 	// 4 octeti) este necesara utilizarea unor tipuri intregi standard. A se vedea
 	// stdint.h.
-	struct sockaddr_in server;
 	
 	if (c < 0) {
 		fprintf(stderr, "Eroare la stabilirea conexiunii cu clientul.\n");
@@ -92,7 +91,7 @@ void tratare2(){
 	int32_t r;
 	uint8_t b;
 	char res[N];
-
+	//char output[N];
 	if(c < 0){
 		fprintf(stderr,"Eroare la stabilirea conexiunii cu clientul\n");
 		exit(1);
@@ -118,7 +117,27 @@ void tratare2(){
 	}
 	while(b!=0);
 	alarm(0);
-	printf("%s\n",res);
+	printf("Am primit de la client: %s\n",res);
+	//token = strktok(res," ");
+	//int index = 0;
+	FILE* fp;
+	fp = popen(res,"r");
+	while(1){
+		char ch;
+		fscanf(fp,"%c",&ch);
+		printf("%c",ch);
+		//ch=htonl(ch);
+		if(feof(fp)){
+			ch = 0;
+			send(c,&ch,1,0);
+			break;
+		}
+		else{
+			send(c,&ch,1,0);
+		}
+	}
+	int exitCode = htonl(WEXITSTATUS(pclose(fp)));
+	send(c,&exitCode,sizeof(int),0);
 	close(c);
 	exit(0);
 }
