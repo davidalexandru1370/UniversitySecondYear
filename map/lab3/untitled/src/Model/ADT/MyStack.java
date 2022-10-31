@@ -32,8 +32,6 @@ public class MyStack<T> implements IStack<T> {
         return stack.firstElement();
     }
 
-
-
     @Override
     public String toString() {
         return "MyStack{" +

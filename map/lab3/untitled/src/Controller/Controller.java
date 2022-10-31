@@ -29,20 +29,21 @@ public class Controller {
 
     ProgramState oneStep(ProgramState state) throws Exception {
         IStack<IStatement> stack = state.getExeStack();
+        System.out.println(state.currentStateToString());
         if(stack.size() == 0){
             throw new ExecutionStackException("Execution stack is empty");
         }
-        System.out.println(state.currentStateToString());
+
         IStatement currentStatement = stack.pop();
         return currentStatement.execute(state);
     }
 
     public void allStep() throws Exception {
         ProgramState programState = repository.getCurrentProgram();
-        while (programState.getExeStack().size() > 0){
+        while (programState.getExeStack().size() >= 0){
             oneStep(programState);
         }
-        System.out.println(programState.currentStateToString());
+//        System.out.println(programState.currentStateToString());
 
     }
 

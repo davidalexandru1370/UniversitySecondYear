@@ -54,6 +54,6 @@ public class ProgramState {
     public String currentStateToString(){
         return "Execution stack: " + (exeStack.size() > 0 ? exeStack.getTop().toString() : "Empty stack") + "\n" +
                 "Symbol Table: " + symbolTable.toString() +"\n" +
-                "Out: "+ out.toString()+ "\n";
+                "Out: " + out.toString() + "\n";
     }
 }
