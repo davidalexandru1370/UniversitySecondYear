@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MyList<T> implements IList<T> {
-    private List<T> list = new ArrayList<T>();
+    private List<T> list;
 
     public MyList() {
         list = new ArrayList<T>();
@@ -31,8 +31,8 @@ public class MyList<T> implements IList<T> {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for ( T element : list){
-            stringBuilder.append(element.toString());
+        for (T t : list) {
+            stringBuilder.append(t.toString());
         }
         return stringBuilder.toString();
     }

@@ -42,9 +42,8 @@ public class Controller {
         while (programState.getExeStack().size() > 0){
             oneStep(programState);
         }
-        for (IValue v : programState.getOut()){
-            System.out.println(v);
-        }
+        System.out.println(programState.currentStateToString());
+
     }
 
 }
