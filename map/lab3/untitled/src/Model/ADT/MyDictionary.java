@@ -41,8 +41,11 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
 
     @Override
     public String toString() {
-        return "MyDictionary{" +
-                "dictionary=" + dictionary +
-                '}';
+        StringBuilder result = new StringBuilder();
+        for(Key key : dictionary.keySet())
+        {
+            result.append(String.format("%s = %s\n", key, dictionary.get(key)));
+        }
+        return result.toString();
     }
 }

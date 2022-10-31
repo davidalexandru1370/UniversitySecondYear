@@ -32,7 +32,7 @@ public class Controller {
         if(stack.size() == 0){
             throw new ExecutionStackException("Execution stack is empty");
         }
-        System.out.println(state);
+        System.out.println(state.currentStateToString());
         IStatement currentStatement = stack.pop();
         return currentStatement.execute(state);
     }

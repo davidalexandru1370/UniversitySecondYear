@@ -27,4 +27,13 @@ public class MyList<T> implements IList<T> {
     public Iterator<T> iterator() {
         return list.iterator();
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for ( T element : list){
+            stringBuilder.append(element.toString());
+        }
+        return stringBuilder.toString();
+    }
 }
