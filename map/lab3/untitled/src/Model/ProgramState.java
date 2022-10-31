@@ -3,6 +3,7 @@ package Model;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
+import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 
@@ -52,7 +53,9 @@ public class ProgramState {
     }
 
     public String currentStateToString(){
-        return "Execution stack: " + (exeStack.size() > 0 ? exeStack.getTop().toString() : "Empty stack") + "\n" +
+        return "Execution stack: " + (exeStack.size() > 0 ?  (exeStack.getTop() instanceof CompoundStatement ?
+                                ((CompoundStatement)exeStack.getTop()).getFirst() : exeStack.getTop() )
+                : "Empty stack") + "\n" +
                 "Symbol Table: " + symbolTable.toString() +"\n" +
                 "Out: " + out.toString() + "\n";
     }

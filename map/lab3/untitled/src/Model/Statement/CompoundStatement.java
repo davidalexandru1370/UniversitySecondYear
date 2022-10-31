@@ -5,8 +5,8 @@ import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
 
 public class CompoundStatement implements IStatement {
-    IStatement first;
-    IStatement second;
+    private final IStatement first;
+    private final IStatement second;
 
     public CompoundStatement(IStatement first, IStatement second){
         this.first = first;
@@ -20,6 +20,15 @@ public class CompoundStatement implements IStatement {
                 ", second=" + second.toString() +
                 '}';
     }
+
+    public IStatement getFirst() {
+        return first;
+    }
+
+    public IStatement getSecond() {
+        return second;
+    }
+
     @Override
     public ProgramState execute(ProgramState state) throws Exception {
         IStack<IStatement> stack = state.getExeStack();

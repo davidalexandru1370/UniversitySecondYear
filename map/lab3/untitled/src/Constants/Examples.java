@@ -14,8 +14,7 @@ public class Examples {
                 a = 2+3*5;
                 int b;
                 b = a-4/2+7;
-                Print(b);
-                """;
+                Print(b);""";
     }
 
     public static String example3(){
@@ -27,7 +26,6 @@ public class Examples {
                     v = 2;
                 else
                     v = 3;
-                Print(v);
-                """;
+                Print(v);""";
     }
 }
