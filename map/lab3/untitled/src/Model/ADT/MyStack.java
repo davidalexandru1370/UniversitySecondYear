@@ -28,6 +28,14 @@ public class MyStack<T> implements IStack<T> {
     }
 
     @Override
+    public T getTop() {
+        if( size() == 0){
+            throw new EmptyStackException();
+        }
+        return stack.firstElement();
+    }
+
+    @Override
     public String toString() {
         return "MyStack{" +
                 "stack=" + stack +

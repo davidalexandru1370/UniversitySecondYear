@@ -50,4 +50,10 @@ public class ProgramState {
                 "Symbol table: " + symbolTable.toString() +"\n" +
                 "Out: " + out.toString()+"\n";
     }
+
+    public String currentStateToString(){
+        return "Execution stack: " + exeStack.getTop()+ "\n" +
+                "Symbol Table: " + symbolTable.toString() +"\n" +
+                "Out: "+ out.toString()+ "\n";
+    }
 }

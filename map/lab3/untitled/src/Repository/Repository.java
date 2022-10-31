@@ -1,5 +1,6 @@
 package Repository;
 
+import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
 import Model.ProgramState;
 import Repository.Interfaces.IRepository;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Repository implements IRepository {
+
 
     private List<ProgramState> programs = new ArrayList<>();
 
@@ -18,6 +20,11 @@ public class Repository implements IRepository {
     @Override
     public void add(ProgramState programState){
         programs.add(programState);
+    }
+
+    @Override
+    public void logProgramStateExecution() throws InterpreterException {
+
     }
 
     @Override
