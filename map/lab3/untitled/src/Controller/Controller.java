@@ -29,9 +29,6 @@ public class Controller {
         repository.add(new ProgramState(stack, symbolTable, out, statement));
     }
 
-    private void logExecutionStack(){
-
-    }
 
     public ProgramState oneStep(ProgramState state) throws Exception {
         IStack<IStatement> stack = state.getExeStack();
@@ -52,11 +49,13 @@ public class Controller {
 
     public void allStep() throws Exception {
         ProgramState programState = repository.getCurrentProgram();
+        repository.logProgramStateExecution();
         while (programState.getExeStack().size() >= 0){
             if(programState.getExeStack().size() == 0){
                 repository.pop();
             }
             oneStep(programState);
+            repository.logProgramStateExecution();
         }
 
 //        System.out.println(programState.currentStateToString());

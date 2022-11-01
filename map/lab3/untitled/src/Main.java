@@ -5,7 +5,7 @@ import View.UI;
 
 public class Main {
     public static void main(String[] args){
-        IRepository repository  = new Repository();
+        IRepository repository  = new Repository("log1.txt");
         Controller controller = new Controller(repository);
         UI console = new UI(controller);
         console.runMenu();

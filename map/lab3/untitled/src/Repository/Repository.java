@@ -12,9 +12,10 @@ public class Repository implements IRepository {
 
 
     private List<ProgramState> programs = new ArrayList<>();
+    private String logFilePath;
 
-    public Repository() {
-
+    public Repository(String logFilePath) {
+        this.logFilePath = logFilePath;
     }
 
     @Override
