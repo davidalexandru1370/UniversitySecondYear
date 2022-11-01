@@ -21,9 +21,9 @@ public class BoolValue implements IValue {
 
     @Override
     public String toString() {
-        return "BoolValue{" +
-                "value=" + value +
-                '}';
+        return "Bool" +
+                "(" + value +
+                ')';
     }
 
     @Override

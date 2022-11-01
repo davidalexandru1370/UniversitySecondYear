@@ -2,9 +2,11 @@ package View;
 
 import Constants.Examples;
 import Controller.Controller;
+import Exceptions.RepositoryException;
 import Model.Expression.ArithmeticExpression;
 import Model.Expression.ValueExpression;
 import Model.Expression.VariableExpression;
+import Model.ProgramState;
 import Model.Statement.*;
 import Model.Statement.Interfaces.*;
 import Model.Value.BoolValue;
@@ -21,6 +23,8 @@ public class UI {
         this.controller = controller;
     }
 
+    private boolean isOneStepRunning = false;
+
     void printMenu(){
         System.out.println("Program 1: ");
         System.out.println(Examples.example1());
@@ -34,7 +38,14 @@ public class UI {
         System.out.println(Examples.example3());
         System.out.println("Press 3 to run program 3\n");
 
-        System.out.println("Press 4 to exit");
+        if(!isOneStepRunning){
+            System.out.println("Press 4 to check one-step-running");
+        }
+        else{
+            System.out.println("Press 4 to uncheck one-step-running");
+        }
+        System.out.println("Press 5 to exit");
+
         System.out.print("Your choice = ");
     }
 
@@ -45,17 +56,13 @@ public class UI {
                 new PrintStatement(new VariableExpression("v"))));
         controller.add(ex1);
         try{
-            controller.allStep();
+            executeProgram();
         }
         catch (Exception ex){
             System.out.println(ex.getMessage());
         }
     }
-    //int a;
-    //a=2+3*5;
-    //int b;
-    //b=a-4/2 + 7;
-    //Print(b)
+
     void runProgram2(){
         IStatement ex2 = new CompoundStatement(
                 new VariableDeclarationStatement("a",new IntType()),
@@ -83,10 +90,48 @@ public class UI {
                         new PrintStatement(new VariableExpression("b"))))));
         controller.add(ex2);
         try{
-            controller.allStep();
+            executeProgram();
         }
         catch (Exception ex){
             System.out.println(ex.getMessage());
+        }
+    }
+
+    private void executeProgram(){
+        ProgramState currentProgram;
+        try{
+            currentProgram = controller.getCurrentProgram();
+        }
+        catch (RepositoryException repositoryException){
+            System.out.println(repositoryException.getMessage());
+            return;
+        }
+        if(scanner.hasNextLine()){
+            scanner.nextLine();
+        }
+        if(isOneStepRunning){
+            try{
+                while(true){
+                    currentProgram = controller.oneStep(currentProgram);
+                    System.out.println("Press \033[3m ENTER\033[0m to continue");
+                    String line = "1";
+
+
+
+                    while(!line.isEmpty()){
+                        line = scanner.nextLine();
+                    }
+                }
+            } catch (Exception e) {
+
+            }
+        }
+        else{
+            try{
+                controller.allStep();
+            } catch (Exception e) {
+
+            }
         }
     }
 
@@ -100,7 +145,7 @@ public class UI {
                 new PrintStatement(new VariableExpression("v"))))));
         controller.add(ex3);
         try{
-            controller.allStep();
+            executeProgram();
         }
         catch (Exception ex){
             System.out.println(ex.getMessage());
@@ -117,7 +162,8 @@ public class UI {
                     case 1 -> runProgram1();
                     case 2 -> runProgram2();
                     case 3 -> runProgram3();
-                    case 4 -> System.exit(0);
+                    case 4 -> isOneStepRunning = !isOneStepRunning;
+                    case 5 -> System.exit(0);
                     default -> System.out.println("Invalid input!");
                 }
             }

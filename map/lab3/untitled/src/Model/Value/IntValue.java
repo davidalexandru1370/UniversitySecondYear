@@ -26,8 +26,8 @@ public class IntValue implements IValue {
 
     @Override
     public String toString() {
-        return "IntValue{" +
-                "value=" + value +
-                '}';
+        return "Int" +
+                "(" + value +
+                ')';
     }
 }

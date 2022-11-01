@@ -28,6 +28,14 @@ public class Repository implements IRepository {
     }
 
     @Override
+    public void pop() throws RepositoryException{
+        if(programs.size() == 0){
+            throw new RepositoryException("No program!");
+        }
+        programs.remove(0);
+    }
+
+    @Override
     public ProgramState getCurrentProgram() throws RepositoryException{
         if (programs.size() == 0){
             throw new RepositoryException("No programs!\n");

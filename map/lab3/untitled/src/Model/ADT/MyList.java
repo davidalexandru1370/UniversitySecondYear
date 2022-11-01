@@ -34,6 +34,10 @@ public class MyList<T> implements IList<T> {
         for (T t : list) {
             stringBuilder.append(t.toString());
         }
+
+        if(list.size() == 0){
+            stringBuilder.append("No output.");
+        }
         return stringBuilder.toString();
     }
 }
