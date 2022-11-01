@@ -157,7 +157,7 @@ public class UI {
         while(true){
             printMenu();
             try{
-                input = scanner.nextInt();
+                input = Integer.parseInt(scanner.nextLine());
                 switch (input) {
                     case 1 -> runProgram1();
                     case 2 -> runProgram2();
@@ -168,7 +168,7 @@ public class UI {
                 }
             }
             catch (Exception exception){
-                System.out.println(exception.getMessage());
+                System.out.println("Invalid input!");
             }
 
         }
