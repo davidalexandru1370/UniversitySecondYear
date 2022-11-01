@@ -106,18 +106,13 @@ public class UI {
             System.out.println(repositoryException.getMessage());
             return;
         }
-        if(scanner.hasNextLine()){
-            scanner.nextLine();
-        }
+
         if(isOneStepRunning){
             try{
                 while(true){
                     currentProgram = controller.oneStep(currentProgram);
                     System.out.println("Press \033[3m ENTER\033[0m to continue");
                     String line = "1";
-
-
-
                     while(!line.isEmpty()){
                         line = scanner.nextLine();
                     }
@@ -170,7 +165,6 @@ public class UI {
             catch (Exception exception){
                 System.out.println("Invalid input!");
             }
-
         }
     }
 }
