@@ -1,5 +1,5 @@
 --DECLARE @DB_NAME AS VARCHAR(100)='DrivingExams';
---alter database DrivingExams set single_user with rollback immediate
+--alter database DrivingExams SET MULTI_USER with rollback immediate
 --DROP DATABASE DrivingExams;
 CREATE DATABASE DrivingExams
 
@@ -20,11 +20,11 @@ CREATE TABLE Instructors(
 );
 
 CREATE TABLE InstructorsDrivingLicenses(
-	Id int PRIMARY KEY IDENTITY(1,1),
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
-	FOREIGN KEY (CNP) REFERENCES Categories(Category),
-	FOREIGN KEY (CNP) REFERENCES Instructors(CNP),
+	Constraint FK_Category FOREIGN KEY (Category) REFERENCES Categories(Category)  ON DELETE CASCADE,
+	Constraint FK_CNP FOREIGN KEY (CNP) REFERENCES Instructors(CNP)  ON DELETE CASCADE,
+	CONSTRAINT PK_Category_CNP PRIMARY KEY (CNP,Category) 
 );
 
 CREATE TABLE Students(
