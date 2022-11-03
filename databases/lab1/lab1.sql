@@ -1,10 +1,10 @@
 --DECLARE @DB_NAME AS VARCHAR(100)='DrivingExams';
 --alter database DrivingExams SET MULTI_USER with rollback immediate
 --DROP DATABASE DrivingExams;
-CREATE DATABASE DrivingExams3
+CREATE DATABASE DrivingExams4
 
 go
-USE  DrivingExams3;
+USE  DrivingExams4;
 go
 
 CREATE TABLE Categories(
@@ -20,8 +20,8 @@ CREATE TABLE Instructors(
 CREATE TABLE InstructorsDrivingLicenses(
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
-	Constraint FK_Category FOREIGN KEY (Category) REFERENCES Categories(Category)  ON DELETE CASCADE,
-	Constraint FK_CNP FOREIGN KEY (CNP) REFERENCES Instructors(CNP)  ON DELETE CASCADE,
+	Constraint FK_Category FOREIGN KEY (Category) REFERENCES Categories(Category)  ON DELETE CASCADE ON UPDATE CASCADE,
+	Constraint FK_CNP FOREIGN KEY (CNP) REFERENCES Instructors(CNP)  ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT PK_Category_CNP PRIMARY KEY (CNP,Category) 
 );
 
@@ -37,8 +37,8 @@ CREATE TABLE Students(
 CREATE TABLE StudentsDrivingLicenses(
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
-	Constraint FK_StudentsDrivingLicenses_Category FOREIGN KEY (Category) REFERENCES Categories(Category) ON DELETE CASCADE,
-	CONSTRAINT FK_StudentDrivingLicences_CNP FOREIGN KEY (CNP) REFERENCES Students(CNP) ON DELETE CASCADE,
+	Constraint FK_StudentsDrivingLicenses_Category FOREIGN KEY (Category) REFERENCES Categories(Category) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FK_StudentDrivingLicences_CNP FOREIGN KEY (CNP) REFERENCES Students(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
 	Constraint PK_StudentDrivingLicenses PRIMARY KEY (CNP,Category),
 );
 
@@ -51,8 +51,8 @@ Create Table Supervisors(
 CREATE TABLE SupervisorsDrivingLicenses(
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
-	CONSTRAINT FK_SupervisorsDrivingLicences_CNP FOREIGN KEY (CNP) REFERENCES Supervisors(CNP) ON DELETE CASCADE,
-	CONSTRAINT FK_SupervisorsDrivingLicenses_Category FOREIGN KEY (Category) REFERENCES Categories(Category) ON DELETE CASCADE,
+	CONSTRAINT FK_SupervisorsDrivingLicences_CNP FOREIGN KEY (CNP) REFERENCES Supervisors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FK_SupervisorsDrivingLicenses_Category FOREIGN KEY (Category) REFERENCES Categories(Category) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT PK_SupervisorsDrivingLicenses PRIMARY KEY(CNP,Category),
 )
 
@@ -70,7 +70,7 @@ CREATE TABLE Vehicles(
 	Id int  PRIMARY KEY IDENTITY,
 	CarPlate NVARCHAR(100) NOT NULL,
 	InstructorCNP NVARCHAR(100) NOT NULL,
-	Constraint FK_InstructorId FOREIGN KEY(InstructorCNP) REFERENCES Instructors(CNP) ON DELETE CASCADE,
+	Constraint FK_InstructorId FOREIGN KEY(InstructorCNP) REFERENCES Instructors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE PracticalExams(
@@ -90,13 +90,12 @@ CREATE TABLE Results(
 	Id int IDENTITY (1,1) PRIMARY KEY,
 	CandidateCNP NVARCHAR(100) NOT NULL,
 	FinalResult bit NOT NULL,
-	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP) ON DELETE CASCADE,
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
 );
 
 CREATE TABLE InstructorDetails(
 	CNP NVARCHAR(100) PRIMARY KEY,
 	CertificationIssued DATE NOT NULL,
 	CertificationExpiration DATE NOT NULL,
-	EnrolledStudents INT NOT NULL,
-	Constraint FK_InstructorDetails_CNP FOREIGN KEY(CNP) REFERENCES Instructors(CNP) ON DELETE CASCADE,
+	Constraint FK_InstructorDetails_CNP FOREIGN KEY(CNP) REFERENCES Instructors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
 )
