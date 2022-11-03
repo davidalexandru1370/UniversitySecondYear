@@ -8,7 +8,7 @@ b. 2 queries with the intersection operation; use INTERSECT and IN;
 c. 2 queries with the difference operation; use EXCEPT and NOT IN;
 */
 
-use DrivingExams7;
+use DrivingExams8;
 go
 DELETE FROM Instructors;
 INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('8809219082745','Simion David','SJ12VDA');
@@ -82,6 +82,7 @@ INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('9925170543526','C')
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('9925170543526','C+E');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8609289040140','B');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8609289040140','C');
+INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('4673261850041','A');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('4673261850041','B');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('5408411857894','B');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('5408411857894','B+E');
@@ -104,3 +105,42 @@ INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8603711577258','D')
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8603711577258','D+E');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('3438600813142','B');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('3438600813142','C');
+
+DELETE FROM Supervisors
+go
+INSERT INTO Supervisors(CNP,Name) values('4043402719748','Ion Filip');
+INSERT INTO Supervisors(CNP,Name) values('6387498973155','Dragomir Rafael');
+INSERT INTO Supervisors(CNP,Name) values('0248959795222','Dorin Mircea');
+INSERT INTO Supervisors(CNP,Name) values('8637723874592','Octavian Mihail');
+go
+
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('4043402719748','A');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('4043402719748','B');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('4043402719748','B+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('4043402719748','C');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('4043402719748','C+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('4043402719748','D');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('4043402719748','D+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('6387498973155','A');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('6387498973155','B');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('6387498973155','B+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('6387498973155','C');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('6387498973155','C+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('6387498973155','D');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('6387498973155','D+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('0248959795222','A');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('0248959795222','B');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('0248959795222','B+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('0248959795222','C');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('0248959795222','C+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('0248959795222','D');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('0248959795222','D+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','A');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','B');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','B+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','C');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','C+E');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','D');
+Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','D+E');
+go
+

@@ -1,10 +1,10 @@
 --DECLARE @DB_NAME AS VARCHAR(100)='DrivingExams';
 --alter database DrivingExams SET MULTI_USER with rollback immediate
 --DROP DATABASE DrivingExams;
-CREATE DATABASE DrivingExams7
+CREATE DATABASE DrivingExams8
 
 go
-USE  DrivingExams7;
+USE  DrivingExams8;
 go
 
 CREATE TABLE Categories(
@@ -50,11 +50,11 @@ Create Table Supervisors(
 );
 
 CREATE TABLE SupervisorsDrivingLicenses(
-	Id int PRIMARY KEY IDENTITY(1,1),
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
-	FOREIGN KEY (CNP) REFERENCES Supervisors(CNP),
-	FOREIGN KEY (Category) REFERENCES Categories(Category),
+	CONSTRAINT FK_SupervisorsDrivingLicences_CNP FOREIGN KEY (CNP) REFERENCES Supervisors(CNP) ON DELETE CASCADE,
+	CONSTRAINT FK_SupervisorsDrivingLicenses_Category FOREIGN KEY (Category) REFERENCES Categories(Category) ON DELETE CASCADE,
+	CONSTRAINT PK_SupervisorsDrivingLicenses PRIMARY KEY(CNP,Category),
 )
 
 CREATE TABLE TheoreticalExams(
