@@ -8,7 +8,7 @@ b. 2 queries with the intersection operation; use INTERSECT and IN;
 c. 2 queries with the difference operation; use EXCEPT and NOT IN;
 */
 
-use DrivingExams;
+use DrivingExams7;
 go
 DELETE FROM Instructors;
 INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('8809219082745','Simion David','SJ12VDA');
@@ -19,8 +19,46 @@ INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('5408411857894','Apostol 
 INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('4599542702892','Ilie Emilian','SJ50RTM');
 INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('2075047510772','Iacob Eusebiu','SJ98ATM');
 INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('7196776918679','Antoniu Ionel','SJ91AAY');
-INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('8603711577258','Constantin Marin','SJ40MMC');
+INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('8603711577258','Vaida Valer','SJ40MMC');
 INSERT INTO Instructors(CNP,Name,VehiclePlate) values ('3438600813142','Chis Teofil','SJ70TEO');
+go
+
+DELETE FROM Students
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('3199705865004','Loredana Ileana',2,'8809219082745','01/01/2022');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('2168278601776','Iuliu Dorina',20,'8809219082745','10/11/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('6889232605884','Ramona Mircea',15,'9925170543526','10/01/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('6831736316573','Filimon Raul',16,'4673261850041','3/20/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('1318543676570','Gavril Adi',3,'5408411857894','05/06/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('2815078598327','Ioan Carol',1,'2075047510772','03/13/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('8785629202432','Flaviu Ionel',20,'8609289040140','04/06/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('1685902704761','Ladislau Marin',0,'8809219082745','01/02/2020');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('5424667600275','Raul Radu',15,'9925170543526','03/04/2020');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('0125282099674','Muresan Marian',20,'4673261850041','6/10/2022');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('0729419925257','Balas Andrei',0,'3438600813142','3/04/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('1967230149969','Gurza Roland',15,'8603711577258','4/10/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('6822153945653','Olar Serban',5,'7196776918679','01/01/2020');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('2411165833346','Horincar Mihai',7,'2075047510772','3/04/2021');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('8414031374178','Gergely Krisztian',20,'5408411857894','07/17/2020');
+INSERT INTO Students(CNP,Name,CurrentLesson,InstructorCNP,StartingDate) values ('3240118986611','Vlasan Darius',13,'4599542702892','02/03/2022');
+go
+
+DELETE FROM StudentsDrivingLicenses
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('3199705865004','B');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('2168278601776','C');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('6889232605884','D');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('6831736316573','A');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('1318543676570','B');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('2815078598327','C+E');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('8785629202432','B+E');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('1685902704761','D+E');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('5424667600275','B');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('0125282099674','B');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('0729419925257','C');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('1967230149969','B');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('6822153945653','B');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('2411165833346','C');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('8414031374178','C+E');
+INSERT INTO StudentsDrivingLicenses(CNP,Category) values ('3240118986611','B');
 go
 
 DELETE FROM Categories;
@@ -66,4 +104,3 @@ INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8603711577258','D')
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8603711577258','D+E');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('3438600813142','B');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('3438600813142','C');
---INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('3438600813143','C');
