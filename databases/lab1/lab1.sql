@@ -1,10 +1,10 @@
 --DECLARE @DB_NAME AS VARCHAR(100)='DrivingExams';
 --alter database DrivingExams SET MULTI_USER with rollback immediate
 --DROP DATABASE DrivingExams;
-CREATE DATABASE DrivingExams8
+CREATE DATABASE DrivingExams3
 
 go
-USE  DrivingExams8;
+USE  DrivingExams3;
 go
 
 CREATE TABLE Categories(
@@ -62,16 +62,15 @@ CREATE TABLE TheoreticalExams(
 	SupervisorCNP NVARCHAR(100) NOT NULL,
 	CandidateScore int NOT NULL,
 	ExamDate date NOT NULL,
-	Score int NOT NULL,
-	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
-	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP),
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE Vehicles(
-	Id int  PRIMARY KEY,
+	Id int  PRIMARY KEY IDENTITY,
 	CarPlate NVARCHAR(100) NOT NULL,
 	InstructorCNP NVARCHAR(100) NOT NULL,
-	Constraint FK_InstructorId FOREIGN KEY(InstructorCNP) REFERENCES Instructors(CNP)
+	Constraint FK_InstructorId FOREIGN KEY(InstructorCNP) REFERENCES Instructors(CNP) ON DELETE CASCADE,
 );
 
 CREATE TABLE PracticalExams(
@@ -82,9 +81,9 @@ CREATE TABLE PracticalExams(
 	ExamDate date NOT NULL,
 	CarId int NOT NULL,
 	Score int NOT NULL,
-	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
-	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP),
-	FOREIGN KEY (CarId) REFERENCES Vehicles(Id),
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (CarId) REFERENCES Vehicles(Id) ON UPDATE CASCADE,
 );
 
 CREATE TABLE Results(
@@ -92,9 +91,7 @@ CREATE TABLE Results(
 	CandidateCNP NVARCHAR(100) NOT NULL,
 	FinalResult bit NOT NULL,
 	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP) ON DELETE CASCADE,
-)
-
-
+);
 
 CREATE TABLE InstructorDetails(
 	CNP NVARCHAR(100) PRIMARY KEY,
