@@ -56,8 +56,7 @@ int main(int argc, char *argv[])
    if(strlen(buffer) != strlen(receivedMessage) || strcmp(buffer,receivedMessage) != 0){
     error("Text is not the same\n");
    }
- 
-   printf("Response time: %f ms\n",difftime(receiveResponseTime,sendRequestTime)*1000);
+   printf("Response time: %f ms\n",difftime(receiveResponseTime,sendRequestTime));
 }
 
 void error(char *msg)
