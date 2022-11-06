@@ -188,4 +188,8 @@ UPDATE Vehicles set CarPlate = 'SJ' + SUBSTRING(Carplate,3,6) where CarPlate NOT
 DELETE FROM Students where InstructorCNP is null or DATEDIFF(DAYOFYEAR,StartingDate,GETDATE()) >= 365
 DELETE FROM TheoreticalExams where CandidateScore between 22 and 26;
 DELETE FROM Instructors where Name like 'Chis%';
+
+
+INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('8414031374178','4043402719748','12/11/2021',26);
+INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('0125282099674','4043402719748','12/10/2021',24);
 go
