@@ -166,6 +166,7 @@ Insert into Vehicles(InstructorCNP,CarPlate) values('8603711577258','BH13DAV');
 Insert into Vehicles(InstructorCNP,CarPlate) values('3438600813142','SJ86GRZ');
 Insert into Vehicles(InstructorCNP,CarPlate) values('8809219082745','CJ87ATM');
 Insert into Vehicles(InstructorCNP,CarPlate) values('8809219082745','CJ90VFV');
+Insert into Vehicles(CarPlate,InstructorCNP) values('BH56GRZ','4673261850041');
 go
 
 DELETE from TheoreticalExams
