@@ -18,6 +18,11 @@ SELECT CandidateCNP from PracticalExams where CandidateScore < 21
 intersect 
 SELECT CandidateCNP  from TheoreticalExams where CandidateScore >= 22;
 
-Select CNP as SupervisorCNP from Supervisors 
-intersect
-Select SupervisorCNP from PracticalExams;
+Select CNP as SupervisorCNP from Supervisors where CNP in (Select SupervisorCNP from PracticalExams);
+
+--get all instructors which do not have Category D
+SELECT CNP from Instructors
+except
+select CNP from InstructorsDrivingLicenses where Category = 'D'
+
+SELECT CNP from Instructors where CNP not in (Select CNP from InstructorsDrivingLicenses where Category = 'D') --alternative
