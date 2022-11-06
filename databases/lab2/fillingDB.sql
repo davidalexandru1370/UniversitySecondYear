@@ -178,6 +178,19 @@ INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore)
 INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('6831736316573','6387498973155','12/24/2021',21);
 go
 
+--luna/ziua/an
+DELETE FROM InstructorDetails;
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('8809219082745','06/20/2019','06/20/2024');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('9925170543526','05/19/2018','05/10/2023');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('8609289040140','04/15/2019','04/15/2024');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('4673261850041','11/22/2018','11/22/2023');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('5408411857894','12/13/2016','12/13/2021');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('4599542702892','11/13/2016','11/13/2021');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('2075047510772','10/11/2015','10/11/2020');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('7196776918679','07/09/2021','07/09/2026');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('8603711577258','09/09/2020','09/09/2025');
+INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('3438600813142','11/11/2017','11/11/2022');
+
 Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('8414031374178','4043402719748',22,'05/10/2021',5);
 Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',18,'05/10/2021',4);
 
