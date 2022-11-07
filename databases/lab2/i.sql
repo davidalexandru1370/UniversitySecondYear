@@ -37,7 +37,11 @@ SELECT distinct I.Name,COUNT(*) as Students FROM Instructors I
 INNER JOIN Students S ON S.InstructorCNP = I.CNP
 INNER JOIN PracticalExams P on S.CNP = P.CandidateCNP
 group by P.CandidateCNP,I.Name,S.CNP
-HAVING P.CandidateCNP = ALL(SELECT CandidateCNP from PracticalExams P2 where  P2.CandidateScore < 21 AND P2.CandidateCNP = S.CNP)
+HAVING P.CandidateCNP not in(SELECT CandidateCNP from PracticalExams P2 where  P2.CandidateScore < 21 AND P2.CandidateCNP = S.CNP)
 
 
-SELECT (Select I.Name from Instructors I where i.CNP = id.CNP) as 'Instructor Name',ID.CNP, CertificationIssued FROM InstructorDetails ID WHERE ID.CertificationIssued >= ALL(SELECT CertificationIssued FROM InstructorDetails)
+SELECT Max(CertificationIssued) as CertificationIssued FROM InstructorDetails ID
+
+
+
+
