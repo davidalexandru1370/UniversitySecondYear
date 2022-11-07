@@ -41,7 +41,3 @@ HAVING P.CandidateCNP not in(SELECT CandidateCNP from PracticalExams P2 where  P
 
 
 SELECT Max(CertificationIssued) as CertificationIssued FROM InstructorDetails ID
-
-
-
-
