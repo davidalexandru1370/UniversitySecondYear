@@ -10,6 +10,16 @@ SELECT  V.InstructorCNP,COUNT(V.InstructorCNP) as 'Total Cars' from Vehicles V G
 SELECT S.InstructorCNP from Students S GROUP BY S.InstructorCNP having count(S.InstructorCNP) >= 2
 
 --get the instructors which have all categories of driving licenses
-SELECT I.CNP, COUNT(*) as 'TOTAL CATEGORIES' from InstructorsDrivingLicenses I
+SELECT TOP 2 I.CNP, COUNT(*) as 'TOTAL CATEGORIES' from InstructorsDrivingLicenses I
 group by I.CNP
-having COUNT(*) = (SELECT COUNT(*) FROM Categories);
+having COUNT(*) = (SELECT COUNT(*) FROM Categories)
+
+--get the supervisor with max score given to a student who also supervised theoretical exams 
+SELECT  P.SupervisorCNP, MAX(P.CandidateScore) as BiggestScore FROM PracticalExams P
+GROUP BY P.SupervisorCNP
+HAVING P.SupervisorCNP = (SELECT distinct T.SupervisorCNP from TheoreticalExams T where T.SupervisorCNP=P.SupervisorCNP)
+
+
+
+
+
