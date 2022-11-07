@@ -114,6 +114,9 @@ INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8603711577258','D')
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8603711577258','D+E');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('3438600813142','B');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('3438600813142','C');
+--error
+INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('5408411867894','C+E');
+
 
 DELETE FROM Supervisors
 go

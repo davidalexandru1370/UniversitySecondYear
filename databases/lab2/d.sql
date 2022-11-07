@@ -21,7 +21,7 @@ from Vehicles V
 SELECT 
 	distinct
 	SDL.CNP as StudentCNP,
-	PE.CandidateScore as TheoreticalExamScore,
+	PE.CandidateScore as PracticExamScore,
 	SVDL.CNP as SupervisorCNP
 	from StudentsDrivingLicenses SDL
 	FULL JOIN PracticalExams PE ON PE.CandidateCNP= SDL.CNP

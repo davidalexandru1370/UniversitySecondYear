@@ -1,0 +1,4 @@
+--h. 4 queries with the GROUP BY clause, 3 of which also contain the HAVING clause;
+--2 of the latter will also have a 
+--subquery in the HAVING clause; use the aggregation operators: 
+--COUNT, SUM, AVG, MIN, MAX;
