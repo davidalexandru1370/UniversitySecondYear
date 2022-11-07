@@ -82,9 +82,13 @@ go
 
 DELETE  from InstructorsDrivingLicenses;
 go
-INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','B');
-INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','C');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','A');
+INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','B');
+INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','B+E');
+INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','C');
+INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','C+E');
+INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','D');
+INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('8809219082745','D+E');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('9925170543526','B');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('9925170543526','B+E');
 INSERT INTO InstructorsDrivingLicenses(CNP,Category) values('9925170543526','C');

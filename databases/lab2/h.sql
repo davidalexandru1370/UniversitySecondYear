@@ -9,4 +9,7 @@ SELECT  V.InstructorCNP,COUNT(V.InstructorCNP) as 'Total Cars' from Vehicles V G
 --get the instructors with greater or equal students than 2
 SELECT S.InstructorCNP from Students S GROUP BY S.InstructorCNP having count(S.InstructorCNP) >= 2
 
-SELECT (Select Name from Students S where S.CNP = T.CandidateCNP) AS 'Student Name'  from TheoreticalExams T
+--get the instructors which have all categories of driving licenses
+SELECT I.CNP, COUNT(*) as 'TOTAL CATEGORIES' from InstructorsDrivingLicenses I
+group by I.CNP
+having COUNT(*) = (SELECT COUNT(*) FROM Categories);
