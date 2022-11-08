@@ -28,17 +28,19 @@ check(A,B):-
 solveb(L,R):-
     solvebhelper(L,[],R).
 
-solvebhelper([],Acc,Acc)
+solvebhelper([],Acc,Acc).
 
 solvebhelper([H|T],Acc,R):-
     is_list(H),
     !,
     bubbleSort(H,R2),
-    solvebhelper(T,[R2|Acc],R).
+    append2(Acc,[R2],R3),
+    solvebhelper(T,R3,R).
 
 solvebhelper([H|T],Acc,R):-
     number(H),
     !,
-    solvebhelper(T,[H|Acc],R).
+    append2(Acc,[H],R3),
+    solvebhelper(T,R3,R).
     
 
