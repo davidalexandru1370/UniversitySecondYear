@@ -1,10 +1,10 @@
 --DECLARE @DB_NAME AS VARCHAR(100)='DrivingExams';
---alter database DrivingExams set single_user with rollback immediate
+--alter database DrivingExams SET MULTI_USER with rollback immediate
 --DROP DATABASE DrivingExams;
-CREATE DATABASE DrivingExams
+CREATE DATABASE DrivingExams21
 
 go
-USE  DrivingExams;
+USE  DrivingExams21;
 go
 
 CREATE TABLE Categories(
@@ -13,35 +13,33 @@ CREATE TABLE Categories(
 );
 
 CREATE TABLE Instructors(
-	Id int PRIMARY KEY IDENTITY(1,1),
-	CNP NVARCHAR(100) UNIQUE NOT NULL,
+	CNP NVARCHAR(100) PRIMARY KEY NOT NULL,
 	Name NVARCHAR(100) NOT NULL,
-	VehiclePlate NVARCHAR(100) UNIQUE NOT NULL,
 );
 
 CREATE TABLE InstructorsDrivingLicenses(
-	Id int PRIMARY KEY IDENTITY(1,1),
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
-	FOREIGN KEY (CNP) REFERENCES Categories(Category),
-	FOREIGN KEY (CNP) REFERENCES Instructors(CNP),
+	Constraint FK_Category FOREIGN KEY (Category) REFERENCES Categories(Category)  ON DELETE CASCADE ON UPDATE CASCADE,
+	Constraint FK_CNP FOREIGN KEY (CNP) REFERENCES Instructors(CNP)  ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT PK_Category_CNP PRIMARY KEY (CNP,Category) 
 );
 
 CREATE TABLE Students(
 	CNP NVARCHAR(100) PRIMARY KEY,
 	Name NVARCHAR(100) NOT NULL,
 	CurrentLesson int NOT NULL,
-	InstructorId int NOT NULL,
+	InstructorCNP NVARCHAR(100) NULL,
 	StartingDate DATE NOT NULL,
-	FOREIGN KEY (InstructorId) REFERENCES Instructors(Id) ON DELETE  NO ACTION
+	FOREIGN KEY (InstructorCNP) REFERENCES Instructors(CNP) ON DELETE SET NULL
 );
 
 CREATE TABLE StudentsDrivingLicenses(
-	Id int PRIMARY KEY IDENTITY(1,1),
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
-	FOREIGN KEY (Category) REFERENCES Categories(Category),
-	FOREIGN KEY (CNP) REFERENCES Students(CNP)
+	Constraint FK_StudentsDrivingLicenses_Category FOREIGN KEY (Category) REFERENCES Categories(Category) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FK_StudentDrivingLicences_CNP FOREIGN KEY (CNP) REFERENCES Students(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
+	Constraint PK_StudentDrivingLicenses PRIMARY KEY (CNP,Category),
 );
 
 Create Table Supervisors(
@@ -51,11 +49,11 @@ Create Table Supervisors(
 );
 
 CREATE TABLE SupervisorsDrivingLicenses(
-	Id int PRIMARY KEY IDENTITY(1,1),
 	CNP NVARCHAR(100) NOT NULL,
 	Category NVARCHAR(100) NOT NULL,
-	FOREIGN KEY (CNP) REFERENCES Supervisors(CNP),
-	FOREIGN KEY (Category) REFERENCES Categories(Category),
+	CONSTRAINT FK_SupervisorsDrivingLicences_CNP FOREIGN KEY (CNP) REFERENCES Supervisors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FK_SupervisorsDrivingLicenses_Category FOREIGN KEY (Category) REFERENCES Categories(Category) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT PK_SupervisorsDrivingLicenses PRIMARY KEY(CNP,Category),
 )
 
 CREATE TABLE TheoreticalExams(
@@ -64,28 +62,27 @@ CREATE TABLE TheoreticalExams(
 	SupervisorCNP NVARCHAR(100) NOT NULL,
 	CandidateScore int NOT NULL,
 	ExamDate date NOT NULL,
-	Score int NOT NULL,
-	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
-	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP),
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE Vehicles(
-	Id int  PRIMARY KEY FOREIGN KEY REFERENCES Instructors(Id),
+	Id int  PRIMARY KEY IDENTITY,
 	CarPlate NVARCHAR(100) NOT NULL,
-	InstructorId int NOT NULL,
+	InstructorCNP NVARCHAR(100) NOT NULL,
+	Constraint FK_InstructorId FOREIGN KEY(InstructorCNP) REFERENCES Instructors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE PracticalExams(
 	Id int PRIMARY KEY IDENTITY (1,1),
-	CandidateCNP NVARCHAR(100) NOT NULL,
+	CandidateCNP NVARCHAR(100)  NOT NULL,
 	SupervisorCNP NVARCHAR(100) NOT NULL,
-	CandidateScore int NOT NULL,
+	CandidateScore int NULL,
 	ExamDate date NOT NULL,
-	CarId int NOT NULL,
-	Score int NOT NULL,
-	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
-	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP),
-	FOREIGN KEY (CarId) REFERENCES Vehicles(Id),
+	CarId int  NOT NULL,
+	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	FOREIGN KEY (SupervisorCNP) REFERENCES Supervisors(CNP) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	FOREIGN KEY (CarId) REFERENCES Vehicles(Id) ON DELETE NO ACTION ON UPDATE NO ACTION,
 );
 
 CREATE TABLE Results(
@@ -93,13 +90,11 @@ CREATE TABLE Results(
 	CandidateCNP NVARCHAR(100) NOT NULL,
 	FinalResult bit NOT NULL,
 	FOREIGN KEY (CandidateCNP) REFERENCES Students(CNP),
-)
-
-
+);
 
 CREATE TABLE InstructorDetails(
-	Id int PRIMARY KEY FOREIGN KEY REFERENCES Instructors(Id),
+	CNP NVARCHAR(100) PRIMARY KEY,
 	CertificationIssued DATE NOT NULL,
 	CertificationExpiration DATE NOT NULL,
-	EnrolledStudents INT NOT NULL,
+	Constraint FK_InstructorDetails_CNP FOREIGN KEY(CNP) REFERENCES Instructors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
 )
