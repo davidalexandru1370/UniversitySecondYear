@@ -5,12 +5,13 @@
 %Eg.: [1, 2, [4, 1, 4], 3, 6, [7, 10, 1, 3, 9], 5, [1, 1, 1], 7] 
 %=>[1, 2, [1, 4, 4], 3, 6, [1, 3, 7, 9, 10], 5, [1, 1, 1], 7].
 %=>[7,6,5,3,2,1,]
-%descrescator si lista din lista sortata crescator si adaugate la final
-%flow model bubbleSort(L - input list,R - result list): (i,i), (i,o)
+%descrescator numerele si lista din lista sortata crescator si adaugate la final
+%flow model bubbleSort(OP - operator ,L - input list,R - result list): (i,i,i), (i,o)
 %flow model swap(L1 - initial list, L2 - list after swapped elements):- (o,o)
 %flow model solveb2(L-input list, R - Result list): (i,o),(i,i)
 %flow model solvebhelper2(L-input list,AccNr - list with numbers,AccL - list with lists, R - Result list): (i,i,i,i),(i,o,o,o),(i,o,i,o),(i,i,o,o),(i,o,o,i).
 %flow model solveb(L - input list , R - result list): (i,o), (i,i)
+
 append2([],R,R).
 append2([H|R],R2,[H|T]):-
     append2(R,R2,T).

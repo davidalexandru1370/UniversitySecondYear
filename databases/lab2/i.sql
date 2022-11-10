@@ -10,7 +10,7 @@ INNER JOIN Instructors I ON S.InstructorCNP = I.CNP
 WHERE InstructorCNP = ANY (Select CNP from InstructorDetails ID Where CertificationExpiration < GETDATE() and ID.CNP = S.InstructorCNP)
 
 --get students with enough lessons for some driving licenses
-SELECT S.Name, S.CurrentLesson from Students S where CurrentLesson >= ANY(Select MIN(MandatoryLessons) from Categories)
+SELECT S.Name, S.CurrentLesson from Students S where CurrentLesson >= ANY(Select MandatoryLessons from Categories)
 
 --get instructors with students who has only students who passed the practical exam from first try
 SELECT I.Name,COUNT(*) as Students FROM Instructors I

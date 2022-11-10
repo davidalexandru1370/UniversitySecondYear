@@ -7,10 +7,14 @@ import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 
+import java.io.BufferedReader;
+
 public class ProgramState {
     private IStack<IStatement> exeStack;
     private IDictionary<String, IValue> symbolTable;
     private IList<IValue> out;
+
+    private IDictionary<String, BufferedReader> outFiles;
 
     public ProgramState(IStack<IStatement> exeStack,
                         IDictionary<String, IValue> symbolTable,
@@ -47,16 +51,16 @@ public class ProgramState {
 
     @Override
     public String toString() {
-        return "Execution stack: " + exeStack.toString() + "\n" +
-                "Symbol table: " + symbolTable.toString() +"\n" +
-                "Out: " + out.toString()+"\n";
+        return "Execution stack:\n " + exeStack.toString() + "\n" +
+                "Symbol table:\n" + symbolTable.toString() +"\n" +
+                "Out:\n" + out.toString()+"\n";
     }
 
     public String currentStateToString(){
-        return "Execution stack: " + (exeStack.size() > 0 ?  (exeStack.getTop() instanceof CompoundStatement ?
+        return "Execution stack:\n" + (exeStack.size() > 0 ?  (exeStack.getTop() instanceof CompoundStatement ?
                                 ((CompoundStatement)exeStack.getTop()).getFirst() : exeStack.getTop() )
                 : "Empty stack") + "\n" +
-                "Symbol Table: " + symbolTable.toString() +"\n" +
-                "Out: " + out.toString() + "\n";
+                "Symbol Table:\n " + symbolTable.toString() +"\n" +
+                "Out:\n " + out.toString() + "\n";
     }
 }
