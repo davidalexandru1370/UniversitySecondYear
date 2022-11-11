@@ -58,7 +58,6 @@ public class Controller {
             repository.logProgramStateExecution();
         }
 
-//        System.out.println(programState.currentStateToString());
 
     }
 
