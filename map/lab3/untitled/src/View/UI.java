@@ -39,7 +39,7 @@ public class UI {
 
         System.out.println("Program 3: ");
         System.out.println(Examples.example3());
-        System.out.println("Press 3 to run program 3\n");
+        System.out.println("Press 3 to run program 3");
 
         if(!isOneStepRunning){
             System.out.println("Press 4 to check one-step-running");

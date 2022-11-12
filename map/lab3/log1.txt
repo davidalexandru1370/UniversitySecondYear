@@ -2779,3 +2779,839 @@ Int(15)
 Int(50)
 
 
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}]}
+Symbol table:
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = Int(2)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = Int(2)
+
+Out:
+Int(2)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='varf', type=string}, second=CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}, second=CompundStatement{first=Model.Statement.OpenFile@5910e440, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}, second=CompundStatement{first=Model.Statement.OpenFile@5910e440, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}}}}, VariableDeclarationStatement{name='varf', type=string}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}, second=CompundStatement{first=Model.Statement.OpenFile@5910e440, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}}}}]}
+Symbol table:
+varf = StringValue{value=''}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.OpenFile@5910e440, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}}}, AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}]}
+Symbol table:
+varf = StringValue{value=''}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.OpenFile@5910e440, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}}}]}
+Symbol table:
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}}, Model.Statement.OpenFile@5910e440]}
+Symbol table:
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}}]}
+Symbol table:
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}, VariableDeclarationStatement{name='varc', type=int}]}
+Symbol table:
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.ReadFile@6267c3bb, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}}]}
+Symbol table:
+varc = Int(0)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}, Model.Statement.ReadFile@6267c3bb]}
+Symbol table:
+varc = Int(0)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}}]}
+Symbol table:
+varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}, Print: Variable expression = varc]}
+Symbol table:
+varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.ReadFile@3d646c37, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}}]}
+Symbol table:
+varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}, Model.Statement.ReadFile@3d646c37]}
+Symbol table:
+varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@41cf53f9}]}
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+
+
+Execution stack:
+ MyStack{stack=[Model.Statement.CloseFile@41cf53f9, Print: Variable expression = varc]}
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+
+
+Execution stack:
+ MyStack{stack=[Model.Statement.CloseFile@41cf53f9]}
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+Int(50)
+
+
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+Int(50)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}]}
+Symbol table:
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = Int(2)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = Int(2)
+
+Out:
+Int(2)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='varf', type=string}, second=CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}, second=CompundStatement{first=Model.Statement.OpenFile@6267c3bb, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}, second=CompundStatement{first=Model.Statement.OpenFile@6267c3bb, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}}}}, VariableDeclarationStatement{name='varf', type=string}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}, second=CompundStatement{first=Model.Statement.OpenFile@6267c3bb, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}}}}]}
+Symbol table:
+varf = StringValue{value=''}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.OpenFile@6267c3bb, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}}}, AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}]}
+Symbol table:
+varf = StringValue{value=''}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.OpenFile@6267c3bb, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}}}]}
+Symbol table:
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}}, Model.Statement.OpenFile@6267c3bb]}
+Symbol table:
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}}]}
+Symbol table:
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}, VariableDeclarationStatement{name='varc', type=int}]}
+Symbol table:
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.ReadFile@533ddba, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}}]}
+Symbol table:
+varc = Int(0)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}, Model.Statement.ReadFile@533ddba]}
+Symbol table:
+varc = Int(0)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}}]}
+Symbol table:
+varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}, Print: Variable expression = varc]}
+Symbol table:
+varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.ReadFile@41cf53f9, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}}]}
+Symbol table:
+varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}, Model.Statement.ReadFile@41cf53f9]}
+Symbol table:
+varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@5a10411}]}
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+
+
+Execution stack:
+ MyStack{stack=[Model.Statement.CloseFile@5a10411, Print: Variable expression = varc]}
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+
+
+Execution stack:
+ MyStack{stack=[Model.Statement.CloseFile@5a10411]}
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+Int(50)
+
+
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+Int(50)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=bool}, second=CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}}, VariableDeclarationStatement{name='a', type=bool}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}}]}
+Symbol table:
+a = Bool(false)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+a = Bool(false)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}]}
+Symbol table:
+a = Bool(false)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}, AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}]}
+Symbol table:
+a = Bool(false)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}]}
+Symbol table:
+a = Bool(true)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}]}
+Symbol table:
+a = Bool(true)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}]}
+Symbol table:
+a = Bool(true)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+a = Bool(true)
+v = Int(2)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+a = Bool(true)
+v = Int(2)
+
+Out:
+Int(2)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=int}, second=CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = Int(0)
+a = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = Int(0)
+a = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = Int(0)
+a = Int(17)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = Int(0)
+a = Int(17)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = Int(22)
+a = Int(17)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+b = Int(22)
+a = Int(17)
+
+Out:
+Int(22)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=bool}, second=CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}}, VariableDeclarationStatement{name='a', type=bool}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}}]}
+Symbol table:
+a = Bool(false)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+a = Bool(false)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}}]}
+Symbol table:
+a = Bool(false)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}, AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}]}
+Symbol table:
+a = Bool(false)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}, second=Print: Variable expression = v}]}
+Symbol table:
+a = Bool(true)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}]}
+Symbol table:
+a = Bool(true)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}]}
+Symbol table:
+a = Bool(true)
+v = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+a = Bool(true)
+v = Int(2)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+a = Bool(true)
+v = Int(2)
+
+Out:
+Int(2)
+
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=int}, second=CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = Int(0)
+a = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = Int(0)
+a = Int(0)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = Int(0)
+a = Int(17)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = Int(0)
+a = Int(17)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = Int(22)
+a = Int(17)
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+b = Int(22)
+a = Int(17)
+
+Out:
+Int(22)
+
+
