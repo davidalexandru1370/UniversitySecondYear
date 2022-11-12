@@ -17,7 +17,7 @@ print('Server number: ',my_num)
 mylock = threading.Lock()
 client_guessed=False
 winner_thread=0
-e = threading.Event()
+e = threading.Event()   
 e.clear()
 threads = []
 client_count=0

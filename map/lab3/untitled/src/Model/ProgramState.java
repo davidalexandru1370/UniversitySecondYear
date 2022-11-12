@@ -41,6 +41,10 @@ public class ProgramState {
         return symbolTable;
     }
 
+    public IDictionary<String, BufferedReader> getOutFiles() {
+        return outFiles;
+    }
+
     public IList<IValue> getOut() {
         return out;
     }
