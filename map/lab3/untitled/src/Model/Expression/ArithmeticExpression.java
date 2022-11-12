@@ -1,6 +1,7 @@
 package Model.Expression;
 
 import Exceptions.DivisionByZeroException;
+import Exceptions.InterpreterException;
 import Exceptions.OperandException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.Expression.Interfaces.IExpression;
@@ -20,7 +21,7 @@ public class ArithmeticExpression implements IExpression {
     }
 
     @Override
-    public IValue evaluate(IDictionary<String, IValue> expression) throws Exception {
+    public IValue evaluate(IDictionary<String, IValue> expression) throws InterpreterException {
         IValue value1, value2;
         value1 = expression1.evaluate(expression);
         if(value1.getType().equals(new IntType())){

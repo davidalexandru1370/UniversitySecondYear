@@ -1,5 +1,6 @@
 package Model.Expression;
 
+import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.Expression.Interfaces.IExpression;
 import Model.Value.Interfaces.IValue;
@@ -12,7 +13,7 @@ public class VariableExpression  implements IExpression {
     }
 
     @Override
-    public IValue evaluate(IDictionary<String, IValue> expression) throws Exception {
+    public IValue evaluate(IDictionary<String, IValue> expression) throws InterpreterException {
         return expression.get(key);
     }
 

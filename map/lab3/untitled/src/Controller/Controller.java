@@ -1,6 +1,7 @@
 package Controller;
 
 import Exceptions.ExecutionStackException;
+import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IList;
@@ -30,7 +31,7 @@ public class Controller {
     }
 
 
-    public ProgramState oneStep(ProgramState state) throws Exception {
+    public ProgramState oneStep(ProgramState state) throws InterpreterException {
         IStack<IStatement> stack = state.getExeStack();
         System.out.println(state.currentStateToString());
 

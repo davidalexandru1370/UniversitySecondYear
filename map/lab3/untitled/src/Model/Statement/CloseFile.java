@@ -11,15 +11,15 @@ import Model.Value.StringValue;
 import Model.VariablesTypes.StringType;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
-public class OpenFile implements IStatement {
-    private IExpression expression;
+public class CloseFile implements IStatement {
+    IExpression expression;
 
-    public OpenFile(IExpression expression) {
+    public CloseFile(IExpression expression) {
         this.expression = expression;
     }
+
 
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
@@ -29,19 +29,20 @@ public class OpenFile implements IStatement {
         if (!value.getType().equals(new StringType())){
             throw new InterpreterException("File is not string!");
         }
+
         StringValue fileName = (StringValue) value;
-        if(fileTable.isDefined(fileName.getValue())){
-            throw new InterpreterException("Filename " + value + " already exists!");
-        }
-        BufferedReader bufferedReader = null;
-        try{
-            bufferedReader = new BufferedReader(new FileReader(fileName.getValue()));
-        }
-        catch (IOException ioException){
-            throw new InterpreterException(String.format("File %s could not be opened",fileName));
+
+        if(!fileTable.isDefined(fileName.getValue())){
+            throw new InterpreterException("Filename " + value + " is not defined");
         }
 
-        fileTable.insert(fileName.getValue(),bufferedReader);
+        try{
+            fileTable.get(fileName.getValue()).close();
+            fileTable.pop(fileName.getValue());
+        }
+        catch (IOException ioException){
+            throw new InterpreterException(ioException.getMessage());
+        }
         return state;
     }
 }

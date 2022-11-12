@@ -21,7 +21,7 @@ public class IfStatement implements IStatement {
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws Exception {
+    public ProgramState execute(ProgramState state) throws InterpreterException {
         IValue value = expression.evaluate(state.getSymbolTable());
         if(value.getType().equals(new BoolType())){
             BoolValue condition = (BoolValue) value;

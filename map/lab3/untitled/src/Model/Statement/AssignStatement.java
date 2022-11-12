@@ -21,7 +21,7 @@ public class AssignStatement implements IStatement {
 
 
     @Override
-    public ProgramState execute(ProgramState state) throws Exception {
+    public ProgramState execute(ProgramState state) throws InterpreterException {
 //        return null;
         IStack<IStatement> stack = state.getExeStack();
         IDictionary<String, IValue> symbolTable = state.getSymbolTable();

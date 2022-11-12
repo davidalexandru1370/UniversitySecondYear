@@ -1,6 +1,6 @@
 package Exceptions;
 
-public class OperandException extends Exception{
+public class OperandException extends InterpreterException{
 
     public OperandException(String message){
         super(message);

@@ -1,5 +1,6 @@
 package Model.Statement;
 
+import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IStack;
 import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
@@ -30,7 +31,7 @@ public class CompoundStatement implements IStatement {
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws Exception {
+    public ProgramState execute(ProgramState state) throws InterpreterException {
         IStack<IStatement> stack = state.getExeStack();
         stack.push(second);
         stack.push(first);

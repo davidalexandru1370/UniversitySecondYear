@@ -2,6 +2,7 @@ package View;
 
 import Constants.Examples;
 import Controller.Controller;
+import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
 import Model.Expression.ArithmeticExpression;
 import Model.Expression.ValueExpression;
@@ -11,8 +12,10 @@ import Model.Statement.*;
 import Model.Statement.Interfaces.*;
 import Model.Value.BoolValue;
 import Model.Value.IntValue;
+import Model.Value.StringValue;
 import Model.VariablesTypes.BoolType;
 import Model.VariablesTypes.IntType;
+import Model.VariablesTypes.StringType;
 
 import java.util.Scanner;
 
@@ -97,6 +100,23 @@ public class UI {
         }
     }
 
+    private void runTestProgram(){
+        String varf = "in.txt";
+        IStatement ex3 = new CompoundStatement(new VariableDeclarationStatement("varf",new StringType()),
+                new CompoundStatement(new AssignStatement("varf",new ValueExpression(new StringValue("in.txt"))),
+                new CompoundStatement(new OpenFile(new VariableExpression("varf")),
+                new CompoundStatement(new VariableDeclarationStatement("varc",new IntType()),
+                new CompoundStatement(new ReadFile(new VariableExpression("varf"),"varc"),
+                new CompoundStatement(new PrintStatement(new VariableExpression("varc")),
+                new CompoundStatement(new ReadFile(new VariableExpression("varf"),"varc"),
+                new CompoundStatement(new PrintStatement(new VariableExpression("varc")),
+                new CloseFile(new VariableExpression("varf"))))))))));
+        controller.add(ex3);
+
+            executeProgram();
+
+    }
+
     private void executeProgram(){
         ProgramState currentProgram;
         try{
@@ -117,15 +137,15 @@ public class UI {
                         line = scanner.nextLine();
                     }
                 }
-            } catch (Exception e) {
-
+            } catch (InterpreterException e) {
+                System.out.println(e.getMessage());
             }
         }
         else{
             try{
                 controller.allStep();
             } catch (Exception e) {
-
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -148,6 +168,7 @@ public class UI {
     }
 
     public void runMenu(){
+        runTestProgram();
         int input = -1;
         while(true){
             printMenu();

@@ -38,4 +38,11 @@ public class StringValue implements IValue {
     public IVariableType getType() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "StringValue{" +
+                "value='" + value + '\'' +
+                '}';
+    }
 }

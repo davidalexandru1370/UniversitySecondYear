@@ -14,6 +14,7 @@ import Model.VariablesTypes.StringType;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class ReadFile implements IStatement {
@@ -26,7 +27,7 @@ public class ReadFile implements IStatement {
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws Exception {
+    public ProgramState execute(ProgramState state) throws InterpreterException {
         IStack<IStatement> stack = state.getExeStack();
         IDictionary<String, BufferedReader> fileTable = state.getOutFiles();
         IDictionary<String, IValue> symbolTable = state.getSymbolTable();
@@ -48,9 +49,15 @@ public class ReadFile implements IStatement {
         }
 
         BufferedReader bufferedReader = fileTable.get(fileName.getValue());
+        try{
+            String line = bufferedReader.readLine();
 
-        String line = bufferedReader.readLine();
-        symbolTable.insert(variableName, new IntValue(line.isEmpty() ? 0 : Integer.parseInt(line)));
+            symbolTable.insert(variableName, new IntValue(line.isEmpty() ? 0 : Integer.parseInt(line)));
+        }
+        catch (IOException ioException){
+            throw new InterpreterException(ioException.getMessage());
+        }
+
         return state;
     }
 }

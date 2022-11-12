@@ -17,7 +17,7 @@ public class VariableDeclarationStatement implements IStatement {
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws Exception {
+    public ProgramState execute(ProgramState state) throws InterpreterException {
         IDictionary<String, IValue> symbolTable = state.getSymbolTable();
         if (symbolTable.isDefined(name)){
             throw new InterpreterException(String.format("Variable %s already defined!\n",name));
