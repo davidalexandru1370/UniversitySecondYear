@@ -37,7 +37,6 @@ public class Controller {
     public ProgramState oneStep(ProgramState state) throws InterpreterException {
         IStack<IStatement> stack = state.getExeStack();
 
-
         if(stack.size() == 0){
             repository.pop();
             throw new ExecutionStackException("Execution stack is empty");
@@ -47,6 +46,7 @@ public class Controller {
         if(currentStatement != null) {
             boolean canPrintOutAndSymbolTable = false;
             if(!(currentStatement instanceof CompoundStatement)){
+                System.out.println("Exe stack:");
                 System.out.println(currentStatement.toString());
                 canPrintOutAndSymbolTable = true;
             }

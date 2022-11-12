@@ -34,7 +34,7 @@ public class OpenFile implements IStatement {
         if(fileTable.isDefined(fileName.getValue())){
             throw new InterpreterException("Filename " + value + " already exists!");
         }
-        BufferedReader bufferedReader = null;
+        BufferedReader bufferedReader;
 
         try{
             bufferedReader = new BufferedReader(new FileReader(fileName.getValue()));

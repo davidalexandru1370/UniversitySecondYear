@@ -32,7 +32,7 @@ public class MyList<T> implements IList<T> {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         for (T t : list) {
-            stringBuilder.append(t.toString());
+            stringBuilder.append(t.toString()).append("\n");
         }
 
         if(list.size() == 0){

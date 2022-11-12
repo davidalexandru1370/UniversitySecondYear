@@ -101,7 +101,7 @@ public class UI {
     }
 
     private void runTestProgram(){
-        String fileName = "in.txt";
+        String fileName = "C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\test.in";
         String stringWithFileNameVariable = "varf";
         String intVariableName = "varc";
         
