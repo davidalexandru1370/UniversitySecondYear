@@ -47,7 +47,7 @@ public class ReadFile implements IStatement {
             throw new InterpreterException(fileName + " does not exists");
         }
 
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName.getValue()));
+        BufferedReader bufferedReader = fileTable.get(fileName.getValue());
 
         String line = bufferedReader.readLine();
         symbolTable.insert(variableName, new IntValue(line.isEmpty() ? 0 : Integer.parseInt(line)));
