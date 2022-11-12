@@ -36,15 +36,27 @@ public class Controller {
 
     public ProgramState oneStep(ProgramState state) throws InterpreterException {
         IStack<IStatement> stack = state.getExeStack();
-        System.out.println(state.currentStateToString());
+
 
         if(stack.size() == 0){
             repository.pop();
             throw new ExecutionStackException("Execution stack is empty");
         }
-
+        ProgramState afterExecute = state;
         IStatement currentStatement = stack.pop();
-        return currentStatement.execute(state);
+        if(currentStatement != null) {
+            boolean canPrintOutAndSymbolTable = false;
+            if(!(currentStatement instanceof CompoundStatement)){
+                System.out.println(currentStatement.toString());
+                canPrintOutAndSymbolTable = true;
+            }
+
+            afterExecute = currentStatement.execute(state);
+            if(canPrintOutAndSymbolTable){
+                System.out.println(afterExecute.symbolTableToString() + afterExecute.outToString());
+            }
+        }
+        return afterExecute;
     }
 
     public ProgramState getCurrentProgram() throws RepositoryException {
@@ -54,6 +66,7 @@ public class Controller {
     public void allStep() throws Exception {
         ProgramState programState = repository.getCurrentProgram();
         repository.logProgramStateExecution();
+        //System.out.println(programState.currentStateToString());
         while (programState.getExeStack().size() >= 0){
             if(programState.getExeStack().size() == 0){
                 repository.pop();

@@ -101,7 +101,7 @@ public class UI {
     }
 
     private void runTestProgram(){
-        String fileName = "persistance/in.txt";
+        String fileName = "in.txt";
         String stringWithFileNameVariable = "varf";
         String intVariableName = "varc";
         

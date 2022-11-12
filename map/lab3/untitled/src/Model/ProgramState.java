@@ -69,4 +69,17 @@ public class ProgramState {
                 "Symbol Table:\n " + symbolTable.toString() + "\n" +
                 "Out:\n " + out.toString() + "\n";
     }
+
+    public String executionStackToString(){
+        return "Execution stack:\n" + (exeStack.size() > 0 ? (exeStack.getTop() instanceof CompoundStatement ?
+                ((CompoundStatement) exeStack.getTop()).getFirst() : exeStack.getTop())  : "Empty stack") + "\n";
+    }
+
+    public String symbolTableToString(){
+        return "Symbol Table:\n " + symbolTable.toString() + "\n";
+    }
+
+    public String outToString(){
+        return "Out:\n " + out.toString() + "\n";
+    }
 }

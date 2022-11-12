@@ -30,10 +30,12 @@ public class OpenFile implements IStatement {
             throw new InterpreterException("File is not string!");
         }
         StringValue fileName = (StringValue) value;
+
         if(fileTable.isDefined(fileName.getValue())){
             throw new InterpreterException("Filename " + value + " already exists!");
         }
         BufferedReader bufferedReader = null;
+
         try{
             bufferedReader = new BufferedReader(new FileReader(fileName.getValue()));
         }
