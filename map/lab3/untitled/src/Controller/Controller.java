@@ -15,6 +15,8 @@ import Model.ProgramState;
 import Model.Value.Interfaces.IValue;
 import Repository.Interfaces.IRepository;
 
+import java.io.BufferedReader;
+
 public class Controller {
 
     IRepository repository;
@@ -27,7 +29,8 @@ public class Controller {
         IStack<IStatement> stack = new MyStack<IStatement>();
         IDictionary<String, IValue> symbolTable = new MyDictionary<String,IValue>();
         IList<IValue> out = new MyList<IValue>();
-        repository.add(new ProgramState(stack, symbolTable, out, statement));
+        IDictionary<String, BufferedReader> outFiles = new MyDictionary<String,BufferedReader>();
+        repository.add(new ProgramState(stack, symbolTable, out,outFiles, statement));
     }
 
 

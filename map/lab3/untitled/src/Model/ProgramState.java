@@ -13,7 +13,6 @@ public class ProgramState {
     private IStack<IStatement> exeStack;
     private IDictionary<String, IValue> symbolTable;
     private IList<IValue> out;
-
     private IDictionary<String, BufferedReader> outFiles;
 
     public ProgramState(IStack<IStatement> exeStack,

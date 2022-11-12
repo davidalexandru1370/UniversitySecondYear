@@ -101,16 +101,19 @@ public class UI {
     }
 
     private void runTestProgram(){
-        String varf = "in.txt";
-        IStatement ex3 = new CompoundStatement(new VariableDeclarationStatement("varf",new StringType()),
-                new CompoundStatement(new AssignStatement("varf",new ValueExpression(new StringValue("in.txt"))),
-                new CompoundStatement(new OpenFile(new VariableExpression("varf")),
-                new CompoundStatement(new VariableDeclarationStatement("varc",new IntType()),
-                new CompoundStatement(new ReadFile(new VariableExpression("varf"),"varc"),
-                new CompoundStatement(new PrintStatement(new VariableExpression("varc")),
-                new CompoundStatement(new ReadFile(new VariableExpression("varf"),"varc"),
-                new CompoundStatement(new PrintStatement(new VariableExpression("varc")),
-                new CloseFile(new VariableExpression("varf"))))))))));
+        String fileName = "persistance/in.txt";
+        String stringWithFileNameVariable = "varf";
+        String intVariableName = "varc";
+        
+        IStatement ex3 = new CompoundStatement(new VariableDeclarationStatement(stringWithFileNameVariable,new StringType()),
+                new CompoundStatement(new AssignStatement(stringWithFileNameVariable,new ValueExpression(new StringValue(fileName))),
+                new CompoundStatement(new OpenFile(new VariableExpression(stringWithFileNameVariable)),
+                new CompoundStatement(new VariableDeclarationStatement(intVariableName,new IntType()),
+                new CompoundStatement(new ReadFile(new VariableExpression(stringWithFileNameVariable),intVariableName),
+                new CompoundStatement(new PrintStatement(new VariableExpression(intVariableName)),
+                new CompoundStatement(new ReadFile(new VariableExpression(stringWithFileNameVariable),intVariableName),
+                new CompoundStatement(new PrintStatement(new VariableExpression(intVariableName)),
+                new CloseFile(new VariableExpression(stringWithFileNameVariable))))))))));
         controller.add(ex3);
 
             executeProgram();
