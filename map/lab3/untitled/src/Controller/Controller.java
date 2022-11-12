@@ -16,6 +16,7 @@ import Model.Value.Interfaces.IValue;
 import Repository.Interfaces.IRepository;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 
 public class Controller {
 
@@ -63,7 +64,7 @@ public class Controller {
         return repository.getCurrentProgram();
     }
 
-    public void allStep() throws Exception {
+    public void allStep() throws InterpreterException, IOException {
         ProgramState programState = repository.getCurrentProgram();
         repository.logProgramStateExecution();
         //System.out.println(programState.currentStateToString());

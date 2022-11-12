@@ -4,6 +4,7 @@ import Constants.Examples;
 import Controller.Controller;
 import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
+import Model.Command.Command;
 import Model.Expression.ArithmeticExpression;
 import Model.Expression.ValueExpression;
 import Model.Expression.VariableExpression;
@@ -17,16 +18,22 @@ import Model.VariablesTypes.BoolType;
 import Model.VariablesTypes.IntType;
 import Model.VariablesTypes.StringType;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class UI {
     private final Controller controller;
     private final Scanner scanner = new Scanner(System.in);
-    public UI(Controller controller) {
-        this.controller = controller;
-    }
 
     private boolean isOneStepRunning = false;
+
+    Map<String, Command> commands;
+
+    public UI(Controller controller) {
+        this.controller = controller;
+        this.commands = new HashMap<>();
+    }
 
     void printMenu(){
         System.out.println("Program 1: ");
@@ -171,7 +178,6 @@ public class UI {
     }
 
     public void runMenu(){
-        runTestProgram();
         int input = -1;
         while(true){
             printMenu();
