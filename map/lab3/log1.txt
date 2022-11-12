@@ -58,3 +58,49 @@ varf = StringValue{value=''}
 Out:
 No output.
 
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='varf', type=string}, second=CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='in.txt'}}}, second=CompundStatement{first=Model.Statement.OpenFile@7a07c5b4, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@26a1ab54, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@306a30c7, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@b81eda8}}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='in.txt'}}}, second=CompundStatement{first=Model.Statement.OpenFile@7a07c5b4, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@26a1ab54, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@306a30c7, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@b81eda8}}}}}}}, VariableDeclarationStatement{name='varf', type=string}]}
+Symbol table:
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='in.txt'}}}, second=CompundStatement{first=Model.Statement.OpenFile@7a07c5b4, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@26a1ab54, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@306a30c7, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@b81eda8}}}}}}}]}
+Symbol table:
+varf = StringValue{value=''}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.OpenFile@7a07c5b4, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@26a1ab54, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@306a30c7, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@b81eda8}}}}}}, AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='in.txt'}}}]}
+Symbol table:
+varf = StringValue{value=''}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.OpenFile@7a07c5b4, second=CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@26a1ab54, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@306a30c7, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@b81eda8}}}}}}]}
+Symbol table:
+varf = StringValue{value='in.txt'}
+
+Out:
+No output.
+
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='varc', type=int}, second=CompundStatement{first=Model.Statement.ReadFile@26a1ab54, second=CompundStatement{first=Print: Variable expression = varc, second=CompundStatement{first=Model.Statement.ReadFile@306a30c7, second=CompundStatement{first=Print: Variable expression = varc, second=Model.Statement.CloseFile@b81eda8}}}}}, Model.Statement.OpenFile@7a07c5b4]}
+Symbol table:
+varf = StringValue{value='in.txt'}
+
+Out:
+No output.
+

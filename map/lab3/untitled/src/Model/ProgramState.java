@@ -19,13 +19,16 @@ public class ProgramState {
     public ProgramState(IStack<IStatement> exeStack,
                         IDictionary<String, IValue> symbolTable,
                         IList<IValue> out,
+                        IDictionary<String, BufferedReader> outFiles,
                         IStatement program) {
         this.exeStack = exeStack;
         this.symbolTable = symbolTable;
         this.out = out;
+        this.outFiles = outFiles;
         exeStack.push(program);
     }
-    public void setStack(IStack<IStatement> exeStack){
+
+    public void setStack(IStack<IStatement> exeStack) {
         this.exeStack = exeStack;
     }
 
@@ -56,15 +59,15 @@ public class ProgramState {
     @Override
     public String toString() {
         return "Execution stack:\n " + exeStack.toString() + "\n" +
-                "Symbol table:\n" + symbolTable.toString() +"\n" +
-                "Out:\n" + out.toString()+"\n";
+                "Symbol table:\n" + symbolTable.toString() + "\n" +
+                "Out:\n" + out.toString() + "\n";
     }
 
-    public String currentStateToString(){
-        return "Execution stack:\n" + (exeStack.size() > 0 ?  (exeStack.getTop() instanceof CompoundStatement ?
-                                ((CompoundStatement)exeStack.getTop()).getFirst() : exeStack.getTop() )
+    public String currentStateToString() {
+        return "Execution stack:\n" + (exeStack.size() > 0 ? (exeStack.getTop() instanceof CompoundStatement ?
+                ((CompoundStatement) exeStack.getTop()).getFirst() : exeStack.getTop())
                 : "Empty stack") + "\n" +
-                "Symbol Table:\n " + symbolTable.toString() +"\n" +
+                "Symbol Table:\n " + symbolTable.toString() + "\n" +
                 "Out:\n " + out.toString() + "\n";
     }
 }

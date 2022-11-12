@@ -2,6 +2,7 @@ package Model.Value;
 
 import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
+import Model.VariablesTypes.StringType;
 
 import java.util.Objects;
 
@@ -36,7 +37,7 @@ public class StringValue implements IValue {
 
     @Override
     public IVariableType getType() {
-        return null;
+        return new StringType();
     }
 
     @Override
