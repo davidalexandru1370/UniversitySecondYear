@@ -60,4 +60,12 @@ public class ReadFile implements IStatement {
 
         return state;
     }
+
+    @Override
+    public String toString() {
+        return "ReadFile{" +
+                "expression=" + expression +
+                ", variableName='" + variableName + '\'' +
+                '}';
+    }
 }

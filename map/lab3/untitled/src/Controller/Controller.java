@@ -66,15 +66,16 @@ public class Controller {
 
     public void allStep() throws InterpreterException, IOException {
         ProgramState programState = repository.getCurrentProgram();
-        repository.logProgramStateExecution();
-        //System.out.println(programState.currentStateToString());
+        repository.logProgramStateExecution("Execution stack: " ,programState.inorderTraversal());
         while (programState.getExeStack().size() >= 0){
             if(programState.getExeStack().size() == 0){
                 repository.pop();
             }
             oneStep(programState);
-            repository.logProgramStateExecution();
         }
+        repository.logProgramStateExecution("Symbol table:", programState.getExeStack().toString());
+        repository.logProgramStateExecution("Out:",programState.getOut().toString());
+        repository.logProgramStateExecution("File table:",programState.getOutFiles().toString());
     }
 
     private void logger(String log){

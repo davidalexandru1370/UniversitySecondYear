@@ -1,4 +1,4 @@
-package Utilities.Enums;
+package Utilities;
 
 public enum Examples {
 

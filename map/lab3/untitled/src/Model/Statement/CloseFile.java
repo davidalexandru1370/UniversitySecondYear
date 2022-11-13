@@ -45,4 +45,11 @@ public class CloseFile implements IStatement {
         }
         return state;
     }
+
+    @Override
+    public String toString() {
+        return "CloseFile{" +
+                "expression=" + expression +
+                '}';
+    }
 }

@@ -5,6 +5,7 @@ import Model.ADT.Interfaces.IDictionary;
 
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.Set;
 
 public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
     Map<Key,Value> dictionary = new Hashtable<Key,Value>();
@@ -37,6 +38,11 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
             throw  new KeyNotFoundException("Invalid key!");
         }
         return dictionary.get(key);
+    }
+
+    @Override
+    public Set getKeys() {
+        return this.dictionary.keySet();
     }
 
     @Override

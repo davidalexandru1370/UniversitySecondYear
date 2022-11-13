@@ -46,4 +46,11 @@ public class OpenFile implements IStatement {
         fileTable.insert(fileName.getValue(),bufferedReader);
         return state;
     }
+
+    @Override
+    public String toString() {
+        return "OpenFile{" +
+                "expression=" + expression +
+                '}';
+    }
 }

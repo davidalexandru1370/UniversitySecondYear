@@ -26,9 +26,10 @@ public class Repository implements IRepository {
     }
 
     @Override
-    public void logProgramStateExecution() throws InterpreterException, IOException {
+    public void logProgramStateExecution(String title, String state) throws InterpreterException, IOException {
         PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
-        logFile.println(programs.get(0));
+        logFile.println(title);
+        logFile.println(state);
         logFile.close();
     }
 

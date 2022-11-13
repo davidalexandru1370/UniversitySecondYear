@@ -59,7 +59,8 @@ public class ProgramState {
     public String toString() {
         return "Execution stack:\n " + exeStack.toString() + "\n" +
                 "Symbol table:\n" + symbolTable.toString() + "\n" +
-                "Out:\n" + out.toString() + "\n";
+                "Out:\n" + out.toString() + "\n"+
+                "File table:\n" + fileTableToString();
     }
 
     public String currentStateToString() {
@@ -81,5 +82,23 @@ public class ProgramState {
 
     public String outToString(){
         return "Out:\n " + out.toString() + "\n";
+    }
+
+    public String fileTableToString(){
+        String result = "";
+        for(Object file : outFiles.getKeys()){
+            result += file +"\n";
+        }
+        return result;
+    }
+
+    public String inorderTraversal(){
+        StringBuilder traversal = new StringBuilder();
+        IStatement iterator = exeStack.getTop();
+        while(iterator instanceof CompoundStatement){
+            traversal.append(((CompoundStatement) iterator).getFirst()).append(" \n");
+            iterator=((CompoundStatement) iterator).getSecond();
+        }
+        return traversal.toString();
     }
 }
