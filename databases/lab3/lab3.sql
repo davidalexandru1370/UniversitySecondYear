@@ -84,10 +84,7 @@ AS
 		CONSTRAINT PK_InstructorDetails PRIMARY KEY (CNP)
 	)
 
-
-
-
-create table version (
+create table versionTable (
 	version int NOT NULL
 )
 
@@ -98,3 +95,44 @@ create table proceduresTable (
 	CONSTRAINT PK_ProceduresTable PRIMARY KEY (FromVersion,ToVersion),
 )
 
+insert into proceduresTable values(1,2,'ChangeCurrentLessonToTinyInt')
+insert into proceduresTable values(2,1,'ChangeCurrentLessonToInt')
+insert into proceduresTable values(2,3,'AddInstructoryCityColumn')
+insert into proceduresTable values(3,2,'RemoveInstructorCityColumn')
+insert into proceduresTable values(3,4,'AddDefaultToCandidateScoreInTheoreticalExams')
+insert into proceduresTable values(4,3,'RemoveDefaultToCandidateScoreInTheoreticalExams')
+insert into proceduresTable values(4,5,'AddPrimaryKeyTheoreticalExams')
+insert into proceduresTable values(5,4,'RemovePrimaryKeyTheoreticalExams')
+insert into proceduresTable values(5,6,'AddCarPlateUniqueInVehicles')
+insert into proceduresTable values(6,5,'RemoveCarPlateUniqueFromVehicles')
+insert into proceduresTable values(6,7,'AddInstructorDetailsForeignKey')
+insert into proceduresTable values(7,6,'RemoveInstructorDetailsForeignKey')
+insert into proceduresTable values(7,8,'DropInstructorDetailsTable')
+insert into proceduresTable values(8,7,'CreateInstructorDetailsTable')
+
+create procedure goToVersion(@newVersion int) 
+AS
+	declare @current int
+	declare @procedureName varchar(max)
+	select @current=version from versionTable
+
+	if @newVersion > (select MAX(toVersion) from proceduresTable) or @newVersion < 1
+		raiserror('Bad version',10,1)
+
+	while @current > @newVersion begin
+		select @procedureName=ProcedureName from proceduresTable where FromVersion=@current and ToVersion=@current-1
+		exec (@procedureName)
+		set @current=@current-1
+
+	end
+
+	while @current < @newVersion begin
+		select @procedureName=ProcedureName from proceduresTable where FromVersion=@current and ToVersion=@current+1
+		exec (@procedureName)
+		set @current=@current+1
+	end
+
+	update versionTable set version=@newVersion
+GO
+
+execute goToVersion 1
