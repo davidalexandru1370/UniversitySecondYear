@@ -25,14 +25,16 @@ import java.util.Scanner;
 public class UI {
     private final Controller controller;
     private final Scanner scanner = new Scanner(System.in);
-
     private boolean isOneStepRunning = false;
-
     Map<String, Command> commands;
 
     public UI(Controller controller) {
         this.controller = controller;
         this.commands = new HashMap<>();
+    }
+
+    public void addCommand(Command command){
+        commands.put(command.getKey(),command);
     }
 
     void printMenu(){
