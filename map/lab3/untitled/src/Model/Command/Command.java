@@ -1,5 +1,8 @@
 package Model.Command;
 
+import Exceptions.InterpreterException;
+import Model.Statement.Interfaces.IStatement;
+
 public abstract class Command {
     private String key;
     private String description;
@@ -9,7 +12,7 @@ public abstract class Command {
         this.description = description;
     }
 
-    public abstract void execute();
+    public abstract void execute() throws InterpreterException;
 
     public String getKey() {
         return key;
@@ -26,4 +29,6 @@ public abstract class Command {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }

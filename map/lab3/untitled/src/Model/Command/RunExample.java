@@ -2,24 +2,41 @@ package Model.Command;
 
 import Controller.Controller;
 import Exceptions.InterpreterException;
+import Exceptions.RepositoryException;
+import Model.Statement.IfStatement;
+import Model.Statement.Interfaces.IStatement;
 
 import java.io.IOException;
 
 public class RunExample extends Command{
 
     private final Controller controller;
+    private IStatement statement;
 
-    public RunExample(String key, String description,Controller controller) {
+    public RunExample(String key, String description,Controller controller,IStatement statement) {
         super(key, description);
         this.controller = controller;
+        this.statement = statement;
     }
 
     @Override
-    public void execute() {
+    public void execute() throws InterpreterException{
         try{
-            controller.allStep();
+            try{
+                controller.getCurrentProgram();
+            }
+            catch (RepositoryException repositoryException){
+                controller.add(statement);
+            }
+
+            if(controller.isOneStepRunning()){
+                controller.oneStep(controller.getCurrentProgram());
+            }
+            else{
+                controller.allStep();
+            }
         } catch (InterpreterException | IOException interpreterException) {
-            System.out.println(interpreterException.getMessage());
+            throw new InterpreterException(interpreterException.getMessage());
         }
     }
 }

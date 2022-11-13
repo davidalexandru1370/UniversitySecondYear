@@ -45,30 +45,21 @@ public class UI {
             System.out.println(String.format("%s",command.getDescription()));
         }
 
-        /*if(!isOneStepRunning){
+        if(!isOneStepRunning){
             System.out.println("Press 6 to check one-step-running");
         }
         else{
             System.out.println("Press 6 to uncheck one-step-running");
-        }*/
+        }
 
         System.out.print("Your choice = ");
     }
 
-    private void executeProgram(){
-        ProgramState currentProgram;
-        try{
-            currentProgram = controller.getCurrentProgram();
-        }
-        catch (RepositoryException repositoryException){
-            System.out.println(repositoryException.getMessage());
-            return;
-        }
-
+    private void executeProgram(String input) throws InterpreterException {
         if(isOneStepRunning){
             try{
                 while(true){
-                    currentProgram = controller.oneStep(currentProgram);
+                    commands.get(String.valueOf(input)).execute();
                     System.out.println("Press \033[3m ENTER\033[0m to continue");
                     String line = "1";
                     while(!line.isEmpty()){
@@ -77,48 +68,37 @@ public class UI {
                 }
             } catch (InterpreterException e) {
                 System.out.println(e.getMessage());
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
             }
         }
         else{
             try{
-                controller.allStep();
+                commands.get(String.valueOf(input)).execute();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
     }
 
-    public void runMenu(){
-        int input = -1;
+    public void runMenu() {
+        String input = "";
         while(true){
             printMenu();
+            input = scanner.nextLine();
             try{
-                input = Integer.parseInt(scanner.nextLine());
-                switch (input) {
-                    case 1 -> {
-                        controller.add(Programs.program1());
-                        commands.get(String.valueOf(input)).execute();
-                    }
-                    case 2 -> {
-                        controller.add(Programs.program2());
-                        commands.get(String.valueOf(input)).execute();}
-                    case 3 -> {
-                        controller.add(Programs.program3());
-                        commands.get(String.valueOf(input)).execute();
-                    }
-                    case 4 -> {
-                        controller.add(Programs.program4());
-                        commands.get(String.valueOf(input)).execute();
-                    }
-                    //case 6 -> isOneStepRunning = !isOneStepRunning;
-                    case 5 -> System.exit(0);
-                    default -> System.out.println("Invalid input!");
+                if(input.toString().equals("6")){
+                    isOneStepRunning=!isOneStepRunning;
+                    controller.setOneStepRunning(isOneStepRunning);
+                    continue;
+                }
+                if(commands.containsKey(input)){
+                    executeProgram(input);
+                }
+                else{
+                    System.out.println("Invalid input!");
                 }
             }
-            catch (Exception exception){
-                System.out.println(exception.getMessage());
+            catch(InterpreterException interpreterException){
+                System.out.println(interpreterException.getMessage());
             }
         }
     }

@@ -21,9 +21,17 @@ import java.io.IOException;
 public class Controller {
 
     IRepository repository;
-
+    private boolean isOneStepRunning = false;
     public Controller(IRepository repository) {
         this.repository = repository;
+    }
+
+    public boolean isOneStepRunning() {
+        return isOneStepRunning;
+    }
+
+    public void setOneStepRunning(boolean oneStepRunning) {
+        isOneStepRunning = oneStepRunning;
     }
 
     public void add(IStatement statement){

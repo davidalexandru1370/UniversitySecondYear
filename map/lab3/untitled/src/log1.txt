@@ -97,3 +97,799 @@ Int(50)
 
 File table: 
 
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=int}
+Symbol Table:
+ a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='b', type=int}
+Symbol Table:
+ b = Int(0)
+a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}
+Symbol Table:
+ b = Int(0)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = b
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ Int(22)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=int}
+Symbol Table:
+ a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='b', type=int}
+Symbol Table:
+ b = Int(0)
+a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}
+Symbol Table:
+ b = Int(0)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = b
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ Int(22)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=bool}
+Symbol Table:
+ a = Bool(false)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ a = Bool(false)
+v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}
+Symbol Table:
+ a = Bool(true)
+v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}
+Symbol Table:
+ a = Bool(true)
+v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ a = Bool(true)
+v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ a = Bool(true)
+v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='varf', type=string}
+Symbol Table:
+ varf = StringValue{value=''}
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}
+Symbol Table:
+ varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+OpenFile{expression=Variable expression = varf}
+Symbol Table:
+ varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+VariableDeclarationStatement{name='varc', type=int}
+Symbol Table:
+ varc = Int(0)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+ReadFile{expression=Variable expression = varf, variableName='varc'}
+Symbol Table:
+ varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+Print: Variable expression = varc
+Symbol Table:
+ varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+ReadFile{expression=Variable expression = varf, variableName='varc'}
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+Print: Variable expression = varc
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+Int(50)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+CloseFile{expression=Variable expression = varf}
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+Int(50)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=int}
+Symbol Table:
+ a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='b', type=int}
+Symbol Table:
+ b = Int(0)
+a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}
+Symbol Table:
+ b = Int(0)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = b
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ Int(22)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=bool}
+Symbol Table:
+ a = Bool(false)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ a = Bool(false)
+v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}
+Symbol Table:
+ a = Bool(true)
+v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=Int(3)}}
+}
+Symbol Table:
+ a = Bool(true)
+v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ a = Bool(true)
+v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ a = Bool(true)
+v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='varf', type=string}
+Symbol Table:
+ varf = StringValue{value=''}
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}
+Symbol Table:
+ varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+OpenFile{expression=Variable expression = varf}
+Symbol Table:
+ varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+VariableDeclarationStatement{name='varc', type=int}
+Symbol Table:
+ varc = Int(0)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+ReadFile{expression=Variable expression = varf, variableName='varc'}
+Symbol Table:
+ varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+Print: Variable expression = varc
+Symbol Table:
+ varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+ReadFile{expression=Variable expression = varf, variableName='varc'}
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+Print: Variable expression = varc
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+Int(50)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+CloseFile{expression=Variable expression = varf}
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+Int(50)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=int}
+Symbol Table:
+ a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='b', type=int}
+Symbol Table:
+ b = Int(0)
+a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}
+Symbol Table:
+ b = Int(0)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = b
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ Int(22)
+
+File table: 
+
