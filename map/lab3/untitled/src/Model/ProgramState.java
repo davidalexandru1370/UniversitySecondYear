@@ -35,12 +35,12 @@ public class ProgramState {
         return exeStack;
     }
 
-    public void setSymbolTable(IDictionary<String, IValue> symbolTable) {
-        this.symbolTable = symbolTable;
-    }
-
     public IDictionary<String, IValue> getSymbolTable() {
         return symbolTable;
+    }
+
+    public void setSymbolTable(IDictionary<String, IValue> symbolTable) {
+        this.symbolTable = symbolTable;
     }
 
     public IDictionary<String, BufferedReader> getOutFiles() {
@@ -68,7 +68,9 @@ public class ProgramState {
                 ((CompoundStatement) exeStack.getTop()).getFirst() : exeStack.getTop())
                 : "Empty stack") + "\n" +
                 "Symbol Table:\n " + symbolTable.toString() + "\n" +
-                "Out:\n " + out.toString() + "\n";
+                "Out:\n " + out.toString() + "\n"
+                + fileTableToString();
+
     }
 
     public String executionStackToString(){
@@ -85,7 +87,7 @@ public class ProgramState {
     }
 
     public String fileTableToString(){
-        String result = "";
+        String result = "File table: \n";
         for(Object file : outFiles.getKeys()){
             result += file +"\n";
         }

@@ -19,6 +19,7 @@ import Model.VariablesTypes.IntType;
 import Model.VariablesTypes.StringType;
 import Utilities.Programs;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -75,6 +76,8 @@ public class UI {
                     }
                 }
             } catch (InterpreterException e) {
+                System.out.println(e.getMessage());
+            } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
         }

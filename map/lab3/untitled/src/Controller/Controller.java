@@ -36,7 +36,7 @@ public class Controller {
 
 
 
-    public ProgramState oneStep(ProgramState state) throws InterpreterException {
+    public ProgramState oneStep(ProgramState state) throws InterpreterException, IOException {
         IStack<IStatement> stack = state.getExeStack();
 
         if(stack.size() == 0){
@@ -54,7 +54,11 @@ public class Controller {
 
             afterExecute = currentStatement.execute(state);
             if(canPrintOutAndSymbolTable){
-                logger(afterExecute.symbolTableToString()+afterExecute.outToString());
+                repository.logProgramStateExecution("Exe Stack:\n" +currentStatement.toString() + "\n" +
+                         afterExecute.symbolTableToString() +
+                         afterExecute.outToString() +
+                         afterExecute.fileTableToString());
+                logger(afterExecute.symbolTableToString()+afterExecute.outToString() + afterExecute.fileTableToString());
             }
         }
         return afterExecute;
@@ -66,17 +70,11 @@ public class Controller {
 
     public void allStep() throws InterpreterException, IOException {
         ProgramState programState = repository.getCurrentProgram();
-        repository.logProgramStateExecution("Execution stack: " ,programState.inorderTraversal());
-        while (programState.getExeStack().size() >= 0){
-            if(programState.getExeStack().size() == 0){
-                repository.pop();
-                break;
-            }
+        while (programState.getExeStack().size() > 0){
             oneStep(programState);
         }
-        repository.logProgramStateExecution("Symbol table:", programState.getSymbolTable().toString());
-        repository.logProgramStateExecution("Out:",programState.getOut().toString());
-        repository.logProgramStateExecution("File table:",programState.getOutFiles().toString());
+        repository.pop();
+
     }
 
     private void logger(String log){
