@@ -70,10 +70,11 @@ public class Controller {
         while (programState.getExeStack().size() >= 0){
             if(programState.getExeStack().size() == 0){
                 repository.pop();
+                break;
             }
             oneStep(programState);
         }
-        repository.logProgramStateExecution("Symbol table:", programState.getExeStack().toString());
+        repository.logProgramStateExecution("Symbol table:", programState.getSymbolTable().toString());
         repository.logProgramStateExecution("Out:",programState.getOut().toString());
         repository.logProgramStateExecution("File table:",programState.getOutFiles().toString());
     }

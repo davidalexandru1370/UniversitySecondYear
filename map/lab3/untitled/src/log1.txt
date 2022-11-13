@@ -1,20 +1,20 @@
 Execution stack: 
 VariableDeclarationStatement{name='varf', type=string} 
 AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}} 
-Model.Statement.OpenFile@41cf53f9 
-VariableDeclarationStatement{name='varc', type=int} 
-Model.Statement.ReadFile@5a10411 
-Print: Variable expression = varc 
-Model.Statement.ReadFile@306a30c7 
-Print: Variable expression = varc 
-
-Execution stack: 
-VariableDeclarationStatement{name='varf', type=string} 
-AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}} 
 OpenFile{expression=Variable expression = varf} 
 VariableDeclarationStatement{name='varc', type=int} 
 ReadFile{expression=Variable expression = varf, variableName='varc'} 
 Print: Variable expression = varc 
 ReadFile{expression=Variable expression = varf, variableName='varc'} 
 Print: Variable expression = varc 
+
+Symbol table:
+varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+Int(15)
+Int(50)
+
+File table:
 
