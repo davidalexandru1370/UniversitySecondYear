@@ -15,8 +15,9 @@ GO
 --b. add / remove a column;
 CREATE PROCEDURE AddInstructoryCityColumn
 AS
-	alter table Instructors add column City nvarchar(255)
+	alter table Instructors add  City nvarchar(255)
 GO
+
 
 CREATE PROCEDURE RemoveInstructorCityColumn
 AS
@@ -58,35 +59,39 @@ AS
 Go
 
 --f. add / remove a foreign key;
-CREATE PROCEDURE AddInstructorDetailsForeignKey
+CREATE PROCEDURE AddBlacklistedForeignKey
 AS
-	ALTER TABLE InstructorDetails ADD CONSTRAINT FK_InstructorDetails_CNP FOREIGN KEY(CNP) REFERENCES Instructors(CNP) ON UPDATE CASCADE ON DELETE CASCADE
+	ALTER TABLE BlacklistedInstructors ADD CONSTRAINT FK_Blacklisted_CNP FOREIGN KEY(CNP) REFERENCES Instructors(CNP) ON UPDATE CASCADE ON DELETE CASCADE
 GO
 
-CREATE PROCEDURE RemoveInstructorDetailsForeignKey
+CREATE PROCEDURE RemoveBlacklistedForeignKey
 AS
-	ALTER TABLE InstructorDetails DROP CONSTRAINT FK_InstructorDetails_CNP
+	ALTER TABLE BlacklistedInstructors DROP CONSTRAINT FK_Blacklisted_CNP
 GO
 
 --g. create / drop a table.
-CREATE PROCEDURE DropInstructorDetailsTable
+CREATE PROCEDURE DropBlacklistedTable
 AS
-	drop table InstructorDetails
+	drop table BlacklistedInstructors
 GO
 
-CREATE PROCEDURE CreateInstructorDetailsTable
+
+CREATE PROCEDURE CreateBlacklistedTable
 AS
-	CREATE TABLE InstructorDetails(
+	CREATE TABLE BlacklistedInstructors(
 		CNP NVARCHAR(100),
-		CertificationIssued DATE NOT NULL,
-		CertificationExpiration DATE NOT NULL,
-		CONSTRAINT FK_InstructorDetails_CNP FOREIGN KEY(CNP) REFERENCES Instructors(CNP) ON DELETE CASCADE ON UPDATE CASCADE,
-		CONSTRAINT PK_InstructorDetails PRIMARY KEY (CNP)
+		CONSTRAINT PK_Blacklisted PRIMARY KEY (CNP)
 	)
+GO
+
+
 
 create table versionTable (
 	version int NOT NULL
 )
+
+DELETE FROM versionTable
+insert into versionTable values (6)
 
 create table proceduresTable (
 	FromVersion INT NOT NULL,
@@ -105,10 +110,10 @@ insert into proceduresTable values(4,5,'AddPrimaryKeyTheoreticalExams')
 insert into proceduresTable values(5,4,'RemovePrimaryKeyTheoreticalExams')
 insert into proceduresTable values(5,6,'AddCarPlateUniqueInVehicles')
 insert into proceduresTable values(6,5,'RemoveCarPlateUniqueFromVehicles')
-insert into proceduresTable values(6,7,'AddInstructorDetailsForeignKey')
-insert into proceduresTable values(7,6,'RemoveInstructorDetailsForeignKey')
-insert into proceduresTable values(7,8,'DropInstructorDetailsTable')
-insert into proceduresTable values(8,7,'CreateInstructorDetailsTable')
+insert into proceduresTable values(6,7,'CreateBlacklistedTable')
+insert into proceduresTable values(7,6,'DropBlacklistedTable')
+insert into proceduresTable values(7,8,'AddBlacklistedForeignKey')
+insert into proceduresTable values(8,7,'RemoveBlacklistedForeignKey')
 
 create procedure goToVersion(@newVersion int) 
 AS
@@ -136,3 +141,8 @@ AS
 GO
 
 execute goToVersion 1
+
+SELECT * FROM versionTable
+
+EXECUTE [dbo].[sp_helpconstraint] 'TheoreticalExams'
+GO
