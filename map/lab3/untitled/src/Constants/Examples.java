@@ -42,4 +42,25 @@ public class Examples {
                 closeFile(varf);
                 """;
     }
+
+    public static String example5(){
+        return """
+                string varf;
+                varf="test.in"
+                openFile(varf);
+                int number1;
+                int number2;
+                readFile(varf,number1);
+                print(number1);
+                readFile(varf,number2);
+                print(number2);
+                bool condition = number1 > number2;
+                if(number1 > number2){
+                    print("da");
+                }
+                else{
+                    print("nu");
+                }
+                """;
+    }
 }

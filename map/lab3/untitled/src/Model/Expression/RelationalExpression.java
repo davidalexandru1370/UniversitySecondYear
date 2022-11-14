@@ -36,12 +36,24 @@ public class RelationalExpression implements IExpression {
                 int leftHandSideValue = ((IntValue) leftHandSideEvaluated).getValue();
                 int rightHandSideValue = ((IntValue) rightHandSideEvaluated).getValue();
                 switch (operation){
-                    case "<" ->  new BoolValue(leftHandSideValue < rightHandSideValue);
-                    case "<=" -> new BoolValue(leftHandSideValue <= rightHandSideValue);
-                    case "==" -> new BoolValue(leftHandSideValue == rightHandSideValue);
-                    case "!=" -> new BoolValue(leftHandSideValue != rightHandSideValue);
-                    case ">" -> new BoolValue(leftHandSideValue > rightHandSideValue);
-                    case ">=" -> new BoolValue(leftHandSideValue >= rightHandSideValue);
+                    case "<" ->  {
+                        return new BoolValue(leftHandSideValue < rightHandSideValue);
+                    }
+                    case "<=" -> {
+                        return new BoolValue(leftHandSideValue <= rightHandSideValue);
+                    }
+                    case "==" -> {
+                        return new BoolValue(leftHandSideValue == rightHandSideValue);
+                    }
+                    case "!=" -> {
+                        return new BoolValue(leftHandSideValue != rightHandSideValue);
+                    }
+                    case ">" -> {
+                        return new BoolValue(leftHandSideValue > rightHandSideValue);
+                    }
+                    case ">=" -> {
+                        return new BoolValue(leftHandSideValue >= rightHandSideValue);
+                    }
                 }
             }
             throw new InterpreterException("Right operand is not integer");

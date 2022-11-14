@@ -1,6 +1,7 @@
 package Utilities;
 
 import Model.Expression.ArithmeticExpression;
+import Model.Expression.RelationalExpression;
 import Model.Expression.ValueExpression;
 import Model.Expression.VariableExpression;
 import Model.Statement.*;
@@ -72,5 +73,23 @@ public class Programs {
                                                         new CompoundStatement(new ReadFile(new VariableExpression(stringWithFileNameVariable),intVariableName),
                                                                 new CompoundStatement(new PrintStatement(new VariableExpression(intVariableName)),
                                                                         new CloseFile(new VariableExpression(stringWithFileNameVariable))))))))));
+    }
+
+    public static IStatement program5(){
+        String fileName = "C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\test.in";
+
+        return new CompoundStatement(new VariableDeclarationStatement("varf",new StringType()),
+                new CompoundStatement(new AssignStatement("varf",new ValueExpression(new StringValue(fileName))),
+                new CompoundStatement(new OpenFile(new VariableExpression("varf")),
+                new CompoundStatement(new VariableDeclarationStatement("number1",new IntType()),
+                new CompoundStatement(new VariableDeclarationStatement("number2",new IntType()),
+                new CompoundStatement(new ReadFile(new VariableExpression("varf"),"number1"),
+                new CompoundStatement(new PrintStatement(new VariableExpression("number1")),
+                new CompoundStatement(new ReadFile(new VariableExpression("varf"),"number2"),
+                new CompoundStatement(new PrintStatement(new VariableExpression("number2")),
+                new CompoundStatement(new VariableDeclarationStatement("condition",new BoolType()),
+                new CompoundStatement(new AssignStatement("condition",new RelationalExpression(new VariableExpression("number1"),new VariableExpression("number2"),">")),
+                        new IfStatement(new VariableExpression("condition"),new PrintStatement(new ValueExpression(new StringValue("da"))),new PrintStatement(new ValueExpression(new StringValue("nu")))))))))))))));
+
     }
 }
