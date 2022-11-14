@@ -893,3 +893,158 @@ Out:
 
 File table: 
 
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='varf', type=string}
+Symbol Table:
+ varf = StringValue{value=''}
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='varf', expression=ValueExpression{value=StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}}}
+Symbol Table:
+ varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+OpenFile{expression=Variable expression = varf}
+Symbol Table:
+ varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+VariableDeclarationStatement{name='varc', type=int}
+Symbol Table:
+ varc = Int(0)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+ReadFile{expression=Variable expression = varf, variableName='varc'}
+Symbol Table:
+ varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ No output.
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+Print: Variable expression = varc
+Symbol Table:
+ varc = Int(15)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+ReadFile{expression=Variable expression = varf, variableName='varc'}
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+Print: Variable expression = varc
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+Int(50)
+
+File table: 
+C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in
+
+Exe Stack:
+CloseFile{expression=Variable expression = varf}
+Symbol Table:
+ varc = Int(50)
+varf = StringValue{value='C:\Users\David\Desktop\folders\UniversitySecondYear\map\lab3\untitled\src\test.in'}
+
+Out:
+ Int(15)
+Int(50)
+
+File table: 
+

@@ -28,4 +28,18 @@ public class Examples {
                     v = 3;
                 Print(v);""";
     }
+
+    public static String example4(){
+        return """
+                string varf;
+                varf="test.in"
+                openFile(varf);
+                int varc;
+                readFile(varf,varc);
+                print(varc);
+                readFile(varf,varc);
+                print(varc);
+                closeFile(varf);
+                """;
+    }
 }

@@ -815,3 +815,81 @@ Out:
  No output.
 File table: 
 
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=Int(2)}}
+Symbol Table:
+ v = Int(2)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = Int(2)
+
+Out:
+ Int(2)
+
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=int}
+Symbol Table:
+ a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='b', type=int}
+Symbol Table:
+ b = Int(0)
+a = Int(0)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=Int(2)}, expression2=ArithmeticExpression{expression1=ValueExpression{value=Int(3)}, expression2=ValueExpression{value=Int(5)}, operation='*'}, operation='+'}}
+Symbol Table:
+ b = Int(0)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=Int(-4)}, expression2=ValueExpression{value=Int(2)}, operation='/'}, expression2=ValueExpression{value=Int(7)}, operation='+'}, operation='+'}}
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+Print: Variable expression = b
+Symbol Table:
+ b = Int(22)
+a = Int(17)
+
+Out:
+ Int(22)
+
+File table: 
+

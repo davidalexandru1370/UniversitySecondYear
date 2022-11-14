@@ -32,8 +32,8 @@ is_mountain([H1,H2|T],1):-
 
 solve(I,R):-
     subsets(I,R),
-    len(R,A),
-    A>=3,
+    R=[A,B|_],
+    A<B,
     is_mountain(R,0).
 
 solveall(I,R2):-
