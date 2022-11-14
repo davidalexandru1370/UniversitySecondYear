@@ -84,8 +84,6 @@ AS
 	)
 GO
 
-
-
 create table versionTable (
 	version int NOT NULL
 )
