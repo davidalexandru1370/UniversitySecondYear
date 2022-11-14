@@ -91,7 +91,7 @@ create table versionTable (
 )
 
 DELETE FROM versionTable
-insert into versionTable values (6)
+insert into versionTable values (8)
 
 create table proceduresTable (
 	FromVersion INT NOT NULL,
@@ -123,6 +123,7 @@ AS
 
 	if @newVersion > (select MAX(toVersion) from proceduresTable) or @newVersion < 1
 		raiserror('Bad version',10,1)
+		return;
 
 	while @current > @newVersion begin
 		select @procedureName=ProcedureName from proceduresTable where FromVersion=@current and ToVersion=@current-1
