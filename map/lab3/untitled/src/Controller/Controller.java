@@ -85,6 +85,10 @@ public class Controller {
 
     }
 
+    public void setLoggerFilePath(String path){
+        repository.changeLoggerFilePath(path);
+    }
+
     private void logger(String log){
         System.out.println(log);
     }

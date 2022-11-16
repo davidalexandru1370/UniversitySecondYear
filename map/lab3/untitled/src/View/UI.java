@@ -91,6 +91,11 @@ public class UI {
                     continue;
                 }
                 if(commands.containsKey(input)){
+                    if(!input.equals("7")){
+                        System.out.println("Logger file path=");
+                        String logFilePath = scanner.nextLine();
+                        controller.setLoggerFilePath(logFilePath);
+                    }
                     executeProgram(input);
                 }
                 else{

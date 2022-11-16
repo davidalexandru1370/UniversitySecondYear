@@ -14,4 +14,6 @@ public interface IRepository {
     void logProgramStateExecution(String state) throws InterpreterException, IOException;
 
     void pop() throws  RepositoryException;
+
+    void changeLoggerFilePath(String path);
 }

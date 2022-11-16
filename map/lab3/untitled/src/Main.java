@@ -17,7 +17,7 @@ public class Main {
         Command example3 = new RunExample("3","Press 3 to run program 3\n" + Examples.example3(),controller, Programs.program3());
         Command example4 = new RunExample("4","Press 4 to run example 4\n" + Examples.example4(),controller, Programs.program4());
         Command example5 = new RunExample("5","Press 5 to run example 5\n" + Examples.example5(),controller, Programs.program5());
-        Command exitCommand = ExitCommand.getInstance("6","Press 6 to exit");
+        Command exitCommand = ExitCommand.getInstance("7","Press 7 to exit");
 
         UI console = new UI(controller);
         console.addCommand(exitCommand);

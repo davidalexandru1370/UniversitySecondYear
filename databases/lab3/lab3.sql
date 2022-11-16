@@ -1,5 +1,4 @@
 use DrivingExams21;
-
 --a. modify the type of a column;
 CREATE PROCEDURE ChangeCurrentLessonToTinyInt
 AS
@@ -89,8 +88,9 @@ create table versionTable (
 )
 
 DELETE FROM versionTable
-insert into versionTable values (8)
+insert into versionTable values (1)
 
+Delete from proceduresTable
 create table proceduresTable (
 	FromVersion INT NOT NULL,
 	ToVersion INT NOT NULL,
@@ -113,21 +113,26 @@ insert into proceduresTable values(7,6,'DropBlacklistedTable')
 insert into proceduresTable values(7,8,'AddBlacklistedForeignKey')
 insert into proceduresTable values(8,7,'RemoveBlacklistedForeignKey')
 
-create procedure goToVersion(@newVersion int) 
+
+create or alter procedure goToVersion(@newVersion int) 
 AS
 	declare @current int
 	declare @procedureName varchar(max)
 	select @current=version from versionTable
+	/*PRINT @current;
+	print @newVersion;
+	*/
 
-	if @newVersion > (select MAX(toVersion) from proceduresTable) or @newVersion < 1
+	if @newVersion > (select MAX(toVersion) from proceduresTable) or @newVersion < 1 
+	begin
 		raiserror('Bad version',10,1)
 		return;
+	end
 
 	while @current > @newVersion begin
 		select @procedureName=ProcedureName from proceduresTable where FromVersion=@current and ToVersion=@current-1
 		exec (@procedureName)
 		set @current=@current-1
-
 	end
 
 	while @current < @newVersion begin
@@ -135,13 +140,15 @@ AS
 		exec (@procedureName)
 		set @current=@current+1
 	end
-
+	print @current;
 	update versionTable set version=@newVersion
 GO
 
-execute goToVersion 1
+execute goToVersion 0
 
 SELECT * FROM versionTable
 
 EXECUTE [dbo].[sp_helpconstraint] 'TheoreticalExams'
 GO
+
+drop PROCEDURE goToVersion

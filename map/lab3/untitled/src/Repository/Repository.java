@@ -41,6 +41,11 @@ public class Repository implements IRepository {
     }
 
     @Override
+    public void changeLoggerFilePath(String path) {
+        logFilePath = path;
+    }
+
+    @Override
     public ProgramState getCurrentProgram() throws RepositoryException{
         if (programs.size() == 0){
             throw new RepositoryException("No programs!\n");

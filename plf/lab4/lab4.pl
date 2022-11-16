@@ -1,5 +1,5 @@
-%13.The lista1, ..., an is given and it consists of distinct integers. 
-%Write a predicate to determineall subsets with aspect of "mountain" 
+%13.The list a1, ..., an is given and it consists of distinct integers. 
+%Write a predicate to determine all subsets with aspect of "mountain" 
 %(a set has a "mountain" aspect if the elements increase to a certain point and then decrease).
 
 
@@ -38,3 +38,7 @@ solve(I,R):-
 
 solveall(I,R2):-
     findall(R,solve(I,R),R2).
+
+
+test():-
+    
