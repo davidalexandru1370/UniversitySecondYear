@@ -1,9 +1,6 @@
 package Utilities;
 
-import Model.Expression.ArithmeticExpression;
-import Model.Expression.RelationalExpression;
-import Model.Expression.ValueExpression;
-import Model.Expression.VariableExpression;
+import Model.Expression.*;
 import Model.Statement.*;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.BoolValue;
@@ -11,6 +8,7 @@ import Model.Value.IntValue;
 import Model.Value.StringValue;
 import Model.VariablesTypes.BoolType;
 import Model.VariablesTypes.IntType;
+import Model.VariablesTypes.ReferenceType;
 import Model.VariablesTypes.StringType;
 
 public class Programs {
@@ -91,5 +89,18 @@ public class Programs {
                 new CompoundStatement(new AssignStatement("condition",new RelationalExpression(new VariableExpression("number1"),new VariableExpression("number2"),">")),
                         new IfStatement(new VariableExpression("condition"),new PrintStatement(new ValueExpression(new StringValue("da"))),new PrintStatement(new ValueExpression(new StringValue("nu")))))))))))))));
 
+    }
+
+    public static IStatement program6(){
+        return new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
+                new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(20))),
+                new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new ReferenceType(new IntType()))),
+                new CompoundStatement(new PrintStatement(new HeapReadingExpression(new VariableExpression("v"))),
+                new PrintStatement(
+                        new ArithmeticExpression(
+                                new HeapReadingExpression(
+                                        new HeapReadingExpression(
+                                                new VariableExpression("a"))),
+                        new ValueExpression(new IntValue(5)),"+"))))));
     }
 }
