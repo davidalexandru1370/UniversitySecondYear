@@ -3,7 +3,9 @@ package Controller;
 import Exceptions.ExecutionStackException;
 import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
+import Model.ADT.Heap;
 import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.Interfaces.IHeap;
 import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
 import Model.ADT.MyDictionary;
@@ -39,7 +41,8 @@ public class Controller {
         IDictionary<String, IValue> symbolTable = new MyDictionary<String,IValue>();
         IList<IValue> out = new MyList<IValue>();
         IDictionary<String, BufferedReader> outFiles = new MyDictionary<String,BufferedReader>();
-        repository.add(new ProgramState(stack, symbolTable, out,outFiles, statement));
+        IHeap heap = new Heap();
+        repository.add(new ProgramState(stack, symbolTable, out,outFiles,heap, statement));
     }
 
 
