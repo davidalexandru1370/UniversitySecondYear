@@ -1,15 +1,13 @@
 package Model.VariablesTypes;
 
 import Model.Value.Interfaces.IValue;
-import Model.Value.RefValue;
+import Model.Value.ReferenceValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
 
-import java.util.Objects;
-
-public class RefType implements IVariableType {
+public class ReferenceType implements IVariableType {
     private IVariableType inner;
 
-    public RefType(IVariableType inner) {
+    public ReferenceType(IVariableType inner) {
         this.inner = inner;
     }
 
@@ -19,7 +17,7 @@ public class RefType implements IVariableType {
 
     @Override
     public boolean equals(Object another) {
-        if(another instanceof RefType){
+        if(another instanceof ReferenceType){
             return inner.equals(another);
         }
         return false;
@@ -34,6 +32,6 @@ public class RefType implements IVariableType {
 
     @Override
     public IValue getDefault() {
-        return new RefValue(0,inner);
+        return new ReferenceValue(0,inner);
     }
 }

@@ -1,6 +1,7 @@
 package Model;
 
 import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.Interfaces.IHeap;
 import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
 import Model.Statement.CompoundStatement;
@@ -13,18 +14,20 @@ public class ProgramState {
     private IStack<IStatement> exeStack;
     private IDictionary<String, IValue> symbolTable;
     private IList<IValue> out;
-    private IDictionary<Integer,IValue> heap;
+    private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
 
     public ProgramState(IStack<IStatement> exeStack,
                         IDictionary<String, IValue> symbolTable,
                         IList<IValue> out,
                         IDictionary<String, BufferedReader> outFiles,
+                        IHeap heap,
                         IStatement program) {
         this.exeStack = exeStack;
         this.symbolTable = symbolTable;
         this.out = out;
         this.outFiles = outFiles;
+        this.heap = heap;
         exeStack.push(program);
     }
 
@@ -38,6 +41,14 @@ public class ProgramState {
 
     public IDictionary<String, IValue> getSymbolTable() {
         return symbolTable;
+    }
+
+    public IHeap getHeap() {
+        return heap;
+    }
+
+    public void setHeap(IHeap heap) {
+        this.heap = heap;
     }
 
     public void setSymbolTable(IDictionary<String, IValue> symbolTable) {

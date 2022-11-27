@@ -2,27 +2,27 @@ package Model.Value;
 
 import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
-import Model.VariablesTypes.RefType;
+import Model.VariablesTypes.ReferenceType;
 
-public class RefValue implements IValue {
+public class ReferenceValue implements IValue {
     private int heapAddress;
     private  IVariableType locationType;
 
-    public RefValue(int heapAddress, IVariableType locationType) {
+    public ReferenceValue(int heapAddress, IVariableType locationType) {
         this.heapAddress = heapAddress;
         this.locationType = locationType;
     }
 
-    public RefValue(IVariableType locationType){
+    public ReferenceValue(IVariableType locationType){
         this.locationType = locationType;
     }
 
-    int getHeapAddress(){
+    public int getHeapAddress(){
         return heapAddress;
     }
 
-    IVariableType getLocationType(){
-        return new RefType(locationType);
+    public IVariableType getLocationType(){
+        return new ReferenceType(locationType);
     }
 
     @Override
