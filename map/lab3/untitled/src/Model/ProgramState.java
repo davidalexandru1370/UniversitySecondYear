@@ -13,6 +13,7 @@ public class ProgramState {
     private IStack<IStatement> exeStack;
     private IDictionary<String, IValue> symbolTable;
     private IList<IValue> out;
+    private IDictionary<Integer,IValue> heap;
     private IDictionary<String, BufferedReader> outFiles;
 
     public ProgramState(IStack<IStatement> exeStack,
@@ -59,8 +60,9 @@ public class ProgramState {
     public String toString() {
         return "Execution stack:\n " + exeStack.toString() + "\n" +
                 "Symbol table:\n" + symbolTable.toString() + "\n" +
-                "Out:\n" + out.toString() + "\n"+
-                "File table:\n" + fileTableToString();
+                "Out:\n" + out.toString() + "\n" +
+                "File table:\n" + fileTableToString() +
+                "Heap: \n" + heapToString();
     }
 
     public String currentStateToString() {
@@ -92,6 +94,10 @@ public class ProgramState {
             result += file +"\n";
         }
         return result;
+    }
+
+    public String heapToString(){
+        return "Heap: " + heap.toString();
     }
 
     public String inorderTraversal(){
