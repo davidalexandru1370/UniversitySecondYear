@@ -22,7 +22,7 @@ public class IfStatement implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
-        IValue value = expression.evaluate(state.getSymbolTable());
+        IValue value = expression.evaluate(state.getSymbolTable(),state.getHeap());
         if(value.getType().equals(new BoolType())){
             BoolValue condition = (BoolValue) value;
             if(condition.getValue()){

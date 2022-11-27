@@ -29,7 +29,7 @@ public class AssignStatement implements IStatement {
         if (symbolTable.isDefined(id)){
 
             IVariableType type = symbolTable.get(id).getType();
-            IValue value = expression.evaluate(symbolTable);
+            IValue value = expression.evaluate(symbolTable,state.getHeap());
             if(!value.getType().equals(type)){
                 throw new InterpreterException("Invalid assignation!");
             }

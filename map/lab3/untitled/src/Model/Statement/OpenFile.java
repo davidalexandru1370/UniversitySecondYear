@@ -25,7 +25,7 @@ public class OpenFile implements IStatement {
     public ProgramState execute(ProgramState state) throws InterpreterException {
         IStack<IStatement> stack = state.getExeStack();
         IDictionary<String, BufferedReader> fileTable = state.getOutFiles();
-        IValue value = expression.evaluate(state.getSymbolTable());
+        IValue value = expression.evaluate(state.getSymbolTable(),state.getHeap());
         if (!value.getType().equals(new StringType())){
             throw new InterpreterException("File is not string!");
         }

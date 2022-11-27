@@ -63,4 +63,15 @@ public class Examples {
                 }
                 """;
     }
+
+    public static String example6(){
+        return """
+                Ref int v;
+                new(v,20);
+                Ref Ref int a;
+                new(a,v);
+                print(ReadHeapOperation(v));
+                print(ReadHeapOperation(ReadHeapOperation(a))+5);
+                """;
+    }
 }

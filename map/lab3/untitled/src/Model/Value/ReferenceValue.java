@@ -27,6 +27,6 @@ public class ReferenceValue implements IValue {
 
     @Override
     public IVariableType getType() {
-        return null;
+        return locationType;
     }
 }

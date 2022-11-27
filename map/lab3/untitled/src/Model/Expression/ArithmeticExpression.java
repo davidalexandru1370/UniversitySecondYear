@@ -4,6 +4,7 @@ import Exceptions.DivisionByZeroException;
 import Exceptions.InterpreterException;
 import Exceptions.OperandException;
 import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.Interfaces.IHeap;
 import Model.Expression.Interfaces.IExpression;
 import Model.Value.IntValue;
 import Model.Value.Interfaces.IValue;
@@ -21,11 +22,11 @@ public class ArithmeticExpression implements IExpression {
     }
 
     @Override
-    public IValue evaluate(IDictionary<String, IValue> expression) throws InterpreterException {
+    public IValue evaluate(IDictionary<String, IValue> expression, IHeap heap) throws InterpreterException {
         IValue value1, value2;
-        value1 = expression1.evaluate(expression);
+        value1 = expression1.evaluate(expression,heap);
         if(value1.getType().equals(new IntType())){
-            value2 = expression2.evaluate(expression);
+            value2 = expression2.evaluate(expression,heap);
             if(value2.getType().equals(new IntType())){
                 IntValue int1 = (IntValue) value1;
                 IntValue int2 = (IntValue) value2;

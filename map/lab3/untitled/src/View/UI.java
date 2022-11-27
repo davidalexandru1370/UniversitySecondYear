@@ -14,7 +14,6 @@ public class UI {
     Map<String, Command> commands;
     private boolean isOneStepRunning = false;
 
-
     public UI(Controller controller) {
         this.controller = controller;
         this.commands = new HashMap<>();
@@ -30,9 +29,9 @@ public class UI {
         }
 
         if (!isOneStepRunning) {
-            System.out.println("Press 6 to check one-step-running");
+            System.out.println("Press 7 to check one-step-running");
         } else {
-            System.out.println("Press 6 to uncheck one-step-running");
+            System.out.println("Press 7 to uncheck one-step-running");
         }
 
         System.out.print("Your choice = ");
@@ -67,13 +66,13 @@ public class UI {
             printMenu();
             input = scanner.nextLine();
             try {
-                if (input.equals("6")) {
+                if (input.equals("7")) {
                     isOneStepRunning = !isOneStepRunning;
                     controller.setOneStepRunning(isOneStepRunning);
                     continue;
                 }
                 if (commands.containsKey(input)) {
-                    if (!input.equals("7")) {
+                    if (!input.equals("8")) {
                         System.out.println("Logger file path=");
                         String logFilePath = scanner.nextLine();
                         controller.setLoggerFilePath(logFilePath);

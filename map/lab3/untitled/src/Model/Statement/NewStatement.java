@@ -30,14 +30,19 @@ public class NewStatement implements IStatement {
         }
 
 
-        if (symbolTable.get(variableName).getType() instanceof ReferenceType){
-            IValue evaluatedValue = expression.evaluate(symbolTable);
-            IVariableType locationType = ((ReferenceValue) evaluatedValue).getLocationType();
-            if(!locationType.equals(evaluatedValue.getType())){
-                throw new InterpreterException(String.format("%s is not of type %s",variableName,evaluatedValue.getType()));
-            }
-//            Integer newPosition = heap.insert();
+        if (!(symbolTable.get(variableName).getType() instanceof ReferenceType)){
+            throw new InterpreterException(variableName + " is not a RefType");
         }
-        throw new InterpreterException(variableName + " is not a RefType");
+
+        IValue evaluatedValue = expression.evaluate(symbolTable,heap);
+        IVariableType locationType = ((ReferenceValue) evaluatedValue).getLocationType();
+        if(!locationType.equals(evaluatedValue.getType())){
+            throw new InterpreterException(String.format("%s is not of type %s",variableName,evaluatedValue.getType()));
+        }
+
+        Integer newPosition = heap.add(evaluatedValue);
+        symbolTable.insert(variableName,new ReferenceValue(newPosition,locationType));
+
+        return null;
     }
 }

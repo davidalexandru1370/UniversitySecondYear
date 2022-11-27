@@ -31,7 +31,7 @@ public class ReadFile implements IStatement {
         IStack<IStatement> stack = state.getExeStack();
         IDictionary<String, BufferedReader> fileTable = state.getOutFiles();
         IDictionary<String, IValue> symbolTable = state.getSymbolTable();
-        IValue value = expression.evaluate(state.getSymbolTable());
+        IValue value = expression.evaluate(state.getSymbolTable(),state.getHeap());
         if (!value.getType().equals(new StringType())) {
             throw new InterpreterException(String.format("%s is not a string", value));
         }

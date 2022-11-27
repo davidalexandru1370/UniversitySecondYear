@@ -2,6 +2,7 @@ package Model.Expression;
 
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.Interfaces.IHeap;
 import Model.Expression.Interfaces.IExpression;
 import Model.Value.Interfaces.IValue;
 
@@ -14,7 +15,7 @@ public class ValueExpression implements IExpression {
 
 
     @Override
-    public IValue evaluate(IDictionary<String, IValue> symbolsTable) throws InterpreterException {
+    public IValue evaluate(IDictionary<String, IValue> symbolsTable, IHeap heap) throws InterpreterException {
         return value;
     }
 
