@@ -1,6 +1,7 @@
 package Model.VariablesTypes;
 
 import Model.Value.Interfaces.IValue;
+import Model.Value.RefValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
 
 import java.util.Objects;
