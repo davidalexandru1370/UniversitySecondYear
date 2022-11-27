@@ -29,7 +29,6 @@ public class NewStatement implements IStatement {
             throw new InterpreterException(variableName + " is not defined!");
         }
 
-
         if (!(symbolTable.get(variableName).getType() instanceof ReferenceType)){
             throw new InterpreterException(variableName + " is not a RefType");
         }

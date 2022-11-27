@@ -34,3 +34,165 @@ Out:
  No output.
 File table: 
 
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@5cb0d902
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@446cdf90
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@5cb0d902
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@446cdf90
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@14514713
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@6438a396
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@446cdf90
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@446cdf90
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@446cdf90
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@446cdf90
+
+Out:
+ No output.
+File table: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@446cdf90
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@799f7e29
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@e2144e4
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@2d38eb89
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@e2144e4
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@2d38eb89
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@5cb0d902
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@46fbb2c1
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@5cb0d902
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@46fbb2c1
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@5cb0d902
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@46fbb2c1
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@5cb0d902
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@46fbb2c1
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@5cb0d902
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@46fbb2c1

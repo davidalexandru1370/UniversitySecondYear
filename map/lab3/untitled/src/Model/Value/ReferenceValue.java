@@ -22,11 +22,11 @@ public class ReferenceValue implements IValue {
     }
 
     public IVariableType getLocationType(){
-        return new ReferenceType(locationType);
+        return locationType;
     }
 
     @Override
     public IVariableType getType() {
-        return locationType;
+        return new ReferenceType(locationType);
     }
 }

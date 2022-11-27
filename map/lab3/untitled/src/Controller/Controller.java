@@ -68,7 +68,9 @@ public class Controller {
                 repository.logProgramStateExecution("Exe Stack:\n" +currentStatement.toString() + "\n" +
                          afterExecute.symbolTableToString() +
                          afterExecute.outToString() +
-                         afterExecute.fileTableToString());
+                         afterExecute.fileTableToString() +
+                         afterExecute.heapToString()
+                        );
                 logger(afterExecute.symbolTableToString()+afterExecute.outToString() + afterExecute.fileTableToString());
             }
         }

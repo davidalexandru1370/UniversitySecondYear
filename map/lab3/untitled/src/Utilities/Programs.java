@@ -95,12 +95,10 @@ public class Programs {
         return new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
                 new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(20))),
                 new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new ReferenceType(new IntType()))),
+                new CompoundStatement(new NewStatement("a",new VariableExpression("v")),
                 new CompoundStatement(new PrintStatement(new HeapReadingExpression(new VariableExpression("v"))),
-                new PrintStatement(
-                        new ArithmeticExpression(
-                                new HeapReadingExpression(
-                                        new HeapReadingExpression(
-                                                new VariableExpression("a"))),
-                        new ValueExpression(new IntValue(5)),"+"))))));
+                new PrintStatement(new ArithmeticExpression(
+                        new HeapReadingExpression(new HeapReadingExpression(new VariableExpression("a"))),
+                        new ValueExpression(new IntValue(5)),"+")))))));
     }
 }
