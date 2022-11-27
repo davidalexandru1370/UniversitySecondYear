@@ -2,6 +2,7 @@ package Model.Expression;
 
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.Interfaces.IHeap;
 import Model.Expression.Interfaces.IExpression;
 import Model.Value.BoolValue;
 import Model.Value.IntValue;
@@ -25,13 +26,13 @@ public class RelationalExpression implements IExpression {
 
 
     @Override
-    public IValue evaluate(IDictionary<String, IValue> expression) throws InterpreterException {
+    public IValue evaluate(IDictionary<String, IValue> expression, IHeap heap) throws InterpreterException {
         IValue leftHandSideEvaluated;
         IValue rightHandSideEvaluated;
 
-        leftHandSideEvaluated = leftHandSideExpression.evaluate(expression);
+        leftHandSideEvaluated = leftHandSideExpression.evaluate(expression,heap);
         if(leftHandSideEvaluated.getType().equals(new IntType())){
-            rightHandSideEvaluated = rightHandSideExpression.evaluate(expression);
+            rightHandSideEvaluated = rightHandSideExpression.evaluate(expression,heap);
             if(rightHandSideEvaluated.getType().equals(new IntType())){
                 int leftHandSideValue = ((IntValue) leftHandSideEvaluated).getValue();
                 int rightHandSideValue = ((IntValue) rightHandSideEvaluated).getValue();
