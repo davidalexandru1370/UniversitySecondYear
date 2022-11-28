@@ -29,4 +29,12 @@ public class ReferenceValue implements IValue {
     public IVariableType getType() {
         return new ReferenceType(locationType);
     }
+
+    @Override
+    public String toString() {
+        return "ReferenceValue{" +
+                "heapAddress=" + heapAddress +
+                ", locationType=" + locationType +
+                '}';
+    }
 }

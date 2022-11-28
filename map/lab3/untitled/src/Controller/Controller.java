@@ -54,7 +54,7 @@ public class Controller {
             repository.pop();
             throw new ExecutionStackException("Execution stack is empty");
         }
-        ProgramState afterExecute = state;
+        //ProgramState afterExecute = state;
         IStatement currentStatement = stack.pop();
         if(currentStatement != null) {
             boolean canPrintOutAndSymbolTable = false;
@@ -63,18 +63,23 @@ public class Controller {
                 canPrintOutAndSymbolTable = true;
             }
 
-            afterExecute = currentStatement.execute(state);
+            /*afterExecute =*/ currentStatement.execute(state);
             if(canPrintOutAndSymbolTable){
                 repository.logProgramStateExecution("Exe Stack:\n" +currentStatement.toString() + "\n" +
-                         afterExecute.symbolTableToString() +
-                         afterExecute.outToString() +
-                         afterExecute.fileTableToString() +
-                         afterExecute.heapToString()
+                         state.symbolTableToString() +
+                         state.outToString() +
+                         state.fileTableToString() +
+                         state.heapToString()
                         );
-                logger(afterExecute.symbolTableToString()+afterExecute.outToString() + afterExecute.fileTableToString());
+                logger(
+                        state.symbolTableToString() +
+                        state.outToString() +
+                        state.fileTableToString() +
+                        state.heapToString());
+                logger(new String(new char[100]).replace("\0","-"));
             }
         }
-        return afterExecute;
+        return state;
     }
 
     public ProgramState getCurrentProgram() throws RepositoryException {

@@ -18,14 +18,14 @@ public class ReferenceType implements IVariableType {
     @Override
     public boolean equals(Object another) {
         if(another instanceof ReferenceType){
-            return inner.equals(another);
+            return inner.equals(((ReferenceType)another).getInner());
         }
         return false;
     }
 
     @Override
     public String toString() {
-        return "RefType{" +
+        return "ReferenceType{" +
                 "inner=" + inner +
                 '}';
     }

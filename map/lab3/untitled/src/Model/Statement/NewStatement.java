@@ -25,16 +25,18 @@ public class NewStatement implements IStatement {
     public ProgramState execute(ProgramState state) throws InterpreterException {
         IDictionary<String, IValue> symbolTable = state.getSymbolTable();
         IHeap heap = state.getHeap();
+
         if(!symbolTable.isDefined(variableName)){
             throw new InterpreterException(variableName + " is not defined!");
         }
+
         IValue storedValue = symbolTable.get(variableName);
         if (!(storedValue.getType() instanceof ReferenceType)){
             throw new InterpreterException(variableName + " is not a RefType");
         }
 
         IValue evaluatedValue = expression.evaluate(symbolTable,heap);
-        IVariableType locationType = ((ReferenceValue) storedValue).getLocationType();
+        IVariableType locationType = ((ReferenceValue)storedValue).getLocationType();
         if(!locationType.equals(evaluatedValue.getType())){
             throw new InterpreterException(String.format("%s is not of type %s",variableName,evaluatedValue.getType()));
         }
@@ -42,9 +44,8 @@ public class NewStatement implements IStatement {
         Integer newPosition = heap.add(evaluatedValue);
         symbolTable.insert(variableName,new ReferenceValue(newPosition,locationType));
 
-        return null;
+        return state;
     }
-
 
     @Override
     public String toString() {

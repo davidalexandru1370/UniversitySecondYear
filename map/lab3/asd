@@ -6,128 +6,21 @@ Symbol Table:
 Out:
  No output.
 File table: 
-
+Heap: Model.ADT.Heap@799f7e29
 Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
 Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
+ v = Model.Value.ReferenceValue@2328c243
 
 Out:
  No output.
 File table: 
-
+Heap: Model.ADT.Heap@799f7e29
 Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+VariableDeclarationStatement{name='a', type=RefType{inner=RefType{inner=int}}}
 Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@14514713
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@6438a396
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
-
-Out:
- No output.
-File table: 
-
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@446cdf90
+ a = Model.Value.ReferenceValue@bebdb06
+v = Model.Value.ReferenceValue@2328c243
 
 Out:
  No output.
@@ -136,72 +29,367 @@ Heap: Model.ADT.Heap@799f7e29
 Exe Stack:
 VariableDeclarationStatement{name='v', type=RefType{inner=int}}
 Symbol Table:
- v = Model.Value.ReferenceValue@e2144e4
-
-Out:
- No output.
-File table: 
-Heap: Model.ADT.Heap@2d38eb89
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@e2144e4
-
-Out:
- No output.
-File table: 
-Heap: Model.ADT.Heap@2d38eb89
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-Heap: Model.ADT.Heap@46fbb2c1
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-Heap: Model.ADT.Heap@46fbb2c1
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-Heap: Model.ADT.Heap@46fbb2c1
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-Heap: Model.ADT.Heap@46fbb2c1
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-Heap: Model.ADT.Heap@46fbb2c1
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
  v = Model.Value.ReferenceValue@446cdf90
 
 Out:
  No output.
 File table: 
-Heap: Model.ADT.Heap@799f7e29
+Heap: Heap{heap={}, freeValue=751668246}
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@2328c243
+
+Out:
+ No output.
+File table: 
+Heap: Heap{heap={751668246=Int(20)}, freeValue=173461831}
+Exe Stack:
+VariableDeclarationStatement{name='a', type=RefType{inner=RefType{inner=int}}}
+Symbol Table:
+ a = Model.Value.ReferenceValue@bebdb06
+v = Model.Value.ReferenceValue@2328c243
+
+Out:
+ No output.
+File table: 
+Heap: Heap{heap={751668246=Int(20)}, freeValue=173461831}
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap: 
+heap = {}, freeValue=351286702
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=351286702, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap: 
+heap = {351286702=Int(20)}, freeValue=612621034
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=351286702, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap: 
+heap = {351286702=Int(20)}, freeValue=612621034
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=217382562, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 217382562 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=217382562, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 217382562 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=244766719, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 244766719 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=244766719, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 244766719 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=499726358, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 499726358 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=499726358, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 499726358 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=795735008, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 795735008 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=795735008, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 795735008 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=390507670, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 390507670 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=390507670, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 390507670 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=447737634, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 447737634 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=447737634, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 447737634 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=1042458937, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 1042458937 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1042458937, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 1042458937 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=48816126, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 48816126 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=48816126, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 48816126 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=641591499, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 641591499 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=641591499, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 641591499 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=761364414, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 761364414 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=761364414, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 761364414 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=535872209, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 535872209 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=535872209, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 535872209 value =Int(20)

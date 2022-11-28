@@ -25,8 +25,8 @@ public class Heap implements IHeap {
 
     private Integer newFreeValue(){
         Random random = new Random();
-        freeValue = random.nextInt();
-        while(freeValue == 0 || heap.containsKey(freeValue)){
+        freeValue = random.nextInt(0,1<<31-1);
+        while(freeValue == 0 || heap.containsKey(freeValue) || freeValue<0){
             freeValue = random.nextInt();
         }
         return freeValue;
@@ -64,5 +64,17 @@ public class Heap implements IHeap {
             throw new InterpreterException(String.format("%d memory access violation",position));
         }
         return heap.get(position);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+
+        for (Integer key : heap.keySet())
+        {
+            result.append(String.format("Heap address = %d value =%s", key, heap.get(key)));
+        }
+
+        return result.toString();
     }
 }
