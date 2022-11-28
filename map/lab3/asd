@@ -393,3 +393,59 @@ Out:
  No output.
 File table: 
 Heap: Heap address = 535872209 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=37040721, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 37040721 value =Int(20)
+Exe Stack:
+Print: Model.Expression.HeapReadingExpression@108c4c35
+Symbol Table:
+ v = ReferenceValue{heapAddress=37040721, locationType=int}
+
+Out:
+ Int(20)
+
+File table: 
+Heap: Heap address = 37040721 value =Int(20)
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=Int(20)}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=487521885, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: Heap address = 487521885 value =Int(20)
+Exe Stack:
+Print: Model.Expression.HeapReadingExpression@4ccabbaa
+Symbol Table:
+ v = ReferenceValue{heapAddress=487521885, locationType=int}
+
+Out:
+ Int(20)
+
+File table: 
+Heap: Heap address = 487521885 value =Int(20)

@@ -102,5 +102,38 @@ public class Programs {
                         new ValueExpression(new IntValue(5)),"+")))))));
     }
 
-    
+    public static IStatement program7(){
+        return new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
+                new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(20))),
+                new CompoundStatement(new PrintStatement(new HeapReadingExpression(new VariableExpression("v"))),
+                new CompoundStatement(new HeapWrittingExpression("v",new ValueExpression(new IntValue(30))),
+                new PrintStatement(new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v")),
+                        new ValueExpression(new IntValue(5)),"+"))))));
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

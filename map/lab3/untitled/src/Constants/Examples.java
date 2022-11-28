@@ -74,4 +74,14 @@ public class Examples {
                 print(ReadHeapOperation(ReadHeapOperation(a))+5);
                 """;
     }
+
+    public static String example7(){
+        return """
+                Ref int v;
+                new(v,20);
+                print(ReadHeapOperation(v));
+                writeHeapOperation(v,30);
+                print(readHeapOperation(v)+5);
+                """;
+    }
 }

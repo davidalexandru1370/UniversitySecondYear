@@ -4,13 +4,17 @@ import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IHeap;
 import Model.Expression.Interfaces.IExpression;
+import Model.ProgramState;
+import Model.Statement.Interfaces.IStatement;
 import Model.Value.IntValue;
 import Model.Value.Interfaces.IValue;
 import Model.Value.ReferenceValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
 import Model.VariablesTypes.ReferenceType;
 
-public class HeapWrittingExpression implements IExpression {
+import java.util.Dictionary;
+
+public class HeapWrittingExpression implements IStatement {
     private String variableName;
     private IExpression expression;
 
@@ -19,11 +23,19 @@ public class HeapWrittingExpression implements IExpression {
         this.expression = expression;
     }
 
-    @Override
-    public IValue evaluate(IDictionary<String, IValue> symbolTable, IHeap heap) throws InterpreterException {
-        IValue valueFromSymbolTable = symbolTable.get(variableName);
 
-        if(!(valueFromSymbolTable.getType() instanceof ReferenceType)){
+
+    @Override
+    public ProgramState execute(ProgramState state) throws InterpreterException {
+        IValue valueFromSymbolTable = state.getSymbolTable().get(variableName);
+        IHeap heap = state.getHeap();
+        IDictionary<String,IValue> symbolTable = state.getSymbolTable();
+
+        if(!symbolTable.isDefined(variableName)){
+            throw new InterpreterException(variableName  + " is not defined in symbol table!");
+        }
+
+        if(!(valueFromSymbolTable instanceof ReferenceValue)){
             throw new InterpreterException(variableName + " is not a reference type");
         }
         int heapMemoryCell;
