@@ -196,3 +196,12 @@ Out:
  No output.
 File table: 
 Heap: Model.ADT.Heap@46fbb2c1
+Exe Stack:
+VariableDeclarationStatement{name='v', type=RefType{inner=int}}
+Symbol Table:
+ v = Model.Value.ReferenceValue@446cdf90
+
+Out:
+ No output.
+File table: 
+Heap: Model.ADT.Heap@799f7e29
