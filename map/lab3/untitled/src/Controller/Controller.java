@@ -15,11 +15,15 @@ import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.ProgramState;
 import Model.Value.Interfaces.IValue;
+import Model.Value.ReferenceValue;
 import Repository.Interfaces.IRepository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Controller {
 
@@ -44,6 +48,21 @@ public class Controller {
         IDictionary<String, BufferedReader> outFiles = new MyDictionary<String,BufferedReader>();
         IHeap heap = new Heap();
         repository.add(new ProgramState(stack, symbolTable, out,outFiles,heap, statement));
+    }
+
+    private Map<Integer,IValue> unsafeGarbageCollector(List<Integer> symbolTableAddresses, IHeap heap){
+        return heap.getContent()
+                .entrySet()
+                .stream()
+                .filter(e -> symbolTableAddresses.contains(e.getKey()))
+                .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue));
+    }
+
+    List<Integer> getAddressesFromSymbolTable(Collection<IValue> symbolTableValues){
+        return symbolTableValues.stream()
+                .filter(v -> v instanceof ReferenceValue)
+                .map(v-> ((ReferenceValue)v).getHeapAddress())
+                .collect(Collectors.toList());
     }
 
     public ProgramState oneStep(ProgramState state) throws InterpreterException, IOException {

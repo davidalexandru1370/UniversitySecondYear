@@ -24,6 +24,11 @@ public class MyList<T> implements IList<T> {
     }
 
     @Override
+    public boolean contains(T elem) {
+        return list.contains(elem);
+    }
+
+    @Override
     public Iterator<T> iterator() {
         return list.iterator();
     }
