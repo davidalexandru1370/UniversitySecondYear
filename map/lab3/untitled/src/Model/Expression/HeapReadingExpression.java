@@ -23,8 +23,6 @@ public class HeapReadingExpression implements IExpression {
             throw new InterpreterException(expression.toString() + " is not evaluated as Reference Type");
         }
 
-        evaluated = (ReferenceValue)evaluated;
-
         return heap.get(((ReferenceValue) evaluated).getHeapAddress());
     }
 }

@@ -35,7 +35,7 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
     @Override
     public Value get(Key key) {
         if(!dictionary.containsKey(key)){
-            throw  new KeyNotFoundException("Invalid key!");
+            throw new KeyNotFoundException("Key = " + key + " does not exists!");
         }
         return dictionary.get(key);
     }
