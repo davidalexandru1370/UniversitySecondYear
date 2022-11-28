@@ -84,4 +84,16 @@ public class Examples {
                 print(readHeapOperation(v)+5);
                 """;
     }
+
+    public static String example8(){
+        return """
+                int v;
+                v=4;
+                while(v>0){
+                    print(v);
+                    v=v-1;                
+                }
+                print(v);
+                """;
+    }
 }

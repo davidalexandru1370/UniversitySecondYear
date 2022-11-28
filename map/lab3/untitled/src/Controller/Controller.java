@@ -19,6 +19,7 @@ import Repository.Interfaces.IRepository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Map;
 
 public class Controller {
 
@@ -45,8 +46,6 @@ public class Controller {
         repository.add(new ProgramState(stack, symbolTable, out,outFiles,heap, statement));
     }
 
-
-
     public ProgramState oneStep(ProgramState state) throws InterpreterException, IOException {
         IStack<IStatement> stack = state.getExeStack();
 
@@ -54,7 +53,7 @@ public class Controller {
             repository.pop();
             throw new ExecutionStackException("Execution stack is empty");
         }
-        //ProgramState afterExecute = state;
+
         IStatement currentStatement = stack.pop();
         if(currentStatement != null) {
             boolean canPrintOutAndSymbolTable = false;
@@ -63,7 +62,7 @@ public class Controller {
                 canPrintOutAndSymbolTable = true;
             }
 
-            /*afterExecute =*/ currentStatement.execute(state);
+            currentStatement.execute(state);
             if(canPrintOutAndSymbolTable){
                 repository.logProgramStateExecution("Exe Stack:\n" +currentStatement.toString() + "\n" +
                          state.symbolTableToString() +

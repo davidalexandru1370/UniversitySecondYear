@@ -42,8 +42,6 @@ public class IntValue implements IValue {
 
     @Override
     public String toString() {
-        return "Int" +
-                "(" + value +
-                ')';
+        return  String.format("%d",value);
     }
 }

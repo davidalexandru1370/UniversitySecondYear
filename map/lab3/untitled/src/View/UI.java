@@ -29,9 +29,9 @@ public class UI {
         }
 
         if (!isOneStepRunning) {
-            System.out.println("Press 8 to check one-step-running");
+            System.out.println("Press 9 to check one-step-running");
         } else {
-            System.out.println("Press 8 to uncheck one-step-running");
+            System.out.println("Press 9 to uncheck one-step-running");
         }
 
         System.out.print("Your choice = ");
@@ -66,13 +66,13 @@ public class UI {
             printMenu();
             input = scanner.nextLine();
             try {
-                if (input.equals("8")) {
+                if (input.equals("9")) {
                     isOneStepRunning = !isOneStepRunning;
                     controller.setOneStepRunning(isOneStepRunning);
                     continue;
                 }
                 if (commands.containsKey(input)) {
-                    if (!input.equals("9")) {
+                    if (!input.equals("10")) {
                         System.out.println("Logger file path=");
                         String logFilePath = scanner.nextLine();
                         controller.setLoggerFilePath(logFilePath);

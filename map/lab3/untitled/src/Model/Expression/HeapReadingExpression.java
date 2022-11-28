@@ -25,4 +25,11 @@ public class HeapReadingExpression implements IExpression {
 
         return heap.get(((ReferenceValue) evaluated).getHeapAddress());
     }
+
+    @Override
+    public String toString() {
+        return "HeapReadingExpression{" +
+                "expression=" + expression +
+                '}';
+    }
 }
