@@ -766,3 +766,21 @@ Out:
 
 File table: 
 Heap: 
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 

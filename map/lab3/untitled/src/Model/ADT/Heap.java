@@ -43,6 +43,11 @@ public class Heap implements IHeap {
     }
 
     @Override
+    public void setContent(Map<Integer, IValue> content) {
+        this.heap = content;
+    }
+
+    @Override
     public Integer add(IValue value) {
         heap.put(freeValue,value);
         Integer lastOccupiedFreeValue = freeValue;

@@ -4,6 +4,7 @@ import Exceptions.KeyNotFoundException;
 import Model.ADT.Interfaces.IDictionary;
 
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -40,9 +41,16 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
         return dictionary.get(key);
     }
 
+
+
     @Override
     public Set getKeys() {
         return this.dictionary.keySet();
+    }
+
+    @Override
+    public List<Value> getContent() {
+        return dictionary.keySet().stream().map(k -> dictionary.get(k)).toList();
     }
 
     @Override

@@ -58,7 +58,7 @@ public class Controller {
                 .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue));
     }
 
-    List<Integer> getAddressesFromSymbolTable(Collection<IValue> symbolTableValues){
+    List<Integer> getAddressesFromSymbolTable(List<IValue> symbolTableValues){
         return symbolTableValues.stream()
                 .filter(v -> v instanceof ReferenceValue)
                 .map(v-> ((ReferenceValue)v).getHeapAddress())
@@ -108,6 +108,7 @@ public class Controller {
         ProgramState programState = repository.getCurrentProgram();
         while (programState.getExeStack().size() > 0){
             oneStep(programState);
+            programState.getHeap().setContent(unsafeGarbageCollector(getAddressesFromSymbolTable(programState.getSymbolTable().getContent()),programState.getHeap()));
         }
         repository.pop();
 

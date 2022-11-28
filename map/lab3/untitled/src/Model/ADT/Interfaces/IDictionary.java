@@ -1,5 +1,6 @@
 package Model.ADT.Interfaces;
 
+import java.util.List;
 import java.util.Set;
 
 public interface IDictionary<Key,Elem> {
@@ -9,4 +10,6 @@ public interface IDictionary<Key,Elem> {
     Elem get(Key key);
 
     Set getKeys();
+
+    List<Elem> getContent();
 }
