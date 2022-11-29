@@ -81,7 +81,7 @@ public class Examples {
                 new(v,20);
                 print(ReadHeapOperation(v));
                 writeHeapOperation(v,30);
-                print(readHeapOperation(v)+5);
+                print(ReadHeapOperation(v)+5);
                 """;
     }
 
@@ -91,9 +91,20 @@ public class Examples {
                 v=4;
                 while(v>0){
                     print(v);
-                    v=v-1;                
+                    v=v-1;               
                 }
                 print(v);
+                """;
+    }
+
+    public static String example9(){
+        return """
+                Ref int v;
+                new(v,20);
+                Ref Ref int a;
+                new(a,v);
+                new(v,30);
+                print(ReadHeapOperation(ReadHeapOperation(a)));
                 """;
     }
 }

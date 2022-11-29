@@ -20,9 +20,7 @@ import Repository.Interfaces.IRepository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Controller {
@@ -50,7 +48,7 @@ public class Controller {
         repository.add(new ProgramState(stack, symbolTable, out,outFiles,heap, statement));
     }
 
-    private Map<Integer,IValue> unsafeGarbageCollector(List<Integer> symbolTableAddresses, IHeap heap){
+    private Map<Integer,IValue> unsafeGarbageCollector(Set<Integer> symbolTableAddresses, IHeap heap){
         return heap.getContent()
                 .entrySet()
                 .stream()
@@ -58,11 +56,21 @@ public class Controller {
                 .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue));
     }
 
-    List<Integer> getAddressesFromSymbolTable(List<IValue> symbolTableValues){
-        return symbolTableValues.stream()
+    Set<Integer> getAddressesFromSymbolTable(List<IValue> symbolTableValues, IHeap heap){
+        Set<Integer> addresses = new TreeSet<>();
+         symbolTableValues.stream()
                 .filter(v -> v instanceof ReferenceValue)
-                .map(v-> ((ReferenceValue)v).getHeapAddress())
-                .collect(Collectors.toList());
+                .forEach(e -> {
+                    while(e instanceof ReferenceValue && ((ReferenceValue) e).getHeapAddress()!=0){
+                        addresses.add(((ReferenceValue)e).getHeapAddress());
+                        try {
+                            e = heap.get(((ReferenceValue)e).getHeapAddress());
+                        } catch (InterpreterException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    }
+                });
+         return addresses;
     }
 
     public ProgramState oneStep(ProgramState state) throws InterpreterException, IOException {
@@ -108,7 +116,8 @@ public class Controller {
         ProgramState programState = repository.getCurrentProgram();
         while (programState.getExeStack().size() > 0){
             oneStep(programState);
-            programState.getHeap().setContent(unsafeGarbageCollector(getAddressesFromSymbolTable(programState.getSymbolTable().getContent()),programState.getHeap()));
+            programState.getHeap().setContent(unsafeGarbageCollector(
+                    getAddressesFromSymbolTable(programState.getSymbolTable().getContent(),programState.getHeap()),programState.getHeap()));
         }
         repository.pop();
 

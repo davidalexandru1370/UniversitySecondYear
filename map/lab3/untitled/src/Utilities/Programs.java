@@ -129,7 +129,14 @@ public class Programs {
                                                 "-")))),
                                 new PrintStatement(new VariableExpression("v")))));
     }
-
+    public static IStatement program9(){
+        return new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
+                new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(20))),
+                new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new ReferenceType(new IntType()))),
+                new CompoundStatement(new NewStatement("a",new VariableExpression("v")),
+                new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(30))),
+                new PrintStatement(new HeapReadingExpression(new HeapReadingExpression(new VariableExpression("a")))))))));
+    }
 }
 
 
