@@ -541,3 +541,378 @@ Out:
 
 File table: 
 Heap: Heap address = 37624314 value =30Heap address = 1012748202 value =ReferenceValue{heapAddress=592320694, locationType=int}Heap address = 592320694 value =20
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=20}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=38360351, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 38360351 value =20
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=38360351, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 38360351 value =20
+
+Exe Stack:
+NewStatement{variableName='a', expression=Variable expression = v}
+Symbol Table:
+ a = ReferenceValue{heapAddress=8037597, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=38360351, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 38360351 value =20
+Heap address = 8037597 value =ReferenceValue{heapAddress=38360351, locationType=int}
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=30}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=8037597, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=64805525, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 38360351 value =20
+Heap address = 8037597 value =ReferenceValue{heapAddress=38360351, locationType=int}
+Heap address = 64805525 value =30
+
+Exe Stack:
+Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=8037597, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=64805525, locationType=int}
+
+Out:
+ 20
+
+File table: 
+Heap: 
+Heap address = 38360351 value =20
+Heap address = 8037597 value =ReferenceValue{heapAddress=38360351, locationType=int}
+Heap address = 64805525 value =30
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=20}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=25444540, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 25444540 value =20
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=25444540, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 25444540 value =20
+
+Exe Stack:
+NewStatement{variableName='a', expression=Variable expression = v}
+Symbol Table:
+ a = ReferenceValue{heapAddress=601951613, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=25444540, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 25444540 value =20
+Heap address = 601951613 value =ReferenceValue{heapAddress=25444540, locationType=int}
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=30}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=601951613, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=303000365, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 303000365 value =30
+Heap address = 25444540 value =20
+Heap address = 601951613 value =ReferenceValue{heapAddress=25444540, locationType=int}
+
+Exe Stack:
+Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=601951613, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=303000365, locationType=int}
+
+Out:
+ 20
+
+File table: 
+Heap: 
+Heap address = 303000365 value =30
+Heap address = 25444540 value =20
+Heap address = 601951613 value =ReferenceValue{heapAddress=25444540, locationType=int}
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=20}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=363753755, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 363753755 value = 20
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=363753755, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 363753755 value = 20
+
+Exe Stack:
+NewStatement{variableName='a', expression=Variable expression = v}
+Symbol Table:
+ a = ReferenceValue{heapAddress=590854382, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=363753755, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 363753755 value = 20
+Heap address = 590854382 value = ReferenceValue{heapAddress=363753755, locationType=int}
+
+Exe Stack:
+Print: HeapReadingExpression{expression=Variable expression = v}
+Symbol Table:
+ a = ReferenceValue{heapAddress=590854382, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=363753755, locationType=int}
+
+Out:
+ 20
+
+File table: 
+Heap: 
+Heap address = 363753755 value = 20
+Heap address = 590854382 value = ReferenceValue{heapAddress=363753755, locationType=int}
+
+Exe Stack:
+Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, expression2=ValueExpression{value=5}, operation='+'}
+Symbol Table:
+ a = ReferenceValue{heapAddress=590854382, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=363753755, locationType=int}
+
+Out:
+ 20
+25
+
+File table: 
+Heap: 
+Heap address = 363753755 value = 20
+Heap address = 590854382 value = ReferenceValue{heapAddress=363753755, locationType=int}
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=20}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=122516574, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 122516574 value = 20
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=122516574, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 122516574 value = 20
+
+Exe Stack:
+NewStatement{variableName='a', expression=Variable expression = v}
+Symbol Table:
+ a = ReferenceValue{heapAddress=180960883, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=122516574, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 122516574 value = 20
+Heap address = 180960883 value = ReferenceValue{heapAddress=122516574, locationType=int}
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=30}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=180960883, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1031613718, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 122516574 value = 20
+Heap address = 180960883 value = ReferenceValue{heapAddress=122516574, locationType=int}
+Heap address = 1031613718 value = 30
+
+Exe Stack:
+Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=180960883, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1031613718, locationType=int}
+
+Out:
+ 20
+
+File table: 
+Heap: 
+Heap address = 122516574 value = 20
+Heap address = 180960883 value = ReferenceValue{heapAddress=122516574, locationType=int}
+Heap address = 1031613718 value = 30
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=20}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=426103877, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 426103877 value = 20
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=426103877, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 426103877 value = 20
+
+Exe Stack:
+NewStatement{variableName='a', expression=Variable expression = v}
+Symbol Table:
+ a = ReferenceValue{heapAddress=394896309, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=426103877, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 426103877 value = 20
+Heap address = 394896309 value = ReferenceValue{heapAddress=426103877, locationType=int}
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=30}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=394896309, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=447032933, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 426103877 value = 20
+Heap address = 447032933 value = 30
+Heap address = 394896309 value = ReferenceValue{heapAddress=426103877, locationType=int}
+
+Exe Stack:
+Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=394896309, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=447032933, locationType=int}
+
+Out:
+ 20
+
+File table: 
+Heap: 
+Heap address = 426103877 value = 20
+Heap address = 447032933 value = 30
+Heap address = 394896309 value = ReferenceValue{heapAddress=426103877, locationType=int}
+

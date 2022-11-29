@@ -61,7 +61,8 @@ public class Controller {
          symbolTableValues.stream()
                 .filter(v -> v instanceof ReferenceValue)
                 .forEach(e -> {
-                    while(e instanceof ReferenceValue && ((ReferenceValue) e).getHeapAddress()!=0){
+                    
+                    while(e instanceof ReferenceValue && ((ReferenceValue) e).getHeapAddress() != 0){
                         addresses.add(((ReferenceValue)e).getHeapAddress());
                         try {
                             e = heap.get(((ReferenceValue)e).getHeapAddress());

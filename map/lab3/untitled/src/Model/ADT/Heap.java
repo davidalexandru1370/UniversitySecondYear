@@ -74,10 +74,10 @@ public class Heap implements IHeap {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-
+        result.append("\n");
         for (Integer key : heap.keySet())
         {
-            result.append(String.format("Heap address = %d value =%s", key, heap.get(key)));
+            result.append(String.format("Heap address = %d value = %s\n", key, heap.get(key)));
         }
 
         return result.toString();
