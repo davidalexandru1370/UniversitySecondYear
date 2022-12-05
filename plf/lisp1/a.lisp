@@ -1,5 +1,5 @@
 ;a) Write twice the n-th element of a linear list. Example: for (10 20 30 40 50) and n=3 will produce (10 20 30 30 40 50).
-
+;flow model twiceNThElement(l - input list i - current index - n - input index to duplicate value) (i,i,i)
 (defun twiceNThElement (l i n)
     (cond
     ((null l) nil)
