@@ -50,3 +50,15 @@
 )
 
 (print (determineNumberOfSublists '(1 2 (3 (4 5) (6 7)) 8 (9 10))))
+
+;d) Write a function to return the number of all numerical atoms in a list at superficial level.
+
+(defun getNumberOfNumericalAtoms (l)
+    (cond
+    ((null l) 0)
+    ((NUMBERP (car l)) (+ 1 (getNumberOfNumericalAtoms(cdr l))))
+    (T (getNumberOfNumericalAtoms(cdr l)))
+    )
+)
+
+(print (getNumberOfNumericalAtoms '(1 2 (3 (4 5) (6 7)) 8 (9 10))))
