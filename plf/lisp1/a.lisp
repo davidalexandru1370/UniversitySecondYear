@@ -34,3 +34,12 @@
 ;(list itself, (3 ...), (4 5), (6 7), (9 10)).
 
 
+(defun determineNumberOfSublists (l)
+    (cond
+    ((null l) 0)
+    ((LISTP (car l)) (+ 1 (determineNumberOfSublists(car l)) (determineNumberOfSublists (cdr l))))
+    (T (determineNumberOfSublists (cdr l)))
+    )
+)
+
+(print (determineNumberOfSublists '(1 2 (3 (4 5) (6 7)) 8 (9 10))))
