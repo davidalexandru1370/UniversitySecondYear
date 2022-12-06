@@ -2016,3 +2016,273 @@ Heap address = 418663190 value = 20
 Heap address = 915944118 value = 30
 Heap address = 521045889 value = ReferenceValue{heapAddress=418663190, locationType=int}
 
+Exe Stack:
+VariableDeclarationStatement{name='v', type=int}
+Symbol Table:
+ v = 0
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ValueExpression{value=4}}
+Symbol Table:
+ v = 4
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+WhileStatement{statement=CompundStatement{first=Print: Variable expression = v, second=AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}}, whileConditionalExpression=RelationalExpression{leftHandSideExpression=Variable expression = v > , rightHandSideExpression=ValueExpression{value=0}}}
+Symbol Table:
+ v = 4
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = 4
+
+Out:
+ 4
+
+File table: 
+Heap: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}
+Symbol Table:
+ v = 3
+
+Out:
+ 4
+
+File table: 
+Heap: 
+
+Exe Stack:
+WhileStatement{statement=CompundStatement{first=Print: Variable expression = v, second=AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}}, whileConditionalExpression=RelationalExpression{leftHandSideExpression=Variable expression = v > , rightHandSideExpression=ValueExpression{value=0}}}
+Symbol Table:
+ v = 3
+
+Out:
+ 4
+
+File table: 
+Heap: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = 3
+
+Out:
+ 4
+3
+
+File table: 
+Heap: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}
+Symbol Table:
+ v = 2
+
+Out:
+ 4
+3
+
+File table: 
+Heap: 
+
+Exe Stack:
+WhileStatement{statement=CompundStatement{first=Print: Variable expression = v, second=AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}}, whileConditionalExpression=RelationalExpression{leftHandSideExpression=Variable expression = v > , rightHandSideExpression=ValueExpression{value=0}}}
+Symbol Table:
+ v = 2
+
+Out:
+ 4
+3
+
+File table: 
+Heap: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = 2
+
+Out:
+ 4
+3
+2
+
+File table: 
+Heap: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}
+Symbol Table:
+ v = 1
+
+Out:
+ 4
+3
+2
+
+File table: 
+Heap: 
+
+Exe Stack:
+WhileStatement{statement=CompundStatement{first=Print: Variable expression = v, second=AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}}, whileConditionalExpression=RelationalExpression{leftHandSideExpression=Variable expression = v > , rightHandSideExpression=ValueExpression{value=0}}}
+Symbol Table:
+ v = 1
+
+Out:
+ 4
+3
+2
+
+File table: 
+Heap: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = 1
+
+Out:
+ 4
+3
+2
+1
+
+File table: 
+Heap: 
+
+Exe Stack:
+AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}
+Symbol Table:
+ v = 0
+
+Out:
+ 4
+3
+2
+1
+
+File table: 
+Heap: 
+
+Exe Stack:
+WhileStatement{statement=CompundStatement{first=Print: Variable expression = v, second=AssignStatement{id='v', expression=ArithmeticExpression{expression1=Variable expression = v, expression2=ValueExpression{value=1}, operation='-'}}}, whileConditionalExpression=RelationalExpression{leftHandSideExpression=Variable expression = v > , rightHandSideExpression=ValueExpression{value=0}}}
+Symbol Table:
+ v = 0
+
+Out:
+ 4
+3
+2
+1
+
+File table: 
+Heap: 
+
+Exe Stack:
+Print: Variable expression = v
+Symbol Table:
+ v = 0
+
+Out:
+ 4
+3
+2
+1
+0
+
+File table: 
+Heap: 
+
+Exe Stack:
+VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=20}}
+Symbol Table:
+ v = ReferenceValue{heapAddress=304805508, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 304805508 value = 20
+
+Exe Stack:
+VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=304805508, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 304805508 value = 20
+
+Exe Stack:
+NewStatement{variableName='a', expression=Variable expression = v}
+Symbol Table:
+ a = ReferenceValue{heapAddress=555365571, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=304805508, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 555365571 value = ReferenceValue{heapAddress=304805508, locationType=int}
+Heap address = 304805508 value = 20
+
+Exe Stack:
+NewStatement{variableName='v', expression=ValueExpression{value=30}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=555365571, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=487742591, locationType=int}
+
+Out:
+ No output.
+File table: 
+Heap: 
+Heap address = 555365571 value = ReferenceValue{heapAddress=304805508, locationType=int}
+Heap address = 487742591 value = 30
+Heap address = 304805508 value = 20
+
+Exe Stack:
+Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}
+Symbol Table:
+ a = ReferenceValue{heapAddress=555365571, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=487742591, locationType=int}
+
+Out:
+ 20
+
+File table: 
+Heap: 
+Heap address = 555365571 value = ReferenceValue{heapAddress=304805508, locationType=int}
+Heap address = 487742591 value = 30
+Heap address = 304805508 value = 20
+
