@@ -62,3 +62,29 @@
 )
 
 (print (getNumberOfNumericalAtoms '(1 2 (3 (4 5) (6 7)) 8 (9 10))))
+
+;
+
+
+;13. For a given tree of type (2) return the path from the root node to a certain given node X.
+(defun explorePath (l level node)
+(cond
+  ((null (car l)) nil)
+  ((equal (car l) node) (list (car l)))
+  (T 
+    (setq left (explorePath (cadr l) (+ level 1) node ))
+	  (cond 
+		    ((null left) (setq right (explorePath (caddr l) (+ level 1) node ))
+                     (cond
+                         ((null right) NIL)
+                         (T (append (list (car l)) right))
+                      )
+        )
+		    (T (append (list (car l)) left ))
+    )
+ )
+)
+)
+(print (explorePath '(A (B) (C (D) (E))) 0 'E ))
+(print (explorePath '(A(B(D)(E(F(G)(H))))(C(I(J(K))))) 0 'A))
+(print (explorePath '(A(B(D)(E(F(G)(H))))(C(I(J(K))))) 0 'K))

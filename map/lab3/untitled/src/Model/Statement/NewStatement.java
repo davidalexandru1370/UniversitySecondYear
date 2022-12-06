@@ -1,6 +1,7 @@
 package Model.Statement;
 
 import Exceptions.InterpreterException;
+import Model.ADT.Heap;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IHeap;
 import Model.Expression.Interfaces.IExpression;
@@ -11,14 +12,17 @@ import Model.Value.ReferenceValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
 import Model.VariablesTypes.ReferenceType;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class NewStatement implements IStatement {
 
     private String variableName;
     private IExpression expression;
 
-    public NewStatement(String variableName, IExpression IExpression) {
+    public NewStatement(String variableName, IExpression expression) {
         this.variableName = variableName;
-        this.expression = IExpression;
+        this.expression = expression;
     }
 
     @Override

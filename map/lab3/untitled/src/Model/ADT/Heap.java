@@ -13,7 +13,6 @@ public class Heap implements IHeap {
     private Map<Integer,IValue> heap;
     private Integer freeValue;
 
-
     public Heap(Map<Integer,IValue> heap) {
         this.heap = heap;
     }

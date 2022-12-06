@@ -41,7 +41,7 @@ public class HeapWrittingStatement implements IStatement {
             throw new InterpreterException(interpreterException + "\n" + " memory access violation");
         }
 
-        IValue evaluatedExpressionValue = ((IValue)expression.evaluate(symbolTable,heap));
+        IValue evaluatedExpressionValue = expression.evaluate(symbolTable,heap);
         IVariableType locationType = evaluatedExpressionValue.getType();
         if(!locationType.equals(((ReferenceValue)valueFromSymbolTable).getLocationType())){
             throw new InterpreterException(String.format("%s is not of type %s",
