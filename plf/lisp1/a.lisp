@@ -90,6 +90,8 @@
     (assert
     (and
     (equal 3 (getNumberOfNumericalAtoms '(1 2 (3 (4 5) (6 7)) 8 (9 10))))
+    (equal 5 (getNumberOfNumericalAtoms '(1 2 3 4 5)))
+    (equal 0 (getNumberOfNumericalAtoms '((1 2 3 4 5))))
     ))
 )
 (testGetNumberOfNumericalAtoms)
@@ -104,10 +106,17 @@
 )
 
 
-(print (getNumberOfNumericalAtomsInDepth '(1 2 (3 (4 5) (6 7)) 8 (9 10))))
-
-
-
+;(print (getNumberOfNumericalAtomsInDepth '(1 2 (3 (4 5) (6 7)) 8 (9 10))))
+(defun testGetNumberOfNumericalAtomsInDepth ()
+    (assert
+    (and
+        (equal 10 (getNumberOfNumericalAtomsInDepth '(1 2 (3 (4 5) (6 7)) 8 (9 10))))
+        (equal 3 (getNumberOfNumericalAtomsInDepth '(1 2 3)))
+        (equal 4 (getNumberOfNumericalAtomsInDepth '(1 A (5 (6 (7))))))
+        (equal 6 (getNumberOfNumericalAtomsInDepth '(1 2 (3 (A B) (C 7)) 8 (9 D))))
+    ))
+)
+(testGetNumberOfNumericalAtomsInDepth)
 
 ;13. For a given tree of type (2) return the path from the root node to a certain given node X.
 (defun explorePath (l level node)
@@ -131,11 +140,14 @@
 
 (defun testExplorePath ()
     (assert (and
-        (equal '(A C I J K) (explorePath '(A (B) (C (D) (E))) 0 'E))
+        (equal '(A C E) (explorePath '(A (B) (C (D) (E))) 0 'E))
+        (equal '(A) (explorePath '(A(B(D)(E(F(G)(H))))(C(I(J(K))))) 0 'A))
+        (equal '(A C I J K) (explorePath '(A(B(D)(E(F(G)(H))))(C(I(J(K))))) 0 'K))
         )               
     ))
+(testExplorePath)
 
 
-(print (explorePath '(A (B) (C (D) (E))) 0 'E ))
-(print (explorePath '(A(B(D)(E(F(G)(H))))(C(I(J(K))))) 0 'A))
-(print (explorePath '(A(B(D)(E(F(G)(H))))(C(I(J(K))))) 0 'K))
+;(print (explorePath '(A (B) (C (D) (E))) 0 'E ))
+;(print (explorePath '(A(B(D)(E(F(G)(H))))(C(I(J(K))))) 0 'A))
+;(print (explorePath '(A(B(D)(E(F(G)(H))))(C(I(J(K))))) 0 'K))
