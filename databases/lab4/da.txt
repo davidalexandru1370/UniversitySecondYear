@@ -1,0 +1,9 @@
+tables - name with our tables
+tableid - identity
+
+views - name of the views
+tests - procedures use to insert / we need to have 2 procedures one for insert and one for delete
+on insert we need a parameter the number the rows we will insert
+
+
+testtable - id of the test and id of the table on which we will test 

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
+public class MyDictionary<Key,Value> implements IDictionary<Key,Value>,Cloneable {
     Map<Key,Value> dictionary = new Hashtable<Key,Value>();
 
     public MyDictionary(){
@@ -41,8 +41,6 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
         return dictionary.get(key);
     }
 
-
-
     @Override
     public Set getKeys() {
         return this.dictionary.keySet();
@@ -51,6 +49,14 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value> {
     @Override
     public List<Value> getContent() {
         return dictionary.keySet().stream().map(k -> dictionary.get(k)).toList();
+    }
+
+    public IDictionary<Key, Value> clone()  {
+        IDictionary<Key,Value> clonedDictionary = new MyDictionary<>();
+        for (Map.Entry<Key,Value> entry : dictionary.entrySet()) {
+            clonedDictionary.insert(entry.getKey(), entry.getValue());
+        }
+            return clonedDictionary;
     }
 
     @Override

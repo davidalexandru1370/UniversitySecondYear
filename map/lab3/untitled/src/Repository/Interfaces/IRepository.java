@@ -5,6 +5,7 @@ import Exceptions.RepositoryException;
 import Model.ProgramState;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface IRepository {
     ProgramState getCurrentProgram() throws RepositoryException;
@@ -16,4 +17,6 @@ public interface IRepository {
     void pop() throws  RepositoryException;
 
     void changeLoggerFilePath(String path);
+    List<ProgramState> getProgramStateList();
+    void setProgramStateList(List<ProgramState> programStates);
 }

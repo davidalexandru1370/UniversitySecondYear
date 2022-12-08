@@ -46,6 +46,16 @@ public class Repository implements IRepository {
     }
 
     @Override
+    public List<ProgramState> getProgramStateList() {
+        return programs;
+    }
+
+    @Override
+    public void setProgramStateList(List<ProgramState> programStates) {
+        programs = programStates;
+    }
+
+    @Override
     public ProgramState getCurrentProgram() throws RepositoryException{
         if (programs.size() == 0){
             throw new RepositoryException("No programs!\n");

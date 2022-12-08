@@ -17,6 +17,8 @@ public class ProgramState {
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
 
+    private static int id;
+
     public ProgramState(IStack<IStatement> exeStack,
                         IDictionary<String, IValue> symbolTable,
                         IList<IValue> out,
@@ -67,9 +69,22 @@ public class ProgramState {
         this.out = out;
     }
 
+    public static synchronized int getId() {
+        return id;
+    }
+
+    public static synchronized void setId(int id) {
+        ProgramState.id = id;
+    }
+
+    public boolean isNotCompleted(){
+        return exeStack.size() != 0;
+    }
+
     @Override
     public String toString() {
-        return "Execution stack:\n " + exeStack.toString() + "\n" +
+        return  "Id:" + id + "\n" +
+                "Execution stack:\n " + exeStack.toString() + "\n" +
                 "Symbol table:\n" + symbolTable.toString() + "\n" +
                 "Out:\n" + out.toString() + "\n" +
                 "File table:\n" + fileTableToString() +
@@ -77,7 +92,8 @@ public class ProgramState {
     }
 
     public String currentStateToString() {
-        return "Execution stack:\n" + (exeStack.size() > 0 ? (exeStack.getTop() instanceof CompoundStatement ?
+        return  "Id:" + id + "\n" +
+                "Execution stack:\n" + (exeStack.size() > 0 ? (exeStack.getTop() instanceof CompoundStatement ?
                 ((CompoundStatement) exeStack.getTop()).getFirst() : exeStack.getTop())
                 : "Empty stack") + "\n" +
                 "Symbol Table:\n " + symbolTable.toString() + "\n" +
@@ -109,15 +125,5 @@ public class ProgramState {
 
     public String heapToString(){
         return "Heap: " + heap.toString();
-    }
-
-    public String inorderTraversal(){
-        StringBuilder traversal = new StringBuilder();
-        IStatement iterator = exeStack.getTop();
-        while(iterator instanceof CompoundStatement){
-            traversal.append(((CompoundStatement) iterator).getFirst()).append(" \n");
-            iterator=((CompoundStatement) iterator).getSecond();
-        }
-        return traversal.toString();
     }
 }

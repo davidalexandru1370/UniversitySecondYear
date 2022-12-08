@@ -62,6 +62,7 @@ public class UI {
 
     public void runMenu() {
         String input = "";
+        //
         while (true) {
             printMenu();
             input = scanner.nextLine();
