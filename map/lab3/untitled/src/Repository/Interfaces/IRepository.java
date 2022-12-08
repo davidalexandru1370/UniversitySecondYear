@@ -13,6 +13,7 @@ public interface IRepository {
     void add(ProgramState programState);
 
     void logProgramStateExecution(String state) throws InterpreterException, IOException;
+    void logProgramStateExecution(ProgramState programState) throws IOException;
 
     void pop() throws  RepositoryException;
 

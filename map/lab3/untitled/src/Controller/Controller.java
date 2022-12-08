@@ -21,14 +21,21 @@ import Repository.Interfaces.IRepository;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.stream.Collectors;
 
 public class Controller {
 
     IRepository repository;
     private boolean isOneStepRunning = false;
+
+    private ExecutorService executorService;
     public Controller(IRepository repository) {
         this.repository = repository;
+        this.executorService = Executors.newFixedThreadPool(2);
     }
 
     public boolean isOneStepRunning() {
@@ -46,6 +53,27 @@ public class Controller {
         IDictionary<String, BufferedReader> outFiles = new MyDictionary<String,BufferedReader>();
         IHeap heap = new Heap();
         repository.add(new ProgramState(stack, symbolTable, out,outFiles,heap, statement));
+    }
+
+    private List<ProgramState> removeCompletedPrograms(List<ProgramState> currentPrograms){
+        return currentPrograms
+                .stream()
+                .filter(ProgramState::isNotCompleted)
+                .collect(Collectors.toList());
+    }
+
+    private void oneStepForAllPrograms(List<ProgramState> programStates){
+        programStates.forEach(p -> {
+            try {
+                repository.logProgramStateExecution(p);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        List<Callable<ProgramState>> callables = programStates.stream()
+                .map((ProgramState p) -> {
+                    return p.oneStep();
+                })
     }
 
     private Map<Integer,IValue> unsafeGarbageCollector(Set<Integer> symbolTableAddresses, IHeap heap){
@@ -72,7 +100,7 @@ public class Controller {
                 });
          return addresses;
     }
-
+/*
     public ProgramState oneStep(ProgramState state) throws InterpreterException, IOException {
         IStack<IStatement> stack = state.getExeStack();
 
@@ -102,7 +130,7 @@ public class Controller {
         }
         return state;
     }
-
+*/
     public ProgramState getCurrentProgram() throws RepositoryException {
         return repository.getCurrentProgram();
     }
@@ -110,7 +138,8 @@ public class Controller {
     public void allStep() throws InterpreterException, IOException {
         ProgramState programState = repository.getCurrentProgram();
         while (programState.getExeStack().size() > 0){
-            oneStep(programState);
+            //oneStep(programState);
+            programState.oneStep();
             programState.getHeap().setContent(unsafeGarbageCollector(
                     getAddressesFromSymbolTable(programState.getSymbolTable().getContent(),programState.getHeap()),programState.getHeap()));
         }

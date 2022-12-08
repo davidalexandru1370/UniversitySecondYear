@@ -1,5 +1,6 @@
 package Model;
 
+import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IHeap;
 import Model.ADT.Interfaces.IList;
@@ -78,6 +79,14 @@ public class ProgramState {
 
     public boolean isNotCompleted(){
         return exeStack.size() != 0;
+    }
+
+    public ProgramState oneStep() throws InterpreterException {
+        if (isNotCompleted()){
+            throw new InterpreterException("Execution stack is empty!");
+        }
+        IStatement topStatement = exeStack.getTop();
+        return topStatement.execute(this);
     }
 
     @Override

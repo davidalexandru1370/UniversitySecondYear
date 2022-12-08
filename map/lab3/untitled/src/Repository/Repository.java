@@ -4,6 +4,7 @@ import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
 import Model.ProgramState;
 import Repository.Interfaces.IRepository;
+import Utilities.Programs;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -27,6 +28,12 @@ public class Repository implements IRepository {
 
     @Override
     public void logProgramStateExecution(String state) throws InterpreterException, IOException {
+        PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
+        logFile.println(state);
+        logFile.close();
+    }
+
+    public void logProgramStateExecution(ProgramState state) throws IOException {
         PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
         logFile.println(state);
         logFile.close();
