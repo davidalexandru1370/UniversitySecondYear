@@ -10,6 +10,10 @@ import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 
 import java.io.BufferedReader;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class ProgramState {
     private IStack<IStatement> exeStack;
@@ -17,6 +21,7 @@ public class ProgramState {
     private IList<IValue> out;
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
+    private static Map<Integer,Boolean> ids = new HashMap<>();
     private static int id;
 
     public ProgramState(IStack<IStatement> exeStack,
@@ -30,6 +35,7 @@ public class ProgramState {
         this.out = out;
         this.outFiles = outFiles;
         this.heap = heap;
+        this.id=generateId();
         exeStack.push(program);
     }
 
@@ -82,11 +88,21 @@ public class ProgramState {
     }
 
     public ProgramState oneStep() throws InterpreterException {
-        if (isNotCompleted()){
+        if (!isNotCompleted()){
             throw new InterpreterException("Execution stack is empty!");
         }
         IStatement topStatement = exeStack.getTop();
         return topStatement.execute(this);
+    }
+
+    private synchronized Integer generateId(){
+        Random random = new Random();
+        Integer generatedId = 0;
+        while(ids.containsKey(generatedId)){
+            generatedId = random.nextInt(0,(int)1e30);
+        }
+        ids.put(generatedId,true);
+        return generatedId;
     }
 
     @Override

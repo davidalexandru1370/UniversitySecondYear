@@ -29,13 +29,8 @@ public class RunExample extends Command{
                 controller.add(statement);
             }
 
-            if(controller.isOneStepRunning()){
-                controller.oneStep(controller.getCurrentProgram());
-            }
-            else{
-                controller.allStep();
-            }
-        } catch (InterpreterException | IOException interpreterException) {
+            controller.executeProgram();
+        } catch (InterpreterException | IOException | InterruptedException interpreterException) {
             throw new InterpreterException(interpreterException.getMessage());
         }
     }

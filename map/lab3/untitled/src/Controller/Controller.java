@@ -21,10 +21,7 @@ import Repository.Interfaces.IRepository;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class Controller {
@@ -62,7 +59,16 @@ public class Controller {
                 .collect(Collectors.toList());
     }
 
-    private void oneStepForAllPrograms(List<ProgramState> programStates){
+    public void executeProgram() throws IOException, InterruptedException {
+        if (isOneStepRunning){
+
+        }
+        else{
+            allStep();
+        }
+    }
+
+    private void oneStepForAllPrograms(List<ProgramState> programStates) throws InterpreterException, InterruptedException {
         programStates.forEach(p -> {
             try {
                 repository.logProgramStateExecution(p);
@@ -70,10 +76,46 @@ public class Controller {
                 throw new RuntimeException(e);
             }
         });
-        List<Callable<ProgramState>> callables = programStates.stream()
-                .map((ProgramState p) -> {
-                    return p.oneStep();
-                })
+        List<Callable<ProgramState>> callables = null;
+        List<ProgramState> newProgramStateList;
+        try {
+            callables = programStates.stream()
+                    .map((ProgramState p) -> {
+                        try {
+                            return (Callable<ProgramState>) p.oneStep();
+                        } catch (InterpreterException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                    }).toList();
+
+            newProgramStateList = executorService.invokeAll(callables)
+                    .stream()
+                    .map(future -> {
+                        try {
+                            return future.get();
+                        } catch (InterruptedException | ExecutionException e) {
+                            logger(e.getMessage());
+                            System.exit(1);
+                            return null;
+                        }
+                    })
+                    .filter(p -> p != null)
+                    .toList();
+        } catch (InterpreterException | InterruptedException interpreterException) {
+            throw interpreterException;
+        }
+
+        programStates.forEach(p -> {
+            try {
+                repository.logProgramStateExecution(p);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        repository.setProgramStateList(newProgramStateList);
+
     }
 
     private Map<Integer,IValue> unsafeGarbageCollector(Set<Integer> symbolTableAddresses, IHeap heap){
@@ -135,16 +177,21 @@ public class Controller {
         return repository.getCurrentProgram();
     }
 
-    public void allStep() throws InterpreterException, IOException {
+    public void allStep() throws InterpreterException, IOException, InterruptedException {
         ProgramState programState = repository.getCurrentProgram();
-        while (programState.getExeStack().size() > 0){
+        executorService = Executors.newFixedThreadPool(2);
+        List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStateList());
+        while (programStateList.size() > 0){
             //oneStep(programState);
-            programState.oneStep();
-            programState.getHeap().setContent(unsafeGarbageCollector(
-                    getAddressesFromSymbolTable(programState.getSymbolTable().getContent(),programState.getHeap()),programState.getHeap()));
-        }
-        repository.pop();
+            //programState.oneStep();
+           // programState.getHeap().setContent(unsafeGarbageCollector(
+            //        getAddressesFromSymbolTable(programState.getSymbolTable().getContent(),programState.getHeap()),programState.getHeap()));
+            oneStepForAllPrograms(programStateList);
 
+            programStateList = removeCompletedPrograms(repository.getProgramStateList());
+        }
+        executorService.shutdown();
+        repository.setProgramStateList(programStateList);
     }
 
     public void setLoggerFilePath(String path){
