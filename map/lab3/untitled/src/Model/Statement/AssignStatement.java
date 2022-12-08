@@ -39,7 +39,7 @@ public class AssignStatement implements IStatement {
             throw new InterpreterException(String.format("Variable %s is not defined",id));
         }
 
-        return state;
+        return null;
     }
 
     @Override

@@ -23,7 +23,7 @@ public class VariableDeclarationStatement implements IStatement {
             throw new InterpreterException(String.format("Variable %s already defined!\n",name));
         }
         symbolTable.insert(name,type.getDefault());
-        return state;
+        return null;
     }
 
     @Override

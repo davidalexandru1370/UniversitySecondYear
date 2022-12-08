@@ -16,7 +16,6 @@ public class ProgramState {
     private IList<IValue> out;
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
-
     private static int id;
 
     public ProgramState(IStack<IStatement> exeStack,

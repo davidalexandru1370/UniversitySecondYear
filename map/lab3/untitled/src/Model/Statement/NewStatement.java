@@ -48,7 +48,7 @@ public class NewStatement implements IStatement {
         Integer newPosition = heap.add(evaluatedValue);
         symbolTable.insert(variableName,new ReferenceValue(newPosition,locationType));
 
-        return state;
+        return null;
     }
 
     @Override
