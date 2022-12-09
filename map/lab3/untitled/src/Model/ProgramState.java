@@ -35,7 +35,7 @@ public class ProgramState {
         this.out = out;
         this.outFiles = outFiles;
         this.heap = heap;
-        this.id=generateId();
+        this.id = generateId();
         exeStack.push(program);
     }
 
@@ -102,7 +102,7 @@ public class ProgramState {
         do {
             generatedId = random.nextInt(0, (int) 1e30);
         }
-        while(!ids.containsKey(generatedId));
+        while(ids.containsKey(generatedId));
 
             ids.put(generatedId,true);
         return generatedId;
