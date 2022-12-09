@@ -54,12 +54,20 @@ public class Main {
                 Programs.program9()
         );
 
+        Command example10 = new RunExample(
+                "10",
+                "Press 10 to run example 10\n" + Examples.example10(),
+                controller,
+                Programs.program10()
+        );
+
         Command exitCommand = ExitCommand.getInstance(
-                "11",
-                "Press 11 to exit");
+                "12",
+                "Press 12 to exit");
 
         UI console = new UI(controller);
         console.addCommand(exitCommand);
+        console.addCommand(example10);
         console.addCommand(example9);
         console.addCommand(example8);
         console.addCommand(example7);

@@ -1,9 +1,0 @@
-Exe Stack:
-VariableDeclarationStatement{name='v', type=RefType{inner=int}}
-Symbol Table:
- v = Model.Value.ReferenceValue@5cb0d902
-
-Out:
- No output.
-File table: 
-

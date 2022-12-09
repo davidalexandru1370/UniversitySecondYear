@@ -107,4 +107,16 @@ public class Examples {
                 print(ReadHeapOperation(ReadHeapOperation(a)));
                 """;
     }
+
+    public static String example10(){
+        return """
+                int v;
+                Ref int a;
+                v = 10;
+                new(a,22);
+                fork(writeHeapOperation(a,30); v = 32; print(v); print(readHeapOperation(a)));
+                print(v);
+                print(readHeapOperation(a));
+                """;
+    }
 }

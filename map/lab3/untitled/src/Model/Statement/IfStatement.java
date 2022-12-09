@@ -31,7 +31,7 @@ public class IfStatement implements IStatement {
             else{
                 state.getExeStack().push(elseStatement);
             }
-            return state;
+            return null;
         }
         throw new InterpreterException("Invalid if statement");
     }

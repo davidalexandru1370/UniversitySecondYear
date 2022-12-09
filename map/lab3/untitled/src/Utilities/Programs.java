@@ -137,6 +137,19 @@ public class Programs {
                 new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(30))),
                 new PrintStatement(new HeapReadingExpression(new HeapReadingExpression(new VariableExpression("a")))))))));
     }
+
+    public static IStatement program10(){
+        return new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
+                new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new IntType())),
+                        new CompoundStatement(new NewStatement("a",new ValueExpression(new IntValue(22))),
+                             new CompoundStatement(new ForkStatement(new CompoundStatement(new HeapWrittingStatement("a",new ValueExpression(new IntValue(30))),
+                                        new CompoundStatement(new AssignStatement("v",new ValueExpression(new IntValue(32))),
+                                                new CompoundStatement(new PrintStatement(new VariableExpression("v")),
+                                                new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))))),
+                                        new CompoundStatement(new PrintStatement(new VariableExpression("v")),
+                                                new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))))));
+
+    }
 }
 
 

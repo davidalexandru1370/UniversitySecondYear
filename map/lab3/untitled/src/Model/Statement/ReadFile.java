@@ -58,7 +58,7 @@ public class ReadFile implements IStatement {
             throw new InterpreterException(ioException.getMessage());
         }
 
-        return state;
+        return null;
     }
 
     @Override

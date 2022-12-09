@@ -8,8 +8,8 @@ public interface IDictionary<Key,Elem> {
     void pop(Key key);
     boolean isDefined (Key key);
     Elem get(Key key);
-
     Set getKeys();
-
     List<Elem> getContent();
+
+    IDictionary<Key,Elem> clone();
 }

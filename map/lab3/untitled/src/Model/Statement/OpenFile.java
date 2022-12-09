@@ -44,7 +44,7 @@ public class OpenFile implements IStatement {
         }
 
         fileTable.insert(fileName.getValue(),bufferedReader);
-        return state;
+        return null;
     }
 
     @Override

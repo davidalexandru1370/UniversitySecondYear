@@ -4,6 +4,7 @@ import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
 import Model.ProgramState;
 import Repository.Interfaces.IRepository;
+import Utilities.Programs;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -32,6 +33,12 @@ public class Repository implements IRepository {
         logFile.close();
     }
 
+    public void logProgramStateExecution(ProgramState state) throws IOException {
+        PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
+        logFile.println(state);
+        logFile.close();
+    }
+
     @Override
     public void pop() throws RepositoryException{
         if(programs.size() == 0){
@@ -43,6 +50,16 @@ public class Repository implements IRepository {
     @Override
     public void changeLoggerFilePath(String path) {
         logFilePath = path;
+    }
+
+    @Override
+    public List<ProgramState> getProgramStateList() {
+        return programs;
+    }
+
+    @Override
+    public void setProgramStateList(List<ProgramState> programStates) {
+        programs = programStates;
     }
 
     @Override

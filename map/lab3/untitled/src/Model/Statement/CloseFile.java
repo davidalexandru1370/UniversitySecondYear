@@ -43,7 +43,7 @@ public class CloseFile implements IStatement {
         catch (IOException ioException){
             throw new InterpreterException(ioException.getMessage());
         }
-        return state;
+        return null;
     }
 
     @Override

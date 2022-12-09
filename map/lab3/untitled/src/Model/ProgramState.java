@@ -1,5 +1,6 @@
 package Model;
 
+import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IHeap;
 import Model.ADT.Interfaces.IList;
@@ -9,6 +10,10 @@ import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 
 import java.io.BufferedReader;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class ProgramState {
     private IStack<IStatement> exeStack;
@@ -16,6 +21,8 @@ public class ProgramState {
     private IList<IValue> out;
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
+    private static Map<Integer,Boolean> ids = new HashMap<>();
+    private static int id;
 
     public ProgramState(IStack<IStatement> exeStack,
                         IDictionary<String, IValue> symbolTable,
@@ -28,6 +35,7 @@ public class ProgramState {
         this.out = out;
         this.outFiles = outFiles;
         this.heap = heap;
+        this.id=generateId();
         exeStack.push(program);
     }
 
@@ -67,17 +75,52 @@ public class ProgramState {
         this.out = out;
     }
 
+    public static synchronized int getId() {
+        return id;
+    }
+
+    public static synchronized void setId(int id) {
+        ProgramState.id = id;
+    }
+
+    public boolean isNotCompleted(){
+        return exeStack.size() != 0;
+    }
+
+    public ProgramState oneStep() throws InterpreterException {
+        if (!isNotCompleted()){
+            throw new InterpreterException("Execution stack is empty!");
+        }
+
+        IStatement topStatement = exeStack.pop();
+        return topStatement.execute(this);
+    }
+
+    private synchronized Integer generateId(){
+        Random random = new Random();
+        Integer generatedId;
+        do {
+            generatedId = random.nextInt(0, (int) 1e30);
+        }
+        while(!ids.containsKey(generatedId));
+
+            ids.put(generatedId,true);
+        return generatedId;
+    }
+
     @Override
     public String toString() {
-        return "Execution stack:\n " + exeStack.toString() + "\n" +
+        return  "Id:" + id + "\n" +
+                "Execution stack:\n " + exeStack.toString() + "\n" +
                 "Symbol table:\n" + symbolTable.toString() + "\n" +
                 "Out:\n" + out.toString() + "\n" +
-                "File table:\n" + fileTableToString() +
-                "Heap: \n" + heapToString();
+                fileTableToString() +
+                heapToString();
     }
 
     public String currentStateToString() {
-        return "Execution stack:\n" + (exeStack.size() > 0 ? (exeStack.getTop() instanceof CompoundStatement ?
+        return  "Id:" + id + "\n" +
+                "Execution stack:\n" + (exeStack.size() > 0 ? (exeStack.getTop() instanceof CompoundStatement ?
                 ((CompoundStatement) exeStack.getTop()).getFirst() : exeStack.getTop())
                 : "Empty stack") + "\n" +
                 "Symbol Table:\n " + symbolTable.toString() + "\n" +
@@ -109,15 +152,5 @@ public class ProgramState {
 
     public String heapToString(){
         return "Heap: " + heap.toString();
-    }
-
-    public String inorderTraversal(){
-        StringBuilder traversal = new StringBuilder();
-        IStatement iterator = exeStack.getTop();
-        while(iterator instanceof CompoundStatement){
-            traversal.append(((CompoundStatement) iterator).getFirst()).append(" \n");
-            iterator=((CompoundStatement) iterator).getSecond();
-        }
-        return traversal.toString();
     }
 }
