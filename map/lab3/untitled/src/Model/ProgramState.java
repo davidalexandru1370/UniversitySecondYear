@@ -124,6 +124,7 @@ public class ProgramState {
                 ((CompoundStatement) exeStack.getTop()).getFirst() : exeStack.getTop())
                 : "Empty stack") + "\n" +
                 "Symbol Table:\n " + symbolTable.toString() + "\n" +
+                heapToString() +
                 "Out:\n " + out.toString() + "\n"
                 + fileTableToString();
 

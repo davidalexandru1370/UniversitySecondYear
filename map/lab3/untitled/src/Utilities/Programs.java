@@ -140,6 +140,7 @@ public class Programs {
 
     public static IStatement program10(){
         return new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
+                new CompoundStatement(new AssignStatement("v",new ValueExpression(new IntValue(10))),
                 new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new IntType())),
                         new CompoundStatement(new NewStatement("a",new ValueExpression(new IntValue(22))),
                              new CompoundStatement(new ForkStatement(new CompoundStatement(new HeapWrittingStatement("a",new ValueExpression(new IntValue(30))),
@@ -147,7 +148,7 @@ public class Programs {
                                                 new CompoundStatement(new PrintStatement(new VariableExpression("v")),
                                                 new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))))),
                                         new CompoundStatement(new PrintStatement(new VariableExpression("v")),
-                                                new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))))));
+                                                new PrintStatement(new HeapReadingExpression(new VariableExpression("a")))))))));
 
     }
 }
