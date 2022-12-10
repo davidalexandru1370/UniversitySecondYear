@@ -66,15 +66,15 @@ create or alter procedure insertIntoTests(@testName varchar(50)) as
 
 
 
-create or alter procedure insertIntoTestTables(@testId int, @tableId int, @noOfRows int, @position int) as
+create or alter procedure insertIntoTestTables(@testName varchar(50), @tableName varchar(50), @noOfRows int, @position int) as
 	begin 
-		if @testId not in (Select TestId from Tests) begin
-			print CONCAT('Does not exists a test with id = ', @testId);
+		if @testName not in (Select Name from Tests) begin
+			print CONCAT('Does not exists a test with name = ', @testName);
 			return
 		end
 
-		if @tableId not in (Select TableId from Tables) begin
-			print CONCAT('Does not exists a table with id = ', @tableId);
+		if @tableName not in (Select Name from Tables) begin
+			print CONCAT('Does not exists a table with name = ', @tableName);
 			return
 		end
 
@@ -84,7 +84,18 @@ create or alter procedure insertIntoTestTables(@testId int, @tableId int, @noOfR
 		end
 
 		if @position < 0 begin
-			print CONCAT(@position, 'can not be negative!');
+			print CONCAT(@position, ' can not be negative!');
 			return;
 		end
+
+		if exists(
+			select * from TestTables testTables 
+			inner join Tests tests on testTables.TableID=tests.TestID
+			WHERE tests.Name = @testName and testTables.Position = @position
+		)
+
+		declare @testId int = (Select TestId from Tests where Name = @testName);
+		declare @tableId int= (Select TableId from Tables where Name = @tableName);
+
+		Insert into TestTables(TestId, TableID,NoOfRows,Position) values(@testId,@tableId,@noOfRows,@position);
 	end
