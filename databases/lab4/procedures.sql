@@ -63,3 +63,28 @@ create or alter procedure insertIntoTests(@testName varchar(50)) as
 
 		Insert into Tests(Name) values(@testName)
 	end
+
+
+
+create or alter procedure insertIntoTestTables(@testId int, @tableId int, @noOfRows int, @position int) as
+	begin 
+		if @testId not in (Select TestId from Tests) begin
+			print CONCAT('Does not exists a test with id = ', @testId);
+			return
+		end
+
+		if @tableId not in (Select TableId from Tables) begin
+			print CONCAT('Does not exists a table with id = ', @tableId);
+			return
+		end
+
+		if @noOfRows < 0 begin
+			print CONCAT(@noOfRows, ' can not be negative!');
+			return;
+		end
+
+		if @position < 0 begin
+			print CONCAT(@position, 'can not be negative!');
+			return;
+		end
+	end
