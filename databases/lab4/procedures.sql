@@ -54,3 +54,12 @@ create or alter procedure insertIntoViews (@viewName varchar(50)) as
 		Insert into Views(Name) values (@viewName);
 	end
 
+create or alter procedure insertIntoTests(@testName varchar(50)) as
+	begin
+		if @testName in (SELECT Name from Tests) begin
+			print CONCAT(@testName, ' test already present in Tests');
+			return;
+		end
+
+		Insert into Tests(Name) values(@testName)
+	end
