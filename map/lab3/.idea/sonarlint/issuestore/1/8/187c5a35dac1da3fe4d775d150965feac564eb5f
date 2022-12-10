@@ -1,0 +1,20 @@
+
+9
+java:S1643•"Use a StringBuilder instead.(ø›ž'8—¡ã¼Ï0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“
+;
+java:S3010&"Remove this assignment of "id".(óË !8Ï¡ã¼Ï0
+Q
+java:S2209&"5Change this instance-reference to a static reference.(óË !8Ñ¡ã¼Ï0
+:
+java:S2119d"Save and re-use this "Random".(¼ÝÅf8å¡ã¼Ï0
+a
+java:S3358{"DExtract this nested ternary operation into an independent statement.(í¹«÷8ë¡ã¼Ï0
+y
+java:S6201{"\Replace this instanceof check and cast with 'instanceof CompoundStatement compoundstatement'(í¹«÷8í¡ã¼Ï0
+b
+java:S3358†"DExtract this nested ternary operation into an independent statement.(ãÉÆÚ8ð¡ã¼Ï0
+z
+java:S6201†"\Replace this instanceof check and cast with 'instanceof CompoundStatement compoundstatement'(ãÉÆÚ8ò¡ã¼Ï0
+N
+java:S1128"1Remove this unused import 'java.util.Dictionary'.(¸Ûãó8›ÀÂ½Ï0

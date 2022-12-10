@@ -1,0 +1,14 @@
+
+)
+java:S1700"Rename field "heap"(†õø
+P
+java:S1191"5Use classes from the Java API instead of Sun classes.(ñ»ò—şÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÕª”
+3
+java:S2119"Save and re-use this "Random".(¼İÅf
+O
+java:S2864M"4Iterate over the "entrySet" instead of the "keySet".(Øâ‹ªùÿÿÿÿ
+l
+java:S3457O"Q%n should be used in place of \n to produce the platform-specific line separator.(šÃ¨²úÿÿÿÿ
+I
+java:S1128".Remove this unused import 'com.sun.jdi.Value'.(ñ»ò—şÿÿÿÿ
