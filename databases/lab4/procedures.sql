@@ -10,6 +10,7 @@
 --TestRuns – contains data about different test runs;
 use DrivingExams21;
 exec sp_databases;
+
 SELECT * from INFORMATION_SCHEMA.TABLES
 
 create or alter procedure insertInTables (@tableName varchar(50)) as
@@ -33,7 +34,23 @@ create or alter procedure insertInTables (@tableName varchar(50)) as
 --a table with a multicolumn primary key,
 
 
-Select * from Tables
 execute insertInTables Instructors
 execute insertInTables Vehicles
 execute insertInTables InstructorsDrivingLicenses
+
+SELECT * from INFORMATION_SCHEMA.VIEWS;
+
+create or alter procedure insertIntoViews (@viewName varchar(50)) as
+	begin
+		if @viewName in (SELECT Name from Views) begin
+			print CONCAT(@viewName, ' view already present in Views');
+			return;
+		end
+
+		if @viewName not in (SELECT TABLE_NAME from INFORMATION_SCHEMA.VIEWS) begin
+			print CONCAT(@viewName, ' does not exists!');
+			return;
+		end
+		Insert into Views(Name) values (@viewName);
+	end
+
