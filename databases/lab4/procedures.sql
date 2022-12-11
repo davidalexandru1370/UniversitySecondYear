@@ -65,7 +65,6 @@ create or alter procedure insertIntoTests(@testName varchar(50)) as
 	end
 
 
-
 create or alter procedure insertIntoTestTables(@testName varchar(50), @tableName varchar(50), @noOfRows int, @position int) as
 	begin 
 		if @testName not in (Select Name from Tests) begin
@@ -95,7 +94,28 @@ create or alter procedure insertIntoTestTables(@testName varchar(50), @tableName
 		)
 
 		declare @testId int = (Select TestId from Tests where Name = @testName);
-		declare @tableId int= (Select TableId from Tables where Name = @tableName);
+		declare @tableId int = (Select TableId from Tables where Name = @tableName);
 
 		Insert into TestTables(TestId, TableID,NoOfRows,Position) values(@testId,@tableId,@noOfRows,@position);
+
+
+	end
+
+
+create or alter procedure insertIntoTestViews(@testName varchar(50), @viewName varchar(50)) as
+	begin
+		if not exists(Select Name from Tests where Name=@testName) begin
+			print CONCAT(@testName, ' does not exists!');
+			return;
+		end
+		if not exists(Select Name from Views where Name=@viewName) begin
+			print CONCAT(@viewName, 'does not exists!')
+			return;
+		end;
+
+
+		Insert Into TestViews(TestID,ViewID) values (
+		(Select TestID from Tests where Name=@testName),
+		(Select ViewId from Views where Name=@viewName)
+		)
 	end
