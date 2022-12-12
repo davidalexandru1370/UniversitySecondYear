@@ -11,6 +11,17 @@
 use DrivingExams21;
 exec sp_databases;
 
+create or alter procedure selectView (@view varchar(100)) as
+	begin
+		if not exists(Select Views.ViewID from Views where Name=@view) begin
+			print CONCAT('View with name = ',@view,' does not exists!');
+			return;
+		end
+		
+		declare @command varchar(100)= CONCAT('SELECT * from ', @view);
+		execute (@command);
+	end
+
 create or alter procedure insertInTables (@tableName varchar(50)) as
 	begin
 		if @tableName in (SELECT Name from Tables) begin
@@ -87,13 +98,11 @@ create or alter procedure insertIntoTestTables(@testName varchar(100), @tableNam
 
 		if exists(
 			select * from TestTables testTables 
-			inner join Tests tests on testTables.TableID=tests.TestID
+			inner join Tests tests on testTables.TestID=tests.TestID
 			WHERE tests.Name = @testName and testTables.Position = @position
 		)
-
 		declare @testId int = (Select TestId from Tests where Name = @testName);
 		declare @tableId int = (Select TableId from Tables where Name = @tableName);
-
 		Insert into TestTables(TestId, TableID,NoOfRows,Position) values(@testId,@tableId,@noOfRows,@position);
 
 
@@ -150,22 +159,20 @@ create or alter procedure runAllTests as
 			order by T2.Position
 
 		declare viewsCursor cursor for
-			Select V.ViewID ,(SELECT T.Name from Tests T where T.TestID = TV.ViewID) as TestViewName
-			from Views V
-			inner join TestViews TV on V.ViewId = TV.ViewId
+			Select V.Name from Views V
 		
 		set @testStartingTime = sysdatetime();
 		
 			--delete
 			open tablesCursor 
-			fetch last from tableCursor into @table, @numberOfRows, @position, @currentRunningTestName
+			fetch last from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName
 			while @@FETCH_STATUS = 0 begin
-				if @currentRunningTestName like '%delete'  begin
+				if @currentRunningTestName like 'delete%'  begin
 					print CONCAT('Running ', @currentRunningTestName);
 					execute @currentRunningTestName
 					print CONCAT('Finished running test ', @currentRunningTestName);
 				end
-				fetch prior from tableCursor into @table, @numberOfRows, @position, @currentRunningTestName
+				fetch prior from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName
 			end
 
 			close tablesCursor
@@ -174,10 +181,10 @@ create or alter procedure runAllTests as
 			--insert
 
 			SET IDENTITY_INSERT TestRuns ON
-			INSERT INTO TestRuns(TestRunID,Description, StartAt) values(@currentRunningTestId,'',@testStartingTime);
+			INSERT INTO TestRuns(TestRunID,Description, StartAt) values(@currentRunningTestId,'Test',@testStartingTime);
 			SET IDENTITY_INSERT TestRuns OFF
 			
-			fetch first from tableCursor into @table, @numberOfRows, @position, @currentRunningTestName
+			fetch first from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName
 			
 			while @@FETCH_STATUS = 0 begin
 				if @currentRunningTestName like 'insert%' begin
@@ -185,8 +192,9 @@ create or alter procedure runAllTests as
 					execute @currentRunningTestName @numberOfRows
 					set @individualTestEndingTime = SYSDATETIME();
 					INSERT INTO TestRunTables(TestRunID,TableID,StartAt,EndAt) values(@currentRunningTestId,(SELECT Tables.TableID from Tables where Tables.Name=@table),@individualTestStartingTime,@individualTestEndingTime);
-					fetch next from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName; 
 				end
+					fetch next from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName; 
+
 			end
 
 			close tablesCursor;
@@ -195,18 +203,18 @@ create or alter procedure runAllTests as
 			--view
 			open viewsCursor
 			
-			fetch first from viewCursor into @viewId, @view;
+			fetch NEXT from viewsCursor into @view;
 
 			while @@FETCH_STATUS = 0 begin
 				set @individualTestStartingTime = SYSDATETIME();
-				exec (@view)
+				execute	selectView @view;
 				set @individualTestEndingTime = SYSDATETIME();
-				INSERT INTO TestRunViews(TestRunID,ViewID,StartAt,EndAt) values (@currentRunningTestId,@viewId,@individualTestStartingTime,@individualTestEndingTime);
-				fetch next from viewCursor into @viewId, @view;
+				INSERT INTO TestRunViews(TestRunID,ViewID,StartAt,EndAt) values (@currentRunningTestId,(Select Views.ViewID from Views where Name = @view),@individualTestStartingTime,@individualTestEndingTime);
+				fetch next from viewsCursor into @view;
 			end
 
-			close viewCursor;
-			deallocate viewCursor;
+			close viewsCursor;
+			deallocate viewsCursor;
 
 			update TestRuns 
 			set EndAt=@individualTestEndingTime
@@ -214,6 +222,13 @@ create or alter procedure runAllTests as
 
 	end
 
-
+	go
 --iterate through all testTables and start test for each Table 
+SELECT * from TestRunTables;
+SELECT * from TestRunViews;
+SELECT * from TestRuns;
+
+DELETE FROM TestRunTables;
+DELETE FROM  TestRuns;
+DELETE FROM TestRunViews;
 
