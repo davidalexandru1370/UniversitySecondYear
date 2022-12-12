@@ -126,7 +126,6 @@ create or alter procedure runAllTests as
 			return;
 		end
 		
-		declare @command varchar(100);
 		declare @testStartingTime datetime2;
 		declare @individualTestStartingTime datetime2;
 		declare @individualTestEndingTime datetime2;
@@ -134,14 +133,15 @@ create or alter procedure runAllTests as
 		declare @numberOfRows int;
 		declare @position int;
 		declare @view varchar(100);
+		declare @viewId int;
 		--declare @testId int = (Select Tests.Name from Tests where Name=@testName);
 
 		declare @currentRunningTestId int;
 		declare @currentRunningTestName varchar(100);
 
-		set @currentRunningTestId = (Select max(TestRunId) from TestRunTables)
+		set @currentRunningTestId = (Select max(TestRunId) + 1 from TestRunTables)
 		if @currentRunningTestId is null begin
-			set @currentRunningTestId = 0
+			set @currentRunningTestId = 1
 		end
 
 		declare tablesCursor cursor scroll for
@@ -150,7 +150,7 @@ create or alter procedure runAllTests as
 			order by T2.Position
 
 		declare viewsCursor cursor for
-			Select V.Name
+			Select V.ViewID ,(SELECT T.Name from Tests T where T.TestID = TV.ViewID) as TestViewName
 			from Views V
 			inner join TestViews TV on V.ViewId = TV.ViewId
 		
@@ -193,6 +193,24 @@ create or alter procedure runAllTests as
 			deallocate tablesCursor;
 			
 			--view
+			open viewsCursor
+			
+			fetch first from viewCursor into @viewId, @view;
+
+			while @@FETCH_STATUS = 0 begin
+				set @individualTestStartingTime = SYSDATETIME();
+				exec (@view)
+				set @individualTestEndingTime = SYSDATETIME();
+				INSERT INTO TestRunViews(TestRunID,ViewID,StartAt,EndAt) values (@currentRunningTestId,@viewId,@individualTestStartingTime,@individualTestEndingTime);
+				fetch next from viewCursor into @viewId, @view;
+			end
+
+			close viewCursor;
+			deallocate viewCursor;
+
+			update TestRuns 
+			set EndAt=@individualTestEndingTime
+			where TestRunID = @currentRunningTestId
 
 	end
 
