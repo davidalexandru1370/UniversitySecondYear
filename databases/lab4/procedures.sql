@@ -161,9 +161,13 @@ create or alter procedure runAllTests as
 		declare viewsCursor cursor for
 			Select V.Name from Views V
 		
-		set @testStartingTime = sysdatetime();
 		
 			--delete
+			SET IDENTITY_INSERT TestRuns ON
+			INSERT INTO TestRuns(TestRunID,Description) values(@currentRunningTestId,'Test');
+			SET IDENTITY_INSERT TestRuns OFF
+			declare @testHasStarted bit = 0;
+
 			open tablesCursor 
 			fetch last from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName
 			while @@FETCH_STATUS = 0 begin
@@ -180,12 +184,10 @@ create or alter procedure runAllTests as
 			open tablesCursor
 			--insert
 
-			SET IDENTITY_INSERT TestRuns ON
-			INSERT INTO TestRuns(TestRunID,Description, StartAt) values(@currentRunningTestId,'Test',@testStartingTime);
-			SET IDENTITY_INSERT TestRuns OFF
+			
 			
 			fetch first from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName
-			
+			declare @hasStartedTesting bit = 0;
 			while @@FETCH_STATUS = 0 begin
 				if @currentRunningTestName like 'insert%' begin
 					set @individualTestStartingTime = SYSDATETIME();
@@ -194,7 +196,12 @@ create or alter procedure runAllTests as
 					INSERT INTO TestRunTables(TestRunID,TableID,StartAt,EndAt) values(@currentRunningTestId,(SELECT Tables.TableID from Tables where Tables.Name=@table),@individualTestStartingTime,@individualTestEndingTime);
 				end
 					fetch next from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName; 
-
+					if @hasStartedTesting = 0 begin
+						set @hasStartedTesting = 1;
+						UPDATE TestRuns 
+						SET StartAt = @individualTestStartingTime
+						WHERE TestRunID = @currentRunningTestId;
+					end
 			end
 
 			close tablesCursor;
@@ -223,12 +230,12 @@ create or alter procedure runAllTests as
 	end
 
 	go
---iterate through all testTables and start test for each Table 
+
 SELECT * from TestRunTables;
 SELECT * from TestRunViews;
 SELECT * from TestRuns;
 
-DELETE FROM TestRunTables;
-DELETE FROM  TestRuns;
-DELETE FROM TestRunViews;
+--DELETE FROM TestRunTables;
+--DELETE FROM  TestRuns;
+--DELETE FROM TestRunViews;
 

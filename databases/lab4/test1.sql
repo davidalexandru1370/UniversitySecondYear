@@ -30,6 +30,7 @@ execute insertIntoTestTables 'deleteInstructors','Instructors',100,3;
 
 SELECT * FROM TestTables;
 SELECT * FROM Instructors;
+SELECT * FROM Vehicles;
 SELECT * from Tests
 SELECT * FROM Views;
 execute runAllTests
