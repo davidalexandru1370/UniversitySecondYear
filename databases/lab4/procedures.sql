@@ -163,8 +163,9 @@ create or alter procedure runAllTests as
 		
 		
 			--delete
+			declare @dateStartTesting datetime2 = SYSDATETIME();
 			SET IDENTITY_INSERT TestRuns ON
-			INSERT INTO TestRuns(TestRunID,Description) values(@currentRunningTestId,'Test');
+			INSERT INTO TestRuns(TestRunID,Description,StartAt) values(@currentRunningTestId,'Test',@dateStartTesting);
 			SET IDENTITY_INSERT TestRuns OFF
 			declare @testHasStarted bit = 0;
 
@@ -188,18 +189,16 @@ create or alter procedure runAllTests as
 			declare @hasStartedTesting bit = 0;
 			while @@FETCH_STATUS = 0 begin
 				if @currentRunningTestName like 'insert%' begin
-					set @individualTestStartingTime = SYSDATETIME();
+					set @individualTestStartingTime = @individualTestEndingTime;
+					if @hasStartedTesting = 0 begin
+						set @individualTestStartingTime = @dateStartTesting
+					end
 					execute @currentRunningTestName @numberOfRows
 					set @individualTestEndingTime = SYSDATETIME();
 					INSERT INTO TestRunTables(TestRunID,TableID,StartAt,EndAt) values(@currentRunningTestId,(SELECT Tables.TableID from Tables where Tables.Name=@table),@individualTestStartingTime,@individualTestEndingTime);
+					set @hasStartedTesting = 1;
 				end
 					fetch next from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName; 
-					if @hasStartedTesting = 0 begin
-						set @hasStartedTesting = 1;
-						UPDATE TestRuns 
-						SET StartAt = @individualTestStartingTime
-						WHERE TestRunID = @currentRunningTestId;
-					end
 			end
 
 			close tablesCursor;
@@ -209,9 +208,8 @@ create or alter procedure runAllTests as
 			open viewsCursor
 			
 			fetch NEXT from viewsCursor into @view;
-
 			while @@FETCH_STATUS = 0 begin
-				set @individualTestStartingTime = SYSDATETIME();
+				set @individualTestStartingTime = @individualTestEndingTime;
 				execute	selectView @view;
 				set @individualTestEndingTime = SYSDATETIME();
 				INSERT INTO TestRunViews(TestRunID,ViewID,StartAt,EndAt) values (@currentRunningTestId,(Select Views.ViewID from Views where Name = @view),@individualTestStartingTime,@individualTestEndingTime);
@@ -232,10 +230,9 @@ create or alter procedure runAllTests as
 SELECT * from TestRunTables;
 SELECT * from TestRunViews;
 SELECT * from TestRuns;
-SELECT * from TestTables;
 
-
---DELETE FROM TestRunTables;
---DELETE FROM  TestRuns;
---DELETE FROM TestRunViews;
+execute runAllTests;
+DELETE FROM TestRunTables;
+DELETE FROM  TestRuns;
+DELETE FROM TestRunViews;
 
