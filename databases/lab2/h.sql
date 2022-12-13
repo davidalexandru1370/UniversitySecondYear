@@ -4,7 +4,8 @@
 --COUNT, SUM, AVG, MIN, MAX;
 use DrivingExams21;
 -- get all vehicles of a instructors
-SELECT  V.InstructorCNP,COUNT(V.InstructorCNP) as 'Total Cars' from Vehicles V GROUP BY V.InstructorCNP order by COUNT(V.InstructorCNP) DESC
+SELECT  V.InstructorCNP,COUNT(V.InstructorCNP) as 'Total Cars'
+from Vehicles V GROUP BY V.InstructorCNP order by COUNT(V.InstructorCNP) DESC
 
 --get the instructors with greater or equal students than 2
 SELECT S.InstructorCNP from Students S GROUP BY S.InstructorCNP having count(S.InstructorCNP) >= 2
