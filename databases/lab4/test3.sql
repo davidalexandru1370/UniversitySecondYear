@@ -17,19 +17,37 @@ create or alter procedure insertInstructorsDrivingLicenses(@numberOfRows int) as
 			set @numberOfInstructors = @numberOfInstructors + 1;
 		end
 
-		while @numberOfRows > 0 begin
-			declare categoriesCursor cursor scroll for
-				Select Category From Categories;
-			declare @category varchar(100);
-			open categoriesCursor
-			fetch next from categoriesCursor into @category;
-			while @@FETCH_STATUS = 0 and @numberOfRows > 0 begin
-				INSERT INTO InstructorsDrivingLicenses(CNP,Category) values (,)
-				fetch next from categoriesCursor into @category;
-				set @numberOfRows = @numberOfRows - 1;
-			end
+		declare InstructorsAndCategoriesCrossJoinCursor cursor scroll for
+			SELECT CNP, C.Category from Instructors as I
+			CROSS JOIN Categories as C
+			Where I.CNP like 'Test%';
+
+		declare @instructorCNP varchar(100);
+		declare @category varchar(100);
+		open InstructorsAndCategoriesCrossJoinCursor;
+		fetch first from InstructorsAndCategoriesCrossJoinCursor into @instructorCNP, @category
+		while @numberOfRows > 0 and @@FETCH_STATUS > 0 begin
+			INSERT INTO InstructorsDrivingLicenses(CNP,Category) values(@instructorCNP,@category);
+			set @numberOfRows = @numberOfRows - 1;
+		fetch next from InstructorsAndCategoriesCrossJoinCursor into @instructorCNP, @category
 		end
+		close InstructorsAndCategoriesCrossJoinCursor;
+		deallocate InstructorsAndCategoriesCrossJoinCursor;
 	end
 
 
+create or alter procedure deleteInstructorDrivingLicenses as
+	begin
+		DELETE from InstructorsDrivingLicenses where CNP like 'Test%';	
+	end
 	
+
+SELECT * FROM TABLES;
+execute insertInTables 'InstructorsDrivingLicenses';
+execute insertIntoViews 'viewInstructorDrivingLicenses';
+execute insertIntoTests 'insertInstructorsDrivingLicenses';
+execute insertIntoTests 'deleteInstructorDrivingLicenses';
+execute insertIntoTestTables 'insertInstructorsDrivingLicenses', 'InstructorsDrivingLicenses',1000,1
+execute insertIntoTestTables 'deleteInstructorDrivingLicenses', 'InstructorsDrivingLicenses', 1000,3
+
+execute runAllTests;
