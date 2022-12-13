@@ -183,8 +183,6 @@ create or alter procedure runAllTests as
 
 			open tablesCursor
 			--insert
-
-			
 			
 			fetch first from tablesCursor into @table, @numberOfRows, @position, @currentRunningTestName
 			declare @hasStartedTesting bit = 0;
@@ -234,6 +232,8 @@ create or alter procedure runAllTests as
 SELECT * from TestRunTables;
 SELECT * from TestRunViews;
 SELECT * from TestRuns;
+SELECT * from TestTables;
+
 
 --DELETE FROM TestRunTables;
 --DELETE FROM  TestRuns;

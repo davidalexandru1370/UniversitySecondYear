@@ -9,10 +9,10 @@ create or alter view viewInstructorDrivingLicenses as
 create or alter procedure insertInstructorsDrivingLicenses(@numberOfRows int) as 
 	begin
 		--make sure we have enough data to insert
-		declare @numberOfInstructors int = (SELECT COUNT(*) from Instructors);
+		declare @numberOfInstructors int = (SELECT COUNT(*) from Instructors WHERE CNP like 'Test%');
 		declare @numberOfCategories int  = (SELECT COUNT(*) from Categories);
 
-		while @numberOfRows > @numberOfCategories * @numberOfInstructors begin
+		while @numberOfRows > (@numberOfCategories * @numberOfInstructors) begin
 			INSERT into Instructors(CNP,Name) values(CONCAT('Test',@numberOfInstructors + 1),'Test');
 			set @numberOfInstructors = @numberOfInstructors + 1;
 		end
@@ -21,15 +21,14 @@ create or alter procedure insertInstructorsDrivingLicenses(@numberOfRows int) as
 			SELECT CNP, C.Category from Instructors as I
 			CROSS JOIN Categories as C
 			Where I.CNP like 'Test%';
-
 		declare @instructorCNP varchar(100);
 		declare @category varchar(100);
 		open InstructorsAndCategoriesCrossJoinCursor;
-		fetch first from InstructorsAndCategoriesCrossJoinCursor into @instructorCNP, @category
-		while @numberOfRows > 0 and @@FETCH_STATUS > 0 begin
+		fetch NEXT from InstructorsAndCategoriesCrossJoinCursor into @instructorCNP, @category
+		while (@numberOfRows > 0 and @@FETCH_STATUS = 0) begin
 			INSERT INTO InstructorsDrivingLicenses(CNP,Category) values(@instructorCNP,@category);
 			set @numberOfRows = @numberOfRows - 1;
-		fetch next from InstructorsAndCategoriesCrossJoinCursor into @instructorCNP, @category
+			fetch next from InstructorsAndCategoriesCrossJoinCursor into @instructorCNP, @category
 		end
 		close InstructorsAndCategoriesCrossJoinCursor;
 		deallocate InstructorsAndCategoriesCrossJoinCursor;
