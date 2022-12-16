@@ -42,6 +42,15 @@ public class AssignStatement implements IStatement {
         return null;
     }
 
+//    @Override
+//    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+//        if(!typeEnviroment.get(id).equals(expression.typeCheck(typeEnviroment)))
+//        {
+//            throw new InterpreterException("invalid assign");
+//        }
+//        return typeEnviroment;
+//    }
+
     @Override
     public String toString() {
         return "AssignStatement{" +

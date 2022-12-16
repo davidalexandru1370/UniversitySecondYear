@@ -5,6 +5,7 @@ import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IHeap;
 import Model.Expression.Interfaces.IExpression;
 import Model.Value.Interfaces.IValue;
+import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class VariableExpression  implements IExpression {
     private String key;
@@ -16,6 +17,11 @@ public class VariableExpression  implements IExpression {
     @Override
     public IValue evaluate(IDictionary<String, IValue> expression, IHeap heap) throws InterpreterException {
         return expression.get(key);
+    }
+
+    @Override
+    public IVariableType typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        return typeEnviroment.get(key);
     }
 
     @Override

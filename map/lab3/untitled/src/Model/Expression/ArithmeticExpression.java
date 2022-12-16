@@ -9,6 +9,7 @@ import Model.Expression.Interfaces.IExpression;
 import Model.Value.IntValue;
 import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.IntType;
+import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class ArithmeticExpression implements IExpression {
     private final IExpression expression1;
@@ -54,6 +55,20 @@ public class ArithmeticExpression implements IExpression {
             }
         }
         throw new OperandException("First operand is not integer!");
+    }
+
+    @Override
+    public IVariableType typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+            IVariableType type1, type2;
+            type1 = expression1.typeCheck(typeEnviroment);
+            type2 = expression2.typeCheck(typeEnviroment);
+            if (!(type1 instanceof IntType)){
+                throw new InterpreterException("left operator is not int");
+            }
+            if(!(type2  instanceof  IntType)){
+                throw new InterpreterException("right operator is not int");
+            }
+            return new IntType();
     }
 
     @Override

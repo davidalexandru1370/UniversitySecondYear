@@ -232,7 +232,7 @@ SELECT * from TestRunViews;
 SELECT * from TestRuns;
 
 execute runAllTests;
-DELETE FROM TestRunTables;
-DELETE FROM  TestRuns;
-DELETE FROM TestRunViews;
+--DELETE FROM TestRunTables;
+--DELETE FROM  TestRuns;
+--DELETE FROM TestRunViews;
 

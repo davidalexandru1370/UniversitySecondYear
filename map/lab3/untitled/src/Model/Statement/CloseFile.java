@@ -8,6 +8,7 @@ import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 import Model.Value.StringValue;
+import Model.VariablesTypes.Interfaces.IVariableType;
 import Model.VariablesTypes.StringType;
 
 import java.io.BufferedReader;

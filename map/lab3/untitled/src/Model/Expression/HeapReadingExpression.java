@@ -6,6 +6,7 @@ import Model.ADT.Interfaces.IHeap;
 import Model.Expression.Interfaces.IExpression;
 import Model.Value.Interfaces.IValue;
 import Model.Value.ReferenceValue;
+import Model.VariablesTypes.Interfaces.IVariableType;
 import Model.VariablesTypes.ReferenceType;
 
 public class HeapReadingExpression implements IExpression {
@@ -24,6 +25,16 @@ public class HeapReadingExpression implements IExpression {
         }
 
         return heap.get(((ReferenceValue) evaluated).getHeapAddress());
+    }
+
+    @Override
+    public IVariableType typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        IVariableType type = expression.typeCheck(typeEnviroment);
+        if (type instanceof ReferenceType){
+            ReferenceType inner = (ReferenceType) type;
+            return inner.getInner();
+        }
+        throw new InterpreterException("The read heap argument is not reference type!");
     }
 
     @Override
