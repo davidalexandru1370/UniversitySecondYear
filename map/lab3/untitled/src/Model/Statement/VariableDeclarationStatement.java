@@ -27,6 +27,12 @@ public class VariableDeclarationStatement implements IStatement {
     }
 
     @Override
+    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        typeEnviroment.insert(name,type);
+        return typeEnviroment;
+    }
+
+    @Override
     public String toString() {
         return "VariableDeclarationStatement{" +
                 "name='" + name + '\'' +

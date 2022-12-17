@@ -52,6 +52,18 @@ public class NewStatement implements IStatement {
     }
 
     @Override
+    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        IVariableType typeVariable = typeEnviroment.get(variableName);
+        IVariableType typeExpression = expression.typeCheck(typeEnviroment);
+
+        if (typeVariable.equals(new ReferenceType(typeExpression))){
+            return typeEnviroment;
+        }
+
+        throw new InterpreterException("New statement: right hand side and left hand side have different types!");
+    }
+
+    @Override
     public String toString() {
         return "NewStatement{" +
                 "variableName='" + variableName + '\'' +

@@ -1,8 +1,0 @@
-
-L
-java:S3740"/Provide the parametrized type for this generic.(µóš8ıã¼Ï0
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ã ıÿÿÿÿ
-^	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(µ¦µ„
-^	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(µ¦µ„
-u
-java:S2975"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(÷´•“ıÿÿÿÿ8‡ã¼Ï0

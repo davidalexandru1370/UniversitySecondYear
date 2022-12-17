@@ -9,6 +9,7 @@ import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 import Model.Value.ReferenceValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
+import Model.VariablesTypes.ReferenceType;
 
 public class HeapWrittingStatement implements IStatement {
     private String variableName;
@@ -52,6 +53,24 @@ public class HeapWrittingStatement implements IStatement {
         heap.update(heapMemoryCell,evaluatedExpressionValue);
 
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        if (!typeEnviroment.isDefined(variableName)){
+            throw new InterpreterException(String.format("Heap Writting Statement: %s is not defined",variableName));
+        }
+
+        if(!(typeEnviroment.get(variableName) instanceof ReferenceType)){
+            throw new InterpreterException(String.format("Heap Writting Statement: %s is not of type ReferenceType",variableName));
+        }
+
+        IVariableType type =  expression.typeCheck(typeEnviroment);
+        if(!(((ReferenceType) typeEnviroment.get(variableName)).getInner().getDefault().equals( type.getDefault()))){
+            throw new InterpreterException(String.format("Heap writting statement: %s is not of type of %s",variableName,type));
+        }
+
+        return typeEnviroment;
     }
 
     @Override

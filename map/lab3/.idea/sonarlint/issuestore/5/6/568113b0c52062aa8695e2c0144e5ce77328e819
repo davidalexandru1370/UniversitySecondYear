@@ -1,8 +1,0 @@
-
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ä‡–À
-W	java:S125
-"<This block of commented-out lines of code should be removed.(Ì◊–8˚†™·–0
-_
-java:S1128"=Remove this unused import 'Model.ADT.Interfaces.IDictionary'.(Õã…¬˙ˇˇˇˇ8˝†™·–0
-l
-java:S1128"JRemove this unused import 'Model.VariablesTypes.Interfaces.IVariableType'.(€¨∏ﬁ¸ˇˇˇˇ8Ä°™·–0

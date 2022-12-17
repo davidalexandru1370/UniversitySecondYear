@@ -1,14 +1,0 @@
-
-e
-java:S1192X"JDefine a constant instead of duplicating this literal "condition" 3 times.(ÁÌâúÿÿÿÿ
-^
-java:S1192R"HDefine a constant instead of duplicating this literal "number1" 4 times.(ö¯È’
-]
-java:S1192S"HDefine a constant instead of duplicating this literal "number2" 4 times.(ĞÍå
-n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÄÍû
-U
-java:S1118":Add a private constructor to hide the implicit public one.(óŞ…Èøÿÿÿÿ
-W
-java:S1075="ARefactor your code to get this URI from a customizable parameter.(Š¦¥ß
-W
-java:S1075M"ARefactor your code to get this URI from a customizable parameter.(Š¦¥ß

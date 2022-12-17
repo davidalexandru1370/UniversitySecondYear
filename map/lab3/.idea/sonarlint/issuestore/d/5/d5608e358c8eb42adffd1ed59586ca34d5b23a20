@@ -1,18 +1,0 @@
-
-t
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Û¥Ëœúÿÿÿÿ
-t
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤—Ìöùÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÕª”
-q
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Û¥Ëœúÿÿÿÿ
-c	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(×‰†¶üÿÿÿÿ
-c	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(×‰†¶üÿÿÿÿ
-n
-java:S29756"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Áªþšþÿÿÿÿ
-c
-java:S11826"HUse super.clone() to create and seed the cloned instance to be returned.(Áªþšþÿÿÿÿ
-O
-java:S2864A"4Iterate over the "entrySet" instead of the "keySet".(©³Éøþÿÿÿÿ
-l
-java:S3457C"Q%n should be used in place of \n to produce the platform-specific line separator.(ÒÒ×Êÿÿÿÿÿ

@@ -48,6 +48,15 @@ public class CloseFile implements IStatement {
     }
 
     @Override
+    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        if(!(expression.typeCheck(typeEnviroment).getDefault() instanceof StringValue)){
+            throw new InterpreterException("Expression is not of string type");
+        }
+
+        return typeEnviroment;
+    }
+
+    @Override
     public String toString() {
         return "CloseFile{" +
                 "expression=" + expression +

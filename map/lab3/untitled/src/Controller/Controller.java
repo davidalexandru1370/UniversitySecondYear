@@ -16,6 +16,7 @@ import Model.Statement.Interfaces.IStatement;
 import Model.ProgramState;
 import Model.Value.Interfaces.IValue;
 import Model.Value.ReferenceValue;
+import Model.VariablesTypes.Interfaces.IVariableType;
 import Repository.Interfaces.IRepository;
 
 import java.io.BufferedReader;
@@ -49,6 +50,8 @@ public class Controller {
         IList<IValue> out = new MyList<IValue>();
         IDictionary<String, BufferedReader> outFiles = new MyDictionary<String,BufferedReader>();
         IHeap heap = new Heap();
+        IDictionary<String, IVariableType> typeEnviroment = new MyDictionary<>();
+        statement.typeCheck(typeEnviroment);
         repository.add(new ProgramState(stack, symbolTable, out,outFiles,heap, statement));
     }
 

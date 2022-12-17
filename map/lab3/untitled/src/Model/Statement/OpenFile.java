@@ -8,6 +8,7 @@ import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 import Model.Value.StringValue;
+import Model.VariablesTypes.Interfaces.IVariableType;
 import Model.VariablesTypes.StringType;
 
 import java.io.BufferedReader;
@@ -45,6 +46,17 @@ public class OpenFile implements IStatement {
 
         fileTable.insert(fileName.getValue(),bufferedReader);
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        IVariableType expressionType = expression.typeCheck(typeEnviroment);
+
+        if(!(expressionType instanceof StringType)){
+            throw new InterpreterException("Open file expression is of type string");
+        }
+
+        return typeEnviroment;
     }
 
     @Override

@@ -42,8 +42,6 @@
     )
 )
 
-(print (liniarize '((1) 2 (3 4) A B (5 (6 7)) 8)))
-
 (defun testMaxList ()
     (assert 
     (and

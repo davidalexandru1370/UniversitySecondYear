@@ -1,10 +1,12 @@
 package Model.Statement;
 
 import Exceptions.InterpreterException;
+import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IStack;
 import Model.ADT.MyStack;
 import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
+import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class ForkStatement implements IStatement {
 
@@ -23,6 +25,12 @@ public class ForkStatement implements IStatement {
                 state.getOutFiles(),
                 state.getHeap(),
                 statement);
+    }
+
+    @Override
+    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        statement.typeCheck(typeEnviroment);
+        return typeEnviroment;
     }
 
     @Override

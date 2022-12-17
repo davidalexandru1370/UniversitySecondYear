@@ -1,9 +1,11 @@
 package Model.Statement;
 
 import Exceptions.InterpreterException;
+import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IStack;
 import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
+import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class CompoundStatement implements IStatement {
     private final IStatement first;
@@ -36,5 +38,10 @@ public class CompoundStatement implements IStatement {
         stack.push(second);
         stack.push(first);
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+        return second.typeCheck(first.typeCheck(typeEnviroment));
     }
 }

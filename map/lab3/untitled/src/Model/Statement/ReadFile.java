@@ -10,6 +10,7 @@ import Model.Value.IntValue;
 import Model.Value.Interfaces.IValue;
 import Model.Value.StringValue;
 import Model.VariablesTypes.IntType;
+import Model.VariablesTypes.Interfaces.IVariableType;
 import Model.VariablesTypes.StringType;
 
 import java.io.BufferedReader;
@@ -59,6 +60,26 @@ public class ReadFile implements IStatement {
         }
 
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+
+        if(!typeEnviroment.isDefined(variableName)){
+            throw new InterpreterException(String.format("Read file statement: %s is not defined",variableName));
+        }
+
+        if (!(typeEnviroment.get(variableName).equals(new IntType()))){
+            throw new InterpreterException(String.format("Read file statement: %s is of type int",variableName));
+        }
+
+        IVariableType expressionType = expression.typeCheck(typeEnviroment);
+
+        if(!(expressionType.equals(new StringType()))){
+            throw new InterpreterException(String.format("Read file statement: %s is of type string",variableName));
+        }
+
+        return  typeEnviroment;
     }
 
     @Override
