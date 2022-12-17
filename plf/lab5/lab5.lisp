@@ -1,32 +1,48 @@
 ;6. Write a function that returns the maximum of numeric atoms in a list, at any level.
 
-(defun myMax(a b)
-    (cond 
-    ((and (not (numberp a)) (not (numberp b))) nil)
-    ((not (numberp a)) b)
-    ((not (numberp b)) a)
-    ((> a b) a)
-    (t b)
-    )
-)
+;; (defun myMax(a b)
+;;     (cond 
+;;     ((and (not (numberp a)) (not (numberp b))) nil)
+;;     ((not (numberp a)) b)
+;;     ((not (numberp b)) a)
+;;     ((> a b) a)
+;;     (t b)
+;;     )
+;; )
 
-(defun solve (l)
-    (cond 
-    ((null l) nil)
+;; (defun solve (l)
+;;     (cond 
+;;     ((null l) nil)
     
-    (t (myMax (car l) (maxList (cdr l))))
+;;     (t (myMax (car l) (maxList (cdr l))))
+;;     )
+;; )
+
+
+
+;; (defun maxList (l)
+;;     (cond
+;;         ((null l) NIL)
+;;         (T (mapcar #'myMax (car l) (car (cdr l))))
+;;     )
+;; )
+
+(defun solve(l)
+    (cond
+        (T (apply #'max (liniarize l)))
     )
 )
 
-(defun maxList (l)
-    (cond 
-    ((numberp l) l)
-    ((atom l) 0)
-    (t (apply #'max (mapcar #'maxList l)))
+(defun liniarize (l)
+    (cond
+    ((null l) NIL)
+    ((numberp (car l)) (cons (car l) (liniarize (cdr l))))
+    ((listp (car l)) (append (MAPCAN #'liniarize (list (car l))) (MAPCAN #'liniarize (list (cdr l)))))
+    (T (liniarize (cdr l)))
     )
 )
 
-
+(print (liniarize '((1) 2 (3 4) A B (5 (6 7)) 8)))
 
 (defun testMaxList ()
     (assert 
