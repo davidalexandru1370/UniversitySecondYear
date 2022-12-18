@@ -1,4 +1,4 @@
-package com.example.interpretor.Model.Statement;
+package Model.Statement;
 
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;

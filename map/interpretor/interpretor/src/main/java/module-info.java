@@ -3,6 +3,6 @@ module com.example.interpretor {
     requires javafx.fxml;
 
 
-    opens com.example.interpretor to javafx.fxml;
-    exports com.example.interpretor;
+    opens UI to javafx.fxml;
+    exports UI;
 }

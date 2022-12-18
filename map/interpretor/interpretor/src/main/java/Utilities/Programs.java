@@ -1,5 +1,7 @@
-package com.example.interpretor.Utilities;
+package Utilities;
 
+import Model.Expression.*;
+import Model.Statement.*;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.BoolValue;
 import Model.Value.IntValue;
@@ -8,7 +10,6 @@ import Model.VariablesTypes.BoolType;
 import Model.VariablesTypes.IntType;
 import Model.VariablesTypes.ReferenceType;
 import Model.VariablesTypes.StringType;
-import com.example.interpretor.Model.Statement.Interfaces.IStatement;
 
 public class Programs {
 

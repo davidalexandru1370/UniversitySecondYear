@@ -2,6 +2,8 @@ package UI;
 
 import Constants.Examples;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.StackPane;
@@ -10,7 +12,7 @@ import javafx.stage.Stage;
 public class GUI  extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        final ListView programStatesListView = new ListView();
+        final ListView<String> programStatesListView = new ListView<>();
         populateProgramListView(programStatesListView);
         StackPane root = new StackPane();
         root.getChildren().add(programStatesListView);
@@ -23,8 +25,21 @@ public class GUI  extends Application {
         launch();
     }
 
-    private void populateProgramListView(ListView listView){
-        
+    private void populateProgramListView(ListView<String> listView){
+        ObservableList<String> data = FXCollections.observableArrayList();
+
+        data.add(Examples.example1());
+        data.add(Examples.example2());
+        data.add(Examples.example3());
+        data.add(Examples.example4());
+        data.add(Examples.example5());
+        data.add(Examples.example6());
+        data.add(Examples.example7());
+        data.add(Examples.example8());
+        data.add(Examples.example9());
+        data.add(Examples.example10());
+
+        listView.setItems(data);
     }
 
 }
