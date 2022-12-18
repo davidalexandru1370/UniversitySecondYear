@@ -1,37 +1,86 @@
 package UI;
 
 import Constants.Examples;
+import Controller.Controller;
+import Exceptions.InterpreterException;
+import Model.Command.Command;
+import Model.Command.ExitCommand;
+import Model.Command.RunExample;
+import Model.Statement.Interfaces.IStatement;
+import Repository.Interfaces.IRepository;
+import Repository.Repository;
+import Utilities.Programs;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Control;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class GUI extends Application {
+    private IRepository repository = new Repository("C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\log1.txt");
+    private Controller controller = new Controller(repository);
+    private Map<String,Command> commands = new HashMap<>();
+
+    private String programSelectedIndex = null;
+
     @Override
     public void start(Stage stage) throws Exception {
+        setAllCommands();
         String css = this.getClass().getResource("application.css").toExternalForm();
         final ListView<String> programStatesListView = new ListView<>();
+        ListView<String> out = new ListView<>();
+        TableView<String> heapTable = new TableView<>();
+        TableView<String> symbolTable = new TableView<>();
+        ListView<String> fileTable = new ListView<>();
+        ListView<String> programIds = new ListView<>();
+        Label errorLabel = new Label();
         TilePane tilePaneLayout = new TilePane(Orientation.HORIZONTAL);
         tilePaneLayout.setPadding(new Insets(20,10,20,10));
         TilePane buttonsLayout = new TilePane(Orientation.VERTICAL);
+        TilePane loggerLayout = new TilePane(Orientation.HORIZONTAL);
+        Label numberOfProgramStatesLabel = new Label();
         buttonsLayout.setHgap(10.0);
         buttonsLayout.setVgap(10.0);
         buttonsLayout.setPadding(new Insets(0,0,0,10));
         Button allStepsButton = new Button("allStepsButton");
         Button oneStepButton = new Button("oneStepButton");
+        configureProgramListView(programStatesListView);
+        allStepsButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try{
+
+                    if(programSelectedIndex == null){
+                        showAlert("No program selected!");
+                        return;
+                    }
+                    commands.get(programSelectedIndex).execute();
+                }
+                catch (InterpreterException interpreterException){
+                    showAlert(interpreterException.getMessage());
+                }
+            }
+        });
+
         allStepsButton.setText("All steps");
         oneStepButton.setText("One step");
 
-        configureProgramListView(programStatesListView);
+
         populateProgramListView(programStatesListView);
         StackPane root = new StackPane();
         addToGUI(tilePaneLayout,programStatesListView);
@@ -39,13 +88,83 @@ public class GUI extends Application {
         addToGUI(buttonsLayout,oneStepButton);
         addToGUI(tilePaneLayout,buttonsLayout);
 
-
         addToGUI(root,tilePaneLayout);
 
-        Scene scene = new Scene(root,640,480);
+        Scene scene = new Scene(root,720,480);
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void showAlert(String message){
+        Alert alert = new Alert(Alert.AlertType.ERROR,message);
+        alert.showAndWait();
+    }
+
+    private void setAllCommands(){
+        Command example1 = new RunExample(
+                "1","Press 1 to run program 1\n" + Examples.example1(),
+                controller,
+                Programs.program1());
+        Command example2 = new RunExample(
+                "2","Press 2 to run program 2\n" + Examples.example2(),
+                controller,
+                Programs.program2());
+        Command example3 = new RunExample(
+                "3","Press 3 to run program 3\n" + Examples.example3(),
+                controller,
+                Programs.program3());
+        Command example4 = new RunExample(
+                "4","Press 4 to run example 4\n" + Examples.example4(),
+                controller,
+                Programs.program4());
+        Command example5 = new RunExample(
+                "5","Press 5 to run example 5\n" + Examples.example5(),
+                controller,
+                Programs.program5());
+        Command example6 = new RunExample(
+                "6","Press 6 to run example 6\n" + Examples.example6(),
+                controller,
+                Programs.program6());
+        Command example7 = new RunExample(
+                "7",
+                "Press 7 to run example 7\n" + Examples.example7(),
+                controller,
+                Programs.program7());
+        Command example8 = new RunExample(
+                "8",
+                "Press 8 to run example 8\n" + Examples.example8(),
+                controller,
+                Programs.program8());
+
+        Command example9 = new RunExample(
+                "9",
+                "Press 9 to run example 9\n" + Examples.example9(),
+                controller,
+                Programs.program9()
+        );
+
+        Command example10 = new RunExample(
+                "10",
+                "Press 10 to run example 10\n" + Examples.example10(),
+                controller,
+                Programs.program10()
+        );
+
+        addCommand(example10);
+        addCommand(example9);
+        addCommand(example8);
+        addCommand(example7);
+        addCommand(example6);
+        addCommand(example5);
+        addCommand(example4);
+        addCommand(example3);
+        addCommand(example2);
+        addCommand(example1);
+    }
+
+    private void addCommand(Command command){
+        commands.put(command.getKey(),command);
     }
 
     private void addToGUI(Pane root, Control control){
@@ -64,6 +183,18 @@ public class GUI extends Application {
         listView.setMaxHeight(300);
         listView.setPrefWidth(300);
         listView.setId("programStatesListView");
+        listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observableValue, Object o, Object t1) {
+                int selectedIndex = listView.getSelectionModel().getSelectedIndex();
+                if(selectedIndex + 1 > commands.size()){
+                    programSelectedIndex = null;
+                }
+                else{
+                    programSelectedIndex = String.valueOf(selectedIndex+1);
+                }
+            }
+        });
     }
 
     private void populateProgramListView(ListView<String> listView){

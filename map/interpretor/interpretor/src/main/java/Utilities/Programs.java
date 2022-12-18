@@ -11,17 +11,24 @@ import Model.VariablesTypes.IntType;
 import Model.VariablesTypes.ReferenceType;
 import Model.VariablesTypes.StringType;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Programs {
 
+    public static Map<Integer, IStatement> programs = new HashMap<>();
      public static IStatement program1(){
-        return new CompoundStatement(
+        IStatement program1 = new CompoundStatement(
                 new VariableDeclarationStatement("v",new IntType()),
                 new CompoundStatement(new AssignStatement("v",new ValueExpression(new IntValue(2))),
                         new PrintStatement(new VariableExpression("v"))));
+        programs.put(1,program1);
+        return program1;
+
     }
 
     public static IStatement program2(){
-        return new CompoundStatement(
+        IStatement program2 = new CompoundStatement(
                 new VariableDeclarationStatement("a",new IntType()),
                 new CompoundStatement(new VariableDeclarationStatement("b",new IntType()),
                         new CompoundStatement(
@@ -45,16 +52,20 @@ public class Programs {
                                                                 "+"),
                                                         "+")),
                                         new PrintStatement(new VariableExpression("b"))))));
+        programs.put(2,program2);
+        return program2;
     }
 
     public static IStatement program3(){
-        return  new CompoundStatement(new VariableDeclarationStatement("a",new BoolType()),
+        IStatement program3 =  new CompoundStatement(new VariableDeclarationStatement("a",new BoolType()),
                 new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
                         new CompoundStatement(new AssignStatement("a",new ValueExpression(new BoolValue(true))),
                                 new CompoundStatement(new IfStatement(new VariableExpression("a"),
                                         new AssignStatement("v",new ValueExpression(new IntValue(2))),
                                         new AssignStatement("v",new ValueExpression(new IntValue(3)))),
                                         new PrintStatement(new VariableExpression("v"))))));
+        programs.put(3,program3);
+        return program3;
     }
 
     public static IStatement program4() {
@@ -62,7 +73,7 @@ public class Programs {
         String stringWithFileNameVariable = "varf";
         String intVariableName = "varc";
 
-        return new CompoundStatement(new VariableDeclarationStatement(stringWithFileNameVariable,new StringType()),
+        IStatement program4 = new CompoundStatement(new VariableDeclarationStatement(stringWithFileNameVariable,new StringType()),
                 new CompoundStatement(new AssignStatement(stringWithFileNameVariable,new ValueExpression(new StringValue(fileName))),
                         new CompoundStatement(new OpenFile(new VariableExpression(stringWithFileNameVariable)),
                                 new CompoundStatement(new VariableDeclarationStatement(intVariableName,new IntType()),
@@ -71,12 +82,14 @@ public class Programs {
                                                         new CompoundStatement(new ReadFile(new VariableExpression(stringWithFileNameVariable),intVariableName),
                                                                 new CompoundStatement(new PrintStatement(new VariableExpression(intVariableName)),
                                                                         new CloseFile(new VariableExpression(stringWithFileNameVariable))))))))));
-    }
+        programs.put(4,program4);
+        return program4;
+     }
 
     public static IStatement program5(){
         String fileName = "C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\test.in";
 
-        return new CompoundStatement(new VariableDeclarationStatement("varf",new StringType()),
+        IStatement program5 = new CompoundStatement(new VariableDeclarationStatement("varf",new StringType()),
                 new CompoundStatement(new AssignStatement("varf",new ValueExpression(new StringValue(fileName))),
                 new CompoundStatement(new OpenFile(new VariableExpression("varf")),
                 new CompoundStatement(new VariableDeclarationStatement("number1",new IntType()),
@@ -89,10 +102,12 @@ public class Programs {
                 new CompoundStatement(new AssignStatement("condition",new RelationalExpression(new VariableExpression("number1"),new VariableExpression("number2"),">")),
                         new IfStatement(new VariableExpression("condition"),new PrintStatement(new ValueExpression(new StringValue("da"))),new PrintStatement(new ValueExpression(new StringValue("nu")))))))))))))));
 
+        programs.put(5,program5);
+        return program5;
     }
 
     public static IStatement program6(){
-        return new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
+        IStatement program6 =  new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
                 new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(20))),
                 new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new ReferenceType(new IntType()))),
                 new CompoundStatement(new NewStatement("a",new VariableExpression("v")),
@@ -100,19 +115,24 @@ public class Programs {
                 new PrintStatement(new ArithmeticExpression(
                         new HeapReadingExpression(new HeapReadingExpression(new VariableExpression("a"))),
                         new ValueExpression(new IntValue(5)),"+")))))));
+        programs.put(6,program6);
+        return program6;
     }
 
     public static IStatement program7(){
-        return new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
+        IStatement program7 = new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
                 new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(20))),
                 new CompoundStatement(new PrintStatement(new HeapReadingExpression(new VariableExpression("v"))),
                 new CompoundStatement(new HeapWrittingStatement("v",new ValueExpression(new IntValue(30))),
                 new PrintStatement(new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v")),
                         new ValueExpression(new IntValue(5)),"+"))))));
+        programs.put(7,program7);
+        return program7;
     }
 
     public static IStatement program8(){
-        return new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
+
+        IStatement program8 = new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
                 new CompoundStatement(new AssignStatement("v",new ValueExpression(new IntValue(4))),
                 new CompoundStatement(
                         new WhileStatement
@@ -128,19 +148,23 @@ public class Programs {
                                                 new ValueExpression(new IntValue(1)),
                                                 "-")))),
                                 new PrintStatement(new VariableExpression("v")))));
+        programs.put(8,program8);
+        return program8;
     }
 
     public static IStatement program9(){
-        return new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
+        IStatement program9 = new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
                 new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(20))),
                 new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new ReferenceType(new IntType()))),
                 new CompoundStatement(new NewStatement("a",new VariableExpression("v")),
                 new CompoundStatement(new NewStatement("v",new ValueExpression(new IntValue(30))),
                 new PrintStatement(new HeapReadingExpression(new HeapReadingExpression(new VariableExpression("a")))))))));
+        programs.put(9,program9);
+        return program9;
     }
 
     public static IStatement program10(){
-        return new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
+        IStatement program10 = new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
                 new CompoundStatement(new AssignStatement("v",new ValueExpression(new IntValue(10))),
                 new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new IntType())),
                         new CompoundStatement(new NewStatement("a",new ValueExpression(new IntValue(22))),
@@ -150,8 +174,9 @@ public class Programs {
                                                 new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))))),
                                         new CompoundStatement(new PrintStatement(new VariableExpression("v")),
                                                 new PrintStatement(new HeapReadingExpression(new VariableExpression("a")))))))));
-
-    }
+        programs.put(10,program10);
+        return program10;
+     }
 }
 
 
