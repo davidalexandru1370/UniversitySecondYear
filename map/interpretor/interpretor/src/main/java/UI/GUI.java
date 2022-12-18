@@ -13,6 +13,7 @@ public class GUI  extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         final ListView<String> programStatesListView = new ListView<>();
+        configureProgramListView(programStatesListView);
         populateProgramListView(programStatesListView);
         StackPane root = new StackPane();
         root.getChildren().add(programStatesListView);
@@ -23,6 +24,11 @@ public class GUI  extends Application {
 
     public static void main(String[] args){
         launch();
+    }
+
+    private void configureProgramListView(ListView listView){
+        listView.setMaxHeight(300);
+        listView.setMaxWidth(300);
     }
 
     private void populateProgramListView(ListView<String> listView){
