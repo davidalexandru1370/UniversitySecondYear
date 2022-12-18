@@ -29,7 +29,7 @@ public class ForkStatement implements IStatement {
 
     @Override
     public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
-        statement.typeCheck(typeEnviroment);
+        statement.typeCheck(typeEnviroment.clone());
         return typeEnviroment;
     }
 

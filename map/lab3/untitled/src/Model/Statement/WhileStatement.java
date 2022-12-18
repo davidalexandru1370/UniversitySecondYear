@@ -39,7 +39,7 @@ public class WhileStatement implements IStatement {
     @Override
     public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
 
-        IVariableType expressionType =  whileConditionalExpression.typeCheck(statement.typeCheck(typeEnviroment));
+        IVariableType expressionType =  whileConditionalExpression.typeCheck(statement.typeCheck(typeEnviroment.clone()));
 
         if (!(expressionType.equals(new BoolType()))){
             throw new InterpreterException("While statement: condition is not evaluated to bool type");
