@@ -24,3 +24,17 @@ select CarPlate from Vehicles where id = 2; --clustered index seek
 select id from Vehicles; --non clustered index scan 
 Select CarChasis from Vehicles where CarChasis > 5 -- non clustered index seek
 Select CarPlate from Vehicles Where CarChasis = 2 -- key lookup
+
+
+--b. Write a query on table Tb with a WHERE clause of the form WHERE b2 = value and analyze its execution plan.
+--Create a nonclustered index that can speed up the query. Examine the execution plan again.
+
+CREATE NONCLUSTERED INDEX practicalExamsScoreIndex on PracticalExams(CandidateScore,CandidateCNP); -- 0.03 ms
+drop index practicalExamsScoreIndex on PracticalExams; -- 0.05 ms
+
+
+
+declare @start datetime2 = SYSDATETIME();
+Select PE.CandidateCNP from PracticalExams PE where CandidateScore >= 22;
+declare @stop datetime2 = SYSDATETIME();
+print CONCAT(DATEDIFF(MILLISECOND,@start,@stop)/1000,'.',DATEDIFF(MILLISECOND,@start,@stop)%1000,' ms'); 

@@ -201,6 +201,15 @@ INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) v
 
 Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('8414031374178','4043402719748',22,'05/10/2021',5);
 Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',18,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',17,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',16,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',15,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',14,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',13,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',12,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',11,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',23,'05/10/2021',4);
+Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',24,'05/10/2021',4);
 
 
 UPDATE Students set InstructorCNP = '3438600813142' where InstructorCNP is null and DATEDIFF(year,StartingDate,GETDATE()) < 1
