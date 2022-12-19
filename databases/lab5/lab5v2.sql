@@ -79,10 +79,10 @@ declare @rows int = 900
 	SELECT * FROM Results;
 
 create or alter view myView as 
-	SELECT TOP 1000 PE.CandidateCNP from PracticalExams PE
+	SELECT TOP 1000 PE.CandidateScore,V.CarChasis from PracticalExams PE
 	inner join Results R on R.PracticalExamId = PE.Id
 	inner join Vehicles V on R.CarId = V.Id
-	where PE.CandidateScore >= 22
+	where PE.CandidateScore <= 18
 
 declare @start2 datetime2 = SYSDATETIME();
 select  * from myView;
