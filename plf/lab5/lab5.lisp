@@ -27,6 +27,15 @@
 ;;     )
 ;; )
 
+(defun myMax (a b)
+    (cond
+    ((null a) b)
+    ((null b) a)
+    ((> a b) a)
+    (T b)
+    )
+)
+
 (defun solve(l)
     (cond
         (T (apply #'max (liniarize l)))
@@ -36,7 +45,7 @@
 (defun liniarize (l)
     (cond
     ((null l) NIL)
-    ((numberp (car l)) (cons (car l) (liniarize (cdr l))))
+    ((numberp (car l)) (cons (car l) (MAPCAN #'liniarize (list (cdr l)))))
     ((listp (car l)) (append (MAPCAN #'liniarize (list (car l))) (MAPCAN #'liniarize (list (cdr l)))))
     (T (liniarize (cdr l)))
     )

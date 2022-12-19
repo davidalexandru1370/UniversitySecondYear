@@ -56,7 +56,6 @@ public class GUI extends Application {
         outLayout.getChildren().add(out);
         outLayout.setAlignment(Pos.CENTER);
 
-
         VBox heapTableLayout = new VBox();
         TableView<String> heapTable = new TableView<>();
         heapTableLayout.getChildren().add(heapTableLabel);
