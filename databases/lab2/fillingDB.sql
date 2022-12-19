@@ -160,7 +160,7 @@ Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','D')
 Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','D+E');
 go
 
-DBCC CHECKIDENT('Vehicles',RESEED,0);
+DBCC CHECKIDENT('Vehicles','RESEED',0);
 Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('8809219082745','CJ30RIA',1);
 Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('9925170543526','SJ31TEO',2);
 Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('8609289040140','SJ32FIL',3);
@@ -179,11 +179,13 @@ DELETE FROM Vehicles
 
 DELETE from TheoreticalExams
 go
+
 INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('8414031374178','4043402719748','12/11/2021',26);
 INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('0125282099674','4043402719748','12/10/2021',24);
 INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('6831736316573','0248959795222','12/10/2021',18);
 INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('2168278601776','0248959795222','12/10/2021',21);
 INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('6831736316573','6387498973155','12/24/2021',21);
+
 go
 
 --luna/ziua/an
@@ -198,6 +200,7 @@ INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) v
 INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('7196776918679','07/09/2021','07/09/2026');
 INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('8603711577258','09/09/2020','09/09/2025');
 INSERT INTO InstructorDetails(CNP,CertificationIssued,CertificationExpiration) values('3438600813142','11/11/2017','11/11/2022');
+
 
 Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('8414031374178','4043402719748',22,'05/10/2021',5);
 Insert into PracticalExams(CandidateCNP,SupervisorCNP,CandidateScore,ExamDate,CarId) values ('0125282099674','4043402719748',18,'05/10/2021',4);
@@ -224,3 +227,5 @@ DELETE FROM Instructors where Name like 'Chis%';
 INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('8414031374178','4043402719748','12/11/2021',26);
 INSERT INTO TheoreticalExams(CandidateCNP,SupervisorCNP,ExamDate,CandidateScore) values('0125282099674','4043402719748','12/10/2021',24);
 go
+
+ 
