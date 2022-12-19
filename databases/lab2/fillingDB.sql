@@ -161,20 +161,21 @@ Insert into SupervisorsDrivingLicenses(CNP,Category) values('8637723874592','D+E
 go
 
 DBCC CHECKIDENT('Vehicles',RESEED,0);
-Insert into Vehicles(InstructorCNP,CarPlate) values('8809219082745','CJ30RIA');
-Insert into Vehicles(InstructorCNP,CarPlate) values('9925170543526','SJ31TEO');
-Insert into Vehicles(InstructorCNP,CarPlate) values('8609289040140','SJ32FIL');
-Insert into Vehicles(InstructorCNP,CarPlate) values('4673261850041','SJ15MMC');
-Insert into Vehicles(InstructorCNP,CarPlate) values('5408411857894','MM16AAY');
-Insert into Vehicles(InstructorCNP,CarPlate) values('4599542702892','SJ20AAY');
-Insert into Vehicles(InstructorCNP,CarPlate) values('2075047510772','BH21DWN');
-Insert into Vehicles(InstructorCNP,CarPlate) values('7196776918679','MM30RTM');
-Insert into Vehicles(InstructorCNP,CarPlate) values('8603711577258','BH13DAV');
-Insert into Vehicles(InstructorCNP,CarPlate) values('3438600813142','SJ86GRZ');
-Insert into Vehicles(InstructorCNP,CarPlate) values('8809219082745','CJ87ATM');
-Insert into Vehicles(InstructorCNP,CarPlate) values('8809219082745','CJ90VFV');
-Insert into Vehicles(CarPlate,InstructorCNP) values('BH56GRZ','4673261850041');
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('8809219082745','CJ30RIA',1);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('9925170543526','SJ31TEO',2);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('8609289040140','SJ32FIL',3);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('4673261850041','SJ15MMC',4);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('5408411857894','MM16AAY',5);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('4599542702892','SJ20AAY',6);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('2075047510772','BH21DWN',7);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('7196776918679','MM30RTM',8);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('8603711577258','BH13DAV',9);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('3438600813142','SJ86GRZ',10);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('8809219082745','CJ87ATM',11);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('8809219082745','CJ90VFV',12);
+Insert into Vehicles(InstructorCNP,CarPlate,CarChasis) values('4673261850041','BH56GRZ',13);
 go
+DELETE FROM Vehicles
 
 DELETE from TheoreticalExams
 go

@@ -2,7 +2,6 @@
 
 (defun myMax(a b)
     (cond 
-    ((and (not (numberp a)) (not (numberp b))) nil)
     ((> a b) a)
     (t b)
     )
@@ -68,11 +67,10 @@
 (defun testMaxList ()
     (assert 
     (and
-        (equal 19 (solve '((19) A 2 3 (5 6) (2 (18)))))
+        (equal 19 (solve '((19 16) A 2 3 (5 6) (2 (18)))))
         (equal 10 (solve '(-2 -3 (-10) 2 (10 (9 1 (3)) 4))))
         (equal -1 (solve '(-5 -6 (-10 (-8 -2) -1))))
         (equal -10 (solve '(B A (-10 (-83 -22) -12 C))))
     ))
 )
 (testMaxList)
-;(print (maxList '((19) 10 2 3 (5 6) (2 (18)))))
