@@ -4,9 +4,7 @@ import Constants.Examples;
 import Controller.Controller;
 import Exceptions.InterpreterException;
 import Model.Command.Command;
-import Model.Command.ExitCommand;
 import Model.Command.RunExample;
-import Model.Statement.Interfaces.IStatement;
 import Repository.Interfaces.IRepository;
 import Repository.Repository;
 import Utilities.Programs;
@@ -24,7 +22,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
@@ -34,7 +31,7 @@ import java.util.Map;
 public class GUI extends Application {
     private IRepository repository = new Repository("C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\log1.txt");
     private Controller controller = new Controller(repository);
-    private Map<String,Command> commands = new HashMap<>();
+    private Map<String, Command> commands = new HashMap<>();
 
     private String programSelectedIndex = null;
 
@@ -44,6 +41,7 @@ public class GUI extends Application {
         String css = this.getClass().getResource("application.css").toExternalForm();
         final ListView<String> programStatesListView = new ListView<>();
         ListView<String> out = new ListView<>();
+        TilePane mainLayout = new TilePane(Orientation.VERTICAL);
         TableView<String> heapTable = new TableView<>();
         TableView<String> symbolTable = new TableView<>();
         ListView<String> fileTable = new ListView<>();
@@ -53,6 +51,7 @@ public class GUI extends Application {
         tilePaneLayout.setPadding(new Insets(20,10,20,10));
         TilePane buttonsLayout = new TilePane(Orientation.VERTICAL);
         TilePane loggerLayout = new TilePane(Orientation.HORIZONTAL);
+        loggerLayout.setId("loggerLayout");
         Label numberOfProgramStatesLabel = new Label();
         buttonsLayout.setHgap(10.0);
         buttonsLayout.setVgap(10.0);
@@ -80,17 +79,33 @@ public class GUI extends Application {
         allStepsButton.setText("All steps");
         oneStepButton.setText("One step");
 
-
         populateProgramListView(programStatesListView);
+        configureLoggerListView(out);
+        configureLoggerListView(fileTable);
+        configureLoggerListView(programIds);
         StackPane root = new StackPane();
         addToGUI(tilePaneLayout,programStatesListView);
+        addToGUI(loggerLayout,out);
+        addToGUI(loggerLayout,heapTable);
+        addToGUI(loggerLayout,symbolTable);
+        addToGUI(loggerLayout,fileTable);
+        addToGUI(loggerLayout,programIds);
         addToGUI(buttonsLayout,allStepsButton);
         addToGUI(buttonsLayout,oneStepButton);
         addToGUI(tilePaneLayout,buttonsLayout);
 
-        addToGUI(root,tilePaneLayout);
+//        addToGUI(root,tilePaneLayout);
+//        addToGUI(root,loggerLayout);
+        tilePaneLayout.setPrefRows(4);
+        tilePaneLayout.setPrefTileHeight(100);
+        loggerLayout.setPrefTileHeight(200);
+        loggerLayout.setPrefRows(5);
+        loggerLayout.setPrefTileWidth(150);
+        addToGUI(mainLayout,tilePaneLayout);
+        addToGUI(mainLayout,loggerLayout);
+        Scene scene = new Scene(root,1000,600);
+        addToGUI(root,mainLayout);
 
-        Scene scene = new Scene(root,720,480);
         scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
@@ -99,6 +114,12 @@ public class GUI extends Application {
     private void showAlert(String message){
         Alert alert = new Alert(Alert.AlertType.ERROR,message);
         alert.showAndWait();
+    }
+
+    private void configureLoggerListView(ListView listView){
+        listView.setMaxHeight(300);
+        listView.setMaxWidth(200);
+
     }
 
     private void setAllCommands(){
