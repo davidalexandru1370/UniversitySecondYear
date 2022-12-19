@@ -17,11 +17,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
@@ -40,39 +42,68 @@ public class GUI extends Application {
         setAllCommands();
         String css = this.getClass().getResource("application.css").toExternalForm();
         final ListView<String> programStatesListView = new ListView<>();
-        ListView<String> out = new ListView<>();
+
         TilePane mainLayout = new TilePane(Orientation.VERTICAL);
+        Label outLabel = new Label("Out table");
+        Label heapTableLabel = new Label("Heap table");
+        Label symbolTableLabel = new Label("Symbol table");
+        Label fileTableLabel = new Label("File table");
+        Label programIdsLabel = new Label("Program Ids table");
+
+        VBox outLayout = new VBox();
+        ListView<String> out = new ListView<>();
+        outLayout.getChildren().add(outLabel);
+        outLayout.getChildren().add(out);
+        outLayout.setAlignment(Pos.CENTER);
+
+
+        VBox heapTableLayout = new VBox();
         TableView<String> heapTable = new TableView<>();
+        heapTableLayout.getChildren().add(heapTableLabel);
+        heapTableLayout.getChildren().add(heapTable);
+        heapTableLayout.setAlignment(Pos.CENTER);
+
+
+        VBox symbolTableLayout = new VBox();
         TableView<String> symbolTable = new TableView<>();
+        symbolTableLayout.getChildren().add(symbolTableLabel);
+        symbolTableLayout.getChildren().add(symbolTable);
+        symbolTableLayout.setAlignment(Pos.CENTER);
+
+        VBox fileTableLayout = new VBox();
         ListView<String> fileTable = new ListView<>();
+        fileTableLayout.getChildren().add(fileTableLabel);
+        fileTableLayout.getChildren().add(fileTable);
+        fileTableLayout.setAlignment(Pos.CENTER);
+
+        VBox programIdsLayout = new VBox();
         ListView<String> programIds = new ListView<>();
-        Label errorLabel = new Label();
+        programIdsLayout.getChildren().add(programIdsLabel);
+        programIdsLayout.getChildren().add(programIds);
+        programIdsLayout.setAlignment(Pos.CENTER);
+
         TilePane tilePaneLayout = new TilePane(Orientation.HORIZONTAL);
         tilePaneLayout.setPadding(new Insets(20,10,20,10));
         TilePane buttonsLayout = new TilePane(Orientation.VERTICAL);
         TilePane loggerLayout = new TilePane(Orientation.HORIZONTAL);
         loggerLayout.setId("loggerLayout");
-        Label numberOfProgramStatesLabel = new Label();
         buttonsLayout.setHgap(10.0);
         buttonsLayout.setVgap(10.0);
         buttonsLayout.setPadding(new Insets(0,0,0,10));
         Button allStepsButton = new Button("allStepsButton");
         Button oneStepButton = new Button("oneStepButton");
         configureProgramListView(programStatesListView);
-        allStepsButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                try{
+        allStepsButton.setOnAction(actionEvent -> {
+            try{
 
-                    if(programSelectedIndex == null){
-                        showAlert("No program selected!");
-                        return;
-                    }
-                    commands.get(programSelectedIndex).execute();
+                if(programSelectedIndex == null){
+                    showAlert("No program selected!");
+                    return;
                 }
-                catch (InterpreterException interpreterException){
-                    showAlert(interpreterException.getMessage());
-                }
+                commands.get(programSelectedIndex).execute();
+            }
+            catch (InterpreterException interpreterException){
+                showAlert(interpreterException.getMessage());
             }
         });
 
@@ -85,22 +116,22 @@ public class GUI extends Application {
         configureLoggerListView(programIds);
         StackPane root = new StackPane();
         addToGUI(tilePaneLayout,programStatesListView);
-        addToGUI(loggerLayout,out);
-        addToGUI(loggerLayout,heapTable);
-        addToGUI(loggerLayout,symbolTable);
-        addToGUI(loggerLayout,fileTable);
-        addToGUI(loggerLayout,programIds);
+        addToGUI(loggerLayout,outLayout);
+        addToGUI(loggerLayout,heapTableLayout);
+        addToGUI(loggerLayout,symbolTableLayout);
+        addToGUI(loggerLayout,fileTableLayout);
+        addToGUI(loggerLayout,programIdsLayout);
         addToGUI(buttonsLayout,allStepsButton);
         addToGUI(buttonsLayout,oneStepButton);
         addToGUI(tilePaneLayout,buttonsLayout);
 
-//        addToGUI(root,tilePaneLayout);
-//        addToGUI(root,loggerLayout);
         tilePaneLayout.setPrefRows(4);
         tilePaneLayout.setPrefTileHeight(100);
         loggerLayout.setPrefTileHeight(200);
         loggerLayout.setPrefRows(5);
         loggerLayout.setPrefTileWidth(150);
+        mainLayout.setPadding(new Insets(0,0,0,600));
+        loggerLayout.setHgap(10);
         addToGUI(mainLayout,tilePaneLayout);
         addToGUI(mainLayout,loggerLayout);
         Scene scene = new Scene(root,1000,600);
