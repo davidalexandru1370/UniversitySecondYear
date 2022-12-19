@@ -1,14 +1,12 @@
 ;6. Write a function that returns the maximum of numeric atoms in a list, at any level.
 
-;; (defun myMax(a b)
-;;     (cond 
-;;     ((and (not (numberp a)) (not (numberp b))) nil)
-;;     ((not (numberp a)) b)
-;;     ((not (numberp b)) a)
-;;     ((> a b) a)
-;;     (t b)
-;;     )
-;; )
+(defun myMax(a b)
+    (cond 
+    ((and (not (numberp a)) (not (numberp b))) nil)
+    ((> a b) a)
+    (t b)
+    )
+)
 
 ;; (defun solve (l)
 ;;     (cond 
@@ -27,18 +25,34 @@
 ;;     )
 ;; )
 
-(defun myMax (a b)
+;; (defun myMax (a b)
+;;     (cond
+;;     ((null a) b)
+;;     ((null b) a)
+;;     ((> a b) a)
+;;     (T b)
+;;     )
+;; )
+
+;; (defun solve(l)
+;;     (cond
+;;         (T (apply #'max (liniarize l)))
+;;     )
+;; )
+
+(defun getMax (l)
     (cond
-    ((null a) b)
-    ((null b) a)
-    ((> a b) a)
-    (T b)
+        ((null l) -999999)
+        ((numberp l) l)
+        (T 
+            (apply #'myMax (car l) (mapcar #'getMax (list (cdr l))))
+        )
     )
 )
 
-(defun solve(l)
+(defun solve (l) 
     (cond
-        (T (apply #'max (liniarize l)))
+    (T (getMax (liniarize l)))
     )
 )
 
