@@ -113,6 +113,7 @@ public class Controller {
             try {
                 repository.logProgramStateExecution(p);
                 logger(p);
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -180,6 +181,11 @@ public class Controller {
 */
     public ProgramState getCurrentProgram() throws RepositoryException {
         return repository.getCurrentProgram();
+    }
+
+    public List<ProgramState> getProgramStateList()
+    {
+        return repository.getProgramStateList();
     }
 
     public void allStep() throws InterpreterException, IOException, InterruptedException {

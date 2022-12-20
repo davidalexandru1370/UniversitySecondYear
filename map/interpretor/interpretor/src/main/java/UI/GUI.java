@@ -5,6 +5,7 @@ import Controller.Controller;
 import Exceptions.InterpreterException;
 import Model.Command.Command;
 import Model.Command.RunExample;
+import Model.ProgramState;
 import Repository.Interfaces.IRepository;
 import Repository.Repository;
 import Utilities.Programs;
@@ -27,6 +28,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -76,7 +78,7 @@ public class GUI extends Application {
         fileTableLayout.setAlignment(Pos.CENTER);
 
         VBox programIdsLayout = new VBox();
-        ListView<String> programIds = new ListView<>();
+        ListView<Integer> programIds = new ListView<>();
         programIdsLayout.getChildren().add(programIdsLabel);
         programIdsLayout.getChildren().add(programIds);
         programIdsLayout.setAlignment(Pos.CENTER);
@@ -93,13 +95,21 @@ public class GUI extends Application {
         Button oneStepButton = new Button("oneStepButton");
         configureProgramListView(programStatesListView);
         allStepsButton.setOnAction(actionEvent -> {
+            fileTable.getItems().clear();
+            programIds.getItems().clear();
+            symbolTable.getItems().clear();
+            heapTable.getItems().clear();
+            out.getItems().clear();
             try{
-
                 if(programSelectedIndex == null){
                     showAlert("No program selected!");
                     return;
                 }
                 commands.get(programSelectedIndex).execute();
+                List<ProgramState> programStateList = this.controller.getProgramStateList();
+                for (ProgramState program : programStateList){
+                    programIds.setItems((ObservableList<Integer>) ProgramState.getIds().keySet());
+                }
             }
             catch (InterpreterException interpreterException){
                 showAlert(interpreterException.getMessage());
@@ -149,7 +159,6 @@ public class GUI extends Application {
     private void configureLoggerListView(ListView listView){
         listView.setMaxHeight(300);
         listView.setMaxWidth(200);
-
     }
 
     private void setAllCommands(){

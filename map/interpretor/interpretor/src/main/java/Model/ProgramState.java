@@ -96,6 +96,14 @@ public class ProgramState {
         return topStatement.execute(this);
     }
 
+    public static Map<Integer, Boolean> getIds() {
+        return ids;
+    }
+
+    public static void setIds(Map<Integer, Boolean> ids) {
+        ProgramState.ids = ids;
+    }
+
     private synchronized Integer generateId(){
         Random random = new Random();
         Integer generatedId;
