@@ -31,9 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class GUI extends Application {
-    private IRepository repository = new Repository("C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\log1.txt");
+    private IRepository repository = new Repository(
+            "C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\log1.txt");
     private Controller controller = new Controller(repository);
     private Map<String, Command> commands = new HashMap<>();
 
@@ -42,7 +42,6 @@ public class GUI extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         setAllCommands();
-        String css = this.getClass().getResource("application.css").toExternalForm();
         final ListView<String> programStatesListView = new ListView<>();
 
         TilePane mainLayout = new TilePane(Orientation.VERTICAL);
@@ -64,7 +63,6 @@ public class GUI extends Application {
         heapTableLayout.getChildren().add(heapTable);
         heapTableLayout.setAlignment(Pos.CENTER);
 
-
         VBox symbolTableLayout = new VBox();
         TableView<String> symbolTable = new TableView<>();
         symbolTableLayout.getChildren().add(symbolTableLabel);
@@ -84,13 +82,13 @@ public class GUI extends Application {
         programIdsLayout.setAlignment(Pos.CENTER);
 
         TilePane tilePaneLayout = new TilePane(Orientation.HORIZONTAL);
-        tilePaneLayout.setPadding(new Insets(20,10,20,10));
+        tilePaneLayout.setPadding(new Insets(20, 10, 20, 10));
         TilePane buttonsLayout = new TilePane(Orientation.VERTICAL);
         TilePane loggerLayout = new TilePane(Orientation.HORIZONTAL);
         loggerLayout.setId("loggerLayout");
         buttonsLayout.setHgap(10.0);
         buttonsLayout.setVgap(10.0);
-        buttonsLayout.setPadding(new Insets(0,0,0,10));
+        buttonsLayout.setPadding(new Insets(0, 0, 0, 10));
         Button allStepsButton = new Button("allStepsButton");
         Button oneStepButton = new Button("oneStepButton");
         configureProgramListView(programStatesListView);
@@ -100,18 +98,17 @@ public class GUI extends Application {
             symbolTable.getItems().clear();
             heapTable.getItems().clear();
             out.getItems().clear();
-            try{
-                if(programSelectedIndex == null){
+            try {
+                if (programSelectedIndex == null) {
                     showAlert("No program selected!");
                     return;
                 }
                 commands.get(programSelectedIndex).execute();
                 List<ProgramState> programStateList = this.controller.getProgramStateList();
-                for (ProgramState program : programStateList){
+                for (ProgramState program : programStateList) {
                     programIds.setItems((ObservableList<Integer>) ProgramState.getIds().keySet());
                 }
-            }
-            catch (InterpreterException interpreterException){
+            } catch (InterpreterException interpreterException) {
                 showAlert(interpreterException.getMessage());
             }
         });
@@ -124,66 +121,65 @@ public class GUI extends Application {
         configureLoggerListView(fileTable);
         configureLoggerListView(programIds);
         StackPane root = new StackPane();
-        addToGUI(tilePaneLayout,programStatesListView);
-        addToGUI(loggerLayout,outLayout);
-        addToGUI(loggerLayout,heapTableLayout);
-        addToGUI(loggerLayout,symbolTableLayout);
-        addToGUI(loggerLayout,fileTableLayout);
-        addToGUI(loggerLayout,programIdsLayout);
-        addToGUI(buttonsLayout,allStepsButton);
-        addToGUI(buttonsLayout,oneStepButton);
-        addToGUI(tilePaneLayout,buttonsLayout);
+        addToGUI(tilePaneLayout, programStatesListView);
+        addToGUI(loggerLayout, outLayout);
+        addToGUI(loggerLayout, heapTableLayout);
+        addToGUI(loggerLayout, symbolTableLayout);
+        addToGUI(loggerLayout, fileTableLayout);
+        addToGUI(loggerLayout, programIdsLayout);
+        addToGUI(buttonsLayout, allStepsButton);
+        addToGUI(buttonsLayout, oneStepButton);
+        addToGUI(tilePaneLayout, buttonsLayout);
 
         tilePaneLayout.setPrefRows(4);
         tilePaneLayout.setPrefTileHeight(100);
         loggerLayout.setPrefTileHeight(200);
         loggerLayout.setPrefRows(5);
         loggerLayout.setPrefTileWidth(150);
-        mainLayout.setPadding(new Insets(0,0,0,600));
+        mainLayout.setPadding(new Insets(0, 0, 0, 600));
         loggerLayout.setHgap(10);
-        addToGUI(mainLayout,tilePaneLayout);
-        addToGUI(mainLayout,loggerLayout);
-        Scene scene = new Scene(root,1000,600);
-        addToGUI(root,mainLayout);
+        addToGUI(mainLayout, tilePaneLayout);
+        addToGUI(mainLayout, loggerLayout);
+        Scene scene = new Scene(root, 1000, 600);
+        addToGUI(root, mainLayout);
 
-        scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
     }
 
-    private void showAlert(String message){
-        Alert alert = new Alert(Alert.AlertType.ERROR,message);
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR, message);
         alert.showAndWait();
     }
 
-    private void configureLoggerListView(ListView listView){
+    private void configureLoggerListView(ListView listView) {
         listView.setMaxHeight(300);
         listView.setMaxWidth(200);
     }
 
-    private void setAllCommands(){
+    private void setAllCommands() {
         Command example1 = new RunExample(
-                "1","Press 1 to run program 1\n" + Examples.example1(),
+                "1", "Press 1 to run program 1\n" + Examples.example1(),
                 controller,
                 Programs.program1());
         Command example2 = new RunExample(
-                "2","Press 2 to run program 2\n" + Examples.example2(),
+                "2", "Press 2 to run program 2\n" + Examples.example2(),
                 controller,
                 Programs.program2());
         Command example3 = new RunExample(
-                "3","Press 3 to run program 3\n" + Examples.example3(),
+                "3", "Press 3 to run program 3\n" + Examples.example3(),
                 controller,
                 Programs.program3());
         Command example4 = new RunExample(
-                "4","Press 4 to run example 4\n" + Examples.example4(),
+                "4", "Press 4 to run example 4\n" + Examples.example4(),
                 controller,
                 Programs.program4());
         Command example5 = new RunExample(
-                "5","Press 5 to run example 5\n" + Examples.example5(),
+                "5", "Press 5 to run example 5\n" + Examples.example5(),
                 controller,
                 Programs.program5());
         Command example6 = new RunExample(
-                "6","Press 6 to run example 6\n" + Examples.example6(),
+                "6", "Press 6 to run example 6\n" + Examples.example6(),
                 controller,
                 Programs.program6());
         Command example7 = new RunExample(
@@ -201,15 +197,13 @@ public class GUI extends Application {
                 "9",
                 "Press 9 to run example 9\n" + Examples.example9(),
                 controller,
-                Programs.program9()
-        );
+                Programs.program9());
 
         Command example10 = new RunExample(
                 "10",
                 "Press 10 to run example 10\n" + Examples.example10(),
                 controller,
-                Programs.program10()
-        );
+                Programs.program10());
 
         addCommand(example10);
         addCommand(example9);
@@ -223,23 +217,23 @@ public class GUI extends Application {
         addCommand(example1);
     }
 
-    private void addCommand(Command command){
-        commands.put(command.getKey(),command);
+    private void addCommand(Command command) {
+        commands.put(command.getKey(), command);
     }
 
-    private void addToGUI(Pane root, Control control){
+    private void addToGUI(Pane root, Control control) {
         root.getChildren().add(control);
     }
 
-    private void addToGUI(Pane root, Pane pane){
+    private void addToGUI(Pane root, Pane pane) {
         root.getChildren().add(pane);
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         launch();
     }
 
-    private void configureProgramListView(ListView listView){
+    private void configureProgramListView(ListView listView) {
         listView.setMaxHeight(300);
         listView.setPrefWidth(300);
         listView.setId("programStatesListView");
@@ -247,17 +241,16 @@ public class GUI extends Application {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
                 int selectedIndex = listView.getSelectionModel().getSelectedIndex();
-                if(selectedIndex + 1 > commands.size()){
+                if (selectedIndex + 1 > commands.size()) {
                     programSelectedIndex = null;
-                }
-                else{
-                    programSelectedIndex = String.valueOf(selectedIndex+1);
+                } else {
+                    programSelectedIndex = String.valueOf(selectedIndex + 1);
                 }
             }
         });
     }
 
-    private void populateProgramListView(ListView<String> listView){
+    private void populateProgramListView(ListView<String> listView) {
         ObservableList<String> data = FXCollections.observableArrayList();
 
         data.add(Examples.example1());
