@@ -2,6 +2,7 @@ package UI;
 
 import Constants.Examples;
 import Controller.Controller;
+import Exceptions.FinishedRunningException;
 import Exceptions.InterpreterException;
 import Model.Command.Command;
 import Model.Command.RunExample;
@@ -20,6 +21,7 @@ import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
@@ -103,13 +105,13 @@ public class GUI extends Application {
             out.getItems().clear();
             try {
                 if (programSelectedIndex == null) {
-                    showAlert("No program selected!");
+                    showAlert("No program selected!", AlertType.ERROR);
                     return;
                 }
                 commands.get(programSelectedIndex).execute();
 
             } catch (InterpreterException interpreterException) {
-                showAlert(interpreterException.getMessage());
+                showAlert(interpreterException.getMessage(), AlertType.ERROR);
             }
         });
 
@@ -117,14 +119,17 @@ public class GUI extends Application {
             controller.setOneStepRunning(true);
             try {
                 if (programSelectedIndex == null) {
-                    showAlert("No program selected!");
+                    showAlert("No program selected!", AlertType.ERROR);
                     return;
                 }
                 commands.get(programSelectedIndex).execute();
 
+            } catch (FinishedRunningException finishedRunningException) {
+                showAlert(finishedRunningException.getMessage(), AlertType.WARNING);
             } catch (InterpreterException interpreterException) {
-                showAlert(interpreterException.getMessage());
+                showAlert(interpreterException.getMessage(), AlertType.ERROR);
             }
+
         });
 
         Consumer<ProgramState> displayResultsConsumer = this::displayProgramStateResults;
@@ -168,8 +173,8 @@ public class GUI extends Application {
         programIds.setItems(FXCollections.observableArrayList(programState.getId()));
     }
 
-    private void showAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR, message);
+    private void showAlert(String message, AlertType type) {
+        Alert alert = new Alert(type, message);
         alert.showAndWait();
     }
 

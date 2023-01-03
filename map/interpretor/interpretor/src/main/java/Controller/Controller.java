@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
+import Exceptions.FinishedRunningException;
 import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
 import Model.ProgramState;
@@ -213,13 +214,11 @@ public class Controller extends ProgramStateObserver {
         return repository.getProgramStateList();
     }
 
-    public void oneStep() throws InterpreterException, InterruptedException {
+    public void oneStep() throws FinishedRunningException, InterruptedException {
         ProgramState programState = repository.getCurrentProgram();
         executorService = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStateList());
-        if (programStateList.isEmpty()) {
-            throw new InterpreterException("Finished");
-        }
+
         programState.getHeap().setContent(unsafeGarbageCollector(
                 getAddressesFromSymbolTable(programState.getSymbolTable().getContent(), programState.getHeap()),
                 programState.getHeap()));
@@ -230,6 +229,10 @@ public class Controller extends ProgramStateObserver {
         executorService.shutdown();
 
         repository.setProgramStateList(programStateList);
+
+        if (programStateList.isEmpty()) {
+            throw new FinishedRunningException("Finished");
+        }
     }
 
     public void allStep() throws InterpreterException, IOException, InterruptedException {
