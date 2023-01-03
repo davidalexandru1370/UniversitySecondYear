@@ -2729,3 +2729,111 @@ Out:
 File table: 
 Heap: 
 
+Id:912175078
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:912175078
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+

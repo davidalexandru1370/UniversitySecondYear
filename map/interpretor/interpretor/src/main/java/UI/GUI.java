@@ -28,6 +28,7 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -41,12 +42,20 @@ public class GUI extends Application {
     private TableView<String> symbolTable = new TableView<>();
     private ListView<String> fileTable = new ListView<>();
     private ListView<Integer> programIds = new ListView<>();
+    private ListView<String> out = new ListView<>();
     private String programSelectedIndex = null;
 
     @Override
     public void start(Stage stage) throws Exception {
         setAllCommands();
         final ListView<String> programStatesListView = new ListView<>();
+        TableColumn<String, String> heapTableKey = new TableColumn<>("Address");
+        TableColumn<String, String> heapTableValue = new TableColumn<>("Value");
+        heapTable.getColumns().addAll(heapTableKey, heapTableValue);
+
+        TableColumn<String, String> symbolTableKey = new TableColumn<>("Key");
+        TableColumn<String, String> symbolTableValue = new TableColumn<>("Value");
+        symbolTable.getColumns().addAll(symbolTableKey, symbolTableValue);
 
         TilePane mainLayout = new TilePane(Orientation.VERTICAL);
         Label outLabel = new Label("Out table");
@@ -56,7 +65,6 @@ public class GUI extends Application {
         Label programIdsLabel = new Label("Program Ids table");
 
         VBox outLayout = new VBox();
-        ListView<String> out = new ListView<>();
         outLayout.getChildren().add(outLabel);
         outLayout.getChildren().add(out);
         outLayout.setAlignment(Pos.CENTER);
@@ -109,7 +117,6 @@ public class GUI extends Application {
                     return;
                 }
                 commands.get(programSelectedIndex).execute();
-
             } catch (InterpreterException interpreterException) {
                 showAlert(interpreterException.getMessage(), AlertType.ERROR);
             }
@@ -136,7 +143,7 @@ public class GUI extends Application {
         controller.addObservant(displayResultsConsumer);
         allStepsButton.setText("All steps");
         oneStepButton.setText("One step");
-
+        configureProgramIdListView();
         populateProgramListView(programStatesListView);
         configureLoggerListView(out);
         configureLoggerListView(fileTable);
@@ -153,7 +160,8 @@ public class GUI extends Application {
         addToGUI(tilePaneLayout, buttonsLayout);
 
         tilePaneLayout.setPrefRows(4);
-        tilePaneLayout.setPrefTileHeight(100);
+        tilePaneLayout.setPrefTileHeight(200);
+
         loggerLayout.setPrefTileHeight(200);
         loggerLayout.setPrefRows(5);
         loggerLayout.setPrefTileWidth(150);
@@ -168,9 +176,28 @@ public class GUI extends Application {
         stage.show();
     }
 
+    private void configureProgramIdListView() {
+        programIds.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Object>() {
+            @Override
+            public void changed(ObservableValue observableValue, Object o, Object t1) {
+                int selectedProgramId = programIds.getSelectionModel().getSelectedItem();
+
+            }
+        });
+    }
+
     private void displayProgramStateResults(ProgramState programState) {
         programIds.getItems().clear();
         programIds.setItems(FXCollections.observableArrayList(programState.getId()));
+
+        out.getItems().clear();
+        out.setItems(FXCollections.observableArrayList(programState.getOutFiles().getKeys()));
+
+        fileTable.getItems().clear();
+        fileTable.setItems(FXCollections.observableArrayList((ArrayList) programState.getOut()));
+
+        heapTable.getItems().clear();
+
     }
 
     private void showAlert(String message, AlertType type) {
