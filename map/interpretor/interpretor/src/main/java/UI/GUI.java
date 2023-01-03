@@ -14,6 +14,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -26,7 +27,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -35,7 +35,10 @@ public class GUI extends Application {
             "C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\log1.txt");
     private Controller controller = new Controller(repository);
     private Map<String, Command> commands = new HashMap<>();
-
+    private TableView<String> heapTable = new TableView<>();
+    private TableView<String> symbolTable = new TableView<>();
+    private ListView<String> fileTable = new ListView<>();
+    private ListView<Integer> programIds = new ListView<>();
     private String programSelectedIndex = null;
 
     @Override
@@ -57,25 +60,25 @@ public class GUI extends Application {
         outLayout.setAlignment(Pos.CENTER);
 
         VBox heapTableLayout = new VBox();
-        TableView<String> heapTable = new TableView<>();
+
         heapTableLayout.getChildren().add(heapTableLabel);
         heapTableLayout.getChildren().add(heapTable);
         heapTableLayout.setAlignment(Pos.CENTER);
 
         VBox symbolTableLayout = new VBox();
-        TableView<String> symbolTable = new TableView<>();
+
         symbolTableLayout.getChildren().add(symbolTableLabel);
         symbolTableLayout.getChildren().add(symbolTable);
         symbolTableLayout.setAlignment(Pos.CENTER);
 
         VBox fileTableLayout = new VBox();
-        ListView<String> fileTable = new ListView<>();
+
         fileTableLayout.getChildren().add(fileTableLabel);
         fileTableLayout.getChildren().add(fileTable);
         fileTableLayout.setAlignment(Pos.CENTER);
 
         VBox programIdsLayout = new VBox();
-        ListView<Integer> programIds = new ListView<>();
+
         programIdsLayout.getChildren().add(programIdsLabel);
         programIdsLayout.getChildren().add(programIds);
         programIdsLayout.setAlignment(Pos.CENTER);
@@ -92,6 +95,7 @@ public class GUI extends Application {
         Button oneStepButton = new Button("oneStepButton");
         configureProgramListView(programStatesListView);
         allStepsButton.setOnAction(actionEvent -> {
+            controller.setOneStepRunning(false);
             fileTable.getItems().clear();
             programIds.getItems().clear();
             symbolTable.getItems().clear();
@@ -108,6 +112,21 @@ public class GUI extends Application {
                 showAlert(interpreterException.getMessage());
             }
         });
+
+        oneStepButton.setOnAction(actionEvent -> {
+            controller.setOneStepRunning(true);
+            try {
+                if (programSelectedIndex == null) {
+                    showAlert("No program selected!");
+                    return;
+                }
+                commands.get(programSelectedIndex).execute();
+
+            } catch (InterpreterException interpreterException) {
+                showAlert(interpreterException.getMessage());
+            }
+        });
+
         Consumer<ProgramState> displayResultsConsumer = this::displayProgramStateResults;
         controller.addObservant(displayResultsConsumer);
         allStepsButton.setText("All steps");
@@ -145,7 +164,8 @@ public class GUI extends Application {
     }
 
     private void displayProgramStateResults(ProgramState programState) {
-
+        programIds.getItems().clear();
+        programIds.setItems(FXCollections.observableArrayList(programState.getId()));
     }
 
     private void showAlert(String message) {

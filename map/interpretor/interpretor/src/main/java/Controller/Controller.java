@@ -72,7 +72,7 @@ public class Controller extends ProgramStateObserver {
 
     public void executeProgram() throws IOException, InterruptedException {
         if (isOneStepRunning) {
-
+            oneStep();
         } else {
             allStep();
         }
@@ -84,6 +84,7 @@ public class Controller extends ProgramStateObserver {
             try {
                 repository.logProgramStateExecution(p);
                 logger(p);
+                sendNotify(p);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -121,9 +122,6 @@ public class Controller extends ProgramStateObserver {
         programStates.forEach(p -> {
             try {
                 repository.logProgramStateExecution(p);
-                if (!(p.getExeStack().getTop() instanceof CompoundStatement)) {
-                    sendNotify(p);
-                }
                 logger(p);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -141,6 +139,7 @@ public class Controller extends ProgramStateObserver {
                 .filter(p -> p.getId() == id)
                 .findFirst()
                 .orElse(null);
+
         if (foundProgramById == null) {
             throw new InterpreterException("Program not found by Id");
         }
@@ -214,6 +213,25 @@ public class Controller extends ProgramStateObserver {
         return repository.getProgramStateList();
     }
 
+    public void oneStep() throws InterpreterException, InterruptedException {
+        ProgramState programState = repository.getCurrentProgram();
+        executorService = Executors.newFixedThreadPool(2);
+        List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStateList());
+        if (programStateList.isEmpty()) {
+            throw new InterpreterException("Finished");
+        }
+        programState.getHeap().setContent(unsafeGarbageCollector(
+                getAddressesFromSymbolTable(programState.getSymbolTable().getContent(), programState.getHeap()),
+                programState.getHeap()));
+        oneStepForAllPrograms(programStateList);
+
+        programStateList = removeCompletedPrograms(repository.getProgramStateList());
+
+        executorService.shutdown();
+
+        repository.setProgramStateList(programStateList);
+    }
+
     public void allStep() throws InterpreterException, IOException, InterruptedException {
         ProgramState programState = repository.getCurrentProgram();
         executorService = Executors.newFixedThreadPool(2);
@@ -244,10 +262,7 @@ public class Controller extends ProgramStateObserver {
 
     @Override
     public void sendNotify(ProgramState programState) {
-        // TODO Auto-generated method stub
-        this.displayMethods.forEach(method -> {
-            method.accept(programState);
-        });
+        this.displayMethods.forEach(method -> method.accept(programState));
     }
 
 }
