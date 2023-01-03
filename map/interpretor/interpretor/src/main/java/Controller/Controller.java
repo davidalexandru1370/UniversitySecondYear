@@ -90,7 +90,6 @@ public class Controller extends ProgramStateObserver {
         List<Callable<ProgramState>> callables = programStates.stream()
                 .map((ProgramState p) -> {
                     try {
-                        sendNotify();
                         return (Callable<ProgramState>) (p::oneStep);
 
                     } catch (InterpreterException e) {
@@ -121,8 +120,8 @@ public class Controller extends ProgramStateObserver {
         programStates.forEach(p -> {
             try {
                 repository.logProgramStateExecution(p);
+                sendNotify(p);
                 logger(p);
-
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -228,10 +227,10 @@ public class Controller extends ProgramStateObserver {
     }
 
     @Override
-    public void sendNotify() {
+    public void sendNotify(ProgramState programState) {
         // TODO Auto-generated method stub
         this.displayMethods.forEach(method -> {
-            method.run();
+            method.accept(programState);
         });
     }
 
