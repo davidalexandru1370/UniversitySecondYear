@@ -24,6 +24,7 @@ import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IHeap;
 import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
+import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.ReferenceValue;
 import Model.Value.Interfaces.IValue;
@@ -120,7 +121,9 @@ public class Controller extends ProgramStateObserver {
         programStates.forEach(p -> {
             try {
                 repository.logProgramStateExecution(p);
-                sendNotify(p);
+                if (!(p.getExeStack().getTop() instanceof CompoundStatement)) {
+                    sendNotify(p);
+                }
                 logger(p);
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -130,6 +133,19 @@ public class Controller extends ProgramStateObserver {
         programStates.addAll(newProgramStateList);
         repository.setProgramStateList(programStates);
 
+    }
+
+    public ProgramState getProgramStateById(Integer id) throws InterpreterException {
+        ProgramState foundProgramById = repository.getProgramStateList()
+                .stream()
+                .filter(p -> p.getId() == id)
+                .findFirst()
+                .orElse(null);
+        if (foundProgramById == null) {
+            throw new InterpreterException("Program not found by Id");
+        }
+
+        return foundProgramById;
     }
 
     private Map<Integer, IValue> unsafeGarbageCollector(Set<Integer> symbolTableAddresses, IHeap heap) {
