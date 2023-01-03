@@ -28,9 +28,10 @@ import Model.Statement.Interfaces.IStatement;
 import Model.Value.ReferenceValue;
 import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
+import Observers.ProgramStateObserver.ProgramStateObserver;
 import Repository.Interfaces.IRepository;
 
-public class Controller {
+public class Controller extends ProgramStateObserver {
 
     IRepository repository;
     private boolean isOneStepRunning = false;
@@ -51,10 +52,10 @@ public class Controller {
     }
 
     public void add(IStatement statement) {
-        IStack<IStatement> stack = new MyStack<IStatement>();
-        IDictionary<String, IValue> symbolTable = new MyDictionary<String, IValue>();
-        IList<IValue> out = new MyList<IValue>();
-        IDictionary<String, BufferedReader> outFiles = new MyDictionary<String, BufferedReader>();
+        IStack<IStatement> stack = new MyStack<>();
+        IDictionary<String, IValue> symbolTable = new MyDictionary<>();
+        IList<IValue> out = new MyList<>();
+        IDictionary<String, BufferedReader> outFiles = new MyDictionary<>();
         IHeap heap = new Heap();
         IDictionary<String, IVariableType> typeEnviroment = new MyDictionary<>();
         statement.typeCheck(typeEnviroment);
@@ -89,7 +90,9 @@ public class Controller {
         List<Callable<ProgramState>> callables = programStates.stream()
                 .map((ProgramState p) -> {
                     try {
+                        sendNotify();
                         return (Callable<ProgramState>) (p::oneStep);
+
                     } catch (InterpreterException e) {
                         throw new RuntimeException(e);
                     }
@@ -201,8 +204,6 @@ public class Controller {
         executorService = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStateList());
         while (!programStateList.isEmpty()) {
-            // oneStep(programState);
-            // programState.oneStep();
             programState.getHeap().setContent(unsafeGarbageCollector(
                     getAddressesFromSymbolTable(programState.getSymbolTable().getContent(), programState.getHeap()),
                     programState.getHeap()));
@@ -224,6 +225,14 @@ public class Controller {
 
     private void logger(ProgramState programState) {
         System.out.println(programState.currentStateToString());
+    }
+
+    @Override
+    public void sendNotify() {
+        // TODO Auto-generated method stub
+        this.displayMethods.forEach(method -> {
+            method.run();
+        });
     }
 
 }

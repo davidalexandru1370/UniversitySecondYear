@@ -14,8 +14,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -104,10 +102,7 @@ public class GUI extends Application {
                     return;
                 }
                 commands.get(programSelectedIndex).execute();
-                List<ProgramState> programStateList = this.controller.getProgramStateList();
-                for (ProgramState program : programStateList) {
-                    programIds.setItems((ObservableList<Integer>) ProgramState.getIds().keySet());
-                }
+
             } catch (InterpreterException interpreterException) {
                 showAlert(interpreterException.getMessage());
             }
@@ -234,7 +229,7 @@ public class GUI extends Application {
     }
 
     private void configureProgramListView(ListView listView) {
-        listView.setMaxHeight(300);
+        listView.setPrefHeight(300);
         listView.setPrefWidth(300);
         listView.setId("programStatesListView");
         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
