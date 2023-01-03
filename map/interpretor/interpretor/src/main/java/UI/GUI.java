@@ -22,11 +22,13 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +40,7 @@ public class GUI extends Application {
             "C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\log1.txt");
     private Controller controller = new Controller(repository);
     private Map<String, Command> commands = new HashMap<>();
-    private TableView<String> heapTable = new TableView<>();
+    private TableView<Pair<String, String>> heapTable = new TableView<>();
     private TableView<String> symbolTable = new TableView<>();
     private ListView<String> fileTable = new ListView<>();
     private ListView<Integer> programIds = new ListView<>();
@@ -49,12 +51,16 @@ public class GUI extends Application {
     public void start(Stage stage) throws Exception {
         setAllCommands();
         final ListView<String> programStatesListView = new ListView<>();
-        TableColumn<String, String> heapTableKey = new TableColumn<>("Address");
-        TableColumn<String, String> heapTableValue = new TableColumn<>("Value");
+        TableColumn<Pair<String, String>, String> heapTableKey = new TableColumn<>("Address");
+        TableColumn<Pair<String, String>, String> heapTableValue = new TableColumn<>("Value");
+        heapTableKey.setCellValueFactory(new PropertyValueFactory<Pair<String, String>, String>("Address"));
+        heapTableValue.setCellValueFactory(new PropertyValueFactory<Pair<String, String>, String>("Value"));
         heapTable.getColumns().addAll(heapTableKey, heapTableValue);
 
         TableColumn<String, String> symbolTableKey = new TableColumn<>("Key");
         TableColumn<String, String> symbolTableValue = new TableColumn<>("Value");
+        symbolTableKey.setCellValueFactory(new PropertyValueFactory<String, String>("Key"));
+        symbolTableValue.setCellValueFactory(new PropertyValueFactory<String, String>("Value"));
         symbolTable.getColumns().addAll(symbolTableKey, symbolTableValue);
 
         TilePane mainLayout = new TilePane(Orientation.VERTICAL);
@@ -181,7 +187,6 @@ public class GUI extends Application {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
                 int selectedProgramId = programIds.getSelectionModel().getSelectedItem();
-
             }
         });
     }
@@ -191,12 +196,27 @@ public class GUI extends Application {
         programIds.setItems(FXCollections.observableArrayList(programState.getId()));
 
         out.getItems().clear();
-        out.setItems(FXCollections.observableArrayList(programState.getOutFiles().getKeys()));
+        ObservableList<String> outList = FXCollections.observableArrayList();
+
+        programState.getOut().forEach(e -> outList.add(e.toString()));
+        out.setItems(outList);
 
         fileTable.getItems().clear();
-        fileTable.setItems(FXCollections.observableArrayList((ArrayList) programState.getOut()));
+        fileTable.setItems(FXCollections.observableArrayList(programState.getOutFiles().getKeys()));
 
         heapTable.getItems().clear();
+
+        ObservableList<Pair<String, String>> heapContent = FXCollections.observableArrayList();
+
+        programState.getHeap().getContent().keySet().stream()
+                .map(p -> heapContent
+                        .add(new Pair<String, String>(p.toString(), programState.getHeap().get(p).toString())));
+
+        if (heapContent.size() >= 1) {
+            System.out.println("aici");
+        }
+
+        heapTable.setItems(heapContent);
 
     }
 
