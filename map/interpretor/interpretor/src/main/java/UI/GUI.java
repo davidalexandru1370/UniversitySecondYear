@@ -28,6 +28,7 @@ import javafx.stage.Stage;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class GUI extends Application {
     private IRepository repository = new Repository(
@@ -107,7 +108,8 @@ public class GUI extends Application {
                 showAlert(interpreterException.getMessage());
             }
         });
-
+        Consumer<ProgramState> displayResultsConsumer = this::displayProgramStateResults;
+        controller.addObservant(displayResultsConsumer);
         allStepsButton.setText("All steps");
         oneStepButton.setText("One step");
 
@@ -140,6 +142,10 @@ public class GUI extends Application {
 
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void displayProgramStateResults(ProgramState programState) {
+
     }
 
     private void showAlert(String message) {
