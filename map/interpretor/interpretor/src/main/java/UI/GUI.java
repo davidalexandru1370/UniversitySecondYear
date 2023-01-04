@@ -53,7 +53,7 @@ public class GUI extends Application {
         final ListView<String> programStatesListView = new ListView<>();
         TableColumn<Pair<String, String>, String> heapTableKey = new TableColumn<>("Address");
         TableColumn<Pair<String, String>, String> heapTableValue = new TableColumn<>("Value");
-        heapTableKey.setCellValueFactory(new PropertyValueFactory<Pair<String, String>, String>("Address"));
+        heapTableKey.setCellValueFactory(new PropertyValueFactory<Pair<String, String>, String>("Key"));
         heapTableValue.setCellValueFactory(new PropertyValueFactory<Pair<String, String>, String>("Value"));
         heapTable.getColumns().addAll(heapTableKey, heapTableValue);
 
@@ -209,12 +209,12 @@ public class GUI extends Application {
         ObservableList<Pair<String, String>> heapContent = FXCollections.observableArrayList();
 
         programState.getHeap().getContent().keySet().stream()
-                .map(p -> heapContent
+                .forEach(p -> heapContent
                         .add(new Pair<String, String>(p.toString(), programState.getHeap().get(p).toString())));
 
-        if (heapContent.size() >= 1) {
-            System.out.println("aici");
-        }
+        // programState.getHeap().getContent().keySet().stream()
+        // .forEach(p -> System.out.println(p));
+        System.out.println(heapContent);
 
         heapTable.setItems(heapContent);
 

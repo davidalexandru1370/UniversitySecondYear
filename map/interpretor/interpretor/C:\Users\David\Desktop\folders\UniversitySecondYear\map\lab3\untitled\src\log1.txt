@@ -8797,3 +8797,1383 @@ File table:
 Heap: 
 Heap address = 656133723 value = 20
 
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=487870902, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+Heap address = 487870902 value = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=487870902, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+Heap address = 487870902 value = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=487870902, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+Heap address = 487870902 value = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=487870902, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+Heap address = 487870902 value = ReferenceValue{heapAddress=383395227, locationType=int}
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=487870902, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=282503742, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+Heap address = 487870902 value = ReferenceValue{heapAddress=383395227, locationType=int}
+Heap address = 282503742 value = 30
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=487870902, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=282503742, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+Heap address = 487870902 value = ReferenceValue{heapAddress=383395227, locationType=int}
+Heap address = 282503742 value = 30
+
+Id:280379445
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+a = ReferenceValue{heapAddress=487870902, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=282503742, locationType=int}
+
+Out:
+20
+
+File table: 
+Heap: 
+Heap address = 383395227 value = 20
+Heap address = 487870902 value = ReferenceValue{heapAddress=383395227, locationType=int}
+Heap address = 282503742 value = 30
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=371251366, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 371251366 value = ReferenceValue{heapAddress=769554438, locationType=int}
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=371251366, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 371251366 value = ReferenceValue{heapAddress=769554438, locationType=int}
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=371251366, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 371251366 value = ReferenceValue{heapAddress=769554438, locationType=int}
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=371251366, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=769554438, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 371251366 value = ReferenceValue{heapAddress=769554438, locationType=int}
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=371251366, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=987646347, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 987646347 value = 30
+Heap address = 371251366 value = ReferenceValue{heapAddress=769554438, locationType=int}
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=371251366, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=987646347, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 987646347 value = 30
+Heap address = 371251366 value = ReferenceValue{heapAddress=769554438, locationType=int}
+Heap address = 769554438 value = 20
+
+Id:1127910030
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+a = ReferenceValue{heapAddress=371251366, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=987646347, locationType=int}
+
+Out:
+20
+
+File table: 
+Heap: 
+Heap address = 987646347 value = 30
+Heap address = 371251366 value = ReferenceValue{heapAddress=769554438, locationType=int}
+Heap address = 769554438 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=732524928, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+Heap address = 732524928 value = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=732524928, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+Heap address = 732524928 value = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=732524928, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+Heap address = 732524928 value = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=732524928, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 76211698 value = 20
+Heap address = 732524928 value = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=732524928, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=741355223, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 741355223 value = 30
+Heap address = 76211698 value = 20
+Heap address = 732524928 value = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=732524928, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=741355223, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 741355223 value = 30
+Heap address = 76211698 value = 20
+Heap address = 732524928 value = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Id:1341228677
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+a = ReferenceValue{heapAddress=732524928, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=741355223, locationType=int}
+
+Out:
+20
+
+File table: 
+Heap: 
+Heap address = 741355223 value = 30
+Heap address = 76211698 value = 20
+Heap address = 732524928 value = ReferenceValue{heapAddress=76211698, locationType=int}
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=696672130, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 696672130 value = ReferenceValue{heapAddress=690948857, locationType=int}
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=696672130, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 696672130 value = ReferenceValue{heapAddress=690948857, locationType=int}
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=696672130, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 696672130 value = ReferenceValue{heapAddress=690948857, locationType=int}
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=696672130, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=690948857, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 696672130 value = ReferenceValue{heapAddress=690948857, locationType=int}
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=696672130, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=977506496, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 977506496 value = 30
+Heap address = 696672130 value = ReferenceValue{heapAddress=690948857, locationType=int}
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=696672130, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=977506496, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 977506496 value = 30
+Heap address = 696672130 value = ReferenceValue{heapAddress=690948857, locationType=int}
+Heap address = 690948857 value = 20
+
+Id:1443029275
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+a = ReferenceValue{heapAddress=696672130, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=977506496, locationType=int}
+
+Out:
+20
+
+File table: 
+Heap: 
+Heap address = 977506496 value = 30
+Heap address = 696672130 value = ReferenceValue{heapAddress=690948857, locationType=int}
+Heap address = 690948857 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}, VariableDeclarationStatement{name='v', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=20}}, second=CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}, NewStatement{variableName='v', expression=ValueExpression{value=20}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}, second=CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}, VariableDeclarationStatement{name='a', type=ReferenceType{inner=ReferenceType{inner=int}}}]}
+Symbol table:
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='a', expression=Variable expression = v}, second=CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}, NewStatement{variableName='a', expression=Variable expression = v}]}
+Symbol table:
+a = ReferenceValue{heapAddress=0, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=123833662, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+Heap address = 123833662 value = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v', expression=ValueExpression{value=30}}, second=Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=123833662, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+Heap address = 123833662 value = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=123833662, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+Heap address = 123833662 value = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}, NewStatement{variableName='v', expression=ValueExpression{value=30}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=123833662, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+Heap address = 123833662 value = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=123833662, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=314608044, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+Heap address = 314608044 value = 30
+Heap address = 123833662 value = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[Print: HeapReadingExpression{expression=HeapReadingExpression{expression=Variable expression = a}}]}
+Symbol table:
+a = ReferenceValue{heapAddress=123833662, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=314608044, locationType=int}
+
+Out:
+No output.
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+Heap address = 314608044 value = 30
+Heap address = 123833662 value = ReferenceValue{heapAddress=1047369562, locationType=int}
+
+Id:950957715
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+a = ReferenceValue{heapAddress=123833662, locationType=ReferenceType{inner=int}}
+v = ReferenceValue{heapAddress=314608044, locationType=int}
+
+Out:
+20
+
+File table: 
+Heap: 
+Heap address = 1047369562 value = 20
+Heap address = 314608044 value = 30
+Heap address = 123833662 value = ReferenceValue{heapAddress=1047369562, locationType=int}
+
