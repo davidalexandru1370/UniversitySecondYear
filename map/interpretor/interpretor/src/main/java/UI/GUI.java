@@ -42,6 +42,7 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class GUI extends Application {
     private IRepository repository = new Repository(
@@ -227,8 +228,11 @@ public class GUI extends Application {
     }
 
     private void displayProgramStateResults(ProgramState programState) {
-        programIds.getItems().clear();
-        programIds.setItems(FXCollections.observableArrayList(programState.getId()));
+        // programIds.getItems().clear();
+        ObservableList<Integer> programIdsContent = FXCollections.observableArrayList(programState.getId());
+        programIdsContent.addAll(programIds.getItems());
+        programIds.setItems(FXCollections.observableArrayList(
+                programIdsContent.stream().collect(Collectors.toSet())));
 
         out.getItems().clear();
         ObservableList<String> outList = FXCollections.observableArrayList();
@@ -246,6 +250,8 @@ public class GUI extends Application {
         programState.getHeap().getContent().keySet().stream()
                 .forEach(p -> heapContent
                         .add(new Pair<String, String>(p.toString(), programState.getHeap().get(p).toString())));
+
+        heapTable.setItems(heapContent);
 
         symbolTableLocalStorage.insert(programState.getId(), programState.getSymbolTable());
         if (!executionStackLocalStorage.isDefined(programState.getId())) {
