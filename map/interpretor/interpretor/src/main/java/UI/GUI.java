@@ -134,14 +134,7 @@ public class GUI extends Application {
 
         allStepsButton.setOnAction(actionEvent -> {
             controller.setOneStepRunning(false);
-            fileTable.getItems().clear();
-            programIds.getItems().clear();
-            symbolTable.getItems().clear();
-            heapTable.getItems().clear();
-            executionStack.getItems().clear();
-            out.getItems().clear();
-            symbolTableLocalStorage = new MyDictionary<>();
-            executionStackLocalStorage = new MyDictionary<>();
+            resetListViews();
 
             try {
                 if (programSelectedIndex == null) {
@@ -210,11 +203,25 @@ public class GUI extends Application {
         stage.show();
     }
 
+    private void resetListViews() {
+        fileTable.getItems().clear();
+        programIds.getItems().clear();
+        symbolTable.getItems().clear();
+        heapTable.getItems().clear();
+        executionStack.getItems().clear();
+        out.getItems().clear();
+        symbolTableLocalStorage = new MyDictionary<>();
+        executionStackLocalStorage = new MyDictionary<>();
+    }
+
     private void configureProgramIdListView() {
         programIds.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Object>() {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
-                int selectedProgramId = programIds.getSelectionModel().getSelectedItem();
+                Integer selectedProgramId = programIds.getSelectionModel().getSelectedItem();
+                if (selectedProgramId == null) {
+                    return;
+                }
                 executionStack
                         .setItems(FXCollections.observableArrayList(executionStackLocalStorage.get(selectedProgramId)));
                 symbolTable.setItems(FXCollections.observableArrayList(symbolTableLocalStorage
@@ -363,6 +370,7 @@ public class GUI extends Application {
                 if (selectedIndex + 1 > commands.size()) {
                     programSelectedIndex = null;
                 } else {
+                    resetListViews();
                     programSelectedIndex = String.valueOf(selectedIndex + 1);
                 }
             }
