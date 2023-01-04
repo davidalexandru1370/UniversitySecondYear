@@ -23,7 +23,7 @@ public class Heap implements IHeap {
 
     private Integer newFreeValue() {
         Random random = new Random();
-        freeValue = random.nextInt(0, 1 << 31 - 1);
+        freeValue = random.nextInt(0, 1 << 8);
         while (freeValue == 0 || heap.containsKey(freeValue) || freeValue < 0) {
             freeValue = random.nextInt();
         }

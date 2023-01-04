@@ -7,6 +7,7 @@ import Exceptions.InterpreterException;
 import Model.Command.Command;
 import Model.Command.RunExample;
 import Model.ProgramState;
+import Model.ADT.MyDictionary;
 import Repository.Interfaces.IRepository;
 import Repository.Repository;
 import Utilities.Programs;
@@ -31,20 +32,24 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 import java.util.function.Consumer;
 
 public class GUI extends Application {
     private IRepository repository = new Repository(
-            "C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\log1.txt");
+            "log1.txt");
     private Controller controller = new Controller(repository);
     private Map<String, Command> commands = new HashMap<>();
     private TableView<Pair<String, String>> heapTable = new TableView<>();
     private TableView<String> symbolTable = new TableView<>();
     private ListView<String> fileTable = new ListView<>();
     private ListView<Integer> programIds = new ListView<>();
+    private ListView<String> executionStack = new ListView<>();
     private ListView<String> out = new ListView<>();
+    private Dictionary<Integer, MyDictionary> symbolTableLocalStorage = new Hashtable<>();
     private String programSelectedIndex = null;
 
     @Override
@@ -69,6 +74,7 @@ public class GUI extends Application {
         Label symbolTableLabel = new Label("Symbol table");
         Label fileTableLabel = new Label("File table");
         Label programIdsLabel = new Label("Program Ids table");
+        Label executionStackLabel = new Label("Execution stack");
 
         VBox outLayout = new VBox();
         outLayout.getChildren().add(outLabel);
@@ -76,9 +82,10 @@ public class GUI extends Application {
         outLayout.setAlignment(Pos.CENTER);
 
         VBox heapTableLayout = new VBox();
-
         heapTableLayout.getChildren().add(heapTableLabel);
         heapTableLayout.getChildren().add(heapTable);
+        heapTableLayout.setPrefWidth(700);
+        heapTable.setPrefWidth(700);
         heapTableLayout.setAlignment(Pos.CENTER);
 
         VBox symbolTableLayout = new VBox();
@@ -99,17 +106,25 @@ public class GUI extends Application {
         programIdsLayout.getChildren().add(programIds);
         programIdsLayout.setAlignment(Pos.CENTER);
 
+        VBox executionStackLayout = new VBox();
+        executionStackLayout.getChildren().add(executionStackLabel);
+        executionStackLayout.getChildren().add(executionStack);
+        executionStackLayout.setAlignment(Pos.CENTER);
+
         TilePane tilePaneLayout = new TilePane(Orientation.HORIZONTAL);
         tilePaneLayout.setPadding(new Insets(20, 10, 20, 10));
         TilePane buttonsLayout = new TilePane(Orientation.VERTICAL);
         TilePane loggerLayout = new TilePane(Orientation.HORIZONTAL);
+
         loggerLayout.setId("loggerLayout");
         buttonsLayout.setHgap(10.0);
         buttonsLayout.setVgap(10.0);
+
         buttonsLayout.setPadding(new Insets(0, 0, 0, 10));
         Button allStepsButton = new Button("allStepsButton");
         Button oneStepButton = new Button("oneStepButton");
         configureProgramListView(programStatesListView);
+
         allStepsButton.setOnAction(actionEvent -> {
             controller.setOneStepRunning(false);
             fileTable.getItems().clear();
@@ -153,9 +168,11 @@ public class GUI extends Application {
         populateProgramListView(programStatesListView);
         configureLoggerListView(out);
         configureLoggerListView(fileTable);
+        configureLoggerListView(executionStack);
         configureLoggerListView(programIds);
         StackPane root = new StackPane();
         addToGUI(tilePaneLayout, programStatesListView);
+        addToGUI(loggerLayout, executionStackLayout);
         addToGUI(loggerLayout, outLayout);
         addToGUI(loggerLayout, heapTableLayout);
         addToGUI(loggerLayout, symbolTableLayout);
