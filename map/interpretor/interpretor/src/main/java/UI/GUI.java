@@ -6,8 +6,12 @@ import Exceptions.FinishedRunningException;
 import Exceptions.InterpreterException;
 import Model.Command.Command;
 import Model.Command.RunExample;
+import Model.Statement.Interfaces.IStatement;
+import Model.Value.Interfaces.IValue;
 import Model.ProgramState;
 import Model.ADT.MyDictionary;
+import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.Interfaces.IStack;
 import Repository.Interfaces.IRepository;
 import Repository.Repository;
 import Utilities.Programs;
@@ -35,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -49,7 +54,8 @@ public class GUI extends Application {
     private ListView<Integer> programIds = new ListView<>();
     private ListView<String> executionStack = new ListView<>();
     private ListView<String> out = new ListView<>();
-    private Dictionary<Integer, MyDictionary> symbolTableLocalStorage = new Hashtable<>();
+    private MyDictionary<Integer, IDictionary<String, IValue>> symbolTableLocalStorage = new MyDictionary<>();
+    private MyDictionary<Integer, List<String>> executionStackLocalStorage = new MyDictionary<>();
     private String programSelectedIndex = null;
 
     @Override
@@ -131,7 +137,11 @@ public class GUI extends Application {
             programIds.getItems().clear();
             symbolTable.getItems().clear();
             heapTable.getItems().clear();
+            executionStack.getItems().clear();
             out.getItems().clear();
+            symbolTableLocalStorage = new MyDictionary<>();
+            executionStackLocalStorage = new MyDictionary<>();
+
             try {
                 if (programSelectedIndex == null) {
                     showAlert("No program selected!", AlertType.ERROR);
@@ -204,6 +214,14 @@ public class GUI extends Application {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
                 int selectedProgramId = programIds.getSelectionModel().getSelectedItem();
+                executionStack
+                        .setItems(FXCollections.observableArrayList(executionStackLocalStorage.get(selectedProgramId)));
+                symbolTable.setItems(FXCollections.observableArrayList(symbolTableLocalStorage
+                        .get(selectedProgramId)
+                        .getKeys()
+                        .stream()
+                        .map(key -> new Pair(key, symbolTableLocalStorage.get(selectedProgramId).get((String) key)))
+                        .toList()));
             }
         });
     }
@@ -229,11 +247,16 @@ public class GUI extends Application {
                 .forEach(p -> heapContent
                         .add(new Pair<String, String>(p.toString(), programState.getHeap().get(p).toString())));
 
-        // programState.getHeap().getContent().keySet().stream()
-        // .forEach(p -> System.out.println(p));
-        System.out.println(heapContent);
+        symbolTableLocalStorage.insert(programState.getId(), programState.getSymbolTable());
+        if (!executionStackLocalStorage.isDefined(programState.getId())) {
+            executionStackLocalStorage.insert(programState.getId(), new ArrayList<String>());
+        }
+        try {
+            executionStackLocalStorage.get(programState.getId())
+                    .add(programState.getExeStack().getTop().toString());
+        } catch (Exception ex) {
 
-        heapTable.setItems(heapContent);
+        }
 
     }
 

@@ -85,7 +85,7 @@ public class Controller extends ProgramStateObserver {
             try {
                 repository.logProgramStateExecution(p);
                 logger(p);
-                sendNotify(p);
+                // sendNotify(p);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
