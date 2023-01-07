@@ -4,12 +4,11 @@ use Bank;
 if OBJECT_ID('Transactions','U') is not null
 	drop table Transactions
 
-	if OBJECT_ID('Card','U') is not null
+if OBJECT_ID('Card','U') is not null
 	drop table Card
 
 if OBJECT_ID('BankAccounts','U') is not null
 	drop table BankAccounts
-
 
 if OBJECT_ID('Customers','U') is not null
 	drop table Customers
