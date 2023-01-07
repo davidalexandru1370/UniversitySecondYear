@@ -14,8 +14,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -30,7 +28,6 @@ import javafx.stage.Stage;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public class GUI extends Application {
     private IRepository repository = new Repository("C:\\Users\\David\\Desktop\\folders\\UniversitySecondYear\\map\\lab3\\untitled\\src\\log1.txt");
@@ -63,7 +60,6 @@ public class GUI extends Application {
         heapTableLayout.getChildren().add(heapTableLabel);
         heapTableLayout.getChildren().add(heapTable);
         heapTableLayout.setAlignment(Pos.CENTER);
-
 
         VBox symbolTableLayout = new VBox();
         TableView<String> symbolTable = new TableView<>();

@@ -113,7 +113,7 @@ public class Programs {
 
     public static IStatement program8(){
         return new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
-                new CompoundStatement(new AssignStatement("v",new ValueExpression(new IntValue(4))),
+                new CompoundStatement(new AssignStatement("v",new ValueExpression(new StringValue(""))),
                 new CompoundStatement(
                         new WhileStatement
                                 (new RelationalExpression(
