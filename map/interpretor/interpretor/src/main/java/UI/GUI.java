@@ -231,6 +231,7 @@ public class GUI extends Application {
                 if (selectedProgramId == null) {
                     return;
                 }
+
                 executionStack
                         .setItems(FXCollections.observableArrayList(executionStackLocalStorage.get(selectedProgramId)));
                 symbolTable.setItems(FXCollections.observableArrayList(symbolTableLocalStorage
@@ -379,6 +380,7 @@ public class GUI extends Application {
                 if (selectedIndex + 1 > commands.size()) {
                     programSelectedIndex = null;
                 } else {
+                    repository.clear();
                     resetListViews();
                     programSelectedIndex = String.valueOf(selectedIndex + 1);
                 }

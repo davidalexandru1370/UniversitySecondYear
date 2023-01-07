@@ -38,7 +38,6 @@ public class Controller extends ProgramStateObserver {
     IRepository repository;
     private boolean isOneStepRunning = false;
 
-
     private ExecutorService executorService;
 
     public Controller(IRepository repository) {
@@ -83,13 +82,10 @@ public class Controller extends ProgramStateObserver {
     private void oneStepForAllPrograms(List<ProgramState> programStates)
             throws InterpreterException, InterruptedException {
         programStates.forEach(p -> {
-            try {
-                repository.logProgramStateExecution(p);
-                logger(p);
-                // sendNotify(p);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            // repository.logProgramStateExecution(p);
+            logger(p);
+            // sendNotify(p);
+
         });
         List<Callable<ProgramState>> callables = programStates.stream()
                 .map((ProgramState p) -> {
@@ -122,13 +118,11 @@ public class Controller extends ProgramStateObserver {
         }
 
         programStates.forEach(p -> {
-            try {
-                repository.logProgramStateExecution(p);
-                logger(p);
-                sendNotify(p);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+
+            // repository.logProgramStateExecution(p);
+            logger(p);
+            sendNotify(p);
+
         });
 
         programStates.addAll(newProgramStateList);
@@ -235,6 +229,10 @@ public class Controller extends ProgramStateObserver {
         if (programStateList.isEmpty()) {
             throw new FinishedRunningException("Finished");
         }
+    }
+
+    public void clearRepository() {
+        repository.clear();
     }
 
     public void allStep() throws InterpreterException, IOException, InterruptedException {

@@ -13,11 +13,16 @@ public interface IRepository {
     void add(ProgramState programState);
 
     void logProgramStateExecution(String state) throws InterpreterException, IOException;
+
     void logProgramStateExecution(ProgramState programState) throws IOException;
 
-    void pop() throws  RepositoryException;
+    void pop() throws RepositoryException;
 
     void changeLoggerFilePath(String path);
+
     List<ProgramState> getProgramStateList();
+
+    void clear();
+
     void setProgramStateList(List<ProgramState> programStates);
 }

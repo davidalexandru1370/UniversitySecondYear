@@ -21,26 +21,26 @@ public class Repository implements IRepository {
     }
 
     @Override
-    public void add(ProgramState programState){
+    public void add(ProgramState programState) {
         programs.add(programState);
     }
 
     @Override
     public void logProgramStateExecution(String state) throws InterpreterException, IOException {
-        PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
+        PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
         logFile.println(state);
         logFile.close();
     }
 
     public void logProgramStateExecution(ProgramState state) throws IOException {
-        PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
+        PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
         logFile.println(state);
         logFile.close();
     }
 
     @Override
-    public void pop() throws RepositoryException{
-        if(programs.size() == 0){
+    public void pop() throws RepositoryException {
+        if (programs.size() == 0) {
             throw new RepositoryException("No program!");
         }
         programs.remove(0);
@@ -62,10 +62,16 @@ public class Repository implements IRepository {
     }
 
     @Override
-    public ProgramState getCurrentProgram() throws RepositoryException{
-        if (programs.size() == 0){
+    public ProgramState getCurrentProgram() throws RepositoryException {
+        if (programs.size() == 0) {
             throw new RepositoryException("No programs!\n");
         }
         return programs.get(0);
+    }
+
+    @Override
+    public void clear() {
+        // TODO Auto-generated method stub
+        programs.clear();
     }
 }
