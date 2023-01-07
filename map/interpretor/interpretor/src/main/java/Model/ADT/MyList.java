@@ -40,9 +40,13 @@ public class MyList<T> implements IList<T> {
             stringBuilder.append(t.toString()).append("\n");
         }
 
-        if(list.size() == 0){
+        if (list.size() == 0) {
             stringBuilder.append("No output.");
         }
         return stringBuilder.toString();
+    }
+
+    public List<T> getList() {
+        return list;
     }
 }

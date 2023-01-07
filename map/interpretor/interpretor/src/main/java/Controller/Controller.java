@@ -1,37 +1,46 @@
 package Controller;
 
-import Exceptions.ExecutionStackException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
+
+import Exceptions.FinishedRunningException;
 import Exceptions.InterpreterException;
 import Exceptions.RepositoryException;
+import Model.ProgramState;
 import Model.ADT.Heap;
+import Model.ADT.MyDictionary;
+import Model.ADT.MyList;
+import Model.ADT.MyStack;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IHeap;
 import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
-import Model.ADT.MyDictionary;
-import Model.ADT.MyList;
-import Model.ADT.MyStack;
 import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
-import Model.ProgramState;
-import Model.Value.Interfaces.IValue;
 import Model.Value.ReferenceValue;
+import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
+import Observers.ProgramStateObserver.ProgramStateObserver;
 import Repository.Interfaces.IRepository;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.stream.Collectors;
-
-public class Controller {
+public class Controller extends ProgramStateObserver {
 
     IRepository repository;
     private boolean isOneStepRunning = false;
 
 
     private ExecutorService executorService;
+
     public Controller(IRepository repository) {
         this.repository = repository;
         this.executorService = Executors.newFixedThreadPool(2);
@@ -45,18 +54,18 @@ public class Controller {
         isOneStepRunning = oneStepRunning;
     }
 
-    public void add(IStatement statement){
-        IStack<IStatement> stack = new MyStack<IStatement>();
-        IDictionary<String, IValue> symbolTable = new MyDictionary<String,IValue>();
-        IList<IValue> out = new MyList<IValue>();
-        IDictionary<String, BufferedReader> outFiles = new MyDictionary<String,BufferedReader>();
+    public void add(IStatement statement) {
+        IStack<IStatement> stack = new MyStack<>();
+        IDictionary<String, IValue> symbolTable = new MyDictionary<>();
+        IList<IValue> out = new MyList<>();
+        IDictionary<String, BufferedReader> outFiles = new MyDictionary<>();
         IHeap heap = new Heap();
         IDictionary<String, IVariableType> typeEnviroment = new MyDictionary<>();
         statement.typeCheck(typeEnviroment);
-        repository.add(new ProgramState(stack, symbolTable, out,outFiles,heap, statement));
+        repository.add(new ProgramState(stack, symbolTable, out, outFiles, heap, statement));
     }
 
-    private List<ProgramState> removeCompletedPrograms(List<ProgramState> currentPrograms){
+    private List<ProgramState> removeCompletedPrograms(List<ProgramState> currentPrograms) {
         return currentPrograms
                 .stream()
                 .filter(ProgramState::isNotCompleted)
@@ -64,19 +73,20 @@ public class Controller {
     }
 
     public void executeProgram() throws IOException, InterruptedException {
-        if (isOneStepRunning){
-
-        }
-        else{
+        if (isOneStepRunning) {
+            oneStep();
+        } else {
             allStep();
         }
     }
 
-    private void oneStepForAllPrograms(List<ProgramState> programStates) throws InterpreterException, InterruptedException {
+    private void oneStepForAllPrograms(List<ProgramState> programStates)
+            throws InterpreterException, InterruptedException {
         programStates.forEach(p -> {
             try {
                 repository.logProgramStateExecution(p);
                 logger(p);
+                // sendNotify(p);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -85,6 +95,7 @@ public class Controller {
                 .map((ProgramState p) -> {
                     try {
                         return (Callable<ProgramState>) (p::oneStep);
+
                     } catch (InterpreterException e) {
                         throw new RuntimeException(e);
                     }
@@ -105,7 +116,7 @@ public class Controller {
                     })
                     .filter(Objects::nonNull)
                     .toList();
-        } catch (InterruptedException interpreterException) {
+        } catch (InterpreterException interpreterException) {
             interpreterException.printStackTrace();
             System.exit(1);
         }
@@ -114,7 +125,7 @@ public class Controller {
             try {
                 repository.logProgramStateExecution(p);
                 logger(p);
-
+                sendNotify(p);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -125,79 +136,115 @@ public class Controller {
 
     }
 
-    private Map<Integer,IValue> unsafeGarbageCollector(Set<Integer> symbolTableAddresses, IHeap heap){
+    public ProgramState getProgramStateById(Integer id) throws InterpreterException {
+        ProgramState foundProgramById = repository.getProgramStateList()
+                .stream()
+                .filter(p -> p.getId() == id)
+                .findFirst()
+                .orElse(null);
+
+        if (foundProgramById == null) {
+            throw new InterpreterException("Program not found by Id");
+        }
+
+        return foundProgramById;
+    }
+
+    private Map<Integer, IValue> unsafeGarbageCollector(Set<Integer> symbolTableAddresses, IHeap heap) {
         return heap.getContent()
                 .entrySet()
                 .stream()
                 .filter(e -> symbolTableAddresses.contains(e.getKey()))
-                .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue));
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
-    Set<Integer> getAddressesFromSymbolTable(List<IValue> symbolTableValues, IHeap heap){
+    Set<Integer> getAddressesFromSymbolTable(List<IValue> symbolTableValues, IHeap heap) {
         Set<Integer> addresses = new TreeSet<>();
-         symbolTableValues.stream()
+        symbolTableValues.stream()
                 .filter(v -> v instanceof ReferenceValue)
                 .forEach(e -> {
-                    while(e instanceof ReferenceValue && ((ReferenceValue) e).getHeapAddress() != 0){
-                        addresses.add(((ReferenceValue)e).getHeapAddress());
+                    while (e instanceof ReferenceValue && ((ReferenceValue) e).getHeapAddress() != 0) {
+                        addresses.add(((ReferenceValue) e).getHeapAddress());
                         try {
-                            e = heap.get(((ReferenceValue)e).getHeapAddress());
+                            e = heap.get(((ReferenceValue) e).getHeapAddress());
                         } catch (InterpreterException ex) {
                             throw new RuntimeException(ex);
                         }
                     }
                 });
-         return addresses;
+        return addresses;
     }
-/*
-    public ProgramState oneStep(ProgramState state) throws InterpreterException, IOException {
-        IStack<IStatement> stack = state.getExeStack();
 
-        IStatement currentStatement = stack.pop();
-        if(currentStatement != null) {
-            boolean canPrintOutAndSymbolTable = false;
-            if(!(currentStatement instanceof CompoundStatement)){
-                logger("Exe stack: \n" + currentStatement.toString());
-                canPrintOutAndSymbolTable = true;
-            }
-
-            currentStatement.execute(state);
-            if(canPrintOutAndSymbolTable){
-                repository.logProgramStateExecution("Exe Stack:\n" + currentStatement.toString() + "\n" +
-                         state.symbolTableToString() +
-                         state.outToString() +
-                         state.fileTableToString() +
-                         state.heapToString()
-                        );
-                logger(
-                        state.symbolTableToString() +
-                        state.outToString() +
-                        state.fileTableToString() +
-                        state.heapToString());
-                logger(new String(new char[100]).replace("\0","-"));
-            }
-        }
-        return state;
-    }
-*/
+    /*
+     * public ProgramState oneStep(ProgramState state) throws InterpreterException,
+     * IOException {
+     * IStack<IStatement> stack = state.getExeStack();
+     * 
+     * IStatement currentStatement = stack.pop();
+     * if(currentStatement != null) {
+     * boolean canPrintOutAndSymbolTable = false;
+     * if(!(currentStatement instanceof CompoundStatement)){
+     * logger("Exe stack: \n" + currentStatement.toString());
+     * canPrintOutAndSymbolTable = true;
+     * }
+     * 
+     * currentStatement.execute(state);
+     * if(canPrintOutAndSymbolTable){
+     * repository.logProgramStateExecution("Exe Stack:\n" +
+     * currentStatement.toString() + "\n" +
+     * state.symbolTableToString() +
+     * state.outToString() +
+     * state.fileTableToString() +
+     * state.heapToString()
+     * );
+     * logger(
+     * state.symbolTableToString() +
+     * state.outToString() +
+     * state.fileTableToString() +
+     * state.heapToString());
+     * logger(new String(new char[100]).replace("\0","-"));
+     * }
+     * }
+     * return state;
+     * }
+     */
     public ProgramState getCurrentProgram() throws RepositoryException {
         return repository.getCurrentProgram();
     }
 
-    public List<ProgramState> getProgramStateList()
-    {
+    public List<ProgramState> getProgramStateList() {
         return repository.getProgramStateList();
+    }
+
+    public void oneStep() throws FinishedRunningException, InterruptedException {
+        ProgramState programState = repository.getCurrentProgram();
+        executorService = Executors.newFixedThreadPool(2);
+        List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStateList());
+
+        programState.getHeap().setContent(unsafeGarbageCollector(
+                getAddressesFromSymbolTable(programState.getSymbolTable().getContent(), programState.getHeap()),
+                programState.getHeap()));
+        oneStepForAllPrograms(programStateList);
+
+        programStateList = removeCompletedPrograms(repository.getProgramStateList());
+
+        executorService.shutdown();
+
+        repository.setProgramStateList(programStateList);
+
+        if (programStateList.isEmpty()) {
+            throw new FinishedRunningException("Finished");
+        }
     }
 
     public void allStep() throws InterpreterException, IOException, InterruptedException {
         ProgramState programState = repository.getCurrentProgram();
         executorService = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = removeCompletedPrograms(repository.getProgramStateList());
-        while (!programStateList.isEmpty()){
-            //oneStep(programState);
-            //programState.oneStep();
-           programState.getHeap().setContent(unsafeGarbageCollector(
-                    getAddressesFromSymbolTable(programState.getSymbolTable().getContent(),programState.getHeap()),programState.getHeap()));
+        while (!programStateList.isEmpty()) {
+            programState.getHeap().setContent(unsafeGarbageCollector(
+                    getAddressesFromSymbolTable(programState.getSymbolTable().getContent(), programState.getHeap()),
+                    programState.getHeap()));
             oneStepForAllPrograms(programStateList);
 
             programStateList = removeCompletedPrograms(repository.getProgramStateList());
@@ -206,16 +253,21 @@ public class Controller {
         repository.setProgramStateList(programStateList);
     }
 
-    public void setLoggerFilePath(String path){
+    public void setLoggerFilePath(String path) {
         repository.changeLoggerFilePath(path);
     }
 
-    private void logger(String log){
+    private void logger(String log) {
         System.out.println(log);
     }
 
-    private void logger(ProgramState programState){
+    private void logger(ProgramState programState) {
         System.out.println(programState.currentStateToString());
+    }
+
+    @Override
+    public void sendNotify(ProgramState programState) {
+        this.displayMethods.forEach(method -> method.accept(programState));
     }
 
 }

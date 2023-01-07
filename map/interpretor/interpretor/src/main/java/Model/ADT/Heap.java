@@ -9,22 +9,22 @@ import java.util.Map;
 import java.util.Random;
 
 public class Heap implements IHeap {
-    private Map<Integer,IValue> heap;
+    private Map<Integer, IValue> heap;
     private Integer freeValue;
 
-    public Heap(Map<Integer,IValue> heap) {
+    public Heap(Map<Integer, IValue> heap) {
         this.heap = heap;
     }
 
-    public Heap(){
+    public Heap() {
         heap = new HashMap<>();
         freeValue = newFreeValue();
     }
 
-    private Integer newFreeValue(){
+    private Integer newFreeValue() {
         Random random = new Random();
-        freeValue = random.nextInt(0,1<<31-1);
-        while(freeValue == 0 || heap.containsKey(freeValue) || freeValue<0){
+        freeValue = random.nextInt(0, 1 << 8);
+        while (freeValue == 0 || heap.containsKey(freeValue) || freeValue < 0) {
             freeValue = random.nextInt();
         }
         return freeValue;
@@ -47,7 +47,7 @@ public class Heap implements IHeap {
 
     @Override
     public Integer add(IValue value) {
-        heap.put(freeValue,value);
+        heap.put(freeValue, value);
         Integer lastOccupiedFreeValue = freeValue;
         freeValue = newFreeValue();
         return lastOccupiedFreeValue;
@@ -55,16 +55,16 @@ public class Heap implements IHeap {
 
     @Override
     public void update(Integer position, IValue value) throws InterpreterException {
-        if (!heap.containsKey(position)){
-            throw new InterpreterException(String.format("%d memory access violation",position));
+        if (!heap.containsKey(position)) {
+            throw new InterpreterException(String.format("%d memory access violation", position));
         }
-        heap.put(position,value);
+        heap.put(position, value);
     }
 
     @Override
-    public IValue get(Integer position) throws InterpreterException{
-        if(!heap.containsKey(position)){
-            throw new InterpreterException(String.format("%d memory access violation",position));
+    public IValue get(Integer position) throws InterpreterException {
+        if (!heap.containsKey(position)) {
+            throw new InterpreterException(String.format("%d memory access violation", position));
         }
         return heap.get(position);
     }
@@ -73,8 +73,7 @@ public class Heap implements IHeap {
     public String toString() {
         StringBuilder result = new StringBuilder();
         result.append("\n");
-        for (Integer key : heap.keySet())
-        {
+        for (Integer key : heap.keySet()) {
             result.append(String.format("Heap address = %d value = %s\n", key, heap.get(key)));
         }
 

@@ -10,7 +10,6 @@ import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 
 import java.io.BufferedReader;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -21,15 +20,15 @@ public class ProgramState {
     private IList<IValue> out;
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
-    private static Map<Integer,Boolean> ids = new HashMap<>();
+    private static Map<Integer, Boolean> ids = new HashMap<>();
     private static int id;
 
     public ProgramState(IStack<IStatement> exeStack,
-                        IDictionary<String, IValue> symbolTable,
-                        IList<IValue> out,
-                        IDictionary<String, BufferedReader> outFiles,
-                        IHeap heap,
-                        IStatement program) {
+            IDictionary<String, IValue> symbolTable,
+            IList<IValue> out,
+            IDictionary<String, BufferedReader> outFiles,
+            IHeap heap,
+            IStatement program) {
         this.exeStack = exeStack;
         this.symbolTable = symbolTable;
         this.out = out;
@@ -83,12 +82,12 @@ public class ProgramState {
         ProgramState.id = id;
     }
 
-    public boolean isNotCompleted(){
+    public boolean isNotCompleted() {
         return exeStack.size() != 0;
     }
 
     public ProgramState oneStep() throws InterpreterException {
-        if (!isNotCompleted()){
+        if (!isNotCompleted()) {
             throw new InterpreterException("Execution stack is empty!");
         }
 
@@ -104,21 +103,20 @@ public class ProgramState {
         ProgramState.ids = ids;
     }
 
-    private synchronized Integer generateId(){
+    private synchronized Integer generateId() {
         Random random = new Random();
         Integer generatedId;
         do {
             generatedId = random.nextInt(0, (int) 1e30);
-        }
-        while(ids.containsKey(generatedId));
+        } while (ids.containsKey(generatedId));
 
-            ids.put(generatedId,true);
+        ids.put(generatedId, true);
         return generatedId;
     }
 
     @Override
     public String toString() {
-        return  "Id:" + id + "\n" +
+        return "Id:" + id + "\n" +
                 "Execution stack:\n " + exeStack.toString() + "\n" +
                 "Symbol table:\n" + symbolTable.toString() + "\n" +
                 "Out:\n" + out.toString() + "\n" +
@@ -127,10 +125,14 @@ public class ProgramState {
     }
 
     public String currentStateToString() {
-        return  "Id:" + id + "\n" +
-                "Execution stack:\n" + (exeStack.size() > 0 ? (exeStack.getTop() instanceof CompoundStatement ?
-                ((CompoundStatement) exeStack.getTop()).getFirst() : exeStack.getTop())
-                : "Empty stack") + "\n" +
+        return "Id:" + id + "\n" +
+                "Execution stack:\n"
+                + (exeStack.size() > 0
+                        ? (exeStack.getTop() instanceof CompoundStatement
+                                ? ((CompoundStatement) exeStack.getTop()).getFirst()
+                                : exeStack.getTop())
+                        : "Empty stack")
+                + "\n" +
                 "Symbol Table:\n " + symbolTable.toString() + "\n" +
                 heapToString() +
                 "Out:\n " + out.toString() + "\n"
@@ -138,28 +140,30 @@ public class ProgramState {
 
     }
 
-    public String executionStackToString(){
-        return "Execution stack:\n" + (exeStack.size() > 0 ? (exeStack.getTop() instanceof CompoundStatement ?
-                ((CompoundStatement) exeStack.getTop()).getFirst() : exeStack.getTop())  : "Empty stack") + "\n";
+    public String executionStackToString() {
+        return "Execution stack:\n" + (exeStack.size() > 0
+                ? (exeStack.getTop() instanceof CompoundStatement ? ((CompoundStatement) exeStack.getTop()).getFirst()
+                        : exeStack.getTop())
+                : "Empty stack") + "\n";
     }
 
-    public String symbolTableToString(){
+    public String symbolTableToString() {
         return "Symbol Table:\n " + symbolTable.toString() + "\n";
     }
 
-    public String outToString(){
+    public String outToString() {
         return "Out:\n " + out.toString() + "\n";
     }
 
-    public String fileTableToString(){
+    public String fileTableToString() {
         String result = "File table: \n";
-        for(Object file : outFiles.getKeys()){
-            result += file +"\n";
+        for (Object file : outFiles.getKeys()) {
+            result += file + "\n";
         }
         return result;
     }
 
-    public String heapToString(){
+    public String heapToString() {
         return "Heap: " + heap.toString();
     }
 }
