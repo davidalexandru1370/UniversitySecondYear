@@ -92,3 +92,21 @@ INSERT INTO Transactions values(3, 1, 1)
 --task 1
 
 --task 2
+go
+create or alter procedure addToPresentationShop(@shoeId int, @presentationShopId int, @numberOfShoes int) as
+	begin
+		if not exists(Select * from Shoe S where S.id = @shoeId) begin
+			print 'invalid shoe'
+			return
+		end
+
+		if not exists(SELECT * FROM Presentation P where p.id=@presentationShopId) begin
+			print 'invalid presentation shop';
+			return;
+		end
+
+		insert into ShopPresentations(presentationId,shoeId,availableShoes) values(@presentationShopId,@shoeId,@numberOfShoes);
+	end
+
+--SELECT * FROM ShopPresentations
+--EXEC addToPresentationShop 3,3,100;
