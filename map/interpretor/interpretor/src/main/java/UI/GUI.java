@@ -58,6 +58,7 @@ public class GUI extends Application {
     private MyDictionary<Integer, IDictionary<String, IValue>> symbolTableLocalStorage = new MyDictionary<>();
     private MyDictionary<Integer, List<String>> executionStackLocalStorage = new MyDictionary<>();
     private String programSelectedIndex = null;
+    private boolean clearOutputAfterThis = false;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -135,29 +136,36 @@ public class GUI extends Application {
         allStepsButton.setOnAction(actionEvent -> {
             controller.setOneStepRunning(false);
             resetListViews();
-
             try {
                 if (programSelectedIndex == null) {
                     showAlert("No program selected!", AlertType.ERROR);
                     return;
                 }
                 commands.get(programSelectedIndex).execute();
+                clearOutputAfterThis = true;
+            } catch (FinishedRunningException finishedRunningException) {
+                clearOutputAfterThis = true;
             } catch (InterpreterException interpreterException) {
                 showAlert(interpreterException.getMessage(), AlertType.ERROR);
             }
+
         });
 
         oneStepButton.setOnAction(actionEvent -> {
             controller.setOneStepRunning(true);
+            if (clearOutputAfterThis) {
+                resetListViews();
+                clearOutputAfterThis = false;
+            }
             try {
                 if (programSelectedIndex == null) {
                     showAlert("No program selected!", AlertType.ERROR);
                     return;
                 }
                 commands.get(programSelectedIndex).execute();
-
             } catch (FinishedRunningException finishedRunningException) {
                 showAlert(finishedRunningException.getMessage(), AlertType.WARNING);
+                clearOutputAfterThis = true;
             } catch (InterpreterException interpreterException) {
                 showAlert(interpreterException.getMessage(), AlertType.ERROR);
             }
@@ -212,6 +220,7 @@ public class GUI extends Application {
         out.getItems().clear();
         symbolTableLocalStorage = new MyDictionary<>();
         executionStackLocalStorage = new MyDictionary<>();
+
     }
 
     private void configureProgramIdListView() {
