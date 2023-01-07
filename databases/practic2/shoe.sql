@@ -110,3 +110,23 @@ create or alter procedure addToPresentationShop(@shoeId int, @presentationShopId
 
 --SELECT * FROM ShopPresentations
 --EXEC addToPresentationShop 3,3,100;
+go
+create or alter view getWomen as
+	SELECT  w.id from Women W
+	inner join Transactions T on T.womenId = w.id 
+	group by W.id
+	having COUNT(T.amount) > 2
+go
+SELECT * FROM getWomen
+
+
+go
+create or alter function shoesInAtLeastTShops(@t int)
+returns table as
+	return SELECT S.id from Shoe S
+		inner join ShopPresentations SP on Sp.shoeId = S.id
+		group by S.id
+		having COUNT(*) >= @t
+
+go
+SELECT * FROM shoesInAtLeastTShops(4);
