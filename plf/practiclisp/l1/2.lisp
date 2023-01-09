@@ -23,7 +23,7 @@
 
 (defun solve2(l)
     (cond 
-    ( (null (cdr l)) (car l))
+    ((null (cdr l)) (car l))
     ((listp (car l)) (mygcd (solve2 (cdr l)) (solve2 (car l))))
     (t (mygcd (car l) (solve2 (cdr l))))
     )
