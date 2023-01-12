@@ -9,7 +9,7 @@
     (cond
         ((null l) nil)
         ((equal nrMuchii (- nrNoduri 1)) nil)
-        (t (cons (car l) (cons (cadr l) (traverseRight (caddr l) (+ 1 nrNoduri) (+ (cadr l) nrMuchii)))))
+        (t (cons (car l) (cons (cadr l) (traverseLeft (caddr l) (+ 1 nrNoduri) (+ (cadr l) nrMuchii)))))
     )
 )
 
@@ -33,8 +33,8 @@
 (defun solve(l level currentLevel)
     (cond
         ((null l) nil)
-        ((equal level currentLevel  ) (car l))
-        (t (cons (solve (right l) level (+ currentLevel 1)) (list (solve (left l) level (+ currentLevel 1)))))
+        ((equal level currentLevel  ) (list (car l)))
+        (t (append (solve (right l) level (+ currentLevel 1)) (solve (left l) level (+ currentLevel 1))))
 ))
 
 (print (solve '(A 2 B 0 C 2 D 0 E 0) 2 0))
