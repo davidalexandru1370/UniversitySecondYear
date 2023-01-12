@@ -1,6 +1,11 @@
 ;; 2. Return the list of nodes on the k-th level of a tree of type (1).
+;;     A
+;;     /\
+;;    B  C
+;;       /\
+;;      D  E
 
-(defun traverseRight(l nrNoduri nrMuchii)
+(defun traverseLeft(l nrNoduri nrMuchii)
     (cond
         ((null l) nil)
         ((equal nrMuchii (- nrNoduri 1)) nil)
@@ -8,27 +13,28 @@
     )
 )
 
-(defun traverseLeft(l nrNoduri nrMuchii)
+(defun traverseRight(l nrNoduri nrMuchii)
     (cond
         ((null l) nil)
         ((equal nrMuchii (- nrNoduri 1)) l)
-        (t (traverseRight (cdr l) (+ 1 nrNoduri) (+ (cadr l) nrMuchii)))
+        (t (traverseRight (cddr l) (+ 1 nrNoduri) (+ (cadr l) nrMuchii)))
     )
 )
 
 (defun right(l)
-    (traverseRight l 0 0)
+    (traverseRight (cddr l) 0 0)
 )
 
 (defun left(l)
-    (traverseLeft l 0 0)
+    (traverseLeft (cddr l) 0 0)
 )
+
 
 (defun solve(l level currentLevel)
     (cond
         ((null l) nil)
-        ((equal level currentLevel)  (car l))
-        (t (cons (solve (right (cddr l)) level (+ currentLevel 1)) (solve (left (cddr l)) level (+ currentLevel 1))))
+        ((equal level currentLevel  ) (car l))
+        (t (cons (solve (right l) level (+ currentLevel 1)) (list (solve (left l) level (+ currentLevel 1)))))
 ))
 
-(print (solve '(A 2 B 0 C 2 D 0 E 0) 1 0))
+(print (solve '(A 2 B 0 C 2 D 0 E 0) 2 0))
