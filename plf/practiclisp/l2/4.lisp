@@ -9,7 +9,9 @@
 (defun solve(l)
     (cond
         ((null l) nil)
-        ()
+        ((null (cadr l)) (append (list (car l)) (list 0)))
+        ((null (caddr l)) (append (list (car l)) (list 1) (solve (cadr l))))
+        (t (append (list (car l)) (list 2) (solve (cadr l)) (solve (caddr l))))
     )
 )
 
