@@ -33,9 +33,6 @@ f2 = finv(1-alpha/2,n1-1,n2-1);
 if h == 0
   fprintf("The null hypothesis H0 is not rejected, i.e, sigmas are equal\n");
   fprintf("The variance seem to be equal\n");
-  
-  
-  
 else
   fprintf("The null hypothesis H0 is rejected, population variances differ\n");
   fprintf("The variance seem to be different\n");
