@@ -51,21 +51,21 @@ fprintf('The observed value for the test statistic is = %6.4f \n', stats.fstat);
   #h0: miu1 = miu2
   #h1: miu1 > miu2 right-tailed test
   
-
+fprintf("------point b----------\n")
 if h == 0
    n = n1+n2-2;
    t2 = tinv(1-alpha,n);
    [H2,P2,CI2,BSTATS] = ttest2(steel,glass,"alpha","tail","right");
-   if H2==1:
+   if H2==1
      fprintf("The null hypothesis H0 is rejected.\n");
-     fprintf("Steel pipe lose more heat than glass pipes")
+     fprintf("Steel pipe lose more heat than glass pipes");
    else
       fprintf("The null hypothesis H0 is not rejected\n");
       fprintf("Steel pipe DOES NOT lose more heat than glass pipes");
    end
    fprintf("The rejection region for T is (%6.4f,%6.4f)\n",t2,inf);
-   fprintf("The observed value of the test statistic is %4.3f",BSTATS.tstat);
-   fprintf("The P-value is = %4.3f",p);
+   fprintf("The observed value of the test statistic is %4.3f\n",BSTATS.tstat);
+   fprintf("The P-value is = %4.3f\n",p);
 else 
     c = (ss/n1)/(ss/n1+sg/n2);
     n = c^2/(n1-1) + (1-c)^2/(n2-1);
@@ -83,8 +83,8 @@ else
     end  
     
    fprintf("The rejection region for T is (%6.4f,%6.4f)\n",t2,inf);
-   fprintf("The observed value of the test statistic is %4.3f",BSTATS.tstat);
-   fprintf("The P-value is = %4.3f",p);
+   fprintf("The observed value of the test statistic is %4.3f\n",ZVAL2.tstat);
+   fprintf("The P-value is = %4.3f\n",p);
 end
 
 
