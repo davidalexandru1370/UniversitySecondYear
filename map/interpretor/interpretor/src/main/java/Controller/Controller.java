@@ -169,39 +169,6 @@ public class Controller extends ProgramStateObserver {
         return addresses;
     }
 
-    /*
-     * public ProgramState oneStep(ProgramState state) throws InterpreterException,
-     * IOException {
-     * IStack<IStatement> stack = state.getExeStack();
-     * 
-     * IStatement currentStatement = stack.pop();
-     * if(currentStatement != null) {
-     * boolean canPrintOutAndSymbolTable = false;
-     * if(!(currentStatement instanceof CompoundStatement)){
-     * logger("Exe stack: \n" + currentStatement.toString());
-     * canPrintOutAndSymbolTable = true;
-     * }
-     * 
-     * currentStatement.execute(state);
-     * if(canPrintOutAndSymbolTable){
-     * repository.logProgramStateExecution("Exe Stack:\n" +
-     * currentStatement.toString() + "\n" +
-     * state.symbolTableToString() +
-     * state.outToString() +
-     * state.fileTableToString() +
-     * state.heapToString()
-     * );
-     * logger(
-     * state.symbolTableToString() +
-     * state.outToString() +
-     * state.fileTableToString() +
-     * state.heapToString());
-     * logger(new String(new char[100]).replace("\0","-"));
-     * }
-     * }
-     * return state;
-     * }
-     */
     public ProgramState getCurrentProgram() throws RepositoryException {
         return repository.getCurrentProgram();
     }
