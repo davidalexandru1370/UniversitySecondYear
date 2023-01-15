@@ -24,7 +24,7 @@ t2 = tinv(1-alpha/2, n1+n2-2);
 
 u1 = meanPremium - meanRegular - t1 * sp * sqrt(1/n1 + 1/n2);
 u2 = meanPremium - meanRegular + t2 * sp * sqrt(1/n1 + 1/n2);
-
+fprintf("-------a-------\n")
 fprintf("The confidence interval for the diffrence of true is %4.3f %4.3f\n",u1,u2);
 
 
@@ -43,7 +43,7 @@ u12 = meanPremium - meanRegular - t12 * sqrt(meanPremium/n1 + meanRegular/n2);
 u22 = meanPremium - meanRegular + t12 * sqrt(meanPremium/n1 + meanRegular/n2);
 
 fprintf("The confidence interval when sigma1 != sigma2  is %4.3f %4.3f\n",u12,u22);
-
+fprintf("--------c------\n")
 #(c) Find a 100(1 − α)% confidence interval for the ratio of the variances.)
 
 a1 = 1/finv(1-alpha/2, n1-1,n2-1) * meanPremium/meanRegular;
