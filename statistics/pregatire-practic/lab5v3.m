@@ -1,7 +1,7 @@
 clc
 pkg load statistics
 
-x= [7 7 4 5 9 9 4 12 8 1 8 7 3 13 2 1 17 7 12 5 6 2 1 13 14 10 2 4 9 11 3 5 12 6 10 7];
+x = [7 7 4 5 9 9 4 12 8 1 8 7 3 13 2 1 17 7 12 5 6 2 1 13 14 10 2 4 9 11 3 5 12 6 10 7];
 
 #a) Assuming that past experience indicates that σ = 5, find a 100(1 − α)% confidence
 #interval for the average number of files stored.
@@ -34,7 +34,7 @@ u1 = x_bar - s/sqrt(n)*t1;
 u2 = x_bar - s/sqrt(n)*t2;
 
 fprintf("The confidence interval for the population mean when sigma unknown is (%4.3f, %4.3f)\n", u1,u2);
-
+fprintf("------c------\n");
 #c) Assuming the number of files stored are approximately normally distributed, find
 #100(1 − α)% confidence intervals for the variance and for the standard deviation
 
