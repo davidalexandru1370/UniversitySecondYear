@@ -1,4 +1,4 @@
-;; 1.Write a function to check if an atom is member ofa list (the list is non-liniar)
+;; 1.Write a function to check if an atom is member of a list (the list is non-liniar)
 
 (defun solve(l elem)
     (cond

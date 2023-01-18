@@ -1,0 +1,15 @@
+;; (defun G(l)
+;;     (mapcon #'LIST l)
+;; )
+;; ;; (print (append '(1 2 3) '(1 2)))
+;; (print (G '(1 2 3 4)))
+;; (print (mapcon #'G '(1 2 3 4)))
+;; (print (apply #'append (mapcon #'G '(1 2 3 4))))
+
+(defun G(L)
+    (LIST (car l) (car l))
+)
+
+(setq Q 'G)
+(setq P Q)
+(print (FUNCALL P '(A B C)))
