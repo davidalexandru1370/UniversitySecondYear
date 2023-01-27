@@ -24,7 +24,7 @@ public class ProgramState {
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
     private int id;
-    private static IDictionary<Integer,Integer> LockTable = new MyDictionary<>();
+    private  IDictionary<Integer,Integer> LockTable = new MyDictionary<>();
 
     public ProgramState(IStack<IStatement> exeStack,
             IDictionary<String, IValue> symbolTable,
@@ -171,11 +171,11 @@ public class ProgramState {
         return "Heap: " + heap.toString();
     }
 
-    synchronized static public IDictionary<Integer, Integer> getLockTable() {
+    synchronized public IDictionary<Integer, Integer> getLockTable() {
         return LockTable;
     }
 
-    synchronized static public void setLockTable(IDictionary<Integer, Integer> lockTable) {
+    synchronized public void setLockTable(IDictionary<Integer, Integer> lockTable) {
         LockTable = lockTable;
     }
 }

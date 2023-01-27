@@ -26,7 +26,7 @@ public class NewLockStatement implements IStatement {
             throw new InterpreterException("variable does not exists");
         }
 
-        ProgramState.getLockTable().insert(nextAdress,-1);
+        state.getLockTable().insert(nextAdress,-1);
         state.getSymbolTable().insert(variableName,new IntValue(nextAdress));
 
         nextAdress++;

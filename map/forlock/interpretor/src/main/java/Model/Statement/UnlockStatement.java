@@ -30,13 +30,13 @@ public class UnlockStatement implements IStatement {
             throw new InterpreterException("invalid variable name");
         }
 
-//        if(!state.getLockTable().isDefined(((IntValue) foundIndex).getValue()))
-//        {
-//            throw new InterpreterException("index is not found in lock table");
-//        }
+        if(!state.getLockTable().isDefined(((IntValue) foundIndex).getValue()))
+        {
+            throw new InterpreterException("index is not found in lock table");
+        }
 
-        if(ProgramState.getLockTable().get(((IntValue) foundIndex).getValue()) == state.getId()){
-            ProgramState.getLockTable().insert(((IntValue) foundIndex).getValue(), -1);
+        if(state.getLockTable().get(((IntValue) foundIndex).getValue()) == state.getId()){
+            state.getLockTable().insert(((IntValue) foundIndex).getValue(), -1);
         }
 
         lock.unlock();

@@ -27,13 +27,13 @@ public class LockStatement implements IStatement {
             throw new InterpreterException("invalid variable name");
         }
 
-        if(!ProgramState.getLockTable().isDefined(((IntValue) foundIndex).getValue()))
+        if(!state.getLockTable().isDefined(((IntValue) foundIndex).getValue()))
         {
             throw new InterpreterException("index is not found in lock table");
         }
 
-        if(ProgramState.getLockTable().get(((IntValue) foundIndex).getValue()) == -1){
-            ProgramState.getLockTable().insert(((IntValue) foundIndex).getValue(), state.getId());
+        if(state.getLockTable().get(((IntValue) foundIndex).getValue()) == -1){
+            state.getLockTable().insert(((IntValue) foundIndex).getValue(), state.getId());
         }
         else{
             state.getExeStack().push(this);
