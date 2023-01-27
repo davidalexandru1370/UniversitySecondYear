@@ -342,4 +342,57 @@ public class Programs {
                 programs.put(11,program11);
                 return program11;
         }
+
+
+        public static IStatement program12(){
+                IStatement program12 = new CompoundStatement(
+                        new VariableDeclarationStatement("v1",new ReferenceType(new IntType())),
+                        new CompoundStatement(new VariableDeclarationStatement("v2",new ReferenceType(new IntType())),
+                                new CompoundStatement(new VariableDeclarationStatement("x",new IntType()),
+                                        new CompoundStatement(new VariableDeclarationStatement("q",new IntType()),
+                                                new CompoundStatement(new NewStatement("v1",new ValueExpression(new IntValue(20))),
+                                                        new CompoundStatement(new NewStatement("v2", new ValueExpression(new IntValue(30))),
+                                                                new CompoundStatement(new NewLockStatement("x"),
+                                                                        new CompoundStatement(new ForkStatement(new CompoundStatement(new ForkStatement(
+                                                                                new CompoundStatement(
+                                                                                        new LockStatement("x"),
+                                                                                        new CompoundStatement(
+                                                                                                new HeapWrittingStatement("v1",
+                                                                                                        new ArithmeticExpression(
+                                                                                                                new HeapReadingExpression(new VariableExpression("v1")),
+                                                                                                                new ValueExpression(new IntValue(1)),
+                                                                                                                "-")),new UnlockStatement("x")))),new CompoundStatement(
+                                                                                new LockStatement("x"),
+                                                                                new CompoundStatement(
+                                                                                        new HeapWrittingStatement("v1",
+                                                                                                new ArithmeticExpression(
+                                                                                                        new HeapReadingExpression(new VariableExpression("v1")),
+                                                                                                        new ValueExpression(new IntValue(10)),
+                                                                                                        "*")),new UnlockStatement("x")))))
+                                                                                ,new CompoundStatement(new NewLockStatement("q"),
+                                                                                new CompoundStatement(new ForkStatement(new CompoundStatement(new ForkStatement(
+                                                                                        new CompoundStatement(
+                                                                                                new LockStatement("q"),
+                                                                                                new CompoundStatement(
+                                                                                                        new HeapWrittingStatement("v2",
+                                                                                                                new ArithmeticExpression(
+                                                                                                                        new HeapReadingExpression(new VariableExpression("v2")),
+                                                                                                                        new ValueExpression(new IntValue(5)),
+                                                                                                                        "+")),new UnlockStatement("q")))),new CompoundStatement(
+                                                                                        new LockStatement("q"),
+                                                                                        new CompoundStatement(
+                                                                                                new HeapWrittingStatement("v2",
+                                                                                                        new ArithmeticExpression(
+                                                                                                                new HeapReadingExpression(new VariableExpression("v2")),
+                                                                                                                new ValueExpression(new IntValue(10)),
+                                                                                                                "*")),new UnlockStatement("q"))))),
+                                                                                        new CompoundStatement(new LockStatement("x"),
+                                                                                                new CompoundStatement(new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))),
+                                                                                                        new CompoundStatement(new UnlockStatement("x"),
+                                                                                                                new CompoundStatement(new LockStatement("q"),
+                                                                                                                        new CompoundStatement(new PrintStatement(new HeapReadingExpression(new VariableExpression("v2"))),
+                                                                                                                                new UnlockStatement("q"))))))))))))))));
+                programs.put(12,program12);
+                return program12;
+        }
 }

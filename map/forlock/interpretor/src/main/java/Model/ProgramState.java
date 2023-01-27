@@ -23,8 +23,8 @@ public class ProgramState {
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
-    private static int id;
-    private static IDictionary<Integer,Integer> LockTable = new MyDictionary<>();
+    private int id;
+    private  IDictionary<Integer,Integer> LockTable = new MyDictionary<>();
 
     public ProgramState(IStack<IStatement> exeStack,
             IDictionary<String, IValue> symbolTable,
@@ -77,12 +77,12 @@ public class ProgramState {
         this.out = out;
     }
 
-    public static synchronized int getId() {
+    public synchronized int getId() {
         return id;
     }
 
-    public static synchronized void setId(int id) {
-        ProgramState.id = id;
+    synchronized public  void setId(int id) {
+        this.id = id;
     }
 
     public boolean isNotCompleted() {
@@ -106,7 +106,7 @@ public class ProgramState {
         ProgramState.ids = ids;
     }
 
-    private synchronized Integer generateId() {
+    public synchronized Integer generateId() {
         Random random = new Random();
         Integer generatedId;
         do {
@@ -166,15 +166,16 @@ public class ProgramState {
         return result;
     }
 
+
     public String heapToString() {
         return "Heap: " + heap.toString();
     }
 
-    synchronized public static IDictionary<Integer, Integer> getLockTable() {
+    synchronized public IDictionary<Integer, Integer> getLockTable() {
         return LockTable;
     }
 
-    synchronized public static void setLockTable(IDictionary<Integer, Integer> lockTable) {
+    synchronized public void setLockTable(IDictionary<Integer, Integer> lockTable) {
         LockTable = lockTable;
     }
 }

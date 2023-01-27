@@ -130,4 +130,10 @@ public class Examples {
                 print(rh(a));
                 """;
     }
+
+    public static String example12(){
+        return """
+                exemplu lung
+                """;
+    }
 }
