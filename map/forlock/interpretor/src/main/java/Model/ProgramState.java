@@ -5,6 +5,7 @@ import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.IHeap;
 import Model.ADT.Interfaces.IList;
 import Model.ADT.Interfaces.IStack;
+import Model.ADT.MyDictionary;
 import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
@@ -13,6 +14,7 @@ import java.io.BufferedReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ProgramState {
     private IStack<IStatement> exeStack;
@@ -22,6 +24,8 @@ public class ProgramState {
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
     private static int id;
+
+    private static IDictionary<Integer,Integer> LockTable = new MyDictionary<>();
 
     public ProgramState(IStack<IStatement> exeStack,
             IDictionary<String, IValue> symbolTable,

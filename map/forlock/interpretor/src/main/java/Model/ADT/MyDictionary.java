@@ -16,12 +16,12 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value>,Cloneable
     }
 
     @Override
-    public void insert(Key key, Value value) {
+    synchronized public void insert(Key key, Value value) {
         dictionary.put(key,value);
     }
 
     @Override
-    public void pop(Key key) {
+    synchronized public void pop(Key key) {
         if(!dictionary.containsKey(key)){
             throw new KeyNotFoundException("Invalid key!");
         }
@@ -29,12 +29,12 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value>,Cloneable
     }
 
     @Override
-    public boolean isDefined(Key key) {
+    synchronized public boolean isDefined(Key key) {
         return dictionary.containsKey(key);
     }
 
     @Override
-    public Value get(Key key) {
+    synchronized public Value get(Key key) {
         if(!dictionary.containsKey(key)){
             throw new KeyNotFoundException("Key = " + key + " does not exists!");
         }
@@ -42,16 +42,16 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value>,Cloneable
     }
 
     @Override
-    public Set getKeys() {
+    synchronized public Set getKeys() {
         return this.dictionary.keySet();
     }
 
     @Override
-    public List<Value> getContent() {
+    synchronized public List<Value> getContent() {
         return dictionary.keySet().stream().map(k -> dictionary.get(k)).toList();
     }
 
-    public IDictionary<Key, Value> clone()  {
+    synchronized public IDictionary<Key, Value> clone()  {
         IDictionary<Key,Value> clonedDictionary = new MyDictionary<>();
         for (Map.Entry<Key,Value> entry : dictionary.entrySet()) {
             clonedDictionary.insert(entry.getKey(), entry.getValue());
@@ -60,7 +60,7 @@ public class MyDictionary<Key,Value> implements IDictionary<Key,Value>,Cloneable
     }
 
     @Override
-    public String toString() {
+    synchronized public String toString() {
         StringBuilder result = new StringBuilder();
         for(Key key : dictionary.keySet())
         {
