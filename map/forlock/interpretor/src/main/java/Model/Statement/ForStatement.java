@@ -3,6 +3,8 @@ package Model.Statement;
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.Expression.Interfaces.IExpression;
+import Model.Expression.RelationalExpression;
+import Model.Expression.VariableExpression;
 import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
 import Model.VariablesTypes.IntType;
@@ -28,7 +30,7 @@ public class ForStatement implements IStatement {
     public ProgramState execute(ProgramState state) throws InterpreterException {
         IStatement variableDeclaration = new VariableDeclarationStatement("v",new IntType());
         IStatement variableInitialization = new AssignStatement("v",initialValueExpression);
-        IStatement whileStatement = new WhileStatement(finalValueExpression,
+        IStatement whileStatement = new WhileStatement(new RelationalExpression(new VariableExpression("v"),finalValueExpression,"<"),
                 new CompoundStatement(insideForStatement, new AssignStatement("v",incrementExpression)));
 
         state.getExeStack().push(whileStatement);
