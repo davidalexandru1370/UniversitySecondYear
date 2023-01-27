@@ -323,4 +323,23 @@ public class Programs {
                 programs.put(10, program10);
                 return program10;
         }
+
+        public static IStatement program11(){
+                IStatement program11 = new CompoundStatement(
+                        new VariableDeclarationStatement("a",new ReferenceType(new IntType())),
+                        new CompoundStatement(new NewStatement("a",new ValueExpression(new IntValue(20))),
+                                new CompoundStatement(new ForStatement(
+                                        new ValueExpression(new IntValue(0)),
+                                        new ValueExpression(new IntValue(3)),
+                                        new ArithmeticExpression(new VariableExpression("v"),new ValueExpression(new IntValue(1)),"+"),
+                                        new ForkStatement(new CompoundStatement(new PrintStatement(new VariableExpression("v")),
+                                                new AssignStatement("v",
+                                                        new ArithmeticExpression(
+                                                                new VariableExpression("v"),
+                                                                new HeapReadingExpression(new VariableExpression("a")),"*"))))),
+                                        new PrintStatement(new HeapReadingExpression(new VariableExpression("a")))
+                                        )));
+                programs.put(11,program11);
+                return program11;
+        }
 }

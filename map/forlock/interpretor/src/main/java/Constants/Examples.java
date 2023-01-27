@@ -119,4 +119,15 @@ public class Examples {
                 print(readHeapOperation(a));
                 """;
     }
+
+    public static String example11(){
+        return """
+                Ref int a;
+                new(a,20);
+                for(v=0;v<3;v=v+1){
+                    fork(print(v); v=v*rh(a));
+                }
+                print(rh(a));
+                """;
+    }
 }
