@@ -33,9 +33,7 @@ public class NewLatchStatement implements IStatement {
             throw new InterpreterException(String.format("%s is not int",expression.toString()));
         }
 
-        if(!state.getSymbolTable().isDefined(variableName) ||
-            !state.getSymbolTable().get(variableName).equals(new IntType())
-        ){
+        if(!state.getSymbolTable().isDefined(variableName)){
             throw new InterpreterException("Variable does not exists or is not of type int");
         }
 
@@ -53,7 +51,7 @@ public class NewLatchStatement implements IStatement {
             throw new InterpreterException(String.format("%s is not defined",variableName));
         }
 
-        if (typeEnviroment.get(variableName).equals(expression.typeCheck(typeEnviroment.clone()))) {
+        if (!typeEnviroment.get(variableName).equals(expression.typeCheck(typeEnviroment))) {
             throw new InterpreterException(String.format("%s and expression does not evaluate to int",variableName));
         }
 

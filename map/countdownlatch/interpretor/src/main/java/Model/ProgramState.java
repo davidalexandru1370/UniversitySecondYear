@@ -19,7 +19,7 @@ public class ProgramState {
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
-    public static ILatchTable latchTable;
+    public static ILatchTable latchTable = new LatchTable();
     private static int id;
 
     public ProgramState(IStack<IStatement> exeStack,
@@ -33,7 +33,6 @@ public class ProgramState {
         this.out = out;
         this.outFiles = outFiles;
         this.heap = heap;
-        latchTable = new LatchTable();
         this.id = generateId();
         exeStack.push(program);
     }

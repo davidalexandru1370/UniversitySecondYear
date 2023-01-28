@@ -15,13 +15,14 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class LatchTable implements ILatchTable<Integer, IValue>{
-    private Map<Integer,IValue> latchTable;
+    private Map<Integer,IValue> latchTable = new ConcurrentHashMap<>();
+    ;
     private Integer freeValue;
 
     private Lock lock = new ReentrantLock();
 
     public LatchTable() {
-        this.latchTable = new ConcurrentHashMap<>();
+        freeValue = newFreeValue();
     }
 
     private Integer newFreeValue() {
