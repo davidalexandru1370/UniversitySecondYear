@@ -131,7 +131,7 @@ public class Examples {
                 writeheap(b,2)
                 v=(rh(a)<rh(b)) ? 100:200
                 print(v)
-                v=((rh(b)-2)<rh(a)) ? 100:200
+                v=((rh(b)-2)>rh(a)) ? 100:200
                 print(v)
                 """;
     }

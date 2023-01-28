@@ -1,10 +1,7 @@
 package Model;
 
 import Exceptions.InterpreterException;
-import Model.ADT.Interfaces.IDictionary;
-import Model.ADT.Interfaces.IHeap;
-import Model.ADT.Interfaces.IList;
-import Model.ADT.Interfaces.IStack;
+import Model.ADT.Interfaces.*;
 import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
@@ -21,6 +18,7 @@ public class ProgramState {
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
+    public static ILatchTable latchTable;
     private static int id;
 
     public ProgramState(IStack<IStatement> exeStack,
