@@ -5,6 +5,7 @@ import Model.ADT.Interfaces.IDictionary;
 import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.IntValue;
+import Model.VariablesTypes.IntType;
 import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class AwaitStatement implements IStatement {
@@ -36,6 +37,11 @@ public class AwaitStatement implements IStatement {
 
     @Override
     public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
+
+        if(!typeEnviroment.get(var).equals(new IntType())){
+            throw new InterpreterException(String.format("%s is not of type int",var));
+        }
+
         return typeEnviroment;
     }
 

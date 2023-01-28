@@ -53,6 +53,10 @@ public class NewLatchStatement implements IStatement {
             throw new InterpreterException(String.format("%s is not defined",variableName));
         }
 
+        if (typeEnviroment.get(variableName).equals(expression.typeCheck(typeEnviroment.clone()))) {
+            throw new InterpreterException(String.format("%s and expression does not evaluate to int",variableName));
+        }
+
         return typeEnviroment;
     }
 
