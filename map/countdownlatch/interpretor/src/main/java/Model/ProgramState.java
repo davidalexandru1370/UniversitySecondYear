@@ -2,6 +2,7 @@ package Model;
 
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.*;
+import Model.ADT.LatchTable;
 import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
@@ -32,6 +33,7 @@ public class ProgramState {
         this.out = out;
         this.outFiles = outFiles;
         this.heap = heap;
+        latchTable = new LatchTable();
         this.id = generateId();
         exeStack.push(program);
     }

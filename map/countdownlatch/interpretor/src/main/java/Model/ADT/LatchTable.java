@@ -1,8 +1,10 @@
 package Model.ADT;
 
+import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.Interfaces.ILatchTable;
 import Model.Statement.Interfaces.IStatement;
+import Model.Value.Interfaces.IValue;
 
 import java.util.List;
 import java.util.Map;
@@ -12,8 +14,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class LatchTable implements ILatchTable {
-    private Map<Integer,Integer> latchTable;
+public class LatchTable implements ILatchTable{
+    private Map<Integer,IValue> latchTable;
     private Integer freeValue;
 
     private Lock lock = new ReentrantLock();
@@ -21,15 +23,12 @@ public class LatchTable implements ILatchTable {
     public LatchTable() {
         this.latchTable = new ConcurrentHashMap<>();
     }
-
-    synchronized private Integer newFreeValue() {
-        lock.lock();
+    private Integer newFreeValue() {
         Random random = new Random();
         freeValue = random.nextInt(0, 1 << 8);
         while (freeValue == 0 || latchTable.containsKey(freeValue) || freeValue < 0) {
             freeValue = random.nextInt();
         }
-        lock.unlock();
         return freeValue;
     }
 
@@ -37,38 +36,49 @@ public class LatchTable implements ILatchTable {
     public Integer getFreeValue() {
         return freeValue;
     }
-    @Override
-    public void insert(Object o, Object o2) {
 
+    @Override
+    public Map<Integer, IValue> getContent() {
+        return latchTable;
     }
 
     @Override
-    public void pop(Object o) {
-
+    public void setContent(Map<Integer, IValue> content) {
+        this.latchTable = content;
     }
 
     @Override
-    public boolean isDefined(Object o) {
-        return false;
+    public Integer add(IValue value) {
+        latchTable.put(freeValue, value);
+        Integer lastOccupiedFreeValue = freeValue;
+        freeValue = newFreeValue();
+        return lastOccupiedFreeValue;
     }
 
     @Override
-    public Object get(Object o) {
-        return null;
+    public void update(Integer position, IValue value) throws InterpreterException {
+        if (!latchTable.containsKey(position)) {
+            throw new InterpreterException(String.format("%d no latch at this id", position));
+        }
+        latchTable.put(position, value);
     }
 
     @Override
-    public Set getKeys() {
-        return null;
+    public IValue get(Integer position) throws InterpreterException {
+        if (!latchTable.containsKey(position)) {
+            throw new InterpreterException(String.format("%d no latch at this id", position));
+        }
+        return latchTable.get(position);
     }
 
     @Override
-    public List getContent() {
-        return null;
-    }
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("\n");
+        for (Integer key : latchTable.keySet()) {
+            result.append(String.format("latchTable value = %d count = %s\n", key, latchTable.get(key)));
+        }
 
-    @Override
-    public IDictionary clone() {
-        return null;
+        return result.toString();
     }
 }
