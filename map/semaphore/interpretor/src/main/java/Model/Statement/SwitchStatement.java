@@ -3,8 +3,10 @@ package Model.Statement;
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.Expression.Interfaces.IExpression;
+import Model.Expression.RelationalExpression;
 import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
+import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class SwitchStatement implements IStatement {
@@ -34,6 +36,19 @@ public class SwitchStatement implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
+        IValue switchValue = switchExpression.evaluate(state.getSymbolTable(),state.getHeap());
+        IValue expression1Value = expression1.evaluate(state.getSymbolTable(),state.getHeap());
+        IValue expression2Value = expression2.evaluate(state.getSymbolTable(),state.getHeap());
+
+        state.getExeStack().push(new IfStatement(
+                new RelationalExpression(switchExpression,expression1,"=="),
+                statement1,
+                new IfStatement(
+                        new RelationalExpression(switchExpression,expression2,"=="),
+                        statement2,
+                        statement3
+                )
+        ));
 
         return null;
     }
