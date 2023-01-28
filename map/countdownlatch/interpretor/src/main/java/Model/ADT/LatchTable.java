@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class LatchTable implements ILatchTable{
+public class LatchTable implements ILatchTable<Integer, IValue>{
     private Map<Integer,IValue> latchTable;
     private Integer freeValue;
 
@@ -23,6 +23,7 @@ public class LatchTable implements ILatchTable{
     public LatchTable() {
         this.latchTable = new ConcurrentHashMap<>();
     }
+
     private Integer newFreeValue() {
         Random random = new Random();
         freeValue = random.nextInt(0, 1 << 8);
@@ -69,6 +70,15 @@ public class LatchTable implements ILatchTable{
             throw new InterpreterException(String.format("%d no latch at this id", position));
         }
         return latchTable.get(position);
+    }
+
+    @Override
+    public void deleteByKey(Integer key) {
+        if(!latchTable.containsKey(key)){
+            throw new InterpreterException(String.format("%d is not in latch table",key));
+        }
+
+        latchTable.remove(key);
     }
 
     @Override

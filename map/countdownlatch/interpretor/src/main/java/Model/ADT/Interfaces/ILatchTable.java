@@ -6,11 +6,12 @@ import Model.Value.Interfaces.IValue;
 
 import java.util.Map;
 
-public interface ILatchTable {
+public interface ILatchTable<Key,Value> {
     Integer getFreeValue();
-    Map<Integer, IValue> getContent();
-    void setContent(Map<Integer,IValue> content);
+    Map<Key, Value> getContent();
+    void setContent(Map<Key,Value> content);
     Integer add(IValue value);
-    void update(Integer position, IValue value) throws InterpreterException;
-    IValue get(Integer position) throws InterpreterException;
+    void update(Key position, Value value) throws InterpreterException;
+    IValue get(Key position) throws InterpreterException;
+    void deleteByKey(Key key);
 }
