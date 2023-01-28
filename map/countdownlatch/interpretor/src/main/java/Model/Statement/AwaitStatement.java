@@ -28,6 +28,7 @@ public class AwaitStatement implements IStatement {
             throw new InterpreterException(String.format( "%d does not exists in latch table",foundIndex));
         }
         int value = ((IntValue)ProgramState.getLatchTable().get(foundIndex)).getValue();
+
         if(value != 0){
             state.getExeStack().push(this);
         }

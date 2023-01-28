@@ -392,24 +392,27 @@ public class Programs {
                                         new ArithmeticExpression(
                                                 new HeapReadingExpression(new VariableExpression("v1")),
                                                 new ValueExpression(new IntValue(10)),
-                                                "*")))),
-                        new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))),
+                                                "*")),
+                                new PrintStatement(new HeapReadingExpression(new VariableExpression("v1")))
+                                )),
                         new CountDownStatement("cnt"),
                         new ForkStatement(getCompoundStatementByListOfStatement(
                                 new HeapWrittingStatement("v2",
                                         new ArithmeticExpression(
                                                 new HeapReadingExpression(new VariableExpression("v2")),
                                                 new ValueExpression(new IntValue(10)),
-                                                "*")))),
-                        new PrintStatement(new HeapReadingExpression(new VariableExpression("v2"))),
+                                                "*")),
+                                new PrintStatement(new HeapReadingExpression(new VariableExpression("v2"))))),
                         new CountDownStatement("cnt"),
                         new ForkStatement(getCompoundStatementByListOfStatement(
                                 new HeapWrittingStatement("v3",
                                         new ArithmeticExpression(
                                                 new HeapReadingExpression(new VariableExpression("v3")),
                                                 new ValueExpression(new IntValue(10)),
-                                                "*")))),
-                        new PrintStatement(new HeapReadingExpression(new VariableExpression("v3"))),
+                                                "*")),
+                                new PrintStatement(new HeapReadingExpression(new VariableExpression("v3")))
+
+                                )),
                         new CountDownStatement("cnt"),
                         new AwaitStatement("cnt"),
                         new PrintStatement(new ValueExpression(new IntValue(100))),

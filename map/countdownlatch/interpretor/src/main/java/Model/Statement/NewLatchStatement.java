@@ -10,6 +10,7 @@ import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.IntType;
 import Model.VariablesTypes.Interfaces.IVariableType;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -18,6 +19,8 @@ public class NewLatchStatement implements IStatement {
     private String variableName;
     private IExpression expression;
     private static Lock lock = new ReentrantLock();
+
+    private static CountDownLatch latch;
 
     public NewLatchStatement(String variableName, IExpression expression) {
         this.variableName = variableName;
@@ -38,6 +41,8 @@ public class NewLatchStatement implements IStatement {
         }
 
         int freeLocation = ProgramState.getLatchTable().add(expressionEvaluated);
+
+        latch = new CountDownLatch(((IntValue)expressionEvaluated).getValue());
 
         state.getSymbolTable().insert(variableName,new IntValue(freeLocation));
 

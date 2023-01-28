@@ -41,10 +41,10 @@ public class CountDownStatement implements IStatement {
 
         if(value > 0){
             ProgramState.getLatchTable().update(foundIndex,new IntValue(value - 1));
-            state.getOut().add(new StringValue(String.format("id: " , ProgramState.getId())));
+            state.getOut().add(new StringValue(String.format("id: %d" , ProgramState.getId())));
         }
         else{
-            state.getOut().add(new StringValue(String.format("id: " , ProgramState.getId())));
+            state.getOut().add(new StringValue(String.format("id: %d" , ProgramState.getId())));
         }
 
         lock.unlock();

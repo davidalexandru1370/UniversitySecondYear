@@ -20,7 +20,7 @@ public class ProgramState {
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
     public static ILatchTable latchTable = new LatchTable();
-    private static int id;
+    private  static int id;
 
     public ProgramState(IStack<IStatement> exeStack,
             IDictionary<String, IValue> symbolTable,
