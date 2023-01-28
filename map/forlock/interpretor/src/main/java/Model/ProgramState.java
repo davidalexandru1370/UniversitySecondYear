@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.Lock;
 
 public class ProgramState {
     private IStack<IStatement> exeStack;
@@ -24,7 +26,9 @@ public class ProgramState {
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
     private int id;
-    private  IDictionary<Integer,Integer> LockTable = new MyDictionary<>();
+    private  static IDictionary<Integer,Integer> LockTable = new MyDictionary<>();
+
+    private static Lock lock = new ReentrantLock();
 
     public ProgramState(IStack<IStatement> exeStack,
             IDictionary<String, IValue> symbolTable,
@@ -165,17 +169,18 @@ public class ProgramState {
         }
         return result;
     }
-
-
+    
     public String heapToString() {
         return "Heap: " + heap.toString();
     }
 
-    synchronized public IDictionary<Integer, Integer> getLockTable() {
+    synchronized static public IDictionary<Integer, Integer> getLockTable() {
         return LockTable;
     }
 
-    synchronized public void setLockTable(IDictionary<Integer, Integer> lockTable) {
+    synchronized static public void setLockTable(IDictionary<Integer, Integer> lockTable) {
+        lock.lock();
         LockTable = lockTable;
+        lock.unlock();
     }
 }

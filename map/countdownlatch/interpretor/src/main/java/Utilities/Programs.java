@@ -28,6 +28,16 @@ public class Programs {
 
         }
 
+        //at least 2 statements
+        private static IStatement getCompoundStatementByListOfStatement(IStatement... statements){
+                CompoundStatement result = new CompoundStatement(statements[0],statements[1]);
+
+                for (int i = 2; i < statements.length; i++) {
+                                result = new CompoundStatement(result,statements[i]);
+                }
+                return result;
+        }
+
         public static IStatement program2() {
                 IStatement program2 = new CompoundStatement(
                                 new VariableDeclarationStatement("a", new IntType()),
@@ -322,5 +332,40 @@ public class Programs {
                                                                                                                                                                 "a")))))))));
                 programs.put(10, program10);
                 return program10;
+        }
+
+        public static IStatement program11(){
+//                IStatement program11 = new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new IntType())),
+//                        new CompoundStatement(new VariableDeclarationStatement("b",new ReferenceType(new IntType())),
+//                                new CompoundStatement(new VariableDeclarationStatement("b",new IntType()),
+//                                        new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
+//                                                new CompoundStatement(new NewStatement())))))
+
+                IStatement program11 = getCompoundStatementByListOfStatement(
+                        new VariableDeclarationStatement("a",new ReferenceType(new IntType())),
+                        new VariableDeclarationStatement("b",new ReferenceType(new IntType())),
+                        new VariableDeclarationStatement("v",new IntType()),
+                        new NewStatement("a",new ValueExpression(new IntValue(0))),
+                        new NewStatement("b",new ValueExpression(new IntValue(0))),
+                        new HeapWrittingStatement("a",new ValueExpression(new IntValue(1))),
+                        new HeapWrittingStatement("b",new ValueExpression(new IntValue(2))),
+                        new ConditionalAssignmentStatement(new RelationalExpression(
+                                new HeapReadingExpression(new VariableExpression("a")),
+                                new HeapReadingExpression(new VariableExpression("b")),
+                                "<"),new ValueExpression(new IntValue(100)),new ValueExpression(new IntValue(200))),
+                        new PrintStatement(new VariableExpression("v")),
+                        new ConditionalAssignmentStatement(new RelationalExpression(
+                                new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("b")),
+                                        new ValueExpression(new IntValue(2))
+                                        ,"-"),
+                                new HeapReadingExpression(new VariableExpression("a")),
+                                ">")
+                                ,new ValueExpression(new IntValue(100))
+                                ,new ValueExpression(new IntValue(200))),
+                        new PrintStatement(new VariableExpression("v"))
+                        );
+
+                programs.put(11,program11);
+                return program11;
         }
 }

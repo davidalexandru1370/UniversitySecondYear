@@ -119,4 +119,20 @@ public class Examples {
                 print(readHeapOperation(a));
                 """;
     }
+
+    public static String example11(){
+        return """
+                Ref int a;
+                ref int b;
+                int v;
+                new(a,0;
+                new(b,0:
+                writeheap(a,1)
+                writeheap(b,2)
+                v=(rh(a)<rh(b)) ? 100:200
+                print(v)
+                v=((rh(b)-2)<rh(a)) ? 100:200
+                print(v)
+                """;
+    }
 }
