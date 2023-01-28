@@ -22,8 +22,8 @@ public class SwitchStatement implements IStatement {
 
     public SwitchStatement(IExpression switchExpression,
                            IExpression expression1,
-                           IStatement statement1,
                            IExpression expression2,
+                           IStatement statement1,
                            IStatement statement2,
                            IStatement statement3) {
         this.switchExpression = switchExpression;

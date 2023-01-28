@@ -119,4 +119,17 @@ public class Examples {
                 print(readHeapOperation(a));
                 """;
     }
+
+    public static String example11(){
+        return """
+                a=1;
+                b=2;
+                c=5;
+                switch(a*10)
+                    case(b*c): print(a);print(b);
+                    case (10): print(100);print(200);
+                    default: print(300);
+                print(300);
+                """;
+    }
 }

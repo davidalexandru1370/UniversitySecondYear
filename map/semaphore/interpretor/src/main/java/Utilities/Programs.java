@@ -346,4 +346,27 @@ public class Programs {
                 programs.put(10, program10);
                 return program10;
         }
+
+        public static IStatement program11(){
+                IStatement program11 = getCompoundStatementByListOfStatement(
+                        new VariableDeclarationStatement("a",new IntType()),
+                        new AssignStatement("a",new ValueExpression(new IntValue(1))),
+                        new VariableDeclarationStatement("b",new IntType()),
+                        new AssignStatement("b",new ValueExpression(new IntValue(2))),
+                        new VariableDeclarationStatement("c",new IntType()),
+                        new AssignStatement("c",new ValueExpression(new IntValue(5))),
+                        new SwitchStatement(
+                                new ArithmeticExpression(new VariableExpression("a"),new ValueExpression(new IntValue(10)),"*"),
+                                new ArithmeticExpression(new VariableExpression("b"),new VariableExpression("c"),"*"),
+                                new ValueExpression(new IntValue(10)),
+                                getCompoundStatementByListOfStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new VariableExpression("b"))),
+                                getCompoundStatementByListOfStatement(new PrintStatement(new ValueExpression(new IntValue(100))), new PrintStatement(new ValueExpression(new IntValue(200)))),
+                                new PrintStatement(new ValueExpression(new IntValue(300)))
+                        ),
+                        new PrintStatement(new ValueExpression(new IntValue(300)))
+                );
+
+                programs.put(11,program11);
+                return program11;
+        }
 }
