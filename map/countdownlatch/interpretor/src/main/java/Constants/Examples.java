@@ -135,4 +135,10 @@ public class Examples {
                 print(v)
                 """;
     }
+
+    public static String example12(){
+        return """
+                examplu12
+                """;
+    }
 }
