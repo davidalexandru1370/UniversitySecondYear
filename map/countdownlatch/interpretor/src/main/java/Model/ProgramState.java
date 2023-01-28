@@ -166,4 +166,12 @@ public class ProgramState {
     public String heapToString() {
         return "Heap: " + heap.toString();
     }
+
+    public static ILatchTable getLatchTable() {
+        return latchTable;
+    }
+
+    public static void setLatchTable(ILatchTable latchTable) {
+        ProgramState.latchTable = latchTable;
+    }
 }

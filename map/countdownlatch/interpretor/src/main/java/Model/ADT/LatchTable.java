@@ -82,6 +82,11 @@ public class LatchTable implements ILatchTable<Integer, IValue>{
     }
 
     @Override
+    public boolean contains(Integer key) {
+        return latchTable.containsKey(key);
+    }
+
+    @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         result.append("\n");

@@ -14,4 +14,5 @@ public interface ILatchTable<Key,Value> {
     void update(Key position, Value value) throws InterpreterException;
     IValue get(Key position) throws InterpreterException;
     void deleteByKey(Key key);
+    boolean contains(Key key);
 }
