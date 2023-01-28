@@ -30,11 +30,25 @@ public class Programs {
 
         //at least 2 statements
         private static IStatement getCompoundStatementByListOfStatement(IStatement... statements){
-                CompoundStatement result = new CompoundStatement(statements[0],statements[1]);
-
-                for (int i = 2; i < statements.length; i++) {
-                                result = new CompoundStatement(result,statements[i]);
+                CompoundStatement result = new CompoundStatement(statements[0],new NopStatement());
+                CompoundStatement nextLink = null;
+                for (int i = 1; i < statements.length; i++) {
+                        CompoundStatement second = new CompoundStatement(statements[i], new NopStatement());
+                                if(result.getSecond() instanceof NopStatement){
+                                        result.setSecond(second);
+                                        nextLink = second;
+                                }
+                                else{
+                                     if(i == statements.length - 1){
+                                             nextLink.setSecond(statements[i]);
+                                     }
+                                     else{
+                                             nextLink.setSecond(second);
+                                             nextLink = second;
+                                     }
+                                }
                 }
+
                 return result;
         }
 
@@ -335,12 +349,6 @@ public class Programs {
         }
 
         public static IStatement program11(){
-//                IStatement program11 = new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new IntType())),
-//                        new CompoundStatement(new VariableDeclarationStatement("b",new ReferenceType(new IntType())),
-//                                new CompoundStatement(new VariableDeclarationStatement("b",new IntType()),
-//                                        new CompoundStatement(new VariableDeclarationStatement("v",new IntType()),
-//                                                new CompoundStatement(new NewStatement())))))
-
                 IStatement program11 = getCompoundStatementByListOfStatement(
                         new VariableDeclarationStatement("a",new ReferenceType(new IntType())),
                         new VariableDeclarationStatement("b",new ReferenceType(new IntType())),
