@@ -18,6 +18,29 @@ public class Programs {
 
         public static Map<Integer, IStatement> programs = new HashMap<>();
 
+        private static IStatement getCompoundStatementByListOfStatement(IStatement... statements){
+                CompoundStatement result = new CompoundStatement(statements[0],new NopStatement());
+                CompoundStatement nextLink = null;
+                for (int i = 1; i < statements.length; i++) {
+                        CompoundStatement second = new CompoundStatement(statements[i], new NopStatement());
+                        if(result.getSecond() instanceof NopStatement){
+                                result.setSecond(second);
+                                nextLink = second;
+                        }
+                        else{
+                                if(i == statements.length - 1){
+                                        nextLink.setSecond(statements[i]);
+                                }
+                                else{
+                                        nextLink.setSecond(second);
+                                        nextLink = second;
+                                }
+                        }
+                }
+
+                return result;
+        }
+
         public static IStatement program1() {
                 IStatement program1 = new CompoundStatement(
                                 new VariableDeclarationStatement("v", new IntType()),

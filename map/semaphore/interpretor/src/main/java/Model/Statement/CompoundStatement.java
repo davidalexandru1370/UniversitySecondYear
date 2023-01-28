@@ -8,8 +8,8 @@ import Model.Statement.Interfaces.IStatement;
 import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class CompoundStatement implements IStatement {
-    private final IStatement first;
-    private final IStatement second;
+    private  IStatement first;
+    private  IStatement second;
 
     public CompoundStatement(IStatement first, IStatement second){
         this.first = first;
@@ -43,5 +43,13 @@ public class CompoundStatement implements IStatement {
     @Override
     public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
         return second.typeCheck(first.typeCheck(typeEnviroment));
+    }
+
+    public void setFirst(IStatement first) {
+        this.first = first;
+    }
+
+    public void setSecond(IStatement second) {
+        this.second = second;
     }
 }
