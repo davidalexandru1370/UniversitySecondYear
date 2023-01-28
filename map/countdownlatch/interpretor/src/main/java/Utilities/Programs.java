@@ -411,7 +411,6 @@ public class Programs {
                                                 new ValueExpression(new IntValue(10)),
                                                 "*")),
                                 new PrintStatement(new HeapReadingExpression(new VariableExpression("v3")))
-
                                 )),
                         new CountDownStatement("cnt"),
                         new AwaitStatement("cnt"),

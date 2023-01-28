@@ -5,6 +5,7 @@ import Controller.Controller;
 import Exceptions.FinishedRunningException;
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.LatchTable;
 import Model.ADT.MyDictionary;
 import Model.Command.Command;
 import Model.Command.RunExample;
@@ -46,6 +47,7 @@ public class GUI extends Application {
     private Map<String, Command> commands = new HashMap<>();
     private TableView<Pair<String, String>> heapTable = new TableView<>();
     private TableView<String> symbolTable = new TableView<>();
+    private TableView<Pair<String,String>> latchTable = new TableView<>();
     private ListView<String> fileTable = new ListView<>();
     private ListView<Integer> programIds = new ListView<>();
     private ListView<String> executionStack = new ListView<>();
@@ -71,6 +73,12 @@ public class GUI extends Application {
         symbolTableValue.setCellValueFactory(new PropertyValueFactory<String, String>("Value"));
         symbolTable.getColumns().addAll(symbolTableKey, symbolTableValue);
 
+        TableColumn<Pair<String, String>,String> latchTableKey = new TableColumn<>("Key");
+        TableColumn<Pair<String,String>,String> latchTableValue = new TableColumn<>("Value");
+        latchTableKey.setCellValueFactory(new PropertyValueFactory<Pair<String,String>, String>("Key"));
+        latchTableValue.setCellValueFactory(new PropertyValueFactory<Pair<String,String>, String>("Value"));
+        latchTable.getColumns().addAll(latchTableKey, latchTableValue);
+
         TilePane mainLayout = new TilePane(Orientation.VERTICAL);
         Label outLabel = new Label("Out table");
         Label heapTableLabel = new Label("Heap table");
@@ -78,6 +86,7 @@ public class GUI extends Application {
         Label fileTableLabel = new Label("File table");
         Label programIdsLabel = new Label("Program Ids table");
         Label executionStackLabel = new Label("Execution stack");
+        Label latchTableLabel = new Label("Latch table");
 
         VBox outLayout = new VBox();
         outLayout.getChildren().add(outLabel);
@@ -96,6 +105,13 @@ public class GUI extends Application {
         symbolTableLayout.getChildren().add(symbolTableLabel);
         symbolTableLayout.getChildren().add(symbolTable);
         symbolTableLayout.setAlignment(Pos.CENTER);
+
+
+        VBox latchTableLayout = new VBox();
+
+        latchTableLayout.getChildren().add(latchTableLabel);
+        latchTableLayout.getChildren().add(latchTable);
+        latchTableLayout.setAlignment(Pos.CENTER);
 
         VBox fileTableLayout = new VBox();
 
@@ -183,6 +199,7 @@ public class GUI extends Application {
         addToGUI(loggerLayout, outLayout);
         addToGUI(loggerLayout, heapTableLayout);
         addToGUI(loggerLayout, symbolTableLayout);
+        addToGUI(loggerLayout, latchTableLayout);
         addToGUI(loggerLayout, fileTableLayout);
         addToGUI(loggerLayout, programIdsLayout);
         addToGUI(buttonsLayout, allStepsButton);
@@ -211,6 +228,7 @@ public class GUI extends Application {
         programIds.getItems().clear();
         symbolTable.getItems().clear();
         heapTable.getItems().clear();
+        latchTable.getItems().clear();
         executionStack.getItems().clear();
         out.getItems().clear();
         symbolTableLocalStorage = new MyDictionary<>();
@@ -276,6 +294,16 @@ public class GUI extends Application {
 
         }
 
+        latchTable.getItems().clear();
+        ObservableList<Pair<String,String>> latchTableContent = FXCollections.observableArrayList();
+
+        ProgramState.getLatchTable()
+                .getContent()
+                .keySet()
+                .stream()
+                .forEach(p -> latchTableContent.add(
+                        new Pair<String,String>(p.toString(),ProgramState.getLatchTable().get(p).toString())));
+        latchTable.setItems(latchTableContent);
     }
 
     private void showAlert(String message, AlertType type) {
