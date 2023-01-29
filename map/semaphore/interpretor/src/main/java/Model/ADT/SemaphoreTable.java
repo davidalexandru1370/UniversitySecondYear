@@ -14,21 +14,22 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, List<Integer>>> {
     private Map<Integer,Pair<Integer,List<Integer>>> semaphoreTable = new ConcurrentHashMap<>();
-
+    private Lock lock = new ReentrantLock();
     private Integer freeValue;
 
-    private Lock lock = new ReentrantLock();
 
     public SemaphoreTable() {
         freeValue = newFreeValue();
     }
 
     private Integer newFreeValue() {
+        lock.lock();
         Random random = new Random();
         freeValue = random.nextInt(0, 1 << 8);
         while (freeValue == 0 || semaphoreTable.containsKey(freeValue) || freeValue < 0) {
             freeValue = random.nextInt();
         }
+        lock.unlock();
         return freeValue;
     }
 
@@ -49,9 +50,11 @@ public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, Li
 
     @Override
     public Integer add(Pair<Integer,List<Integer>> value) {
+        lock.lock();
         semaphoreTable.put(freeValue, value);
         Integer lastOccupiedFreeValue = freeValue;
         freeValue = newFreeValue();
+        lock.unlock();
         return lastOccupiedFreeValue;
     }
 
