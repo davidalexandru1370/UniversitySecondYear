@@ -342,6 +342,13 @@ public class GUI extends Application {
                 controller,
                 Programs.program11());
 
+        Command example12 = new RunExample(
+                "12",
+                "Press 12 to run example 12\n" + Examples.example12(),
+                controller,
+                Programs.program12());
+
+        addCommand(example12);
         addCommand(example11);
         addCommand(example10);
         addCommand(example9);
@@ -404,6 +411,7 @@ public class GUI extends Application {
         data.add(Examples.example9());
         data.add(Examples.example10());
         data.add(Examples.example11());
+        data.add(Examples.example12());
 
         listView.setItems(data);
     }

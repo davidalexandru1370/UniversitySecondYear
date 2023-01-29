@@ -132,4 +132,11 @@ public class Examples {
                 print(300);
                 """;
     }
+
+    public static String example12(){
+        return
+                """
+                exemplu 12
+                """;
+    }
 }

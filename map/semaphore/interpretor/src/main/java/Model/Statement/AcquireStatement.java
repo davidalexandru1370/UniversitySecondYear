@@ -18,6 +18,10 @@ public class AcquireStatement implements IStatement {
     private String var;
     private static Lock lock = new ReentrantLock();
 
+    public AcquireStatement(String var) {
+        this.var = var;
+    }
+
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
         lock.lock();

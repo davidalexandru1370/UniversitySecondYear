@@ -18,6 +18,10 @@ public class ReleaseStatement implements IStatement {
     private String var;
     private static Lock lock = new ReentrantLock();
 
+    public ReleaseStatement(String var) {
+        this.var = var;
+    }
+
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
         lock.lock();
@@ -34,7 +38,6 @@ public class ReleaseStatement implements IStatement {
         Pair<Integer, List<Integer>> result = (Pair<Integer, List<Integer>>) ProgramState.getSemaphoreTable().get(foundIndex);
 
         if(result.getValue().contains(ProgramState.getId())){
-            //result = new Pair<>(result.getKey(), result.getValue().stream().filter(p -> p == ProgramState.getId()).toList());
             ProgramState.getSemaphoreTable().update(foundIndex,new Pair<>(result.getKey(),
                     result.getValue().stream().filter(p -> p == ProgramState.getId()).toList()));
         }
