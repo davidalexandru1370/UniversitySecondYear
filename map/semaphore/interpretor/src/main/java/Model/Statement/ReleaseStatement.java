@@ -9,6 +9,7 @@ import Model.VariablesTypes.IntType;
 import Model.VariablesTypes.Interfaces.IVariableType;
 import javafx.util.Pair;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -25,6 +26,7 @@ public class ReleaseStatement implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
         lock.lock();
+
         if(!state.getSymbolTable().isDefined(var)){
             throw new InterpreterException(String.format("%s is not defined", var));
         }
@@ -37,9 +39,11 @@ public class ReleaseStatement implements IStatement {
 
         Pair<Integer, List<Integer>> result = (Pair<Integer, List<Integer>>) ProgramState.getSemaphoreTable().get(foundIndex);
 
-        if(result.getValue().contains(ProgramState.getId())){
+        if(result.getValue().size() > 0 && result.getValue().contains(state.getId())){
             ProgramState.getSemaphoreTable().update(foundIndex,new Pair<>(result.getKey(),
-                    result.getValue().stream().filter(p -> p == ProgramState.getId()).toList()));
+                    new LinkedList<Integer>(result.getValue().stream().filter(p -> p != state.getId()).toList())));
+//            ProgramState.getSemaphoreTable().update(foundIndex,new Pair<>(result.getKey(),
+//                    result.getValue().stream().filter(p -> p != state.getId()).toList()));
         }
 
         lock.unlock();

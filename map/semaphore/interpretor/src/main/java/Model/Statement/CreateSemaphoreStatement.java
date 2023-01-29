@@ -12,6 +12,7 @@ import Model.VariablesTypes.Interfaces.IVariableType;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -32,17 +33,17 @@ public class CreateSemaphoreStatement implements IStatement {
         lock.lock();
         IValue expressionValue = expression.evaluate(state.getSymbolTable(),state.getHeap());
 
-        if (!expressionValue.equals(new IntType())){
+        if (!expressionValue.getType().equals(new IntType())){
             throw new InterpreterException("expression does not evaluate to int");
         }
 
         int freeValue = ProgramState.getSemaphoreTable().add(
                 new Pair<Integer, List<Integer>>(
                         ((IntValue)expressionValue).getValue(),
-                        new ArrayList<>()));
+                        new LinkedList<>()));
 
         if (state.getSymbolTable().isDefined(var) &&
-        state.getSymbolTable().get(var).equals(new IntType())){
+        state.getSymbolTable().get(var).getType().equals(new IntType())){
             state.getSymbolTable().insert(var,new IntValue(freeValue));
         }
         else{

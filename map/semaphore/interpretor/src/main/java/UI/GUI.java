@@ -143,6 +143,9 @@ public class GUI extends Application {
             } catch (InterpreterException interpreterException) {
                 showAlert(interpreterException.getMessage(), AlertType.ERROR);
             }
+            catch(RuntimeException re){
+                System.out.println(re.getMessage());
+            }
 
         });
 

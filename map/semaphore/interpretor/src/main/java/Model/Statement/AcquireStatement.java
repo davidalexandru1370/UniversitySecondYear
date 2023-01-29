@@ -40,8 +40,9 @@ public class AcquireStatement implements IStatement {
         int n1 = result.getKey();
         int n = result.getValue().size();
         if (n1 > n){
-            if(!result.getValue().contains(ProgramState.getId())){
-                result.getValue().add(ProgramState.getId());
+            if(!result.getValue().contains(state.getId())){
+                result.getValue().add(state.getId());
+                ProgramState.getSemaphoreTable().update(foundIndex,new Pair<>(n1,result.getValue()));
             }
         }
         else{

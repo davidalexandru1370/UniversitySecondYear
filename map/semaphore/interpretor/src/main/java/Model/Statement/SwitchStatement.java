@@ -36,10 +36,6 @@ public class SwitchStatement implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
-        IValue switchValue = switchExpression.evaluate(state.getSymbolTable(),state.getHeap());
-        IValue expression1Value = expression1.evaluate(state.getSymbolTable(),state.getHeap());
-        IValue expression2Value = expression2.evaluate(state.getSymbolTable(),state.getHeap());
-
         state.getExeStack().push(new IfStatement(
                 new RelationalExpression(switchExpression,expression1,"=="),
                 statement1,

@@ -21,7 +21,7 @@ public class ProgramState {
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
-    private static int id;
+    private int id;
     private static ISemaphoreTable semaphoreTable = new SemaphoreTable();
 
     public ProgramState(IStack<IStatement> exeStack,
@@ -75,13 +75,10 @@ public class ProgramState {
         this.out = out;
     }
 
-    public static synchronized int getId() {
+    public  synchronized int getId() {
         return id;
     }
 
-    public static synchronized void setId(int id) {
-        ProgramState.id = id;
-    }
 
     public boolean isNotCompleted() {
         return exeStack.size() != 0;
