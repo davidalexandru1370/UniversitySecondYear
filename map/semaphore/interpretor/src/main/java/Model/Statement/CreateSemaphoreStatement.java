@@ -29,6 +29,7 @@ public class CreateSemaphoreStatement implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
+        lock.lock();
         IValue expressionValue = expression.evaluate(state.getSymbolTable(),state.getHeap());
 
         if (!expressionValue.equals(new IntType())){
@@ -47,7 +48,7 @@ public class CreateSemaphoreStatement implements IStatement {
         else{
             throw new InterpreterException(String.format("%s is not defined or does not have int type",var));
         }
-
+        lock.unlock();  
         return null;
     }
 
