@@ -57,11 +57,13 @@ public class CreateSemaphoreStatement implements IStatement {
             throw new InterpreterException(String.format("%s is not defined",var));
         }
 
-        if (!typeEnviroment.get(var).equals(expression.typeCheck(typeEnviroment.clone())))
+        if (!typeEnviroment.get(var).equals(expression.typeCheck(typeEnviroment.clone())) &&
+            !typeEnviroment.get(var).equals(new IntType())
+        )
         {
             throw new InterpreterException("DOes not evaluate to the same types");
         }
-        
+
         return typeEnviroment;
     }
 }
