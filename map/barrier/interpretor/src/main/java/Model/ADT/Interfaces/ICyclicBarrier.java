@@ -1,12 +1,10 @@
 package Model.ADT.Interfaces;
 
 import Exceptions.InterpreterException;
-import Model.Value.Interfaces.IValue;
 
-import java.security.Key;
 import java.util.Map;
 
-public interface ISemaphoreTable<Key,Value> {
+public interface ICyclicBarrier<Key,Value> {
         Integer getFreeValue();
         Map<Key, Value> getContent();
         void setContent(Map<Key,Value> content);

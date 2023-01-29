@@ -2,15 +2,13 @@ package Model;
 
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.*;
-import Model.ADT.SemaphoreTable;
+import Model.ADT.CyclicBarrier;
 import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
-import javafx.util.Pair;
 
 import java.io.BufferedReader;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -22,7 +20,7 @@ public class ProgramState {
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
     private int id;
-    private static ISemaphoreTable semaphoreTable = new SemaphoreTable();
+    private static ICyclicBarrier semaphoreTable = new CyclicBarrier();
 
     public ProgramState(IStack<IStatement> exeStack,
             IDictionary<String, IValue> symbolTable,
@@ -165,11 +163,11 @@ public class ProgramState {
         return "Heap: " + heap.toString();
     }
 
-    public static ISemaphoreTable getSemaphoreTable() {
+    public static ICyclicBarrier getSemaphoreTable() {
         return semaphoreTable;
     }
 
-    public static void setSemaphoreTable(ISemaphoreTable semaphoreTable) {
+    public static void setSemaphoreTable(ICyclicBarrier semaphoreTable) {
         ProgramState.semaphoreTable = semaphoreTable;
     }
 }

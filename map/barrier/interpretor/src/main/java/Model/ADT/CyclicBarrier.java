@@ -1,8 +1,7 @@
 package Model.ADT;
 
 import Exceptions.InterpreterException;
-import Model.ADT.Interfaces.ISemaphoreTable;
-import Model.Value.Interfaces.IValue;
+import Model.ADT.Interfaces.ICyclicBarrier;
 import javafx.util.Pair;
 
 import java.util.List;
@@ -12,13 +11,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, List<Integer>>> {
+public class CyclicBarrier implements ICyclicBarrier<Integer, Pair<Integer, List<Integer>>> {
     private Map<Integer,Pair<Integer,List<Integer>>> semaphoreTable = new ConcurrentHashMap<>();
     private Lock lock = new ReentrantLock();
     private Integer freeValue;
 
 
-    public SemaphoreTable() {
+    public CyclicBarrier() {
         freeValue = newFreeValue();
     }
 
@@ -60,10 +59,12 @@ public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, Li
 
     @Override
     public void update(Integer position, Pair<Integer,List<Integer>> value) throws InterpreterException {
+        lock.lock();
         if (!semaphoreTable.containsKey(position)) {
             throw new InterpreterException(String.format("%d no latch at this id", position));
         }
         semaphoreTable.put(position, value);
+        lock.unlock();
     }
 
     @Override
@@ -76,11 +77,13 @@ public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, Li
 
     @Override
     public void deleteByKey(Integer key) {
+        lock.lock();
         if(!semaphoreTable.containsKey(key)){
             throw new InterpreterException(String.format("%d is not in latch table",key));
         }
 
         semaphoreTable.remove(key);
+        lock.unlock();
     }
 
     @Override
