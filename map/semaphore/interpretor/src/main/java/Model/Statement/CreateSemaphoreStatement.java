@@ -48,7 +48,7 @@ public class CreateSemaphoreStatement implements IStatement {
         else{
             throw new InterpreterException(String.format("%s is not defined or does not have int type",var));
         }
-        lock.unlock();  
+        lock.unlock();
         return null;
     }
 
