@@ -349,72 +349,42 @@ public class Programs {
 
         public static IStatement program11(){
                 IStatement program11 = getCompoundStatementByListOfStatement(
-                        new VariableDeclarationStatement("a",new IntType()),
-                        new AssignStatement("a",new ValueExpression(new IntValue(1))),
-                        new VariableDeclarationStatement("b",new IntType()),
-                        new AssignStatement("b",new ValueExpression(new IntValue(2))),
-                        new VariableDeclarationStatement("c",new IntType()),
-                        new AssignStatement("c",new ValueExpression(new IntValue(5))),
-                        new SwitchStatement(
-                                new ArithmeticExpression(new VariableExpression("a"),new ValueExpression(new IntValue(10)),"*"),
-                                new ArithmeticExpression(new VariableExpression("b"),new VariableExpression("c"),"*"),
+                        new VariableDeclarationStatement("v",new IntType()),
+                        new VariableDeclarationStatement("x",new IntType()),
+                        new VariableDeclarationStatement("y",new IntType()),
+                        new AssignStatement("v",new ValueExpression(new IntValue(0))),
+                        new RepeatUntillStatement(getCompoundStatementByListOfStatement( new ForkStatement(
+                                getCompoundStatementByListOfStatement(
+                                new PrintStatement(new VariableExpression("v")),
+                                new AssignStatement("v",new ArithmeticExpression(
+                                        new VariableExpression("v"),
+                                        new ValueExpression(new IntValue(1)),
+                                        "-"
+                                ))
+                        )),
+                                new AssignStatement("v",new ArithmeticExpression(
+                                        new VariableExpression("v"),
+                                        new ValueExpression(new IntValue(1)),
+                                        "+"
+                                ))
+                                ),
+                                new RelationalExpression(
+                                        new VariableExpression("v"),
+                                        new ValueExpression(new IntValue(3)),
+                                        "=="
+                                )),
+                        new AssignStatement("x",new ValueExpression(new IntValue(1))),
+                        new NopStatement(),
+                        new AssignStatement("y",new ValueExpression(new IntValue(3))),
+                        new NopStatement(),
+                        new PrintStatement(new ArithmeticExpression(
+                                new VariableExpression("v"),
                                 new ValueExpression(new IntValue(10)),
-                                getCompoundStatementByListOfStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new VariableExpression("b"))),
-                                getCompoundStatementByListOfStatement(new PrintStatement(new ValueExpression(new IntValue(100))), new PrintStatement(new ValueExpression(new IntValue(200)))),
-                                new PrintStatement(new ValueExpression(new IntValue(300)))
-                        ),
-                        new PrintStatement(new ValueExpression(new IntValue(300)))
+                                "*"
+                                ))
                 );
 
                 programs.put(11,program11);
                 return program11;
-        }
-
-        public static IStatement program12(){
-                IStatement program12 = getCompoundStatementByListOfStatement(
-                        new VariableDeclarationStatement("v1",new ReferenceType(new IntType())),
-                        new VariableDeclarationStatement("cnt",new IntType()),
-                        new NewStatement("v1",new ValueExpression(new IntValue(1))),
-                        new CreateSemaphoreStatement("cnt",new HeapReadingExpression(new VariableExpression("v1"))),
-                        new ForkStatement(
-                                getCompoundStatementByListOfStatement(
-                                        new AcquireStatement("cnt"),
-                                        new HeapWrittingStatement("v1",
-                                                new ArithmeticExpression(
-                                                        new HeapReadingExpression(new VariableExpression("v1")),
-                                                        new ValueExpression(new IntValue(10)),
-                                                        "*")),
-                                        new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))),
-                                        new ReleaseStatement("cnt")
-                                )
-                        ),
-                        new ForkStatement(
-                                getCompoundStatementByListOfStatement(
-                                        new AcquireStatement("cnt"),
-                                        new HeapWrittingStatement("v1",
-                                                new ArithmeticExpression(
-                                                        new HeapReadingExpression(new VariableExpression("v1")),
-                                                        new ValueExpression(new IntValue(10)),
-                                                        "*")),
-                                        new HeapWrittingStatement("v1",new ArithmeticExpression(
-                                                new HeapReadingExpression(new VariableExpression("v1")),
-                                                        new ValueExpression(new IntValue(2)),
-                                                        "*")
-                                        ),
-                                        new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))),
-                                        new ReleaseStatement("cnt")
-                                )
-                        ),
-                        new AcquireStatement("cnt"),
-                        new PrintStatement(new ArithmeticExpression(
-                                new HeapReadingExpression(new VariableExpression("v1")),
-                                        new ValueExpression(new IntValue(1)),
-                                        "-")
-                        ),
-                        new ReleaseStatement("cnt")
-                        );
-
-                programs.put(12,program12);
-                return program12;
         }
 }

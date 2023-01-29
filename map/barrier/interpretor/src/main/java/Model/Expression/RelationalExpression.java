@@ -57,6 +57,21 @@ public class RelationalExpression implements IExpression {
             }
             throw new InterpreterException("Right operand is not integer");
         }
+        if(leftHandSideEvaluated.getType().equals(new BoolType())){
+            rightHandSideEvaluated = rightHandSideExpression.evaluate(expression,heap);
+            if(rightHandSideEvaluated.getType().equals(new BoolType())){
+                boolean leftHandSideValue = ((BoolValue) leftHandSideEvaluated).getValue();
+                boolean rightHandSideValue = ((BoolValue) rightHandSideEvaluated).getValue();
+                switch (operation){
+                    case "==" -> {
+                        return new BoolValue(leftHandSideValue == rightHandSideValue);
+                    }
+                    case "!=" -> {
+                        return new BoolValue(leftHandSideValue != rightHandSideValue);
+                    }
+                }
+            }
+        }
         throw new InterpreterException("Left operand is not integer!");
     }
 
