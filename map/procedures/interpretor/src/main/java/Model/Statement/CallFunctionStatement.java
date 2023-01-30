@@ -2,15 +2,12 @@ package Model.Statement;
 
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
-import Model.ADT.Interfaces.IStack;
-import Model.ADT.MyStack;
 import Model.Expression.Interfaces.IExpression;
 import Model.ProgramState;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 import Model.VariablesTypes.Interfaces.IVariableType;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class CallFunctionStatement implements IStatement {

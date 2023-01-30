@@ -34,7 +34,11 @@ public class MyStack<T> implements IStack<T> {
 
     @Override
     public IStack<T> clone() {
-        return (IStack<T>)stack.clone();
+        IStack<T> copy = new MyStack<>();
+        for(int index = stack.size()-1;index>=0;index--){
+            copy.push(stack.get(index));
+        }
+        return copy;
     }
 
     @Override
