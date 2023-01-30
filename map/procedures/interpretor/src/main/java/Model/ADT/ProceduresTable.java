@@ -13,32 +13,32 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ProceduresTable implements IProceduresTable<String, IPair<List<IVariableType>, IStatement>> {
-    private Map<String,IPair<List<IVariableType>, IStatement>> proceduresTable = new ConcurrentHashMap<>();
+public class ProceduresTable implements IProceduresTable<String, IPair<List<String>, IStatement>> {
+    private Map<String,IPair<List<String>, IStatement>> proceduresTable = new ConcurrentHashMap<>();
     private Lock lock = new ReentrantLock();
 
     public ProceduresTable() {
     }
 
     @Override
-    public Map<String, IPair<List<IVariableType>, IStatement>> getContent() {
+    public Map<String, IPair<List<String>, IStatement>> getContent() {
         return proceduresTable;
     }
 
     @Override
-    public void setContent(Map<String, IPair<List<IVariableType>, IStatement>> content) {
+    public void setContent(Map<String, IPair<List<String>, IStatement>> content) {
         proceduresTable = content;
     }
 
     @Override
-    public void add(String s,IPair<List<IVariableType>, IStatement> value) {
+    public void add(String s,IPair<List<String>, IStatement> value) {
         lock.lock();
         proceduresTable.put(s, value);
         lock.unlock();
     }
 
     @Override
-    public void update(String position, IPair<List<IVariableType>, IStatement> value) throws InterpreterException {
+    public void update(String position, IPair<List<String>, IStatement> value) throws InterpreterException {
         lock.lock();
         if (!proceduresTable.containsKey(position)) {
             throw new InterpreterException(String.format("%d no latch at this id", position));
@@ -48,7 +48,7 @@ public class ProceduresTable implements IProceduresTable<String, IPair<List<IVar
     }
 
     @Override
-    public IPair<List<IVariableType>, IStatement> get(String position) throws InterpreterException {
+    public IPair<List<String>, IStatement> get(String position) throws InterpreterException {
         if (!proceduresTable.containsKey(position)) {
             throw new InterpreterException(String.format("%d no latch at this id", position));
         }
