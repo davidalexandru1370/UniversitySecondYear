@@ -9,7 +9,7 @@ import Model.VariablesTypes.Interfaces.IVariableType;
 public class ReturnStatement  implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
-        
+        state.getStackSymbolTable().pop();
         return null;
     }
 
