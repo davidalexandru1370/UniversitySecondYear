@@ -11,8 +11,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class CyclicBarrier implements ICyclicBarrier<Integer, Pair<Integer, List<Integer>>> {
-    private Map<Integer,Pair<Integer,List<Integer>>> semaphoreTable = new ConcurrentHashMap<>();
+public class CyclicBarrier implements ICyclicBarrier<Integer, MyPair<Integer, List<Integer>>> {
+    private Map<Integer,MyPair<Integer,List<Integer>>> semaphoreTable = new ConcurrentHashMap<>();
     private Lock lock = new ReentrantLock();
     private Integer freeValue;
 
@@ -38,17 +38,17 @@ public class CyclicBarrier implements ICyclicBarrier<Integer, Pair<Integer, List
     }
 
     @Override
-    public Map<Integer, Pair<Integer,List<Integer>>> getContent() {
+    public Map<Integer, MyPair<Integer,List<Integer>>> getContent() {
         return semaphoreTable;
     }
 
     @Override
-    public void setContent(Map<Integer, Pair<Integer,List<Integer>>> content) {
+    public void setContent(Map<Integer, MyPair<Integer,List<Integer>>> content) {
         this.semaphoreTable = content;
     }
 
     @Override
-    public Integer add(Pair<Integer,List<Integer>> value) {
+    public Integer add(MyPair<Integer,List<Integer>> value) {
         lock.lock();
         semaphoreTable.put(freeValue, value);
         Integer lastOccupiedFreeValue = freeValue;
@@ -58,7 +58,7 @@ public class CyclicBarrier implements ICyclicBarrier<Integer, Pair<Integer, List
     }
 
     @Override
-    public void update(Integer position, Pair<Integer,List<Integer>> value) throws InterpreterException {
+    public void update(Integer position, MyPair<Integer,List<Integer>> value) throws InterpreterException {
         lock.lock();
         if (!semaphoreTable.containsKey(position)) {
             throw new InterpreterException(String.format("%d no latch at this id", position));
@@ -68,7 +68,7 @@ public class CyclicBarrier implements ICyclicBarrier<Integer, Pair<Integer, List
     }
 
     @Override
-    public Pair<Integer,List<Integer>> get(Integer position) throws InterpreterException {
+    public MyPair<Integer,List<Integer>> get(Integer position) throws InterpreterException {
         if (!semaphoreTable.containsKey(position)) {
             throw new InterpreterException(String.format("%d no latch at this id", position));
         }

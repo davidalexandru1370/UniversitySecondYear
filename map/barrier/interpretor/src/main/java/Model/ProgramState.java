@@ -20,7 +20,7 @@ public class ProgramState {
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
     private int id;
-    private static ICyclicBarrier semaphoreTable = new CyclicBarrier();
+    private static ICyclicBarrier barrierTable = new CyclicBarrier();
 
     public ProgramState(IStack<IStatement> exeStack,
             IDictionary<String, IValue> symbolTable,
@@ -163,11 +163,8 @@ public class ProgramState {
         return "Heap: " + heap.toString();
     }
 
-    public static ICyclicBarrier getSemaphoreTable() {
-        return semaphoreTable;
+    public static ICyclicBarrier getBarrierTable() {
+        return barrierTable;
     }
 
-    public static void setSemaphoreTable(ICyclicBarrier semaphoreTable) {
-        ProgramState.semaphoreTable = semaphoreTable;
-    }
 }
