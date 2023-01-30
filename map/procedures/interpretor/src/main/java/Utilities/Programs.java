@@ -18,7 +18,7 @@ public class Programs {
 
         public static Map<Integer, IStatement> programs = new HashMap<>();
 
-        private static IStatement getCompoundStatementByListOfStatement(IStatement... statements){
+        private static IStatement getCompoundStatementByListOfStatements(IStatement... statements){
                 CompoundStatement result = new CompoundStatement(statements[0],new NopStatement());
                 CompoundStatement nextLink = null;
                 for (int i = 1; i < statements.length; i++) {
