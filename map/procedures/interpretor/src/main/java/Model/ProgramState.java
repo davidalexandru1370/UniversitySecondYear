@@ -2,6 +2,7 @@ package Model;
 
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.*;
+import Model.ADT.MyStack;
 import Model.ADT.ProceduresTable;
 import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
@@ -15,7 +16,7 @@ import java.util.Random;
 
 public class ProgramState {
     private IStack<IStatement> exeStack;
-    private  IStack<IDictionary<String, IValue>> symbolTable;
+    private  IStack<IDictionary<String, IValue>> symbolTable = new MyStack<>();
     private IList<IValue> out;
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;

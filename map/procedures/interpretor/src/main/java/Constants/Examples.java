@@ -122,21 +122,8 @@ public class Examples {
 
     public static String example11(){
         return """
-                a=1;
-                b=2;
-                c=5;
-                switch(a*10)
-                    case(b*c): print(a);print(b);
-                    case (10): print(100);print(200);
-                    default: print(300);
-                print(300);
+                exemplu11
                 """;
     }
 
-    public static String example12(){
-        return
-                """
-                exemplu 12
-                """;
-    }
 }

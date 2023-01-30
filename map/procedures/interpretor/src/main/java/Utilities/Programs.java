@@ -12,6 +12,8 @@ import Model.VariablesTypes.ReferenceType;
 import Model.VariablesTypes.StringType;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class Programs {
@@ -347,4 +349,53 @@ public class Programs {
                 return program10;
         }
 
+        public static IStatement program11(){
+                IStatement program11 = getCompoundStatementByListOfStatements(
+                        new CreateFunctionStatement("sum",
+                                List.of("a","b")
+                        ,getCompoundStatementByListOfStatements(
+                                new AssignStatement("v",new ArithmeticExpression(
+                                        new VariableExpression("a"),
+                                        new VariableExpression("b"),
+                                        "+"
+                                )),
+                                new PrintStatement(new VariableExpression("v"))
+                        )),
+                        new CreateFunctionStatement("product",
+                        List.of("a","b")
+                        ,getCompoundStatementByListOfStatements(
+                        new AssignStatement("v",new ArithmeticExpression(
+                                new VariableExpression("a"),
+                                new VariableExpression("b"),
+                                "*"
+                        )),
+                        new PrintStatement(new VariableExpression("v"))
+                )),
+                        new VariableDeclarationStatement("v",new IntType()),
+                        new AssignStatement("v",new ValueExpression(new IntValue(2))),
+                        new VariableDeclarationStatement("w",new IntType()),
+                        new AssignStatement("w",new ValueExpression(new IntValue(5))),
+                        new CallFunctionStatement("sum",
+                                new ArithmeticExpression(
+                                new VariableExpression("v"),
+                                new ValueExpression(new IntValue(10)),
+                                "*"
+                        ),
+                                new VariableExpression("w")),
+                        new PrintStatement(new VariableExpression("v")),
+                        new ForkStatement(getCompoundStatementByListOfStatements(
+                                new CallFunctionStatement("product",
+                                        new VariableExpression("v"),
+                                        new VariableExpression("w")),
+                                new ForkStatement(new CallFunctionStatement("sum",
+                                        new VariableExpression("v"),
+                                        new VariableExpression("w")
+                                ))
+                        ))
+
+                        );
+
+                programs.put(11,program11);
+                return program11;
+        }
 }
