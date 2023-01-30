@@ -362,14 +362,14 @@ public class Programs {
                                 new PrintStatement(new VariableExpression("v"))
                         )),
                         new CreateFunctionStatement("product",
-                        List.of("a","b")
+                                List.of("a","b")
                         ,getCompoundStatementByListOfStatements(
-                        new AssignStatement("v",new ArithmeticExpression(
-                                new VariableExpression("a"),
-                                new VariableExpression("b"),
-                                "*"
-                        )),
-                        new PrintStatement(new VariableExpression("v"))
+                                new AssignStatement("v",new ArithmeticExpression(
+                                        new VariableExpression("a"),
+                                        new VariableExpression("b"),
+                                        "*"
+                                )),
+                                new PrintStatement(new VariableExpression("v"))
                 )),
                         new VariableDeclarationStatement("v",new IntType()),
                         new AssignStatement("v",new ValueExpression(new IntValue(2))),

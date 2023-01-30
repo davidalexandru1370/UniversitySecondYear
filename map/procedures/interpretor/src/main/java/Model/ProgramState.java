@@ -99,6 +99,7 @@ public class ProgramState {
         }
 
         IStatement topStatement = exeStack.pop();
+
         return topStatement.execute(this);
     }
 
@@ -170,7 +171,7 @@ public class ProgramState {
         return result;
     }
 
-    public IProceduresTable<String, IPair<List<String>, IStatement>> getProceduresTable() {
+    public static IProceduresTable<String, IPair<List<String>, IStatement>> getProceduresTable() {
         return proceduresTable;
     }
 

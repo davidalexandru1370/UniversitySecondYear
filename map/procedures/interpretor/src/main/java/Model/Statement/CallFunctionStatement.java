@@ -29,8 +29,8 @@ public class CallFunctionStatement implements IStatement {
             throw new InterpreterException(String.format("%s is not a procedure",name));
         }
 
-        List<String> variables = state.getProceduresTable().get(name).getFirst();
-        IStatement functionBody = state.getProceduresTable().get(name).getSecond();
+        List<String> variables = ProgramState.getProceduresTable().get(name).getFirst();
+        IStatement functionBody = ProgramState.getProceduresTable().get(name).getSecond();
         IDictionary<String, IValue> symbolTable = state.getSymbolTable().clone();
 
         int index = 0;
@@ -38,6 +38,7 @@ public class CallFunctionStatement implements IStatement {
              variables) {
             IValue value = expressions[index].evaluate(state.getSymbolTable(),state.getHeap());
             symbolTable.insert(variable,value);
+            index++;
         }
 
         state.insertSymbolTable(symbolTable);
