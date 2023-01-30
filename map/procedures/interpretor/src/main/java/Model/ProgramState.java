@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class ProgramState {
     private IStack<IStatement> exeStack;
-    private IDictionary<String, IValue> symbolTable;
+    private  IStack<IDictionary<String, IValue>> symbolTable;
     private IList<IValue> out;
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
@@ -31,7 +31,7 @@ public class ProgramState {
             IHeap heap,
             IStatement program) {
         this.exeStack = exeStack;
-        this.symbolTable = symbolTable;
+        this.symbolTable.push(symbolTable);
         this.out = out;
         this.outFiles = outFiles;
         this.heap = heap;
@@ -48,7 +48,7 @@ public class ProgramState {
     }
 
     public IDictionary<String, IValue> getSymbolTable() {
-        return symbolTable;
+        return symbolTable.getTop();
     }
 
     public IHeap getHeap() {
@@ -59,8 +59,12 @@ public class ProgramState {
         this.heap = heap;
     }
 
-    public void setSymbolTable(IDictionary<String, IValue> symbolTable) {
+    public void setSymbolTable(IStack<IDictionary<String, IValue>> symbolTable) {
         this.symbolTable = symbolTable;
+    }
+
+    public IStack<IDictionary<String,IValue>> getStackSymbolTable(){
+        return this.symbolTable;
     }
 
     public IDictionary<String, BufferedReader> getOutFiles() {

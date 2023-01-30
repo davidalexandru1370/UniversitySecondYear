@@ -19,12 +19,16 @@ public class ForkStatement implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws InterpreterException {
         IStack<IStatement> newExecutionStack = new MyStack<>();
-        return new ProgramState(newExecutionStack,
+        ProgramState forkedProgram =  new ProgramState(newExecutionStack,
                 state.getSymbolTable().clone(),
                 state.getOut(),
                 state.getOutFiles(),
                 state.getHeap(),
                 statement);
+
+        forkedProgram.setSymbolTable(state.getStackSymbolTable().clone());
+
+        return forkedProgram;
     }
 
     @Override

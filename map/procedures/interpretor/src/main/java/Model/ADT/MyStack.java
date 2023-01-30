@@ -33,6 +33,11 @@ public class MyStack<T> implements IStack<T> {
     }
 
     @Override
+    public IStack<T> clone() {
+        return (IStack<T>)stack.clone();
+    }
+
+    @Override
     public String toString() {
         return "MyStack{" +
                 "stack=" + stack +
