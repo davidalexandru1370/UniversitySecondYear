@@ -1,16 +1,15 @@
 package Model;
 
 import Exceptions.InterpreterException;
-import Model.ADT.Interfaces.IDictionary;
-import Model.ADT.Interfaces.IHeap;
-import Model.ADT.Interfaces.IList;
-import Model.ADT.Interfaces.IStack;
+import Model.ADT.Interfaces.*;
+import Model.ADT.ProceduresTable;
 import Model.Statement.CompoundStatement;
 import Model.Statement.Interfaces.IStatement;
 import Model.Value.Interfaces.IValue;
 
 import java.io.BufferedReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -21,6 +20,7 @@ public class ProgramState {
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
     private static Map<Integer, Boolean> ids = new HashMap<>();
+    private static IProceduresTable<String,IPair<List<String>,IStatement>> proceduresTable= new ProceduresTable();
     private int id;
 
 
@@ -65,6 +65,10 @@ public class ProgramState {
 
     public IStack<IDictionary<String,IValue>> getStackSymbolTable(){
         return this.symbolTable;
+    }
+
+    public void insertSymbolTable(IDictionary<String, IValue> symbolTable){
+        this.symbolTable.push(symbolTable);
     }
 
     public IDictionary<String, BufferedReader> getOutFiles() {
@@ -163,6 +167,14 @@ public class ProgramState {
             result += file + "\n";
         }
         return result;
+    }
+
+    public IProceduresTable<String, IPair<List<String>, IStatement>> getProceduresTable() {
+        return proceduresTable;
+    }
+
+    public  void setProceduresTable(IProceduresTable<String, IPair<List<String>, IStatement>> proceduresTable) {
+        ProgramState.proceduresTable = proceduresTable;
     }
 
     public String heapToString() {
