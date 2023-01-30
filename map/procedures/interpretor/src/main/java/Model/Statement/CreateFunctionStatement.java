@@ -31,4 +31,13 @@ public class CreateFunctionStatement implements IStatement {
     public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
         return typeEnviroment;
     }
+
+    @Override
+    public String toString() {
+        return "CreateFunctionStatement{" +
+                "functionName='" + functionName + '\'' +
+                ", arguments=" + arguments +
+                ", statement=" + statement +
+                '}';
+    }
 }

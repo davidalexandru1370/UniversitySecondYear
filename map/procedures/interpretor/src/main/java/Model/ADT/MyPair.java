@@ -28,4 +28,12 @@ public class MyPair<T1,T2> implements IPair<T1,T2> {
     public void setSecond(T2 second) {
         this.second = second;
     }
+
+    @Override
+    public String toString() {
+        return "MyPair{" +
+                "first=" + first +
+                ", second=" + second +
+                '}';
+    }
 }

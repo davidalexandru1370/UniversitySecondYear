@@ -75,7 +75,6 @@ public class ProceduresTable implements IProceduresTable<String, IPair<List<Stri
     public String toString() {
         return "ProceduresTable{" +
                 "proceduresTable=" + proceduresTable +
-                ", lock=" + lock +
                 '}';
     }
 }

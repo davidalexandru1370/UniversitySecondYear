@@ -5,7 +5,9 @@ import Controller.Controller;
 import Exceptions.FinishedRunningException;
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
+import Model.ADT.Interfaces.IPair;
 import Model.ADT.MyDictionary;
+import Model.ADT.MyPair;
 import Model.Command.Command;
 import Model.Command.RunExample;
 import Model.ProgramState;
@@ -46,6 +48,7 @@ public class GUI extends Application {
     private Map<String, Command> commands = new HashMap<>();
     private TableView<Pair<String, String>> heapTable = new TableView<>();
     private TableView<String> symbolTable = new TableView<>();
+    private TableView<Pair<String,String>> proceduresTable = new TableView<>();
     private ListView<String> fileTable = new ListView<>();
     private ListView<Integer> programIds = new ListView<>();
     private ListView<String> executionStack = new ListView<>();
@@ -64,6 +67,14 @@ public class GUI extends Application {
         heapTableKey.setCellValueFactory(new PropertyValueFactory<Pair<String, String>, String>("Key"));
         heapTableValue.setCellValueFactory(new PropertyValueFactory<Pair<String, String>, String>("Value"));
         heapTable.getColumns().addAll(heapTableKey, heapTableValue);
+
+
+        TableColumn<Pair<String, String>, String> proceduresTableKey = new TableColumn<>("name");
+        TableColumn<Pair<String, String>, String> proceduresTableValue = new TableColumn<>("body");
+        proceduresTableKey.setCellValueFactory(new PropertyValueFactory<>("Key"));
+        proceduresTableValue.setCellValueFactory(new PropertyValueFactory<>("Value"));
+        proceduresTable.getColumns().addAll(proceduresTableKey, proceduresTableValue);
+
 
         TableColumn<String, String> symbolTableKey = new TableColumn<>("Key");
         TableColumn<String, String> symbolTableValue = new TableColumn<>("Value");
@@ -191,7 +202,6 @@ public class GUI extends Application {
         addToGUI(buttonsLayout, allStepsButton);
         addToGUI(buttonsLayout, oneStepButton);
         addToGUI(tilePaneLayout, buttonsLayout);
-
         tilePaneLayout.setPrefRows(4);
         tilePaneLayout.setPrefTileHeight(200);
 
@@ -201,6 +211,7 @@ public class GUI extends Application {
         mainLayout.setPadding(new Insets(0, 0, 0, 600));
         loggerLayout.setHgap(10);
         addToGUI(mainLayout, tilePaneLayout);
+        addToGUI(tilePaneLayout,proceduresTable);
         addToGUI(mainLayout, loggerLayout);
         Scene scene = new Scene(root, 1000, 600);
         addToGUI(root, mainLayout);
@@ -279,6 +290,29 @@ public class GUI extends Application {
 
         }
 
+        proceduresTable.getItems().clear();
+        ObservableList<Pair<String, String>> proceduresContent = FXCollections.observableArrayList();
+
+        ProgramState
+                .getProceduresTable()
+                .getContent()
+                .keySet()
+                .forEach(
+                        p -> proceduresContent.add(new Pair<>(p + "(" + ProgramState
+                                .getProceduresTable()
+                                .get(p)
+                                .getFirst()
+                                .toString()
+
+                                + ")",
+                                ProgramState
+                                        .getProceduresTable()
+                                        .get(p)
+                                        .getSecond()
+                                        .toString()
+                        ))
+                );
+        proceduresTable.setItems(proceduresContent);
     }
 
     private void showAlert(String message, AlertType type) {
