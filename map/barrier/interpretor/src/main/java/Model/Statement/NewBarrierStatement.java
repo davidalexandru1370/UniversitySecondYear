@@ -30,9 +30,15 @@ public class NewBarrierStatement implements IStatement {
             throw new InterpreterException("Expression is not int");
         }
 
+        if(!state.getSymbolTable().isDefined(var)){
+            throw new InterpreterException(String.format("%s is not defined in symbol table",var));
+        }
+
         int result = ((IntValue)expressionEvaluated).getValue();
 
         int freeValue = ProgramState.getBarrierTable().add(new MyPair<>(result,new LinkedList<>()));
+
+        state.getSymbolTable().insert(var,new IntValue(freeValue));
 
         lock.unlock();
 
@@ -41,6 +47,14 @@ public class NewBarrierStatement implements IStatement {
 
     @Override
     public IDictionary<String, IVariableType> typeCheck(IDictionary<String, IVariableType> typeEnviroment) throws InterpreterException {
-        return null;
+        if(!typeEnviroment.isDefined(var)){
+            throw new InterpreterException(String.format("%s is not defined in symbol table",var));
+        }
+
+        if(!typeEnviroment.get(var).equals(new IntType())){
+            throw new InterpreterException(String.format("%s is not of type int",var));
+        }
+
+        return typeEnviroment;
     }
 }
