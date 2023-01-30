@@ -19,6 +19,11 @@ public class NewBarrierStatement implements IStatement {
     private String var;
     private IExpression expression;
 
+    public NewBarrierStatement(String var, IExpression expression) {
+        this.var = var;
+        this.expression = expression;
+    }
+
     private static Lock lock = new ReentrantLock();
 
     @Override

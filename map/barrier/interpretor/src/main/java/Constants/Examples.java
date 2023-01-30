@@ -126,4 +126,10 @@ public class Examples {
                 """;
     }
 
+    public static String example12(){
+        return """
+                exemplu12
+                """;
+    }
+
 }

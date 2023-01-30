@@ -387,4 +387,55 @@ public class Programs {
                 programs.put(11,program11);
                 return program11;
         }
+
+        public static IStatement program12(){
+                IStatement program12 = getCompoundStatementByListOfStatement(
+                    new VariableDeclarationStatement("v1",new ReferenceType(new IntType())),
+                    new VariableDeclarationStatement("v2",new ReferenceType(new IntType())),
+                    new VariableDeclarationStatement("v3",new ReferenceType(new IntType())),
+                    new VariableDeclarationStatement("cnt",new IntType()),
+                    new NewStatement("v1",new ValueExpression(new IntValue(2))),
+                    new NewStatement("v2",new ValueExpression(new IntValue(3))),
+                    new NewStatement("v3",new ValueExpression(new IntValue(4))),
+                    new NewBarrierStatement("cnt",new HeapReadingExpression(new VariableExpression("v2"))),
+                    new ForkStatement(
+                            getCompoundStatementByListOfStatement(
+                                    new AwaitStatement("cnt"),
+                                    new HeapWrittingStatement("v1",
+                                            new ArithmeticExpression(
+                                                    new HeapReadingExpression(new VariableExpression("v1")),
+                                                    new ValueExpression(new IntValue(10)),
+                                                    "*"
+                                            )
+                                            ),
+                                    new PrintStatement(new HeapReadingExpression(new VariableExpression("v1")))
+                            )
+                    ),
+                    new ForkStatement(
+                        getCompoundStatementByListOfStatement(
+                                new AwaitStatement("cnt"),
+                                new HeapWrittingStatement("v2",
+                                        new ArithmeticExpression(
+                                                new HeapReadingExpression(new VariableExpression("v2")),
+                                                new ValueExpression(new IntValue(10)),
+                                                "*"
+                                        )
+                                ),
+                                new HeapWrittingStatement("v2",
+                                        new ArithmeticExpression(
+                                                new HeapReadingExpression(new VariableExpression("v2")),
+                                                new ValueExpression(new IntValue(10)),
+                                                "*"
+                                        )
+                                ),
+                                new PrintStatement(new HeapReadingExpression(new VariableExpression("v2")))
+                        )
+                ),
+                new AwaitStatement("cnt"),
+                new PrintStatement(new HeapReadingExpression(new VariableExpression("v3")))
+                );
+
+                programs.put(12,program12);
+                return program12;
+        }
 }
