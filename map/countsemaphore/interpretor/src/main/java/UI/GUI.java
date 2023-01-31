@@ -6,6 +6,7 @@ import Exceptions.FinishedRunningException;
 import Exceptions.InterpreterException;
 import Model.ADT.Interfaces.IDictionary;
 import Model.ADT.MyDictionary;
+import Model.ADT.Triple;
 import Model.Command.Command;
 import Model.Command.RunExample;
 import Model.ProgramState;
@@ -45,7 +46,8 @@ public class GUI extends Application {
     private Controller controller = new Controller(repository);
     private Map<String, Command> commands = new HashMap<>();
     private TableView<Pair<String, String>> heapTable = new TableView<>();
-    private TableView semaphoreTable = new TableView<>();
+    private TableView<Triple<String,String,String>> semaphoreTable = new TableView<>();
+
     private TableView<String> symbolTable = new TableView<>();
     private ListView<String> fileTable = new ListView<>();
     private ListView<Integer> programIds = new ListView<>();
@@ -72,8 +74,16 @@ public class GUI extends Application {
         symbolTableValue.setCellValueFactory(new PropertyValueFactory<String, String>("Value"));
         symbolTable.getColumns().addAll(symbolTableKey, symbolTableValue);
 
+        TableColumn semaphoreColumn1 = new TableColumn("index");
+        semaphoreColumn1.setCellValueFactory(new PropertyValueFactory<>("First"));
 
+        TableColumn semaphoreColumn2 = new TableColumn("value");
+        semaphoreColumn2.setCellValueFactory(new PropertyValueFactory<>("Second"));
 
+        TableColumn semaphoreColumn3 = new TableColumn("list");
+        semaphoreColumn3.setCellValueFactory(new PropertyValueFactory<>("Third"));
+
+        semaphoreTable.getColumns().addAll(semaphoreColumn1,semaphoreColumn2,semaphoreColumn3);
 
         TilePane mainLayout = new TilePane(Orientation.VERTICAL);
         Label outLabel = new Label("Out table");
@@ -205,6 +215,7 @@ public class GUI extends Application {
         mainLayout.setPadding(new Insets(0, 0, 0, 600));
         loggerLayout.setHgap(10);
         addToGUI(mainLayout, tilePaneLayout);
+        addToGUI(tilePaneLayout,semaphoreTable);
         addToGUI(mainLayout, loggerLayout);
         Scene scene = new Scene(root, 1000, 600);
         addToGUI(root, mainLayout);
@@ -283,6 +294,13 @@ public class GUI extends Application {
 
         }
 
+        semaphoreTable.getItems().clear();
+
+        ObservableList<Triple<String,String,String>> semaphoreContent = FXCollections.observableArrayList();
+
+        semaphoreContent.add(new Triple<>("1","2","3"));
+
+        semaphoreTable.setItems(semaphoreContent);
     }
 
     private void showAlert(String message, AlertType type) {
