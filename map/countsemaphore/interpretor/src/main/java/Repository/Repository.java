@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Repository implements IRepository {
     private List<ProgramState> programs = new ArrayList<>();
@@ -71,6 +72,7 @@ public class Repository implements IRepository {
 
     @Override
     public void clear() {
+        ProgramState.getSemaphoreTable().setContent(new ConcurrentHashMap());
         programs.clear();
     }
 }

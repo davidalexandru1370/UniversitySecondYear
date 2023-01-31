@@ -228,6 +228,7 @@ public class GUI extends Application {
         fileTable.getItems().clear();
         programIds.getItems().clear();
         symbolTable.getItems().clear();
+        semaphoreTable.getItems().clear();
         heapTable.getItems().clear();
         executionStack.getItems().clear();
         out.getItems().clear();
@@ -294,11 +295,20 @@ public class GUI extends Application {
 
         }
 
-        semaphoreTable.getItems().clear();
 
         ObservableList<Triple<String,String,String>> semaphoreContent = FXCollections.observableArrayList();
+        semaphoreTable.getItems().clear();
 
-        semaphoreContent.add(new Triple<>("1","2","3"));
+//        semaphoreContent.add(new Triple<>(ProgramState.getSemaphoreTable().,"2","3"));
+
+        ProgramState.getSemaphoreTable().getContent().keySet()
+                        .forEach(
+                                p -> semaphoreContent.add(new Triple<>(
+                                        p.toString(),
+                                        ((Pair)ProgramState.getSemaphoreTable().get(p)).getValue().toString(),
+                                        ((Pair)ProgramState.getSemaphoreTable().get(p)).getKey().toString()
+                                ))
+                        );
 
         semaphoreTable.setItems(semaphoreContent);
     }
