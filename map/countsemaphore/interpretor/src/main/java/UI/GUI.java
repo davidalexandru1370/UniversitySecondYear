@@ -45,6 +45,7 @@ public class GUI extends Application {
     private Controller controller = new Controller(repository);
     private Map<String, Command> commands = new HashMap<>();
     private TableView<Pair<String, String>> heapTable = new TableView<>();
+    private TableView semaphoreTable = new TableView<>();
     private TableView<String> symbolTable = new TableView<>();
     private ListView<String> fileTable = new ListView<>();
     private ListView<Integer> programIds = new ListView<>();
@@ -70,6 +71,9 @@ public class GUI extends Application {
         symbolTableKey.setCellValueFactory(new PropertyValueFactory<String, String>("Key"));
         symbolTableValue.setCellValueFactory(new PropertyValueFactory<String, String>("Value"));
         symbolTable.getColumns().addAll(symbolTableKey, symbolTableValue);
+
+
+
 
         TilePane mainLayout = new TilePane(Orientation.VERTICAL);
         Label outLabel = new Label("Out table");

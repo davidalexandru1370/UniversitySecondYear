@@ -71,7 +71,6 @@ public class Repository implements IRepository {
 
     @Override
     public void clear() {
-        // TODO Auto-generated method stub
         programs.clear();
     }
 }
