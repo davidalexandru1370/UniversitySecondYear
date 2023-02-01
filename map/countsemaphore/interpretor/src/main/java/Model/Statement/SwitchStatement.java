@@ -11,7 +11,7 @@ import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class SwitchStatement implements IStatement {
     IExpression switchExpression;
-    
+
     IExpression expression1;
     IStatement statement1;
 
@@ -65,5 +65,17 @@ public class SwitchStatement implements IStatement {
         }
 
         return typeEnviroment;
+    }
+
+    @Override
+    public String toString() {
+        return "SwitchStatement{" +
+                "switchExpression=" + switchExpression +
+                ", expression1=" + expression1 +
+                ", statement1=" + statement1 +
+                ", expression2=" + expression2 +
+                ", statement2=" + statement2 +
+                ", statement3=" + statement3 +
+                '}';
     }
 }

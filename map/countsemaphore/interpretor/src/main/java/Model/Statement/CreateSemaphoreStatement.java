@@ -63,7 +63,7 @@ public class CreateSemaphoreStatement implements IStatement {
             !typeEnviroment.get(var).equals(new IntType())
         )
         {
-            throw new InterpreterException("DOes not evaluate to the same types");
+            throw new InterpreterException("Does not evaluate to the same types");
         }
 
         return typeEnviroment;
