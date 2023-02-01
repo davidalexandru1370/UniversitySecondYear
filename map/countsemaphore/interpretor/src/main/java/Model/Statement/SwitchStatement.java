@@ -11,12 +11,7 @@ import Model.VariablesTypes.Interfaces.IVariableType;
 
 public class SwitchStatement implements IStatement {
     IExpression switchExpression;
-    //87 cu 87 cu 87 cu 87 1 data de 4 ori 87
-    //8 ori 5 ii 40
-    //7 ori 8 56
-    //si cu 40 manca-v-as
-    //is 9
-    //9 milioane sase sute
+    
     IExpression expression1;
     IStatement statement1;
 
@@ -60,7 +55,7 @@ public class SwitchStatement implements IStatement {
         if(!(expression1.typeCheck(typeEnviroment).equals(expression2.typeCheck(typeEnviroment)) &&
                 switchExpression.typeCheck(typeEnviroment).equals(expression1.typeCheck(typeEnviroment))
                 )){
-            throw new InterpreterException("expression does not evaluate to same type");
+            throw new InterpreterException("expressions does not evaluate to same type");
         }
 
         if(!(statement1.typeCheck(typeEnviroment).equals(statement2.typeCheck(typeEnviroment)) &&

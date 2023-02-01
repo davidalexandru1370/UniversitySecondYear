@@ -82,7 +82,11 @@ public class Controller extends ProgramStateObserver {
     private void oneStepForAllPrograms(List<ProgramState> programStates)
             throws InterpreterException, InterruptedException {
         programStates.forEach(p -> {
-            // repository.logProgramStateExecution(p);
+            try {
+                repository.logProgramStateExecution(p);
+            } catch (IOException e) {
+
+            }
             logger(p);
             // sendNotify(p);
 
@@ -118,8 +122,12 @@ public class Controller extends ProgramStateObserver {
         }
 
         programStates.forEach(p -> {
+            try {
+                repository.logProgramStateExecution(p);
+            }
+            catch(Exception ex){
 
-            // repository.logProgramStateExecution(p);
+            }
             logger(p);
             sendNotify(p);
 

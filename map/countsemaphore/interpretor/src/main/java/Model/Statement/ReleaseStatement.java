@@ -63,4 +63,11 @@ public class ReleaseStatement implements IStatement {
 
         return typeEnviroment;
     }
+
+    @Override
+    public String toString() {
+        return "ReleaseStatement{" +
+                "var='" + var + '\'' +
+                '}';
+    }
 }

@@ -118,8 +118,9 @@ public class ProgramState {
                 "Execution stack:\n " + exeStack.toString() + "\n" +
                 "Symbol table:\n" + symbolTable.toString() + "\n" +
                 "Out:\n" + out.toString() + "\n" +
-                fileTableToString() +
-                heapToString();
+                fileTableToString() + " \n" +
+                "Semaphore table:"
+                +semaphoreTable.toString();
     }
 
     public String currentStateToString() {
@@ -134,8 +135,8 @@ public class ProgramState {
                 "Symbol Table:\n " + symbolTable.toString() + "\n" +
                 heapToString() +
                 "Out:\n " + out.toString() + "\n"
-                + fileTableToString();
-
+                + fileTableToString() + "\n" +
+                semaphoreTable.toString();
     }
 
     public String executionStackToString() {
