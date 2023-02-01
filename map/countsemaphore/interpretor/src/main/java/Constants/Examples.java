@@ -136,7 +136,20 @@ public class Examples {
     public static String example12(){
         return
                 """
-                exemplu 12
+                Ref int v1; int cnt;
+                new(v1,1);createSemaphore(cnt,rH(v1));
+                fork(acquire(cnt);
+                    wh(v1,rh(v1)*10);
+                    print(rh(v1);
+                    release(cnt));
+                fork(acquire(cnt);
+                    wh(v1,rh(v1)*10);
+                    wh(v1,rh(v1)*2);
+                    print(rh(v1));
+                    release(cnt));
+                acquire(cnt);
+                print(rh(v1)-1);
+                release(cnt);
                 """;
     }
 }
