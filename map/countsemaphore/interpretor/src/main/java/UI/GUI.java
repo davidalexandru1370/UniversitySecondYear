@@ -232,6 +232,7 @@ public class GUI extends Application {
         heapTable.getItems().clear();
         executionStack.getItems().clear();
         out.getItems().clear();
+        controller.clearRepository();
         symbolTableLocalStorage = new MyDictionary<>();
         executionStackLocalStorage = new MyDictionary<>();
 
@@ -305,8 +306,8 @@ public class GUI extends Application {
                         .forEach(
                                 p -> semaphoreContent.add(new Triple<>(
                                         p.toString(),
-                                        ((Pair)ProgramState.getSemaphoreTable().get(p)).getValue().toString(),
-                                        ((Pair)ProgramState.getSemaphoreTable().get(p)).getKey().toString()
+                                        ((Pair)ProgramState.getSemaphoreTable().get(p)).getKey().toString(),
+                                        ((Pair)ProgramState.getSemaphoreTable().get(p)).getValue().toString()
                                 ))
                         );
 

@@ -39,17 +39,19 @@ public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, Li
     }
 
     @Override
-    public Map<Integer, Pair<Integer,List<Integer>>> getContent() {
+    synchronized public Map<Integer, Pair<Integer,List<Integer>>> getContent() {
         return semaphoreTable;
     }
 
     @Override
-    public void setContent(Map<Integer, Pair<Integer,List<Integer>>> content) {
+    synchronized public void setContent(Map<Integer, Pair<Integer,List<Integer>>> content) {
+        lock.lock();
         this.semaphoreTable = content;
+        lock.unlock();
     }
 
     @Override
-    public Integer add(Pair<Integer,List<Integer>> value) {
+    synchronized public Integer add(Pair<Integer,List<Integer>> value) {
         lock.lock();
         semaphoreTable.put(freeValue, value);
         Integer lastOccupiedFreeValue = freeValue;
@@ -59,7 +61,7 @@ public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, Li
     }
 
     @Override
-    public void update(Integer position, Pair<Integer,List<Integer>> value) throws InterpreterException {
+    synchronized public void update(Integer position, Pair<Integer,List<Integer>> value) throws InterpreterException {
         if (!semaphoreTable.containsKey(position)) {
             throw new InterpreterException(String.format("%d no latch at this id", position));
         }
@@ -67,7 +69,7 @@ public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, Li
     }
 
     @Override
-    public Pair<Integer,List<Integer>> get(Integer position) throws InterpreterException {
+    synchronized public Pair<Integer,List<Integer>> get(Integer position) throws InterpreterException {
         if (!semaphoreTable.containsKey(position)) {
             throw new InterpreterException(String.format("%d no latch at this id", position));
         }
@@ -75,7 +77,7 @@ public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, Li
     }
 
     @Override
-    public void deleteByKey(Integer key) {
+    synchronized public void deleteByKey(Integer key) {
         if(!semaphoreTable.containsKey(key)){
             throw new InterpreterException(String.format("%d is not in latch table",key));
         }
@@ -84,7 +86,7 @@ public class SemaphoreTable implements ISemaphoreTable<Integer, Pair<Integer, Li
     }
 
     @Override
-    public boolean contains(Integer key) {
+    synchronized public boolean contains(Integer key) {
         return semaphoreTable.containsKey(key);
     }
 
