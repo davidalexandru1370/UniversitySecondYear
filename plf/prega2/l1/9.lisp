@@ -4,7 +4,7 @@
     (cond
         ((and (atom l) (eq l e)) nil)
         ((atom l) (list l))
-        (t (list (mapcan (lambda (x) (solve x e)) l)))
+        (t (list (mapcar (lambda (x) (solve x e)) l)))
     )
 )
 
