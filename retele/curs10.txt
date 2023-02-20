@@ -1,0 +1,372 @@
+-a mask is a contigous set of 1s from the left of the right which specifies which part of ip address is
+network which is host
+-usually the bits in the mask that are 0 are host and 1 is network   
+first ip address = network address
+the last ip address = broadcast address
+
+get the broadcast address - to and OR with the complementary of the mask
+
+ARP - address resolution protocol
+NAT - network address translation
+
+ICMP - signaling protocol to exchange network-level information (error reporting, ping)
+
+
+UDP - best effort protocol 
+header: source port/ destination port pe 32 de biti
+length
+ udp checksum computed  over udp header udp data ip source ip destionation and ip protocol fields
+
+udp rules - 
+unreliable - when a message is sent, it cannot be kwnown if it will reach its destination;
+not ordered - if two messages are sent to the same recipient, the order in which they arrive
+cannot be predicted
+lightweight - there is ordering of messages, no tracking connections. It is a small transport
+layer designed on top of ip
+datagrams - packets are sent individually and are checked for integrity only if they arrive.
+Packets have definite boundaries which are honored upon receipt, meaning a read operation
+at the receiver socket will yield an entire message as it was originally sent.
+No congestion control - UDP itself does not avoid congestion, and it's possible
+for hight bandwith applications to trigger congestion collapse unless they implement
+congestion control measures at the application level.
+
+TCP - data transfer
+ordered data transfer - the destionation host rearragens data according tot he sequence number
+retramission of lost packets- any cumulative strema not acknowldged is retransmitted
+error-free data transfer -consequence of the above
+flow control - limits the rate a sender transfer data to guarantee reliable delivier.
+The receiver continually hints the sender on how much data can be received 
+(contrlled by the sliding window). When the receiving hosts buffer fills,
+the next acknowledgment contains a 0 int he window size, to stop transfer and allow the data in the buffer
+to be processed.
+
+The network address is the logical AND of the IP address and the netmask. The netmask is used to separate the
+ IP address into the network portion and host portion, and it is typically represented in the same format as an IP address.
+ For class A addresses, the first IP address (network address) is reserved for identifying the network 
+ and the last IP address (broadcast address) is reserved for broadcasting messages to all hosts on the network.
+
+For class B addresses, the first and last IP addresses of the second and third octet are also reserved
+ for the network and broadcast addresses respectively.
+
+For class C addresses, the first and last IP addresses of the third and fourth octet are reserved for
+ the network and broadcast addresses respectively.
+
+ 12. For connecting a host with a private address to the Internet, it has to be translated to a public address, process named ARP.
+
+ A. True
+
+ B. False
+
+No, the process of connecting a host with a private address to the Internet is called NAT (Network Address Translation), not ARP (Address Resolution Protocol).
+
+ARP is a protocol that is used to map a network address (such as an IP address) to a physical address (such as a MAC address) on a LAN (Local Area Network).
+ It is used to determine the physical address of a device on the network when you only know its IP address.
+
+NAT, on the other hand, is a technique used to allow hosts on a private network to communicate with hosts on a public network, such as the Internet.
+ The hosts on the private network have private IP addresses that are not globally unique, so they cannot communicate directly with hosts on the public network.
+  NAT allows these hosts to communicate by translating their private IP addresses to a public IP address that is globally unique.
+
+NAT is typically implemented at the edge of the network, by a device called a NAT router.
+The NAT router has two interfaces, one connected to the private network and one connected to the public network. When a host on the private network initiates a connection to a host on the public network, the NAT router intercepts the packet, changes the source IP address to the public IP address and forwards the packet to the public network.
+
+In summary, ARP is used to determine the physical address of a device on a LAN, NAT is used to allow hosts on a private network to communicate with hosts on a public network by translating their IP addresses.
+
+In IPv4, there are three ranges of IP addresses that are reserved for use on private networks, and are not globally unique. These ranges are:
+
+10.0.0.0/8
+
+172.16.0.0/12
+
+192.168.0.0/16
+
+
+A computer uses DNS (Domain Name System) to look up domain names and get the associated IP address. 
+
+A proxy server is a server that sits between a client and a remote server and acts as an intermediary for requests from clients seeking resources from other servers. The client sends a request to the proxy server, which then forwards the request to the remote server. The remote server then sends the response back to the proxy server, which then forwards it to the client.
+
+There are different types of proxy servers such as:
+
+Transparent proxy: A transparent proxy is a type of proxy server that acts as an intermediary for requests from clients without requiring any special configuration on the client side.
+
+Anonymous proxy: An anonymous proxy is a type of proxy server that acts as an intermediary for requests from clients and hides the client's IP address.
+
+Distorting proxy: A distorting proxy is a type of proxy server that acts as an intermediary for requests from clients and changes the client's IP address.
+
+High anonymity proxy: A high anonymity proxy is a type of proxy server that acts as an intermediary for requests from clients and hides the client's IP address and other identifying information.
+
+
+
+24. The combination DNS server = Default Gateway is not possible
+
+ A. True
+
+ B. False
+
+The combination of DNS server = Default Gateway is possible.
+
+A DNS server is a server that is responsible for resolving domain names to IP addresses.
+ A default gateway is an IP address that is used to forward packets to other networks when the destination IP address is not on the local network.
+
+A router is a device that connects multiple networks together and serves as the default gateway for the devices connected to it.
+ A router can also be configured to act as a DNS server, by having the capability to resolve domain names to IP addresses locally.
+
+When a device on a local network wants to communicate with a device on a different network, it sends the packet to the default gateway (the router).
+ The router then checks its routing table to determine the next hop for the packet, and forwards it to the next hop.
+  If the destination is on a different network, the packet is forwarded to the router that connects the local network to the Internet or to other networks.
+
+If the router is configured to act as a DNS server, it can resolve domain names to IP addresses and forward the packets to the correct destination,
+ this eliminates the need for an external DNS server to be involved in the process.
+
+
+ 
+34. Port forwarding is a use of NAT.
+
+ A. True
+
+ B. False
+
+Yes, port forwarding is a use of Network Address Translation (NAT). NAT is a method used by routers to map a public IP address to a private IP address on a LAN (Local Area Network).
+
+cross cable : PC la PC, switch la switch
+straight trought : switch-hub, pc-router, switch-server, switch-router, PC-server
+
+
+44. What is the maximum number of hosts for a class C network ?
+
+ A. 65.534
+
+ B. 65.535
+
+ C. 128
+
+ D. 254 -- asta ii bun
+
+ In IP addressing, the first three octets of an IP address are used to identify the network, and the last octet is used to identify individual hosts on that network.
+  Class C networks use a 24-bit subnet mask, which means that the first three octets of the IP address are used to identify the network, and the last octet is used to identify individual hosts.
+  Since the last octet can be any value from 1 to 255, this means that a class C network can have a maximum of 254 hosts.
+
+
+  49. Which one is not true about classless routing protocols :
+
+ A. RIPv1 supports classless routing protocols
+
+RIP version 1 (RIPv1) is a classful routing protocol, meaning it does not support VLSMs or classless routing. It does not support the use of variable-length subnet masks, it uses a fixed-length subnet mask, and it does not allow the use of discontiguous networks. On the other hand, RIP version 2 (RIPv2) is a classless routing protocol, it supports the use of variable-length subnet masks and allows for the use of discontiguous networks.
+
+ B. RIPv2 supports classless routing protocols
+
+ C. It is allowed to a use a variable length mask
+
+ D. It is allowed to use discontiguous network
+
+
+
+50. Which one of these is a RIPv2 characteristic ?
+
+ A. maintains a routing table as in RIPv1 without the mask information
+
+ B. is a classful routing protocol
+
+ C. supports maximum metric(hop count ) value up to 15 . Any router further than 15 hops is considered unreachable
+
+RIP version 2 (RIPv2) is an updated version of the Routing Information Protocol (RIP) routing protocol, which is a distance-vector routing protocol. One of the characteristics of RIPv2 is that it supports a maximum metric (hop count) value of 15, meaning that any router further than 15 hops is considered unreachable. Additionally, RIPv2 supports subnet masks, unlike RIPv1, which makes it a classless routing protocol, and it also supports triggered updates and authentication of update messages.
+
+ D. does not support triggered updates or authentication of ripv2 update messages
+
+
+
+51. Which one is true about RIPv1?
+
+ A. It is easier to configure than RIPv2
+
+RIP version 1 (RIPv1) is an older version of the Routing Information Protocol (RIP) routing protocol, which is a distance-vector routing protocol. 
+One of the characteristics of RIPv1 is that it is considered to be easier to configure than RIPv2.
+ Additionally, RIPv1 does not support subnet masks, unlike RIPv2, which makes it a classful routing protocol and it does not have mask information in its routing table. 
+ It has a higher administrative distance than RIPv2 and its timers are different from those of RIPv2.
+
+ B. It maintains a routing table as in RIPv2 , including mask information
+
+RIPv2, on the other hand, is a classless routing protocol, which means it includes subnet mask information in its routing updates, allowing for more efficient use of IP addresses and support for VLSMs.
+
+ C. It has a lower administrative distance than RIPv2
+
+RIPv1 has a default administrative distance of 120, while RIPv2 has a default administrative distance of 120 too.
+
+ D. It has the same timers ad RIPv2
+
+RIPv1 uses a fixed update interval of 30 seconds and a fixed invalidation interval of 180 seconds. While RIPv2 uses configurable update and invalidation intervals.
+
+Which protocol does DHCP use at the Transport Layer ?
+
+ A. IP
+
+ B. UDP
+
+DHCP (Dynamic Host Configuration Protocol) uses the User Datagram Protocol (UDP) at the Transport Layer.
+
+ C. TCP
+
+ D. ARP
+
+
+ 60. Which of the following is a private IP address ?
+
+ A. 12.0.0.2
+
+ B. 168.172.19.40
+
+ C. 172.15.14.36
+
+ D. 192.168.24.43
+
+A private IP address is an IP address that is not globally unique, but is unique within a private network. These IP addresses are typically used on internal networks and are not reachable from the internet.
+
+The IP addresses that are reserved for use in private networks are:
+
+Class A: 10.0.0.0 to 10.255.255.255
+
+Class B: 172.16.0.0 to 172.31.255.255
+
+Class C: 192.168.0.0 to 192.168.255.255
+
+77. Which one is not a principle to the OSI model?
+
+ A. A layer should be created where a different abstraction is needed.
+
+Each layer of the OSI model provides a different level of abstraction, or a different way of thinking about the data being transmitted. This allows the different layers to perform their specific functions while still working together to achieve the overall goal of communication.
+
+ B. Each layer should perform a well-defined function.
+
+Each layer in the OSI model is responsible for performing a specific set of functions that contribute to the overall process of communication.
+
+ C. The layer boundaries should be chosen to maximize the information flow across the interfaces.
+
+The OSI model is designed to minimize the amount of information that needs to be passed between layers, in order to maximize the efficiency of communication.
+
+ D. The function of each layer should be chosen with an eye toward defining internationally standardized protocols.
+
+The OSI model is designed to be a standardized framework that can be used to develop communication protocols that are compatible with different types of devices and networks.
+
+The OSI model is divided into 7 layers:
+
+Physical Layer: It is responsible for the physical connection between devices.
+
+Data Link Layer: It is responsible for maintaining the link between devices and ensuring that data is transmitted error-free.
+
+Network Layer: It is responsible for routing data between different networks
+
+Transport Layer: It is responsible for ensuring that data is delivered reliably and in the correct order.
+
+Session Layer: It is responsible for managing the sessions between devices.
+
+Presentation Layer: It is responsible for converting data into a format that can be understood by the application layer.
+
+Application Layer: It is responsible for providing services to the user.
+
+88. What is a datagram?
+
+ A. A structure used to get data from the user in order to synchronize the server
+
+ B. A basic transfer unit used in packet-switched networks, providing a connectionless comunnication service
+
+Datagrams are used in connectionless protocols such as the User Datagram Protocol (UDP), where each datagram is sent and received independently of any other datagrams. In contrast, in a connection-oriented protocol such as the Transmission Control Protocol (TCP), a virtual circuit is established between the sender and the receiver and all data is sent as a stream, rather than as individual datagrams.
+
+ C. Information that can harm your computer if you're not careful with it
+
+ D. Millions of bytes configured in a big cluster which can be easily transferred
+
+
+ 89. ARP can be used for...
+
+ A. Mapping network addresses to physical (MAC) addresses
+
+ARP (Address Resolution Protocol) is a protocol used to map a network layer address (such as an IP address) to a link layer address (such as a MAC address). It can be used for the following purposes:
+
+Resolving an IP address to a MAC address: When a device wants to communicate with another device on the same local network, it needs to know the MAC address of the destination device. ARP is used to find the MAC address of the destination device by broadcasting a message on the local network that contains the IP address of the destination device. The device with that IP address will respond with its MAC address.
+
+Maintaining the ARP cache: Each device on the network keeps a table of recently resolved IP-to-MAC address mappings, called the ARP cache. This allows the device to quickly look up the MAC address for a known IP address, rather than having to broadcast an ARP request every time it needs to communicate with another device.
+
+Detecting duplicate IP addresses: When a device sends an ARP request, if another device on the network already has the same IP address, both devices will respond to the ARP request with their own MAC address. This can be used to detect duplicate IP addresses on the network, which can cause connectivity issues.
+
+Network troubleshooting: ARP can be used to troubleshoot network connectivity issues by analyzing the ARP request and response messages on the network. ARP is a fundamental protocol in the OSI model, and its functionality is crucial for the correct operation of the communication between devices in the same network.
+
+ B. Mapping public virtual addresses to private ip addresses
+
+ C. Publishing websites to the internet
+
+ D. Sending emails very fast
+
+
+
+94. What is the difference between a switch and a hub?
+
+ A. The hub sends a packet specifically to an end point or more, the switch broadcasts the message to all the network
+
+ B. The switch sends a packet specifically to an end point or more, the hub broadcasts the message to all the network
+
+A hub is a simple device that receives incoming data packets and then forwards them to all connected devices. It does not analyze or filter the data in any way, it just broadcast all the packets it receives to all the connected devices. A hub operates at the physical layer of the OSI model, and it does not have any intelligence.
+
+A switch, on the other hand, is a more advanced device that uses the MAC addresses of connected devices to forward data packets only to the intended destination. It filters and forwards the data based on the MAC address of the devices, and it does not broadcast the data to all devices like a hub does. Switches operate at the data link layer of the OSI model, and they have some level of intelligence which allows them to forward data more efficiently and increase network performance.
+
+ C. The hub can send packets on large distances, but the switch is generally for home usage
+
+ D. There is no difference
+
+
+ 98. How many layers are in TCP/IP ?
+
+ A. 7 layers
+
+ B. 4 layers
+
+The TCP/IP protocol suite, also known as the Internet protocol suite, is a set of communications protocols used to interconnect network devices on the internet and other networks. It is generally composed of four layers: the Link Layer, the Internet Layer, the Transport Layer, and the Application Layer.
+
+ C. 6 layers
+
+ D. 5 layers
+
+
+ Which is the difference between bandwidth and throughput?
+
+ A. The bandwidth is the physical property of the transmission medium, while throughput represents the amount of data which we transmit
+
+The difference between bandwidth and throughput is that bandwidth is the theoretical maximum data transfer rate of a network connection and throughput is the actual data transfer rate.
+
+ B. There is no difference between them;
+
+ C. The bandwidth represents the amount of data which we transmit, while throughput is the physical property of the transmission medium.
+
+
+  What is the length of the TCP header?
+
+ a. 32
+
+ b. 64
+
+ c. 20 --corect
+
+
+  What is Throughtput?
+
+ A. quantity of data which we send at some point through a transmission channel
+
+ B. quantity of data over quantity of time which we send at a given time through a transmission channel
+
+ C. the capacity of data transportation that we send through a transmission channel
+
+
+ FTP uses the following channels:
+
+ A. the delta channel
+
+ B. the control channel
+
+ C. the bearer channel
+
+ D. the data channel
+
+ A. the control channel and the data channel
+
+
+276. How many pairs of address/mask are needed to write the range 193.226.17.224 ... 193.226.23.23 as network/mask in the most compact way?
+
+R: 6
