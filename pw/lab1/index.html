@@ -9,28 +9,28 @@ Create a single HTML web page for a subject you like
  You can NOT use any CSS or Javascript on your web page!
   Only basic HTML language. The web page should be HTML5 valid.
    You will have to use the following HTML tags in your web page: 
-<img>
-<a>
-<table>
-<br>
-<hr>
-<p>
-<b>
-<div>
-<ul>
-<li>
-<section>
-<article>
-<footer>
-<header>
-<aside>
-<nav>
-<svg>
-<audio>
+<img> X
+<a> X
+<table> X
+<br> X
+<hr> X
+<p> X
+<b> X
+<div> X
+<ul> X
+<li> X
+<section> X
+<article> X
+<footer> X
+<header> X
+<aside> X
+<nav> X
+<svg> X
+<audio> 
 <video>
 <figure>
 <figurecaption>
-<main>.
+<main>. X
      Also you should specify the type of document using <!Doctype>.
       The page must be at least one screen long and at most 2 screens long (using a resolution of 1024x768 pixels). 
       The textual content of the page should be relevant to the chosen subject (not "lorem ipsum" text).
@@ -46,39 +46,78 @@ Create a single HTML web page for a subject you like
     <title>Cluj</title>
   </head>
   <body>
-    <header>
+    <main>
       <div>
-        <p>Cluj-Napoca</p>
-        <b>judetul Cluj</b>
+        <nav>
+          <a href="home">Home</a>
+          <a href="News">News</a>
+        </nav>
       </div>
-      <img src="images.jpeg" />
-    </header>
-    <hr />
-    <table>
-      <tr>
-        <th>Populatie</th>
-        <th>An</th>
-      </tr>
-      <tr>
-        <th>500000</th>
-        <th>2020</th>
-      </tr>
-      <tr>
-        <th>50000</th>
-        <th>2019</th>
-      </tr>
-      <a href="">Sursa</a>
-      <br />
-    </table>
+      <header>
+        <div>
+          <p>Cluj-Napoca</p>
+          <b>judetul Cluj</b>
+        </div>
+        <img src="images.jpeg" />
+      </header>
+      <hr />
+      <table>
+        <tr>
+          <th>Populatie</th>
+          <th>An</th>
+        </tr>
+        <tr>
+          <th>500000</th>
+          <th>2020</th>
+        </tr>
+        <tr>
+          <th>50000</th>
+          <th>2019</th>
+        </tr>
+        <a href="">Sursa</a>
+        <br />
+      </table>
 
-    <hr />
+      <hr />
 
-    <ul>
-      <li>Floresti</li>
-      <li>Baciu</li>
-      <li>...</li>
-    </ul>
+      <ul>
+        <li>Floresti</li>
+        <li>Baciu</li>
+        <li>...</li>
+      </ul>
 
-    <section></section>
+      <section>
+        <p>Latest news</p>
+        <p>...</p>
+      </section>
+      <article>
+        <p>A new subway will be building in the next following 10 years.</p>
+        <aside>
+          <p>The subway will cost over 1 billion dollars.</p>
+        </aside>
+      </article>
+      <div>
+        <svg width="100" height="100">
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="green"
+            stroke-width="4"
+            fill="yellow"
+          >
+            Cluj
+          </circle>
+        </svg>
+      </div>
+      <footer>
+        <p>Copyright.All rights reserved.</p>
+      </footer>
+      <audio controls>
+        <audio src="Alef - Sol(MP3_128K).mp3">
+          Check out our latest project
+        </audio>
+      </audio>
+    </main>
   </body>
 </html>
