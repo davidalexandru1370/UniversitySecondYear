@@ -26,10 +26,10 @@ Create a single HTML web page for a subject you like
 <aside> X
 <nav> X
 <svg> X
-<audio> 
-<video>
-<figure>
-<figurecaption>
+<audio>  X
+<video> X
+<figure> X
+<figurecaption>  X
 <main>. X
      Also you should specify the type of document using <!Doctype>.
       The page must be at least one screen long and at most 2 screens long (using a resolution of 1024x768 pixels). 
@@ -58,28 +58,32 @@ Create a single HTML web page for a subject you like
           <p>Cluj-Napoca</p>
           <b>judetul Cluj</b>
         </div>
-        <img src="images.jpeg" />
+        <figure>
+          <img src="images.jpeg" />
+          <figurecaption>cluj</figurecaption>
+        </figure>
       </header>
       <hr />
+      <p>Demografie</p>
       <table>
         <tr>
           <th>Populatie</th>
           <th>An</th>
         </tr>
         <tr>
-          <th>500000</th>
-          <th>2020</th>
+          <th>324.576</th>
+          <th>2011</th>
         </tr>
         <tr>
-          <th>50000</th>
-          <th>2019</th>
+          <th>317.953</th>
+          <th>2002</th>
         </tr>
         <a href="">Sursa</a>
         <br />
       </table>
 
       <hr />
-
+      <p>Localitati:</p>
       <ul>
         <li>Floresti</li>
         <li>Baciu</li>
@@ -88,7 +92,10 @@ Create a single HTML web page for a subject you like
 
       <section>
         <p>Latest news</p>
-        <p>...</p>
+        <a
+          href="https://www.digi24.ro/stiri/actualitate/a-fost-desemnat-castigatorul-licitatiei-pentru-metroul-din-cluj-firma-a-construit-si-metroul-din-dubai-pentru-expo-2020-2266995"
+          >Subway in Cluj</a
+        >
       </section>
       <article>
         <p>A new subway will be building in the next following 10 years.</p>
@@ -110,14 +117,20 @@ Create a single HTML web page for a subject you like
           </circle>
         </svg>
       </div>
+      <audio controls>
+        <source src="Alef - Sol(MP3_128K).mp3" />
+        Check out our latest project >
+      </audio>
+      <br />
+      <video width="320" height="240" controls>
+        <source
+          src="Timelapse, Piata Unirii Cluj-Napoca (10 minute in 20 secunde).mp4"
+        />
+      </video>
+
       <footer>
         <p>Copyright.All rights reserved.</p>
       </footer>
-      <audio controls>
-        <audio src="Alef - Sol(MP3_128K).mp3">
-          Check out our latest project
-        </audio>
-      </audio>
     </main>
   </body>
 </html>
