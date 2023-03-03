@@ -23,9 +23,9 @@ public class VehicleService : IVehicleService
         _vehicleRepository.RemoveVehicle(id);
     }
 
-    public void UpdateVehicle(Vehicle vehicle)
+    public Vehicle UpdateVehicle(Vehicle vehicle)
     {
-        _vehicleRepository.UpdateVehicle(vehicle);
+        return _vehicleRepository.UpdateVehicle(vehicle);
     }
 
     public IEnumerable<Vehicle> GetAllVehicles()

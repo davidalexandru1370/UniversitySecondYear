@@ -11,10 +11,15 @@ public class VehicleRepository : IVehicleRepository
         _vehicles.Add(vehicle);
     }
 
-    public void UpdateVehicle(Vehicle vehicle)
+    public Vehicle UpdateVehicle(Vehicle vehicle)
     {
         var foundVehicle = _vehicles.FirstOrDefault(v => v.Id == vehicle.Id);
-        foundVehicle = vehicle;
+        foundVehicle.Brand = vehicle.Brand;
+        foundVehicle.CarPlate = vehicle.CarPlate;
+        foundVehicle.NumberOfSeats = vehicle.NumberOfSeats;
+        foundVehicle.HorsePower = vehicle.HorsePower;
+        foundVehicle.OwnerName = vehicle.OwnerName;
+        return foundVehicle;
     }
 
     public void RemoveVehicle(Guid Id)

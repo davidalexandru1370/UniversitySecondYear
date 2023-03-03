@@ -14,6 +14,7 @@ public class VehicleController : ControllerBase
     {
         _vehicleService = vehicleService;
     }
+    
     [HttpPost]
     [Route("add-vehicle")]
     public ActionResult<Vehicle> AddVehicle([FromBody]Vehicle vehicle)
@@ -21,6 +22,7 @@ public class VehicleController : ControllerBase
         _vehicleService.AddVehicle(vehicle);
         return Ok(vehicle);
     }
+    
     [HttpGet]
     [Route("get-all")]
     public ActionResult<IEnumerable<Vehicle>> GetAllVehicles()
@@ -36,9 +38,24 @@ public class VehicleController : ControllerBase
         if (result is null)
         {
             return BadRequest(String.Format("Vehicle not found"));
-            
         }
 
+        return Ok(result);
+    }
+    
+    [HttpDelete]
+    [Route("delete/{vehicleId}")]
+    public ActionResult DeleteVehicle([FromRoute] Guid vehicleId)
+    {
+        _vehicleService.DeleteVehicle(vehicleId);
+        return Ok();
+    }
+
+    [HttpPut]
+    [Route("update")]
+    public ActionResult<Vehicle> UpdateVehicle( [FromBody]Vehicle vehicle)
+    {
+        var result = _vehicleService.UpdateVehicle(vehicle);
         return Ok(result);
     }
 
