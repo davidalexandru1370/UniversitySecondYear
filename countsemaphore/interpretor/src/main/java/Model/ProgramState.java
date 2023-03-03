@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class ProgramState {
     private IStack<IStatement> exeStack;
@@ -21,7 +20,7 @@ public class ProgramState {
     private IList<IValue> out;
     private IHeap heap;
     private IDictionary<String, BufferedReader> outFiles;
-    private static Map<Integer, Boolean> ids = new ConcurrentHashMap<>();
+    private static Map<Integer, Boolean> ids = new HashMap<>();
     private int id;
     private static ISemaphoreTable semaphoreTable = new SemaphoreTable();
 

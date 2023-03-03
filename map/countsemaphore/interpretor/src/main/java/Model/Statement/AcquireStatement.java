@@ -23,7 +23,7 @@ public class AcquireStatement implements IStatement {
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws InterpreterException {
+    synchronized public ProgramState execute(ProgramState state) throws InterpreterException {
         lock.lock();
         if(!state.getSymbolTable().isDefined(var)){
             throw new InterpreterException(String.format("%s is not defined", var));

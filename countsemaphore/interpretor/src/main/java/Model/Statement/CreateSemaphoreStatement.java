@@ -37,10 +37,6 @@ public class CreateSemaphoreStatement implements IStatement {
             throw new InterpreterException("expression does not evaluate to int");
         }
 
-        if(!state.getSymbolTable().isDefined(var)){
-            throw new InterpreterException(String.format("%s is not defined!",var));
-        }
-
         int freeValue = ProgramState.getSemaphoreTable().add(
                 new Pair<Integer, List<Integer>>(
                         ((IntValue)expressionValue).getValue(),
