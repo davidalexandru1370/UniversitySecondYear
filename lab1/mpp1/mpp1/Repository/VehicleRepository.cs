@@ -5,34 +5,30 @@ namespace mpp1.Repository;
 
 public class VehicleRepository : IVehicleRepository
 {
-    private static List<Vehicle> vehicles = new();
+    private static List<Vehicle> _vehicles = new();
     public void AddVehicle(Vehicle vehicle)
     {
-        vehicles.Add(vehicle);
+        _vehicles.Add(vehicle);
     }
 
-    public void UpdateVehicle(Guid Id, Vehicle vehicle)
+    public void UpdateVehicle(Vehicle vehicle)
     {
-        var foundVehicle = vehicles.FirstOrDefault(v => v.Id == Id);
-        foundVehicle.Brand = vehicle.Brand;
-        foundVehicle.CarPlate = vehicle.CarPlate;
-        foundVehicle.NumberOfSeats = vehicle.NumberOfSeats;
-        foundVehicle.HorsePower = vehicle.HorsePower;
-        foundVehicle.OwnerName = vehicle.OwnerName;
+        var foundVehicle = _vehicles.FirstOrDefault(v => v.Id == vehicle.Id);
+        foundVehicle = vehicle;
     }
 
     public void RemoveVehicle(Guid Id)
     {
-        vehicles.RemoveAll(v => v.Id == Id);
+        _vehicles.RemoveAll(v => v.Id == Id);
     }
 
     public IEnumerable<Vehicle> GetAllVehicles()
     {
-        return vehicles;
+        return _vehicles;
     }
 
     public Vehicle GetVehicleById(Guid Id)
     {
-        return vehicles.FirstOrDefault(v => v.Id == Id);
+        return _vehicles.FirstOrDefault(v => v.Id == Id);
     }
 }
