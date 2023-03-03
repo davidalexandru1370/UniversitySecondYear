@@ -21,6 +21,26 @@ public class VehicleController : ControllerBase
         _vehicleService.AddVehicle(vehicle);
         return Ok(vehicle);
     }
-    
-    
+    [HttpGet]
+    [Route("get-all")]
+    public ActionResult<IEnumerable<Vehicle>> GetAllVehicles()
+    {
+        return Ok(_vehicleService.GetAllVehicles());
+    }
+
+    [HttpGet]
+    [Route("get/{vehicleId}")]  
+    public ActionResult<Vehicle> GetVehicleById([FromRoute] Guid vehicleId)
+    {
+        var result = _vehicleService.GetVehicleById(vehicleId);
+        if (result is null)
+        {
+            return BadRequest(String.Format("Vehicle not found"));
+            
+        }
+
+        return Ok(result);
+    }
+
+
 }
