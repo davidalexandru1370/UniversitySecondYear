@@ -11,10 +11,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
 
-
 var app = builder.Build();
-
-
 
 if (app.Environment.IsDevelopment())
 {
