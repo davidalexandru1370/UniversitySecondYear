@@ -31,11 +31,11 @@ public class ClientController : ControllerBase
     }
 
     [HttpDelete("delete-client/{clientId}")]
-    public async Task<ActionResult> DeleteClient([FromRoute] Guid clientId)
+    public async Task<IActionResult> DeleteClient([FromRoute] Guid clientId)
     {
         try
         {
-            _clientService.RemoveClient(clientId);
+            await _clientService.RemoveClient(clientId);
             return Ok();
         }
         catch (RepositoryException repositoryException)
@@ -43,6 +43,29 @@ public class ClientController : ControllerBase
             return BadRequest(repositoryException.Message);
         }
     }
+
+    [HttpGet("get-client/{clientId}")]
+    public async Task<ActionResult<Client>> GetClientById([FromRoute] Guid clientId)
+    {
+        try
+        {
+            var result = await _clientService.GetClientById(clientId);
+            return Ok(result);
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+    }
     
-    public async Task<ActionResult<>>
+    [HttpGet("get-clients")]
+    public async Task<ActionResult<IEnumerable<Client>>> GetAllClients()
+    {
+        var result = await _clientService.GetAllClients();
+        return Ok(result);
+    }
+    
+    
+    
+    
 }
