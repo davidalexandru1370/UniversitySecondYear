@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using mpp1.DatabaseContext;
 using mpp1.Repository;
 using mpp1.Repository.Interfaces;
 using mpp1.Service;
@@ -10,7 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
-
+builder.Services.AddDbContext<RentACarDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Dev")));
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
