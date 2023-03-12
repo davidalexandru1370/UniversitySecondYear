@@ -11,9 +11,9 @@ public class RentACarDbContext : DbContext
         
     }
     
-    public DbSet<Client> Clients { get; set; }
-    public DbSet<Incident> Incidents { get; set; }
-    public DbSet<Vehicle> Vehicles { get; set; }
+    public virtual DbSet<Client> Clients { get; set; }
+    public virtual DbSet<Incident> Incidents { get; set; }
+    public virtual DbSet<Vehicle> Vehicles { get; set; }
 
 
 }
