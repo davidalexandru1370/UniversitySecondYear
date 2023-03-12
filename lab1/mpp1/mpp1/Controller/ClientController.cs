@@ -64,8 +64,20 @@ public class ClientController : ControllerBase
         var result = await _clientService.GetAllClients();
         return Ok(result);
     }
-    
-    
+
+    [HttpPut]
+    public async Task<ActionResult<Client>> UpdateClient([FromBody] Client client)
+    {
+        try
+        {
+            var result = await _clientService.UpdateClient(client);
+            return Ok(result);
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+    }
     
     
 }
