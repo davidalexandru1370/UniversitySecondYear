@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using mpp1.Model;
+using mpp1.Repository;
 using mpp1.Service.Interfaces;
 
 namespace mpp1.Controller;
@@ -27,36 +28,63 @@ public class VehicleController : ControllerBase
     [Route("get-all")]
     public ActionResult<IEnumerable<Vehicle>> GetAllVehicles()
     {
-        return Ok(_vehicleService.GetAllVehicles());
+
+        try
+        {
+            var result = _vehicleService.GetAllVehicles();
+            return Ok(result);
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+         
     }
 
     [HttpGet]
     [Route("get/{vehicleId}")]  
     public ActionResult<Vehicle> GetVehicleById([FromRoute] Guid vehicleId)
     {
-        var result = _vehicleService.GetVehicleById(vehicleId);
-        if (result is null)
+        try
         {
-            return BadRequest(String.Format("Vehicle not found"));
+            var result = _vehicleService.GetVehicleById(vehicleId);
+            return Ok(result);
         }
-
-        return Ok(result);
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
     }
     
     [HttpDelete]
     [Route("delete/{vehicleId}")]
     public ActionResult DeleteVehicle([FromRoute] Guid vehicleId)
     {
-        _vehicleService.DeleteVehicle(vehicleId);
-        return Ok();
+        try
+        {
+            _vehicleService.DeleteVehicle(vehicleId);
+            return Ok();
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
     }
 
     [HttpPut]
     [Route("update")]
     public ActionResult<Vehicle> UpdateVehicle( [FromBody]Vehicle vehicle)
     {
-        var result = _vehicleService.UpdateVehicle(vehicle);
-        return Ok(result);
+        try
+        {
+            var result = _vehicleService.UpdateVehicle(vehicle);
+            return Ok(result);
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+        
     }
 
 
