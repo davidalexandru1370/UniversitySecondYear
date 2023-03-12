@@ -1,3 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ChainOfResposability;
+using ChainOfResposability.Handler;
 
-Console.WriteLine("Hello, World!");
+namespace Program
+{
+    public static class main
+    {
+        public static void Main()
+        {
+            ValidatePaymentHandler validatePaymentHandler = new();
+            validatePaymentHandler
+                .link(new AmountValidation())
+                .link(new CardValidationHandler());
+            
+            PaymentGateway gateway = new PaymentGateway(validatePaymentHandler);
+            
+            gateway.makePayment("1234");
+        }
+    }
+}
+

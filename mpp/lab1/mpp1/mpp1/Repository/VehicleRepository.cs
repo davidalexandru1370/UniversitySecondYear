@@ -18,7 +18,7 @@ public class VehicleRepository : IVehicleRepository
         foundVehicle.CarPlate = vehicle.CarPlate;
         foundVehicle.NumberOfSeats = vehicle.NumberOfSeats;
         foundVehicle.HorsePower = vehicle.HorsePower;
-        foundVehicle.OwnerName = vehicle.OwnerName;
+        foundVehicle.FabricationDate = vehicle.FabricationDate;
         return foundVehicle;
     }
 
