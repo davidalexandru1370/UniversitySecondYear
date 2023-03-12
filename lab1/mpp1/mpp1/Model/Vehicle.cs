@@ -7,5 +7,5 @@ public class Vehicle
     public int HorsePower { get; set; }
     public string? CarPlate { get; set; }
     public int NumberOfSeats { get; set; }
-    public string OwnerName { get; set; }
+    public int FabricationDate { get; set; }
 }
