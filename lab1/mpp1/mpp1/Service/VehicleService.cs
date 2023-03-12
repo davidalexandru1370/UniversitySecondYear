@@ -23,17 +23,17 @@ public class VehicleService : IVehicleService
         _vehicleRepository.RemoveVehicle(id);
     }
 
-    public Vehicle UpdateVehicle(Vehicle vehicle)
+    public Task<Vehicle> UpdateVehicle(Vehicle vehicle)
     {
         return _vehicleRepository.UpdateVehicle(vehicle);
     }
 
-    public IEnumerable<Vehicle> GetAllVehicles()
+    public Task<IEnumerable<Vehicle>> GetAllVehicles()
     {
         return _vehicleRepository.GetAllVehicles();
     }
 
-    public Vehicle GetVehicleById(Guid vehicleId)
+    public Task<Vehicle> GetVehicleById(Guid vehicleId)
     {
         return _vehicleRepository.GetVehicleById(vehicleId);
     }
