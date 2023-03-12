@@ -29,6 +29,20 @@ public class ClientController : ControllerBase
             return BadRequest(repositoryException.Message);
         }
     }
+
+    [HttpDelete("delete-client/{clientId}")]
+    public async Task<ActionResult> DeleteClient([FromRoute] Guid clientId)
+    {
+        try
+        {
+            _clientService.RemoveClient(clientId);
+            return Ok();
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+    }
     
-    
+    public async Task<ActionResult<>>
 }
