@@ -4,9 +4,9 @@ namespace mpp1.Repository.Interfaces;
 
 public interface IVehicleRepository
 {
-    void AddVehicle(Vehicle vehicle);
-    Vehicle UpdateVehicle(Vehicle vehicle);
-    void RemoveVehicle(Guid id);
-    IEnumerable<Vehicle> GetAllVehicles();
-    Vehicle GetVehicleById(Guid id);
+    Task AddVehicle(Vehicle vehicle);
+    Task<Vehicle> UpdateVehicle(Vehicle vehicle);
+    Task RemoveVehicle(Guid id);
+    Task<IEnumerable<Vehicle>> GetAllVehicles();
+    Task<Vehicle> GetVehicleById(Guid id);
 }
