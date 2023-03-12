@@ -21,7 +21,7 @@ public class ClientRepository : IClientRepository
             throw new RepositoryException("Invalid client");
         }
 
-        await _rentACarDbContext.AddAsync(client);
+        await _rentACarDbContext.Set<Client>().AddAsync(client);
         await _rentACarDbContext.SaveChangesAsync();
     }
 
