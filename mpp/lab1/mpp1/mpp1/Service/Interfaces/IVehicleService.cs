@@ -6,7 +6,7 @@ public interface IVehicleService
 {
     void AddVehicle(Vehicle vehicle);
     void DeleteVehicle(Guid id);
-    Vehicle UpdateVehicle(Vehicle vehicle);
-    IEnumerable<Vehicle> GetAllVehicles();
-    Vehicle GetVehicleById(Guid vehicleId);
+    Task<Vehicle> UpdateVehicle(Vehicle vehicle);
+    Task<IEnumerable<Vehicle>> GetAllVehicles();
+    Task<Vehicle> GetVehicleById(Guid vehicleId);
 }
