@@ -11,29 +11,53 @@
      Each line/div should be fully transparent at the edges (i.e. the corners of the box are transparent).-->
     <div
       style="
-        border-bottom: 10px solid red;
+        position: absolute;
         width: 100px;
-        height: min-content;
-        overflow: hidden;
-      "
-    ></div>
-    <div
-      style="
-        border-left: 10px solid blue;
-        width: 25px;
         height: 100px;
-        overflow: hidden;
-        display: inline-block;
+        background-color: antiquewhite;
       "
-    ></div>
-    <div
-      style="
-        border-right: 10px solid black;
-        width: 50px;
-        height: 100px;
-        display: inline-block;
-      "
-    ></div>
-    <div style="border-top: 10px solid magenta; width: 100px"></div>
+    >
+      <div
+        style="
+          position: absolute;
+          width: 80px;
+          background-color: red;
+          top: 0;
+          height: 10px;
+          margin-left: 10px;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          width: 80px;
+          background-color: red;
+          bottom: 0;
+          margin-left: 10px;
+          height: 10px;
+        "
+      ></div>
+
+      <div
+        style="
+          position: absolute;
+          width: 10px;
+          background-color: red;
+          left: 0;
+          height: 80px;
+          margin-top: 10px;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          width: 10px;
+          background-color: red;
+          right: 0;
+          height: 80px;
+          margin-top: 10px;
+        "
+      ></div>
+    </div>
   </body>
 </html>
