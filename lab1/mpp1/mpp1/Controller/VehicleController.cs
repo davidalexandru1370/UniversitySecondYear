@@ -87,8 +87,8 @@ public class VehicleController : ControllerBase
         
     }
 
-    [HttpGet("get-vehicles-filtered")]
-    public async Task<ActionResult<IEnumerable<Vehicle>>> GetVehiclesWithCapacityGreater([FromBody] int capacity)
+    [HttpGet("get-vehicles-filtered/{capacity}")]
+    public async Task<ActionResult<IEnumerable<Vehicle>>> GetVehiclesWithCapacityGreater([FromRoute] int capacity)
     {
         var result = await _vehicleService.GetVehiclesWithCapacityGreaterThan(capacity);
         return Ok(result);

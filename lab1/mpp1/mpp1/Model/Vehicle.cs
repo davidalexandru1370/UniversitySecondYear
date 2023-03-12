@@ -13,5 +13,5 @@ public class Vehicle
     public string CarPlate { get; set; }
     public int NumberOfSeats { get; set; }
     public int EngineCapacity { get; set; }
-    public int FabricationDate { get; set; }
+    public DateTime FabricationDate { get; set; }
 }
