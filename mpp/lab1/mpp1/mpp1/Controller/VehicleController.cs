@@ -73,11 +73,11 @@ public class VehicleController : ControllerBase
 
     [HttpPut]
     [Route("update")]
-    public ActionResult<Vehicle> UpdateVehicle( [FromBody]Vehicle vehicle)
+    public async Task<ActionResult<Vehicle>> UpdateVehicle( [FromBody]Vehicle vehicle)
     {
         try
         {
-            var result = _vehicleService.UpdateVehicle(vehicle);
+            var result = await _vehicleService.UpdateVehicle(vehicle);
             return Ok(result);
         }
         catch (RepositoryException repositoryException)
@@ -86,8 +86,13 @@ public class VehicleController : ControllerBase
         }
         
     }
-    
-    
+
+    [HttpGet("get-vehicles-filtered")]
+    public async Task<ActionResult<IEnumerable<Vehicle>>> GetVehiclesWithCapacityGreater([FromBody] int capacity)
+    {
+        var result = await _vehicleService.GetVehiclesWithCapacityGreaterThan(capacity);
+        return Ok(result);
+    }
 
 
 }

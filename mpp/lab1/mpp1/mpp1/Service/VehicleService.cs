@@ -41,6 +41,6 @@ public class VehicleService : IVehicleService
 
     public Task<IEnumerable<Vehicle>> GetVehiclesWithCapacityGreaterThan(int capacity)
     {
-        throw new NotImplementedException();
+        return _vehicleRepository.GetVehiclesFiltered(v => v.EngineCapacity > capacity);
     }
 }
