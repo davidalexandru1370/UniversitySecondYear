@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using mpp1.DatabaseContext;
 using mpp1.Model;
 using mpp1.Repository.Interfaces;
@@ -13,28 +14,63 @@ public class ClientRepository : IClientRepository
         _rentACarDbContext = rentACarDbContext;
     }
 
-    public Task AddClient(Client client)
+    public async Task AddClient(Client client)
     {
-        throw new NotImplementedException();
+        if (client is null)
+        {
+            throw new RepositoryException("Invalid client");
+        }
+
+        await _rentACarDbContext.AddAsync(client);
+        await _rentACarDbContext.SaveChangesAsync();
     }
 
-    public Task RemoveClient(Guid id)
+    public async Task RemoveClient(Guid id)
     {
-        throw new NotImplementedException();
+        var client = await GetClientById(id);
+        
+        if (client is null)
+        {
+            throw new RepositoryException($"Client with Id={id} does not exists!");
+        }
+
+        _rentACarDbContext.Remove(client);
+        await _rentACarDbContext.SaveChangesAsync();
     }
 
-    public Task<Client> UpdateClient(Client client)
+    public async Task<Client> UpdateClient(Client client)
     {
-        throw new NotImplementedException();
+        if (client is null)
+        {
+            throw new RepositoryException("Invalid client");
+        }
+
+        _rentACarDbContext.Set<Client>().Attach(client);
+        var entry = _rentACarDbContext.Entry(client);
+        if (entry is null)
+        {
+            throw new RepositoryException($"Client with Id={client.Id} does not exists!");
+        }
+        entry.State = EntityState.Modified;
+        await _rentACarDbContext.SaveChangesAsync();
+
+        return client;
     }
 
     public Task<IEnumerable<Client>> GetAllClients()
     {
-        throw new NotImplementedException();
+        var result = _rentACarDbContext.Set<Client>().ToList() as IEnumerable<Client>;
+        return Task.FromResult(result);
     }
 
-    public Task<Client> GetClientById(Guid id)
+    public async Task<Client> GetClientById(Guid id)
     {
-        throw new NotImplementedException();
+        var result = await _rentACarDbContext.Clients.FirstOrDefaultAsync(c => c.Id == id);
+        if (result is null)
+        {
+            throw new RepositoryException($"Client with Id={id} does not exists!");
+        }
+
+        return result;
     }
 }
