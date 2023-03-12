@@ -14,14 +14,14 @@ public class ClientRepository : IClientRepository
         _rentACarDbContext = rentACarDbContext;
     }
 
-    public async Task AddClient(Client client)
+    public async Task  AddClient(Client client)
     {
         if (client is null)
         {
             throw new RepositoryException("Invalid client");
         }
 
-        await _rentACarDbContext.Set<Client>().AddAsync(client);
+        _rentACarDbContext.Set<Client>().Add(client);
         await _rentACarDbContext.SaveChangesAsync();
     }
 

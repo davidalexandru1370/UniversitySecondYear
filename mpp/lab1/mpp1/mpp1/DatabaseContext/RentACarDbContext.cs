@@ -10,10 +10,9 @@ public class RentACarDbContext : DbContext
     {
         
     }
-    
-    public virtual DbSet<Client> Clients { get; set; }
-    public virtual DbSet<Incident> Incidents { get; set; }
-    public virtual DbSet<Vehicle> Vehicles { get; set; }
 
+    public virtual DbSet<Client> Clients { get; set; } = null!;
+    public virtual DbSet<Incident> Incidents { get; set; } = null!;
+    public virtual DbSet<Vehicle> Vehicles { get; set; } = null!;
 
 }

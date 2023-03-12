@@ -14,7 +14,6 @@ public class VehicleService : IVehicleService
     
     public void AddVehicle(Vehicle vehicle)
     {
-        vehicle.Id = Guid.NewGuid();
         _vehicleRepository.AddVehicle(vehicle);
     }
 
