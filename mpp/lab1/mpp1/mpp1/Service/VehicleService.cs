@@ -16,6 +16,8 @@ public class VehicleService : IVehicleService
     {
         _vehicleRepository.AddVehicle(vehicle);
     }
+    
+    
 
     public void DeleteVehicle(Guid id)
     {
@@ -35,5 +37,10 @@ public class VehicleService : IVehicleService
     public Task<Vehicle> GetVehicleById(Guid vehicleId)
     {
         return _vehicleRepository.GetVehicleById(vehicleId);
+    }
+
+    public Task<IEnumerable<Vehicle>> GetVehiclesWithCapacityGreaterThan(int capacity)
+    {
+        throw new NotImplementedException();
     }
 }

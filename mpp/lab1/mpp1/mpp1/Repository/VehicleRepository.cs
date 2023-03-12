@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using mpp1.DatabaseContext;
 using mpp1.Model;
@@ -62,5 +63,11 @@ public class VehicleRepository : IVehicleRepository
         }
 
         return vehicle;
+    }
+
+    public Task<IEnumerable<Vehicle>> GetVehiclesFiltered(Expression<Func<Vehicle, bool>> condition)
+    {
+        var result = _rentACarDbContext.Vehicles.Where(condition) as IEnumerable<Vehicle>;
+        return Task.FromResult(result);
     }
 }
