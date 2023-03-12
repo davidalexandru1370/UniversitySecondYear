@@ -22,20 +22,16 @@ public class VehicleRepository : IVehicleRepository
 
     public async Task<Vehicle> UpdateVehicle(Vehicle vehicle)
     {
-        var foundVehicle = await _rentACarDbContext.Vehicles.FirstOrDefaultAsync(v => v.Id == vehicle.Id);
-        if (foundVehicle is null)
+        if (vehicle is null)
         {
-            throw new RepositoryException($"Vehicle with Id={vehicle.Id} does not exists!");
+            throw new RepositoryException("Invalid vehicle");
         }
-        
-        foundVehicle.Brand = vehicle.Brand;
-        foundVehicle.CarPlate = vehicle.CarPlate;
-        foundVehicle.NumberOfSeats = vehicle.NumberOfSeats;
-        foundVehicle.HorsePower = vehicle.HorsePower;
-        foundVehicle.FabricationDate = vehicle.FabricationDate;
 
+        _rentACarDbContext.Set<Vehicle>().Attach(vehicle);
+        var entry = _rentACarDbContext.Entry(vehicle);
+        entry.State = EntityState.Modified;
         await _rentACarDbContext.SaveChangesAsync();
-        return foundVehicle;
+        return vehicle;
     }
 
     public async Task RemoveVehicle(Guid id)
