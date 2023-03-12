@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using mpp1.Model;
 
 namespace mpp1.Repository.Interfaces;
@@ -9,4 +10,6 @@ public interface IVehicleRepository
     Task RemoveVehicle(Guid id);
     Task<IEnumerable<Vehicle>> GetAllVehicles();
     Task<Vehicle> GetVehicleById(Guid id);
+
+    Task<IEnumerable<Vehicle>> GetVehiclesFiltered(Expression<Func<Vehicle, bool>> condition);
 }
