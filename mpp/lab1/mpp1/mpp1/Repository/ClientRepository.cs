@@ -45,15 +45,15 @@ public class ClientRepository : IClientRepository
             throw new RepositoryException("Invalid client");
         }
 
-        _rentACarDbContext.Set<Client>().Attach(client);
-        var entry = _rentACarDbContext.Entry(client);
-        if (entry is null)
+        var foundClient = await _rentACarDbContext.Clients.FirstOrDefaultAsync(c => c.Id == client.Id);
+        
+        if (foundClient is null)
         {
-            throw new RepositoryException($"Client with Id={client.Id} does not exists!");
+            throw new RepositoryException($"Client with Id={client.Id} does not exists");
         }
-        entry.State = EntityState.Modified;
-        await _rentACarDbContext.SaveChangesAsync();
 
+        _rentACarDbContext.Entry(foundClient).CurrentValues.SetValues(client);
+        await _rentACarDbContext.SaveChangesAsync();
         return client;
     }
 
