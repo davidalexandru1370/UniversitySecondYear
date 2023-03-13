@@ -1,3 +1,4 @@
+using System.Data;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using mpp1.DatabaseContext;
@@ -28,9 +29,18 @@ public class VehicleRepository : IVehicleRepository
             throw new RepositoryException("Invalid vehicle");
         }
 
-        _rentACarDbContext.Set<Vehicle>().Attach(vehicle);
-        var entry = _rentACarDbContext.Entry(vehicle);
-        entry.State = EntityState.Modified;
+        // _rentACarDbContext.Set<Vehicle>().Attach(vehicle);
+        // var entry = _rentACarDbContext.Entry(vehicle);
+        // entry.State = EntityState.Modified;
+        // _rentACarDbContext.SaveChanges();
+        var foundVehile = _rentACarDbContext.Vehicles.FirstOrDefault(v => v.Id == vehicle.Id);
+        
+        if (foundVehile is null)
+        {
+            throw new RepositoryException($"Vehicle with Id={vehicle.Id} does not exists!");
+        }
+
+        _rentACarDbContext.Entry(foundVehile).CurrentValues.SetValues(vehicle);
         await _rentACarDbContext.SaveChangesAsync();
         return vehicle;
     }

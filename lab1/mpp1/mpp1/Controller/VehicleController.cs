@@ -18,9 +18,9 @@ public class VehicleController : ControllerBase
     
     [HttpPost]
     [Route("add-vehicle")]
-    public ActionResult<Vehicle> AddVehicle([FromBody]Vehicle vehicle)
+    public async Task<ActionResult<Vehicle>> AddVehicle([FromBody]Vehicle vehicle)
     {
-        _vehicleService.AddVehicle(vehicle);
+        await _vehicleService.AddVehicle(vehicle);
         return Ok(vehicle);
     }
     
@@ -43,11 +43,11 @@ public class VehicleController : ControllerBase
 
     [HttpGet]
     [Route("get/{vehicleId}")]  
-    public ActionResult<Vehicle> GetVehicleById([FromRoute] Guid vehicleId)
+    public async Task<ActionResult<Vehicle>> GetVehicleById([FromRoute] Guid vehicleId)
     {
         try
         {
-            var result = _vehicleService.GetVehicleById(vehicleId);
+            var result = await _vehicleService.GetVehicleById(vehicleId);
             return Ok(result);
         }
         catch (RepositoryException repositoryException)
@@ -58,11 +58,11 @@ public class VehicleController : ControllerBase
     
     [HttpDelete]
     [Route("delete/{vehicleId}")]
-    public ActionResult DeleteVehicle([FromRoute] Guid vehicleId)
+    public async Task<ActionResult> DeleteVehicle([FromRoute] Guid vehicleId)
     {
         try
         {
-            _vehicleService.DeleteVehicle(vehicleId);
+            await _vehicleService.DeleteVehicle(vehicleId);
             return Ok();
         }
         catch (RepositoryException repositoryException)
