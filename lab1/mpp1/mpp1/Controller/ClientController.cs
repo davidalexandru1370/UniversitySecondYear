@@ -65,7 +65,7 @@ public class ClientController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPut]
+    [HttpPut("update-client")]
     public async Task<ActionResult<Client>> UpdateClient([FromBody] Client client)
     {
         try
