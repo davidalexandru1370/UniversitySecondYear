@@ -13,7 +13,7 @@
   background-color: aquamarine;
 }
 
-.hero-section {
+.heroSection {
   display: flex;
   justify-content: center;
 }

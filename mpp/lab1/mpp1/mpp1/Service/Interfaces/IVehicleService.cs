@@ -4,8 +4,8 @@ namespace mpp1.Service.Interfaces;
 
 public interface IVehicleService
 {
-    void AddVehicle(Vehicle vehicle);
-    void DeleteVehicle(Guid id);
+    Task AddVehicle(Vehicle vehicle);
+    Task DeleteVehicle(Guid id);
     Task<Vehicle> UpdateVehicle(Vehicle vehicle);
     Task<IEnumerable<Vehicle>> GetAllVehicles();
     Task<Vehicle> GetVehicleById(Guid vehicleId);

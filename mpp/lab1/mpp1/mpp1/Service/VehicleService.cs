@@ -12,21 +12,19 @@ public class VehicleService : IVehicleService
         _vehicleRepository = vehicleRepository;
     }
     
-    public void AddVehicle(Vehicle vehicle)
+    public async Task AddVehicle(Vehicle vehicle)
     {
-        _vehicleRepository.AddVehicle(vehicle);
+        await _vehicleRepository.AddVehicle(vehicle);
     }
     
-    
-
-    public void DeleteVehicle(Guid id)
+    public async Task DeleteVehicle(Guid id)
     {
-        _vehicleRepository.RemoveVehicle(id);
+        await _vehicleRepository.RemoveVehicle(id);
     }
 
-    public Task<Vehicle> UpdateVehicle(Vehicle vehicle)
+    public async Task<Vehicle> UpdateVehicle(Vehicle vehicle)
     {
-        return _vehicleRepository.UpdateVehicle(vehicle);
+        return await _vehicleRepository.UpdateVehicle(vehicle);
     }
 
     public Task<IEnumerable<Vehicle>> GetAllVehicles()
@@ -34,9 +32,9 @@ public class VehicleService : IVehicleService
         return _vehicleRepository.GetAllVehicles();
     }
 
-    public Task<Vehicle> GetVehicleById(Guid vehicleId)
+    public async Task<Vehicle> GetVehicleById(Guid vehicleId)
     {
-        return _vehicleRepository.GetVehicleById(vehicleId);
+        return await _vehicleRepository.GetVehicleById(vehicleId);
     }
 
     public Task<IEnumerable<Vehicle>> GetVehiclesWithCapacityGreaterThan(int capacity)
