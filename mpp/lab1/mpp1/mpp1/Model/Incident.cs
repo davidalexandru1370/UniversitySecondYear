@@ -9,7 +9,7 @@ public class Incident
     public Guid Id { get; set; }
     public Vehicle Vehicle { get; set; }
     [ForeignKey("Vehicle")]
-    public IEnumerable<Vehicle> VehicleId { get; set; }
+    public Vehicle VehicleId { get; set; }
     public string Location { get; set; }
     public string Description { get; set; }
     public int Cost { get; set; }
