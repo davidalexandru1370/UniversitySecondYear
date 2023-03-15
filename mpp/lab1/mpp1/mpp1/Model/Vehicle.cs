@@ -14,4 +14,5 @@ public class Vehicle
     public int NumberOfSeats { get; set; }
     public int EngineCapacity { get; set; }
     public DateTime FabricationDate { get; set; }
+    public virtual ICollection<Incident>? Incidents { get; set; } = null!;
 }

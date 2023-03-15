@@ -41,4 +41,9 @@ public class VehicleService : IVehicleService
     {
         return _vehicleRepository.GetVehiclesFiltered(v => v.EngineCapacity > capacity);
     }
+
+    public Task<Vehicle> GetVehicleByIdWithAllData(Guid vehicleId)
+    {
+        return _vehicleRepository.GetByVehicleIdWithAllData(vehicleId);
+    }
 }

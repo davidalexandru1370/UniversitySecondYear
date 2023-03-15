@@ -8,6 +8,7 @@ public interface IVehicleRepository
     Task AddVehicle(Vehicle vehicle);
     Task<Vehicle> UpdateVehicle(Vehicle vehicle);
     Task RemoveVehicle(Guid id);
+    Task<Vehicle> GetByVehicleIdWithAllData(Guid vehicleId);
     Task<IEnumerable<Vehicle>> GetAllVehicles();
     Task<Vehicle> GetVehicleById(Guid id);
 

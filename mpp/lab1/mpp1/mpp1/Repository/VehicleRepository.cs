@@ -57,6 +57,17 @@ public class VehicleRepository : IVehicleRepository
         await _rentACarDbContext.SaveChangesAsync();
     }
 
+    public Task<Vehicle> GetByVehicleIdWithAllData(Guid vehicleId)
+    {
+        var result = _rentACarDbContext.Set<Vehicle>().Where(v => v.Id == vehicleId).Include(v => v.Incidents) .FirstOrDefault();
+        if (result is null)
+        {
+            throw new RepositoryException($"vehicle with id={vehicleId} does not exists!");
+        }
+
+        return Task.FromResult(result);
+    }
+
     public  Task<IEnumerable<Vehicle>> GetAllVehicles()
     {
         var vehicles = _rentACarDbContext.Vehicles.ToList() as IEnumerable<Vehicle>;
