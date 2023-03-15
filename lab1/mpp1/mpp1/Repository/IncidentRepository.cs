@@ -41,7 +41,8 @@ public class IncidentRepository : IIncidentsRepository
 
     public Task<IEnumerable<Incident>> GetAllIncidents()
     {
-        throw new NotImplementedException();
+        var result = _rentACarDbContext.Set<Incident>().ToList() as IEnumerable<Incident>;
+        return Task.FromResult(result);
     }
 
     public async Task<Incident> GetIncidentById(Guid id)
@@ -57,8 +58,8 @@ public class IncidentRepository : IIncidentsRepository
 
     public Task<IEnumerable<Incident>> GetIncidentsByVehicleId(Guid vehicleId)
     {
-        var incidents =  _rentACarDbContext.Incidents.Where(v => v.VehicleId.Equals(vehicleId)) as IEnumerable<Incident>;
-
-        return Task.FromResult(incidents);
+        throw new NotImplementedException();
+        //var incidents = _rentACarDbContext.Incidents.Where(v => v.VehicleId == vehicleId) as IEnumerable<Incident>;
+        //return Task.FromResult(incidents);
     }
 }

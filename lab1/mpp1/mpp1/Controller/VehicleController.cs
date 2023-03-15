@@ -28,7 +28,6 @@ public class VehicleController : ControllerBase
     [Route("get-all")]
     public ActionResult<IEnumerable<Vehicle>> GetAllVehicles()
     {
-
         try
         {
             var result = _vehicleService.GetAllVehicles();
@@ -55,7 +54,22 @@ public class VehicleController : ControllerBase
             return BadRequest(repositoryException.Message);
         }
     }
-    
+
+    [HttpGet]
+    [Route("get-with-data/{vehicleId}")]
+    public async Task<ActionResult<Vehicle>> GetVehicleWithAllData([FromRoute] Guid vehicleId)
+    {
+        try
+        {
+            var result = await _vehicleService.GetVehicleByIdWithAllData(vehicleId);
+            return Ok(result);
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+    }
+
     [HttpDelete]
     [Route("delete/{vehicleId}")]
     public async Task<ActionResult> DeleteVehicle([FromRoute] Guid vehicleId)

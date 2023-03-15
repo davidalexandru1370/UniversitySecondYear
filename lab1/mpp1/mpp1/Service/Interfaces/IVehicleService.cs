@@ -10,4 +10,5 @@ public interface IVehicleService
     Task<IEnumerable<Vehicle>> GetAllVehicles();
     Task<Vehicle> GetVehicleById(Guid vehicleId);
     Task<IEnumerable<Vehicle>> GetVehiclesWithCapacityGreaterThan(int capacity);
+    Task<Vehicle> GetVehicleByIdWithAllData(Guid vehicleId);
 }
