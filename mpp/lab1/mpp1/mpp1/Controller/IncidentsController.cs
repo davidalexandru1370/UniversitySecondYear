@@ -62,6 +62,21 @@ public class IncidentsController : ControllerBase
             return BadRequest(repositoryException.Message);
         }    
     }
+
+    [HttpDelete]
+    [Route("delete-incident/{incidentId}")]
+    public async Task<IActionResult> DeleteIncidentById([FromRoute] Guid incidentId)
+    {
+        try
+        {
+            await _incidentService.RemoveIncident(incidentId);
+            return Ok();
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+    }
     
     
 }
