@@ -27,9 +27,9 @@ public class IncidentService : IIncidentService
         return _incidentsRepository.GetAllIncidents();
     }
 
-    public Task<Incident> GetIncidentById(Guid id)
+    public async Task<Incident> GetIncidentById(Guid id)
     {
-        return _incidentsRepository.GetIncidentById(id);
+        return await _incidentsRepository.GetIncidentById(id);
     }
 
     public Task<IEnumerable<Incident>> GetIncidentsByVehicleId(Guid vehicleId)

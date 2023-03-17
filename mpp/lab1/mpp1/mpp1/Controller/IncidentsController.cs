@@ -47,4 +47,21 @@ public class IncidentsController : ControllerBase
             return BadRequest(repositoryException.Message);
         }
     }
+    
+    [HttpGet]
+    [Route("get-incident-by-id/{incidentId}")]
+    public async Task<ActionResult<Incident>> GetIncidentById([FromRoute]Guid incidentId)
+    {
+        try
+        {
+            var result = await _incidentService.GetIncidentById(incidentId);
+            return Ok(result);
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }    
+    }
+    
+    
 }
