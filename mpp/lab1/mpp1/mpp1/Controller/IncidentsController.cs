@@ -79,12 +79,12 @@ public class IncidentsController : ControllerBase
     }
 
     [HttpPut]
-    [Route("update-incident/{incidentId}")]
+    [Route("update-incident")]
     public async Task<ActionResult<Incident>> UpdateIncident([FromBody] Incident incident)
     {
         try
         {
-            var result = _incidentService.UpdateIncident(incident);
+            var result = await _incidentService.UpdateIncident(incident);
             return Ok(result);
         }
         catch (RepositoryException repositoryException)
