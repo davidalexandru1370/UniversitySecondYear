@@ -37,6 +37,11 @@ public class VehicleService : IVehicleService
         return await _vehicleRepository.GetVehicleById(vehicleId);
     }
 
+    public Task<IEnumerable<Vehicle>> GetAllVehiclesWithAllData()
+    {
+        return _vehicleRepository.GetAllVehiclesWithAllData();
+    }
+
     public Task<IEnumerable<Vehicle>> GetVehiclesWithCapacityGreaterThan(int capacity)
     {
         return _vehicleRepository.GetVehiclesFiltered(v => v.EngineCapacity > capacity);
