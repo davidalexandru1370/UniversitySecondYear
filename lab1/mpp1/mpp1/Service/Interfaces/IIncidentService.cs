@@ -10,6 +10,8 @@ public interface IIncidentService
 
     public Task<IEnumerable<Incident>> GetAllIncidents();
 
+    public Task<Incident> UpdateIncident(Incident incident);
+
     public Task<Incident> GetIncidentById(Guid id);
 
     public Task<IEnumerable<Incident>> GetIncidentsByVehicleId(Guid vehicleId);

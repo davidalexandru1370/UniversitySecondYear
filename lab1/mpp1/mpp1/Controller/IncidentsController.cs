@@ -77,6 +77,21 @@ public class IncidentsController : ControllerBase
             return BadRequest(repositoryException.Message);
         }
     }
+
+    [HttpPut]
+    [Route("update-incident/{incidentId}")]
+    public async Task<ActionResult<Incident>> UpdateIncident([FromBody] Incident incident)
+    {
+        try
+        {
+            var result = _incidentService.UpdateIncident(incident);
+            return Ok(result);
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+    }
     
     
 }

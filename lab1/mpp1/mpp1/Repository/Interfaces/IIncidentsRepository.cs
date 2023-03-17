@@ -7,6 +7,7 @@ public interface IIncidentsRepository
     public Task AddIncident(Incident incident);
 
     public Task RemoveIncident(Guid id);
+    Task<Incident> UpdateIncident(Incident incident);
 
     public Task<IEnumerable<Incident>> GetAllIncidents();
 
