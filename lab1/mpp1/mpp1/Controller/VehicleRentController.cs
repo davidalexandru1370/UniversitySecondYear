@@ -55,4 +55,19 @@ public class VehicleRentController : ControllerBase
     var result = _vehicleService.GetClientsByVehicleId(vehicleId);
     return Ok(result);
   }
+
+  [HttpDelete]
+  [Route("delete-rent/{rentId}")]
+  public async Task<IActionResult> DeleteVehicleRent(Guid vehicleRentId)
+  {
+    try
+    {
+      await _vehicleService.DeleteVehicleRent(vehicleRentId);
+      return Ok();
+    }
+    catch (RepositoryException repositoryException)
+    {
+      return BadRequest(repositoryException.Message);
+    }
+  }
 }
