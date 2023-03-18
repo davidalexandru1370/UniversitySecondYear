@@ -20,4 +20,5 @@ public class VehicleRent
     public int TotalCost { get; set; }
     public string? Comments { get; set; }
     
+    
 }

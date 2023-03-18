@@ -49,7 +49,7 @@ namespace mpp1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Client");
+                    b.ToTable("Client", (string)null);
                 });
 
             modelBuilder.Entity("mpp1.Model.Incident", b =>
@@ -79,7 +79,7 @@ namespace mpp1.Migrations
 
                     b.HasIndex("VehicleId");
 
-                    b.ToTable("Incidents");
+                    b.ToTable("Incidents", (string)null);
                 });
 
             modelBuilder.Entity("mpp1.Model.Vehicle", b =>
@@ -110,7 +110,7 @@ namespace mpp1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vehicle");
+                    b.ToTable("Vehicle", (string)null);
                 });
 
             modelBuilder.Entity("mpp1.Model.VehicleRent", b =>
@@ -143,7 +143,7 @@ namespace mpp1.Migrations
 
                     b.HasIndex("VehicleId");
 
-                    b.ToTable("VehicleRent");
+                    b.ToTable("VehicleRent", (string)null);
                 });
 
             modelBuilder.Entity("mpp1.Model.Incident", b =>
