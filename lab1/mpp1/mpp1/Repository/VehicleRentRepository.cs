@@ -63,10 +63,12 @@ public class VehicleRentRepository : IVehicleRentRepository
 
     public Task<IEnumerable<Client>> GetClientsByVehicleId(Guid vehicleId)
     {
-        var result = _rentACarDbContext.VehicleRents
-                .Where(vr => vr.VehicleId == vehicleId)
-                .Include(vr => vr.Client).ToList()
-            as IEnumerable<Client>;
+        var result = (
+            from VR in _rentACarDbContext.VehicleRents
+            where VR.VehicleId == vehicleId
+            join C in _rentACarDbContext.Clients on VR.ClientId equals C.Id
+            select C
+        ) as IEnumerable<Client>;
         return Task.FromResult(result);
     }
 
