@@ -12,8 +12,8 @@ using mpp1.DatabaseContext;
 namespace mpp1.Migrations
 {
     [DbContext(typeof(RentACarDbContext))]
-    [Migration("20230315131324_AddForeignKey")]
-    partial class AddForeignKey
+    [Migration("20230318111517_AddedVehicleRentModel")]
+    partial class AddedVehicleRentModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,7 +72,7 @@ namespace mpp1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("VehicleId")
+                    b.Property<Guid>("VehicleId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("WhenHappend")
@@ -116,11 +116,65 @@ namespace mpp1.Migrations
                     b.ToTable("Vehicle");
                 });
 
+            modelBuilder.Entity("mpp1.Model.VehicleRent", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ClientId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TotalCost")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("VehicleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("VehicleId");
+
+                    b.ToTable("VehicleRent");
+                });
+
             modelBuilder.Entity("mpp1.Model.Incident", b =>
                 {
                     b.HasOne("mpp1.Model.Vehicle", "Vehicle")
                         .WithMany("Incidents")
-                        .HasForeignKey("VehicleId");
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Vehicle");
+                });
+
+            modelBuilder.Entity("mpp1.Model.VehicleRent", b =>
+                {
+                    b.HasOne("mpp1.Model.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("mpp1.Model.Vehicle", "Vehicle")
+                        .WithMany()
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
 
                     b.Navigation("Vehicle");
                 });
