@@ -64,6 +64,10 @@ public class VehicleRentRepository : IVehicleRentRepository
     {
         var result = await _rentACarDbContext.VehicleRents
             .Where(vr => vr.Id == vehicleRentId).FirstOrDefaultAsync();
+        if (result is null)
+        {
+            throw new RepositoryException($"Vehicle with Id={vehicleRentId} does not exists!");
+        }
         return result;
     }
 }
