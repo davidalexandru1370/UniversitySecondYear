@@ -47,4 +47,12 @@ public class VehicleRentController : ControllerBase
     var result = _vehicleService.GetVehiclesByClientId(clientId);
     return Ok(result);
   }
+
+  [HttpGet]
+  [Route("get-by-vehicleId/{vehicleId}")]
+  public ActionResult<IEnumerable<Client>> GetClientsByVehicleId(Guid vehicleId)
+  {
+    var result = _vehicleService.GetClientsByVehicleId(vehicleId);
+    return Ok(result);
+  }
 }
