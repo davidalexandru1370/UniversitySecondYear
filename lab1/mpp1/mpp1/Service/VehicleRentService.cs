@@ -42,6 +42,11 @@ public class VehicleRentService : IVehicleRentService
         return result;
     }
 
+    public Task<IEnumerable<VehicleRent>> GetAllRents()
+    {
+        return _vehicleRentRepository.GetAllRents();
+    }
+
     public Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId)
     {
         var result = _vehicleRentRepository.GetVehicleRentById(vehicleRentId);
