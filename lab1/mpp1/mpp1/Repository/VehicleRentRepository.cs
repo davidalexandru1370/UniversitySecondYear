@@ -55,13 +55,15 @@ public class VehicleRentRepository : IVehicleRentRepository
     {
         var result = _rentACarDbContext.VehicleRents
                 .Where(vr => vr.VehicleId == vehicleId)
-                .Include(vr => vr.Client)
+                .Include(vr => vr.Client).ToList()
             as IEnumerable<Client>;
         return Task.FromResult(result);
     }
 
-    public Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId)
+    public async Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId)
     {
-        throw new NotImplementedException();
+        var result = await _rentACarDbContext.VehicleRents
+            .Where(vr => vr.Id == vehicleRentId).FirstOrDefaultAsync();
+        return result;
     }
 }
