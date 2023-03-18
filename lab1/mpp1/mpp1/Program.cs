@@ -17,7 +17,7 @@ builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<IIncidentService, IncidentService>();
 builder.Services.AddScoped<IIncidentsRepository, IncidentRepository>();
 builder.Services.AddScoped<IVehicleRentRepository, VehicleRentRepository>();
-builder.Services.AddScoped<IVehicleService, VehicleService>();
+builder.Services.AddScoped<IVehicleRentService, VehicleRentService>();
 builder.Services.AddDbContext<RentACarDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Dev")));
 var app = builder.Build();
