@@ -53,7 +53,11 @@ public class VehicleRentRepository : IVehicleRentRepository
 
     public Task<IEnumerable<Client>> GetClientsByVehicleId(Guid vehicleId)
     {
-        throw new NotImplementedException();
+        var result = _rentACarDbContext.VehicleRents
+                .Where(vr => vr.VehicleId == vehicleId)
+                .Include(vr => vr.Client)
+            as IEnumerable<Client>;
+        return Task.FromResult(result);
     }
 
     public Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId)
