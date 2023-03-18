@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using mpp1.DatabaseContext;
 using mpp1.Model;
 using mpp1.Repository.Interfaces;
@@ -41,13 +42,22 @@ public class VehicleRentRepository : IVehicleRentRepository
 
         return vehicleRent;
     }
-
+    
+    /*
+     * SELECT V.* From VehiclesRent VR
+     * WHERE VR.clientId = @clientId
+     * LEFT JOIN Vehicles V on V.Id = VR.vehicleId 
+     */
+    
     public Task<IEnumerable<Vehicle>> GetVehiclesByClientId(Guid clientId)
     {
-        var result = _rentACarDbContext.VehicleRents
-            .Where(vr => vr.ClientId == clientId)
-            .Include(vr => vr.Vehicle)
-            as IEnumerable<Vehicle>;
+        var result = (
+            from VR in _rentACarDbContext.VehicleRents
+            where VR.ClientId == clientId
+            join V in _rentACarDbContext.Vehicles on VR.VehicleId equals V.Id
+            select V
+        ) as IEnumerable<Vehicle>;
+            
         return Task.FromResult(result);
     }
 

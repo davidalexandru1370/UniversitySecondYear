@@ -39,4 +39,12 @@ public class VehicleRentController : ControllerBase
       return BadRequest(repositoryException.Message);
     }
   }
+
+  [HttpGet]
+  [Route("get-by-clientId/{clientId}")]
+  public ActionResult<IEnumerable<Vehicle>> GetVehiclesByClientId(Guid clientId)
+  {
+    var result = _vehicleService.GetVehiclesByClientId(clientId);
+    return Ok(result);
+  }
 }
