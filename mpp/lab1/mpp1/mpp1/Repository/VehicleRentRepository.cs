@@ -60,6 +60,12 @@ public class VehicleRentRepository : IVehicleRentRepository
         return Task.FromResult(result);
     }
 
+    public Task<IEnumerable<VehicleRent>> GetAllRents()
+    {
+        var result = _rentACarDbContext.VehicleRents.ToList() as IEnumerable<VehicleRent>;
+        return Task.FromResult(result);
+    }
+
     public async Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId)
     {
         var result = await _rentACarDbContext.VehicleRents

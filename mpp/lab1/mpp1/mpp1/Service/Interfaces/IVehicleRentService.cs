@@ -13,6 +13,7 @@ public interface IVehicleRentService
     public Task<IEnumerable<Vehicle>> GetVehiclesByClientId(Guid clientId);
 
     public Task<IEnumerable<Client>> GetClientsByVehicleId(Guid vehicleId);
+    public Task<IEnumerable<VehicleRent>> GetAllRents();
 
     public Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId);
 }

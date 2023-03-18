@@ -9,6 +9,7 @@ public interface IVehicleRentRepository
     public Task DeleteVehicleRent(Guid vehicleRentId);
 
     public Task<VehicleRent> UpdateVehicleRent(VehicleRent vehicleRent);
+    public Task<IEnumerable<VehicleRent>> GetAllRents();
 
     public Task<IEnumerable<Vehicle>> GetVehiclesByClientId(Guid clientId);
 
