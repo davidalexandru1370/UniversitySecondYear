@@ -42,7 +42,7 @@ public class VehicleRentController : ControllerBase
 
   [HttpGet]
   [Route("get-by-clientId/{clientId}")]
-  public ActionResult<IEnumerable<Vehicle>> GetVehiclesByClientId([FromRoute]Guid clientId)
+  public ActionResult<IEnumerable<Vehicle>> GetVehiclesByClientId([FromRoute] Guid clientId)
   {
     var result = _vehicleRentService.GetVehiclesByClientId(clientId);
     return Ok(result);
@@ -50,7 +50,7 @@ public class VehicleRentController : ControllerBase
 
   [HttpGet]
   [Route("get-by-vehicleId/{vehicleId}")]
-  public ActionResult<IEnumerable<Client>> GetClientsByVehicleId([FromRoute]Guid vehicleId)
+  public ActionResult<IEnumerable<Client>> GetClientsByVehicleId([FromRoute] Guid vehicleId)
   {
     var result = _vehicleRentService.GetClientsByVehicleId(vehicleId);
     return Ok(result);
@@ -58,7 +58,7 @@ public class VehicleRentController : ControllerBase
 
   [HttpDelete]
   [Route("delete-rent/{vehicleRentId}")]
-  public async Task<IActionResult> DeleteVehicleRent([FromRoute]Guid vehicleRentId)
+  public async Task<IActionResult> DeleteVehicleRent([FromRoute] Guid vehicleRentId)
   {
     try
     {
