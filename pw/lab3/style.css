@@ -189,6 +189,23 @@
   color: black;
 }
 
+.sign-in-card {
+  max-height: 100px;
+}
+
+.sign-in-button {
+  margin: 5px;
+  padding: 7px;
+  background-color: yellow;
+  border-radius: 10px;
+  border: 0px solid transparent;
+}
+
+.advertise-card {
+  padding: 0px !important;
+  height: 100% !important;
+}
+
 .card-footer {
   padding: 20px;
   position: absolute;
