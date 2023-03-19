@@ -98,3 +98,24 @@
 .b-fs {
   font-size: 13px;
 }
+
+.second-navbar {
+  box-sizing: border-box;
+  font-size: 14px !important;
+  color: white;
+  width: 100vw;
+  padding-block: 10px;
+  display: flex;
+  padding-inline: 10px;
+  justify-content: space-between;
+  background-color: rgb(35, 47, 62);
+}
+
+.left-second-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.left-second-navbar > *:not(:nth-child(1)) {
+  padding-right: 20px;
+}
