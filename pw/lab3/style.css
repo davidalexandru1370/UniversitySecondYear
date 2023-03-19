@@ -17,6 +17,7 @@
 }
 
 .delivery-navbar {
+  margin-left: 5px;
   max-width: 120px;
   word-wrap: break-word;
   display: flex;
@@ -86,4 +87,10 @@
   position: absolute;
   top: 0;
   left: 15%;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
