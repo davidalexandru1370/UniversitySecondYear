@@ -175,6 +175,7 @@
 }
 
 .card-image {
+  margin-left: -30px;
   width: 80%;
   position: relative;
 }
@@ -201,11 +202,6 @@
   border: 0px solid transparent;
 }
 
-.advertise-card {
-  padding: 0px !important;
-  height: 100% !important;
-}
-
 .card-footer {
   padding: 20px;
   position: absolute;
@@ -214,4 +210,9 @@
   text-decoration: none;
   font-size: 14px;
   color: rgb(57, 187, 216) !important;
+}
+
+.advertise-card {
+  margin: -20px -20px -20px -20px;
+  height: 250px !important;
 }
