@@ -47,9 +47,9 @@ public class VehicleRentService : IVehicleRentService
         return _vehicleRentRepository.GetAllRents();
     }
 
-    public Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId)
+    public async Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId)
     {
-        var result = _vehicleRentRepository.GetVehicleRentById(vehicleRentId);
+        var result = await _vehicleRentRepository.GetVehicleRentById(vehicleRentId);
         return result;
     }
 }
