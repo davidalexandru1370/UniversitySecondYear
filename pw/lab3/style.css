@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.content {
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  color: white;
+  padding-block: 10px;
+  background-color: rgb(15, 20, 26);
+  display: flex;
+  flex: row;
+  padding-inline: 10px;
+}
+
+.delivery-navbar {
+  max-width: 120px;
+  word-wrap: break-word;
+  display: flex;
+}
+
+.search-box {
+  width: inherit;
+}
+
+.search-box-icon {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: brown;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.search-product {
+  width: 50vw;
+  margin-inline: 10px;
+  display: flex;
+}
+
+.fs-small {
+  font-size: small;
+}
+
+.fs-medium {
+  font-size: medium;
+}
+
+.account {
+  margin-inline: 10px;
+  width: 160px;
+}
+
+.product-search-dropbox {
+  margin: 0;
+}
+
+.language-search-dropbox {
+  padding-inline: 5px;
+}
+
+.returns-and-orders {
+  width: 83px;
+}
+
+.cart-icon {
+  z-index: 1;
+  font-size: 40px !important;
+}
+
+.cart-container {
+  position: relative;
+  margin-left: 10px;
+}
+
+.cart-quantity {
+  font-weight: 1000;
+  font-size: 25px;
+  z-index: 100;
+  color: orange;
+  margin-top: -8px;
+  position: absolute;
+  top: 0;
+  left: 15%;
+}
