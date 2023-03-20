@@ -109,6 +109,13 @@ public class VehicleController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("get-all-vehicles-with-data")]
+    public  ActionResult<IEnumerable<Vehicle>> GetAllVehiclesWithAllData()
+    {
+        var result =  _vehicleService.GetAllVehiclesWithAllData();
+        return Ok(result);
+    }
+
     [HttpGet("get-by-incidents")]
     public async Task<ActionResult<IEnumerable<VehicleDTO>>> GetVehiclesByNumberOfIncidents()
     {

@@ -29,10 +29,6 @@ public class VehicleRepository : IVehicleRepository
             throw new RepositoryException("Invalid vehicle");
         }
 
-        // _rentACarDbContext.Set<Vehicle>().Attach(vehicle);
-        // var entry = _rentACarDbContext.Entry(vehicle);
-        // entry.State = EntityState.Modified;
-        // _rentACarDbContext.SaveChanges();
         var foundVehile = _rentACarDbContext.Vehicles.FirstOrDefault(v => v.Id == vehicle.Id);
         
         if (foundVehile is null)
@@ -71,6 +67,12 @@ public class VehicleRepository : IVehicleRepository
     public  Task<IEnumerable<Vehicle>> GetAllVehicles()
     {
         var vehicles = _rentACarDbContext.Vehicles.ToList() as IEnumerable<Vehicle>;
+        return Task.FromResult(vehicles);
+    }
+
+    public Task<IEnumerable<Vehicle>> GetAllVehiclesWithAllData()
+    {
+        var vehicles = _rentACarDbContext.Set<Vehicle>().Include(v => v.Incidents) as IEnumerable<Vehicle>;
         return Task.FromResult(vehicles);
     }
 
