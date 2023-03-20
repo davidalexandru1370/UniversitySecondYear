@@ -1,4 +1,5 @@
 using mpp1.Model;
+using mpp1.Model.DTO;
 using mpp1.Repository.Interfaces;
 using mpp1.Service.Interfaces;
 
@@ -47,9 +48,20 @@ public class VehicleService : IVehicleService
         return _vehicleRepository.GetByVehicleIdWithAllData(vehicleId);
     }
 
-    public async Task<IEnumerable<Vehicle>> GetVehiclesOrderByNumberOfIncidents()
+    public async Task<IEnumerable<VehicleDTO>> GetVehiclesOrderByNumberOfIncidents()
     {
-        var result = (await GetAllVehicles()).OrderBy(v => v.Incidents?.Count);
+        var result = (await GetAllVehicles())
+            .OrderBy(v => v.Incidents?.Count)
+            .Select(v => new VehicleDTO
+            {
+                EngineCapacity = v.EngineCapacity,
+                Brand = v.Brand,
+                CarPlate = v.CarPlate,
+                FabricationDate = v.FabricationDate,
+                HorsePower = v.HorsePower,
+                NumberOfSeats = v.NumberOfSeats,
+                NumberOfIncidents = v.Incidents?.Count ?? 0
+            });
         return result;
     }
 }

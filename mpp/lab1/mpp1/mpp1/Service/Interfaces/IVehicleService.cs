@@ -1,4 +1,5 @@
 using mpp1.Model;
+using mpp1.Model.DTO;
 
 namespace mpp1.Service.Interfaces;
 
@@ -11,5 +12,5 @@ public interface IVehicleService
     Task<Vehicle> GetVehicleById(Guid vehicleId);
     Task<IEnumerable<Vehicle>> GetVehiclesWithCapacityGreaterThan(int capacity);
     Task<Vehicle> GetVehicleByIdWithAllData(Guid vehicleId);
-    Task<IEnumerable<Vehicle>> GetVehiclesOrderByNumberOfIncidents();
+    Task<IEnumerable<VehicleDTO>> GetVehiclesOrderByNumberOfIncidents();
 }

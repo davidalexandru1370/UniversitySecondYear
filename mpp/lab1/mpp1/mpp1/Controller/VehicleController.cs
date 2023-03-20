@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using mpp1.Model;
+using mpp1.Model.DTO;
 using mpp1.Repository;
 using mpp1.Service.Interfaces;
 
@@ -109,7 +110,7 @@ public class VehicleController : ControllerBase
     }
 
     [HttpGet("get-by-incidents")]
-    public async Task<ActionResult<IEnumerable<Vehicle>>> GetVehiclesByNumberOfIncidents()
+    public async Task<ActionResult<IEnumerable<VehicleDTO>>> GetVehiclesByNumberOfIncidents()
     {
         var result = await _vehicleService.GetVehiclesOrderByNumberOfIncidents();
         return Ok(result);
