@@ -10,6 +10,7 @@ public interface IVehicleRepository
     Task RemoveVehicle(Guid id);
     Task<Vehicle> GetByVehicleIdWithAllData(Guid vehicleId);
     Task<IEnumerable<Vehicle>> GetAllVehicles();
+    Task<IEnumerable<Vehicle>> GetAllVehiclesWithAllData();
     Task<Vehicle> GetVehicleById(Guid id);
 
     Task<IEnumerable<Vehicle>> GetVehiclesFiltered(Expression<Func<Vehicle, bool>> condition);
