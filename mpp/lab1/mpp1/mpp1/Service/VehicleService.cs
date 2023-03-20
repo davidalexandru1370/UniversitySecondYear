@@ -55,7 +55,7 @@ public class VehicleService : IVehicleService
 
     public async Task<IEnumerable<VehicleDTO>> GetVehiclesOrderByNumberOfIncidents()
     {
-        var result = (await GetAllVehicles())
+        var result = (await GetAllVehiclesWithAllData())
             .OrderBy(v => v.Incidents?.Count)
             .Select(v => new VehicleDTO
             {

@@ -10,7 +10,7 @@ namespace mpp1.Controller;
 [Route("api/[controller]")]
 public class VehicleController : ControllerBase
 {
-    private IVehicleService _vehicleService;
+    private readonly IVehicleService _vehicleService;
 
     public VehicleController(IVehicleService vehicleService)
     {
