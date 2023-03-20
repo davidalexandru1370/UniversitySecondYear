@@ -108,4 +108,10 @@ public class VehicleController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("get-by-incidents")]
+    public async Task<ActionResult<IEnumerable<Vehicle>>> GetVehiclesByNumberOfIncidents()
+    {
+        var result = await _vehicleService.GetVehiclesOrderByNumberOfIncidents();
+        return Ok(result);
+    }
 }

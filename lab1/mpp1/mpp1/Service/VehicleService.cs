@@ -46,4 +46,10 @@ public class VehicleService : IVehicleService
     {
         return _vehicleRepository.GetByVehicleIdWithAllData(vehicleId);
     }
+
+    public async Task<IEnumerable<Vehicle>> GetVehiclesOrderByNumberOfIncidents()
+    {
+        var result = (await GetAllVehicles()).OrderBy(v => v.Incidents?.Count);
+        return result;
+    }
 }
