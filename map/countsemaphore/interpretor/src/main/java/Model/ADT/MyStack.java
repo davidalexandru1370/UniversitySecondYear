@@ -29,7 +29,7 @@ public class MyStack<T> implements IStack<T> {
 
     @Override
     public T getTop() {
-        return stack.firstElement();
+        return stack.peek();
     }
 
     @Override

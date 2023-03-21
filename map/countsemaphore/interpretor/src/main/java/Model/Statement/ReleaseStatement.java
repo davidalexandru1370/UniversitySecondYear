@@ -24,7 +24,7 @@ public class ReleaseStatement implements IStatement {
     }
 
     @Override
-    public ProgramState execute(ProgramState state) throws InterpreterException {
+    synchronized public ProgramState execute(ProgramState state) throws InterpreterException {
         lock.lock();
 
         if(!state.getSymbolTable().isDefined(var)){

@@ -4,36 +4,24 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-class A implements D{}   class B extends A implements D {}
+abstract class A1 { abstract int getS1(int);}
+class A extends A1 {
+    static int f1;
+    static int s1 = 0;
 
-class C extends A implements D {}   interface D {}
-
-
-
-class Amain{
-
-
-
-    D  method1(ArrayList<? extends A> list) {  if (list.isEmpty()) return null;
-
-                                   else return list.get(1);}
-
-    void method2(ArrayList<? extends A>  list, C elem) {  list.add(elem);}
-
-    void method3(C elem){
-
-        ArrayList<A> listA=new ArrayList<A>(); listA.add(new A());listA.add(new A());
-
-        ArrayList<B> listB = new ArrayList<B>(); listB.add(new B());listB.add(new B());
-
-        ArrayList<C> listC = new ArrayList<C>(); listC.add(new C()); listC.add(new C());
-
-        this.method1(listA); this.method1(listB); this.method1(listC);
-
-        this.method2(listA,elem); this.method2(listB,elem); this.method2(listC,elem);
-
+    public A(int a) {
+        this.f1 = a * s1;
+        s1 = s1 + 1;
     }
 
+    static int getS() {
+        A ob = new A(10);
+        return ob.getS1();
+    }
+
+    int getS1() {
+        return f1;
+    }
 }
 public class Main {
 //    interface  l1 {
