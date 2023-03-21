@@ -42,7 +42,7 @@
             this.instructorsDataGridView1.RowTemplate.Height = 25;
             this.instructorsDataGridView1.Size = new System.Drawing.Size(776, 150);
             this.instructorsDataGridView1.TabIndex = 0;
-            this.instructorsDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instructorsDataGridView1_CellContentClick);
+            this.instructorsDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instructorsDataGridView1_CellClick);
             // 
             // vehiclesDataGridView
             // 
@@ -52,7 +52,7 @@
             this.vehiclesDataGridView.RowTemplate.Height = 25;
             this.vehiclesDataGridView.Size = new System.Drawing.Size(776, 150);
             this.vehiclesDataGridView.TabIndex = 1;
-            this.vehiclesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.vehiclesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vehiclesDataGridView_CellClick);
             // 
             // Form1
             // 

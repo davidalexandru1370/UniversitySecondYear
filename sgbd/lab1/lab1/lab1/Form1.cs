@@ -26,7 +26,6 @@ namespace lab1
         {
             DisplayAllInstructors();
             instructorsDataGridView1.DataSource = _dataSet.Tables["Instructors"];
-            vehiclesDataGridView.DataSource = _dataSet.Tables["Vehicles"];
         }
 
         private void DisplayAllInstructors()
@@ -45,24 +44,38 @@ namespace lab1
             _sqlConnection.Open();
             string vehiclesTableName = "Vehicles";
             SqlDataAdapter adapter = new();
-            adapter.SelectCommand = new SqlCommand($"SELECT * FROM {vehiclesTableName} where InstructorCNP={instructorCNP}");
+            // MessageBox.Show(instructorCNP);
+            adapter.SelectCommand = new SqlCommand($"SELECT * FROM {vehiclesTableName} where InstructorCNP = {instructorCNP}", _sqlConnection);
+            _dataSet.Tables["Vehicles"]?.Clear();
             adapter.Fill(_dataSet, "Vehicles");
+            
+            vehiclesDataGridView.DataSource = _dataSet.Tables["Vehicles"];
             vehiclesDataGridView.Refresh();
             _sqlConnection.Close();
         }
 
-        private void instructorsDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void vehiclesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var cell = sender as DataGridView;
-            if (e.RowIndex == 0)
-            {
-                DisplayVehiclesByInstructorId(cell[e.RowIndex, e.ColumnIndex].ToString());
-            }
+           
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void instructorsDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            var cell = sender as DataGridView;
+            try
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    var cellValue = instructorsDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    //MessageBox.Show(cellValue);
+                    DisplayVehiclesByInstructorId(cellValue);
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Casuta invalida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
     }
 }
