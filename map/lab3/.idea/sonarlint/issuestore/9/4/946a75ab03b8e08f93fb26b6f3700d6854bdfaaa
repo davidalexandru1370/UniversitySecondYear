@@ -1,0 +1,8 @@
+
+P
+java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³’ñU
+€
+java:S2142!"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(Ñ»½Âûÿÿÿÿ8†‹ã¼Ï0
+N
+java:S1128"8Remove this unused import 'Model.Statement.IfStatement'.(‡êÌ¯

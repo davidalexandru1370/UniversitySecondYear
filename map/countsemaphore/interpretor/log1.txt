@@ -1,0 +1,1301 @@
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v1', type=ReferenceType{inner=int}}, second=CompundStatement{first=VariableDeclarationStatement{name='cnt', type=int}, second=CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='cnt', type=int}, second=CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}}, VariableDeclarationStatement{name='v1', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='cnt', type=int}, second=CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}}, VariableDeclarationStatement{name='v1', type=ReferenceType{inner=int}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='cnt', type=int}, second=CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}}]}
+Symbol table:
+v1 = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='cnt', type=int}, second=CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}}]}
+Symbol table:
+v1 = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}, VariableDeclarationStatement{name='cnt', type=int}]}
+Symbol table:
+v1 = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}, VariableDeclarationStatement{name='cnt', type=int}]}
+Symbol table:
+v1 = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}]}
+Symbol table:
+cnt = 0
+v1 = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=NewStatement{variableName='v1', expression=ValueExpression{value=1}}, second=CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}}]}
+Symbol table:
+cnt = 0
+v1 = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}, NewStatement{variableName='v1', expression=ValueExpression{value=1}}]}
+Symbol table:
+cnt = 0
+v1 = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}, NewStatement{variableName='v1', expression=ValueExpression{value=1}}]}
+Symbol table:
+cnt = 0
+v1 = ReferenceValue{heapAddress=0, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}]}
+Symbol table:
+cnt = 0
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.CreateSemaphoreStatement@645f2b22, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}}]}
+Symbol table:
+cnt = 0
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}, Model.Statement.CreateSemaphoreStatement@645f2b22]}
+Symbol table:
+cnt = 0
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}, Model.Statement.CreateSemaphoreStatement@645f2b22]}
+Symbol table:
+cnt = 0
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}, second=CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}, ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}, ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}, second=CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.AcquireStatement@687acb96, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}, ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}, Model.Statement.AcquireStatement@687acb96]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}, ForkStatement{statement=CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}, Model.Statement.AcquireStatement@687acb96]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.AcquireStatement@5038a179, second=CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Model.Statement.AcquireStatement@33ca053b, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}, HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}, HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}, Print: HeapReadingExpression{expression=Variable expression = v1}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}, Print: HeapReadingExpression{expression=Variable expression = v1}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+No output.
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1706802550]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1706802550
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}, Model.Statement.AcquireStatement@5038a179]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}, second=ReleaseStatement{var='cnt'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}, Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}, Print: ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=1}, operation='-'}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[2033375264]
+
+Id:2033375264
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}, Model.Statement.AcquireStatement@33ca053b]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}, second=CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}, HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}, HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=10}, operation='*'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}, second=CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}, HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}, HeapWrittingStatement{variableName='v1', expression=ArithmeticExpression{expression1=HeapReadingExpression{expression=Variable expression = v1}, expression2=ValueExpression{value=2}, operation='*'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[CompundStatement{first=Print: HeapReadingExpression{expression=Variable expression = v1}, second=ReleaseStatement{var='cnt'}}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}, Print: HeapReadingExpression{expression=Variable expression = v1}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}, Print: HeapReadingExpression{expression=Variable expression = v1}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+200
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[ReleaseStatement{var='cnt'}]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+200
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[1305172209]
+
+Id:1305172209
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+cnt = 103
+v1 = ReferenceValue{heapAddress=127, locationType=int}
+
+Out:
+10
+9
+200
+
+File table: 
+ 
+Semaphore table:
+semaphore table value = 103 count = 1=[]
+
