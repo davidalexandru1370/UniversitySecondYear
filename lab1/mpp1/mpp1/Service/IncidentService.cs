@@ -41,4 +41,5 @@ public class IncidentService : IIncidentService
     {
         return _incidentsRepository.GetIncidentsByVehicleId(vehicleId);
     }
+
 }

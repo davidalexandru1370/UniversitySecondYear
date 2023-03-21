@@ -15,4 +15,5 @@ public interface IIncidentService
     public Task<Incident> GetIncidentById(Guid id);
 
     public Task<IEnumerable<Incident>> GetIncidentsByVehicleId(Guid vehicleId);
+
 }
