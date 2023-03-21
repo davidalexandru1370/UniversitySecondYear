@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using mpp1.Model;
+using mpp1.Model.DTO;
 using mpp1.Repository;
 using mpp1.Service.Interfaces;
 
@@ -9,7 +10,7 @@ namespace mpp1.Controller;
 [Route("api/[controller]")]
 public class VehicleController : ControllerBase
 {
-    private IVehicleService _vehicleService;
+    private readonly IVehicleService _vehicleService;
 
     public VehicleController(IVehicleService vehicleService)
     {
@@ -115,4 +116,10 @@ public class VehicleController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("get-by-incidents")]
+    public async Task<ActionResult<IEnumerable<VehicleDTO>>> GetVehiclesByNumberOfIncidents()
+    {
+        var result = await _vehicleService.GetVehiclesOrderByNumberOfIncidents();
+        return Ok(result);
+    }
 }

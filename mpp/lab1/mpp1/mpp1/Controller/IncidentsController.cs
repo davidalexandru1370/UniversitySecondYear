@@ -92,6 +92,20 @@ public class IncidentsController : ControllerBase
             return BadRequest(repositoryException.Message);
         }
     }
-    
-    
+
+    [HttpGet]
+    [Route("get-by-vehicleId/{vehicleId}")]
+    public async Task<ActionResult<IEnumerable<Incident>>> GetIncidentsByVehicleId([FromRoute] Guid vehicleId)
+    {
+        try
+        {
+            var result = await _incidentService.GetIncidentsByVehicleId(vehicleId);
+            return Ok(result);
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
+        }
+    }
+
 }
