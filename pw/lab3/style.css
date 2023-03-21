@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: a;
+}
+.content {
+  height: 120vh;
+  width: 100vw;
+  background-color: rgb(227, 230, 230);
+}
+
+.navbar {
+  color: white;
+  padding-block: 10px;
+  background-color: rgb(15, 20, 26);
+  display: flex;
+  flex: row;
+  padding-inline: 10px;
+}
+
+.delivery-navbar {
+  margin-left: 5px;
+  max-width: 120px;
+  word-wrap: break-word;
+  display: flex;
+}
+
+.search-box {
+  width: inherit;
+}
+
+.search-box-icon {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #febd69;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.search-product {
+  width: 50vw;
+  margin-inline: 10px;
+  display: flex;
+}
+
+.fs-small {
+  font-size: small;
+}
+
+.fs-medium {
+  font-size: medium;
+}
+
+.account {
+  margin-inline: 10px;
+  width: 140px;
+}
+
+.product-search-dropbox {
+  margin: 0;
+}
+
+.language-search-dropbox {
+  padding-inline: 5px;
+}
+
+.returns-and-orders {
+  width: 83px;
+}
+
+.cart-icon {
+  z-index: 1;
+  font-size: 40px !important;
+}
+
+.cart-container {
+  position: relative;
+  margin-left: 10px;
+}
+
+.cart-quantity {
+  font-weight: 1000;
+  font-size: 25px;
+  z-index: 100;
+  color: orange;
+  margin-top: -8px;
+  position: absolute;
+  top: 0;
+  left: 15%;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.b-fs {
+  font-size: 13px;
+}
+
+.second-navbar {
+  box-sizing: border-box;
+  font-size: 14px !important;
+  color: white;
+  width: 100vw;
+  padding-block: 10px;
+  display: flex;
+  padding-inline: 10px;
+  justify-content: space-between;
+  background-color: rgb(35, 47, 62);
+}
+
+.left-second-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.left-second-navbar > *:not(:nth-child(1)) {
+  padding-right: 20px;
+}
+
+.hero-section {
+  box-sizing: border-box;
+  padding-top: 15%;
+  width: 100vw;
+  height: 80vh;
+  background-image: url("Resources/sofa.jpg");
+  background-size: cover;
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.f-size-12 {
+  font-size: 8;
+}
+
+.m-3 {
+  margin: 3;
+}
+
+.p-3 {
+  padding: 3;
+}
+
+.card {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  max-width: 250px;
+}
+
+.card-column {
+  overflow: hidden;
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  margin-left: -30px;
+  width: 80%;
+  position: relative;
+}
+
+.card > img {
+  height: 80%;
+}
+
+.card-column > a {
+  font-size: 11px;
+  text-decoration: none;
+  color: black;
+}
+
+.sign-in-card {
+  max-height: 100px;
+}
+
+.sign-in-button {
+  margin: 5px;
+  padding: 7px;
+  background-color: yellow;
+  border-radius: 10px;
+  border: 0px solid transparent;
+}
+
+.card-footer {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(57, 187, 216) !important;
+}
+
+.advertise-card {
+  margin: -20px -20px -20px -20px;
+  height: 250px !important;
+}
