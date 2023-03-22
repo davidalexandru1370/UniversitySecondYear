@@ -78,7 +78,6 @@ public class IncidentRepository : IIncidentsRepository
 
     public Task<IEnumerable<Incident>> GetIncidentsByVehicleId(Guid vehicleId)
     {
-        //throw new NotImplementedException();
         var incidents = _rentACarDbContext.Incidents.Where(v => v.VehicleId == vehicleId) as IEnumerable<Incident>;
         return Task.FromResult(incidents);
     }
