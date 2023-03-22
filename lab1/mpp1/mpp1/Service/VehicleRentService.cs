@@ -1,5 +1,6 @@
 
 using mpp1.Model;
+using mpp1.Model.DTO;
 using mpp1.Repository.Interfaces;
 using mpp1.Service.Interfaces;
 
@@ -8,9 +9,11 @@ namespace mpp1.Service;
 public class VehicleRentService : IVehicleRentService
 {
     private IVehicleRentRepository _vehicleRentRepository;
+    private IClientService _clientService;
 
-    public VehicleRentService(IVehicleRentRepository vehicleRentRepository)
+    public VehicleRentService(IVehicleRentRepository vehicleRentRepository, IClientService clientService)
     {
+        _clientService = clientService;
         _vehicleRentRepository = vehicleRentRepository;
     }
 
@@ -50,6 +53,28 @@ public class VehicleRentService : IVehicleRentService
     public async Task<VehicleRent> GetVehicleRentById(Guid vehicleRentId)
     {
         var result = await _vehicleRentRepository.GetVehicleRentById(vehicleRentId);
+        return result;
+    }
+
+    public async Task<IEnumerable<ClientDTO>> GetMostActiveClients()
+    {
+        var result = (from E in await _vehicleRentRepository.GetAllRents()
+                join C in await _clientService.GetAllClients() on E.ClientId equals C.Id
+                group C by E.ClientId
+                into g
+                            
+                select new ClientDTO
+                { 
+                    Birthday = g.ToList()[0].Birthday,
+                    CNP = g.ToList()[0].CNP,
+                    Name = g.ToList()[0].Name,
+                    Nationality = g.ToList()[0].Nationality,
+                    CardNumber = g.ToList()[0].CardNumber,
+                    NumberOfIncidents = g.Count()
+                }
+
+            ).OrderByDescending(x => x.NumberOfIncidents);
+
         return result;
     }
 }
