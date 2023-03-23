@@ -62,7 +62,6 @@ public class VehicleRentService : IVehicleRentService
                 join C in await _clientService.GetAllClients() on E.ClientId equals C.Id
                 group C by E.ClientId
                 into g
-                            
                 select new ClientDTO
                 { 
                     Birthday = g.ToList()[0].Birthday,
@@ -70,10 +69,10 @@ public class VehicleRentService : IVehicleRentService
                     Name = g.ToList()[0].Name,
                     Nationality = g.ToList()[0].Nationality,
                     CardNumber = g.ToList()[0].CardNumber,
-                    NumberOfIncidents = g.Count()
+                    NumberOfRents = g.Count()
                 }
 
-            ).OrderByDescending(x => x.NumberOfIncidents);
+            ).OrderByDescending(x => x.NumberOfRents);
 
         return result;
     }

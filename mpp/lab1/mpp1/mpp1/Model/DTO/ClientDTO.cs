@@ -7,5 +7,5 @@ public class ClientDTO
     public string CNP { get; set; }
     public DateOnly Birthday { get; set; }
     public string Nationality { get; set; }
-    public int NumberOfIncidents { get; set; }
+    public int NumberOfRents { get; set; }
 }
