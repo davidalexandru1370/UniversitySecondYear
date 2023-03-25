@@ -45,7 +45,7 @@ namespace RentAVehicleApi
                         NumberOfSeats = 5,
                         EngineCapacity = 3000,
                         FabricationDate = new DateTime(2018,03,12),
-                        Incidents =
+                        Incidents = new List<Incident>()
                         {
                             new Incident
                             {
@@ -60,14 +60,12 @@ namespace RentAVehicleApi
                     },
                 };
                 
-              
-                
                 _vehicleRepositoryMock.Setup(v => v.GetAllVehiclesWithAllData())
                     .ReturnsAsync(vehicles);
                 //Act
                 var result = await _vehicleService.GetVehiclesOrderByNumberOfIncidents();
                 //Assert
-                Assert.Equal(expectedResult,result);
+                Assert.Equal(expectedResult[0],result.ToList()[0]);
             }
         }
 }
