@@ -1,19 +1,24 @@
 using mpp1.Model;
 using mpp1.Repository.Interfaces;
+using mpp1.Service.Interfaces;
+using mpp1.Validators;
 
 namespace mpp1.Service;
 
 public class IncidentService : IIncidentService
 {
+    private IVehicleService _vehicleService;
     private IIncidentsRepository _incidentsRepository;
 
-    public IncidentService(IIncidentsRepository incidentsRepository)
+    public IncidentService(IIncidentsRepository incidentsRepository, IVehicleService vehicleService)
     {
         _incidentsRepository = incidentsRepository;
+        _vehicleService = vehicleService;
     }
 
     public async Task AddIncident(Incident incident)
     {
+        IncidentValidator.ValidateIncident(incident, await _vehicleService.GetVehicleById(incident.VehicleId));
         await _incidentsRepository.AddIncident(incident);
     }
 
