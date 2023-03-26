@@ -44,15 +44,7 @@ public class VehicleRentTests
                 Name = "Andrei",
                 Birthday = new DateOnly(2002,08,14)
             },
-            new Client()
-            {
-                Id = Guid.Parse("69a76704-eeec-5f8b-f90f-08db233c133f"),
-                CardNumber = "1234-5678-9123-4569",
-                Nationality = "Romanian",
-                CNP = "5020320691002",
-                Name = "Paul",
-                Birthday = new DateOnly(2002,08,22)
-            },
+
         };
 
         var rents = new List<VehicleRent>()
@@ -120,15 +112,7 @@ public class VehicleRentTests
                 Birthday = new DateOnly(2002, 08, 14),
                 NumberOfRents = 1
             },
-            new ClientDTO()
-            {
-                CardNumber = "1234-5678-9123-4569",
-                Nationality = "Romanian",
-                CNP = "5020320691002",
-                Name = "Paul",
-                Birthday = new DateOnly(2002, 08, 22),
-                NumberOfRents = 0
-            }
+
         };
 
         _clientRepositoryMock.Setup(x => x.GetAllClients()).ReturnsAsync(clients);
@@ -138,6 +122,8 @@ public class VehicleRentTests
         var actualResult =  await _vehicleRentService.GetMostActiveClients();
         //Assert
         Assert.Equal(actualResult.ToList()[0],expectedResult[0]);
+        Assert.Equal(actualResult.ToList()[1],expectedResult[1]);
+        Assert.Equal(actualResult.Count(),expectedResult.Count());
     }
 
 }
