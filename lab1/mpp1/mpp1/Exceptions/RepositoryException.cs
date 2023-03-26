@@ -1,4 +1,4 @@
-namespace mpp1.Repository;
+namespace mpp1.Exceptions;
 
 public class RepositoryException : Exception
 {
