@@ -30,7 +30,10 @@ public class IncidentsController : ControllerBase
         {
             return BadRequest(repositoryException.Message);
         }
-       
+        catch (ValidationException validationException)
+        {
+            return BadRequest(validationException.Message);
+        }
     }
 
     [HttpGet]
