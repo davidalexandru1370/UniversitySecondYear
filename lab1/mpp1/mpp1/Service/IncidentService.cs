@@ -1,3 +1,4 @@
+using mpp1.Exceptions;
 using mpp1.Model;
 using mpp1.Repository.Interfaces;
 using mpp1.Service.Interfaces;
@@ -47,4 +48,20 @@ public class IncidentService : IIncidentService
         return _incidentsRepository.GetIncidentsByVehicleId(vehicleId);
     }
 
+    public async Task ChangeIncidentsIdToAnotherVehicleId(Guid vehicleId, IEnumerable<Guid> incidentIds)
+    {
+        try
+        {
+            foreach (var incidentId in incidentIds)
+            {
+                var incident = await _incidentsRepository.GetIncidentById(incidentId);
+                incident.VehicleId = vehicleId;
+                await UpdateIncident(incident);
+            }
+        }
+        catch (Exception e)
+        {
+            throw new RentACarException(e.Message);
+        }
+    }
 }

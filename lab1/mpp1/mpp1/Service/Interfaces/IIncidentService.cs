@@ -16,4 +16,6 @@ public interface IIncidentService
 
     public Task<IEnumerable<Incident>> GetIncidentsByVehicleId(Guid vehicleId);
 
+    public Task ChangeIncidentsIdToAnotherVehicleId(Guid vehicleId, IEnumerable<Guid> incidentIds);
+
 }
