@@ -126,7 +126,7 @@ public class VehicleController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPatch("bulk-update/{vehicleId}")]
+    [HttpPost("bulk-update/vehicle/{vehicleId}/incidents")]
     public async Task<IActionResult> UpdateBulkOfIncidentsByVehicleId([FromRoute]Guid vehicleId, [FromBody]IEnumerable<Guid> incidentIds)
     {
         try
