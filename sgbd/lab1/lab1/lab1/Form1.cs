@@ -119,5 +119,10 @@ namespace lab1
             MessageBox.Show(text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
