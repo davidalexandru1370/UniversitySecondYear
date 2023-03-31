@@ -58,6 +58,13 @@ public class VehicleRentService : IVehicleRentService
 
     public async Task<IEnumerable<ClientDTO>> GetMostActiveClients()
     {
+        /*
+         * SELECT C.*, Count(*) as NumberOfRents FROM Clients C
+         * left join VehicleRents VR on C.id = VR.ClientId
+         * GROUP BY C.Id
+         * order by NumberOfRents
+         */
+     
         var result = (from E in await _vehicleRentRepository.GetAllRents()
                 join C in await _clientService.GetAllClients() on E.ClientId equals C.Id
                 group C by E.ClientId
@@ -71,7 +78,6 @@ public class VehicleRentService : IVehicleRentService
                     CardNumber = g.ToList()[0].CardNumber,
                     NumberOfRents = g.Count()
                 }
-
             ).OrderByDescending(x => x.NumberOfRents);
 
         return result;

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using mpp1.DatabaseContext;
+using mpp1.Exceptions;
 using mpp1.Model;
 using mpp1.Repository.Interfaces;
 
