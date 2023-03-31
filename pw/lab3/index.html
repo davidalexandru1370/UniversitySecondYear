@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Amazon</title>
+  </head>
+  <body>
+    <!-- Develop an html+css web document that looks like the following web page:
+    https://www.amazon.com/. You should clone about one screen of this web page (not the whole web page)
+    and your html document should look approximately 90% as the given web page.
+    No interactivity should be added (e.g. javascript, :hover effects etc.)
+    and you are not allowed to use any css or javascript library. -->
+    <div class="content">
+      <div class="navbar">
+        <div class="navbar-logo">
+          <img
+            alt="amazon logo"
+            src="Resources/AMZN_BIG.D-8fb0be81.png"
+            width="113"
+            height="35"
+          />
+        </div>
+        <div class="delivery-navbar">
+          <span
+            class="material-symbols-outlined"
+            style="
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+            "
+          >
+            location_on
+          </span>
+          <div class="delivery-navbar-content">
+            <span class="fs-small">Deliver to</span>
+            <b class="b-fs">Romania</b>
+          </div>
+        </div>
+        <div class="search-product">
+          <select name="category" class="product-search-dropbox">
+            <option value="aps">All Departments</option>
+            <option value="arts-crafts-intl-ship">Arts &amp; Crafts</option>
+            <option value="automotive-intl-ship">Automotive</option>
+            <option value="baby-products-intl-ship">Baby</option>
+            <option value="beauty-intl-ship">Beauty &amp; Personal Care</option>
+            <option value="stripbooks-intl-ship">Books</option>
+            <option value="fashion-boys-intl-ship">Boys' Fashion</option>
+            <option value="computers-intl-ship">Computers</option>
+            <option value="deals-intl-ship">Deals</option>
+            <option value="digital-music">Digital Music</option>
+            <option value="electronics-intl-ship">Electronics</option>
+            <option value="fashion-girls-intl-ship">Girls' Fashion</option>
+            <option value="hpc-intl-ship">Health &amp; Household</option>
+            <option value="kitchen-intl-ship">Home &amp; Kitchen</option>
+            <option value="industrial-intl-ship">
+              Industrial &amp; Scientific
+            </option>
+            <option value="digital-text">Kindle Store</option>
+            <option value="luggage-intl-ship">Luggage</option>
+            <option value="fashion-mens-intl-ship">Men's Fashion</option>
+            <option value="movies-tv-intl-ship">Movies &amp; TV</option>
+            <option value="music-intl-ship">Music, CDs &amp; Vinyl</option>
+            <option value="pets-intl-ship">Pet Supplies</option>
+            <option value="instant-video">Prime Video</option>
+            <option value="software-intl-ship">Software</option>
+            <option value="sporting-intl-ship">Sports &amp; Outdoors</option>
+            <option value="tools-intl-ship">
+              Tools &amp; Home Improvement
+            </option>
+            <option value="toys-and-games-intl-ship">Toys &amp; Games</option>
+            <option value="videogames-intl-ship">Video Games</option>
+            <option value="fashion-womens-intl-ship">Women's Fashion</option>
+          </select>
+          <input type="text" value="Search Amazon" class="search-box" />
+          <div class="search-box-icon">
+            <span class="material-symbols-outlined"> search </span>
+          </div>
+        </div>
+        <select name="language" class="language-search-dropbox">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+        <div class="account">
+          <span class="fs-small">Hello, sign in</span>
+          <b class="b-fs">Account & Lists</b>
+        </div>
+        <div class="returns-and-orders">
+          <span class="fs-small">Returns</span>
+          <b class="b-fs">& Orders</b>
+        </div>
+        <div class="cart-container">
+          <span class="material-symbols-outlined cart-icon">
+            production_quantity_limits
+          </span>
+          <span>Cart</span>
+          <span class="cart-quantity">0</span>
+        </div>
+      </div>
+      <div class="second-navbar">
+        <div class="left-second-navbar">
+          <span class="material-symbols-outlined" style="margin-right: 5px">
+            menu
+          </span>
+          <b>All</b>
+          <span>Today's Deals</span>
+          <span>Customer Service</span>
+          <span>Registry</span>
+          <span>Gift Cards</span>
+          <span>Sell</span>
+        </div>
+        <b>Shop great deals now</b>
+      </div>
+      <div class="hero-section">
+        <div class="cards-section">
+          <div class="card">
+            <b class="m-3" style="margin-bottom: 10px">Gaming accesories</b>
+            <div class="d-flex flex-direction-row">
+              <div class="card-column">
+                <div class="card-image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Headset_1x._SY116_CB667159060_.jpg"
+                    alt="headsets"
+                  />
+                </div>
+                <a class="f-size-12" href="#">Headsets</a>
+                <div class="card-image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Mouse_1x._SY116_CB667159063_.jpg"
+                    alt="mouse"
+                  />
+                </div>
+                <a class="f-size-12" href="#">Computer mice</a>
+              </div>
+              <div class="card-column">
+                <div class="card-image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Keyboard_1x._SY116_CB667159063_.jpg"
+                    alt="Keyboards"
+                  />
+                </div>
+                <a class="f-size-12" href="#">Keyboards</a>
+                <div class="card-image">
+                  <img
+                    src="https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Chair_1x._SY116_CB667159060_.jpg"
+                    alt="chair"
+                  />
+                </div>
+                <a class="f-size-12" href="#">Chairs</a>
+              </div>
+            </div>
+            <a class="card-footer" href="#">See more</a>
+          </div>
+          <div class="card">
+            <b>Deals & promotions</b>
+            <img
+              src="https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Deals_1x._SY304_CB430401028_.jpg"
+              alt="courier"
+            />
+            <a class="card-footer" href="#">Shop now</a>
+          </div>
+          <div class="card">
+            <b>Deals & promotions</b>
+            <img
+              src="https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_Beauty_1x._SY304_CB432774351_.jpg"
+              alt="courier"
+            />
+            <a class="card-footer" href="#">Shop now</a>
+          </div>
+          <div class="d-flex flex-direction-column">
+            <div class="card sign-in-card">
+              <b>Sign in for the best experience</b>
+              <button class="sign-in-button">Sign in securely</button>
+            </div>
+            <div class="card">
+              <img
+                src="https://images-na.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T1/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_1x._CB418309979_.jpg"
+                alt="am"
+                class="advertise-card"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

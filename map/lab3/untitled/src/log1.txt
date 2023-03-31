@@ -1,0 +1,1875 @@
+Id:1919186587
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1919186587
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:159013378
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=int}, second=CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1814636631
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+22
+
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=int}, second=CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:48041190
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+22
+
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1568657236
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1922577165
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=bool}, second=CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}}, VariableDeclarationStatement{name='a', type=bool}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}}, VariableDeclarationStatement{name='a', type=bool}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}}]}
+Symbol table:
+a = Bool(false)
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}}]}
+Symbol table:
+a = Bool(false)
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+a = Bool(false)
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+a = Bool(false)
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}]}
+Symbol table:
+a = Bool(false)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}, second=CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}}]}
+Symbol table:
+a = Bool(false)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}, AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}]}
+Symbol table:
+a = Bool(false)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}, AssignStatement{id='a', expression=ValueExpression{value=Bool(true)}}]}
+Symbol table:
+a = Bool(false)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}]}
+Symbol table:
+a = Bool(true)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[CompundStatement{first=if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}, second=Print: Variable expression = v}]}
+Symbol table:
+a = Bool(true)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}]}
+Symbol table:
+a = Bool(true)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, if(Variable expression = a){
+	AssignStatement{id='v', expression=ValueExpression{value=2}}
+}else{
+	AssignStatement{id='v', expression=ValueExpression{value=3}}
+}]}
+Symbol table:
+a = Bool(true)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+a = Bool(true)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+a = Bool(true)
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+a = Bool(true)
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+a = Bool(true)
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1746654570
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+a = Bool(true)
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:152947304
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:829438744
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='v', type=int}, second=CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}, VariableDeclarationStatement{name='v', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='v', expression=ValueExpression{value=2}}, second=Print: Variable expression = v}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v, AssignStatement{id='v', expression=ValueExpression{value=2}}]}
+Symbol table:
+v = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[Print: Variable expression = v]}
+Symbol table:
+v = 2
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1903189568
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+v = 2
+
+Out:
+2
+
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=int}, second=CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:2137718770
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+22
+
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='a', type=int}, second=CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}, VariableDeclarationStatement{name='a', type=int}]}
+Symbol table:
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=VariableDeclarationStatement{name='b', type=int}, second=CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}, VariableDeclarationStatement{name='b', type=int}]}
+Symbol table:
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}, second=CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}, AssignStatement{id='a', expression=ArithmeticExpression{expression1=ValueExpression{value=2}, expression2=ArithmeticExpression{expression1=ValueExpression{value=3}, expression2=ValueExpression{value=5}, operation='*'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 0
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[CompundStatement{first=AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}, second=Print: Variable expression = b}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b, AssignStatement{id='b', expression=ArithmeticExpression{expression1=Variable expression = a, expression2=ArithmeticExpression{expression1=ArithmeticExpression{expression1=ValueExpression{value=-4}, expression2=ValueExpression{value=2}, operation='/'}, expression2=ValueExpression{value=7}, operation='+'}, operation='+'}}]}
+Symbol table:
+b = 0
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[Print: Variable expression = b]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+No output.
+File table: 
+Heap: 
+
+Id:1230793191
+Execution stack:
+ MyStack{stack=[]}
+Symbol table:
+b = 22
+a = 17
+
+Out:
+22
+
+File table: 
+Heap: 
+
