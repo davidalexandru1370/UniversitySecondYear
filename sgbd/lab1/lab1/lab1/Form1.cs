@@ -9,7 +9,7 @@ namespace lab1
         {
             InitializeComponent();
             instructorsDataGridView1.AutoGenerateColumns = true;
-            
+
         }
         private static string _connectionString =
             "Data Source=localhost;" +
@@ -22,6 +22,8 @@ namespace lab1
             "MultiSubnetFailover=False";
         private DataSet _dataSet = new();
         private SqlConnection _sqlConnection = new(_connectionString);
+        private string _lastInstructorCNPSelected = String.Empty;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             DisplayAllInstructors();
@@ -33,8 +35,8 @@ namespace lab1
             _sqlConnection.Open();
             string instructorsTableName = "Instructors";
             SqlDataAdapter adapter = new();
-            adapter.SelectCommand = new SqlCommand($"SELECT * FROM {instructorsTableName}",_sqlConnection);
-            adapter.Fill(_dataSet,"Instructors");
+            adapter.SelectCommand = new SqlCommand($"SELECT * FROM {instructorsTableName}", _sqlConnection);
+            adapter.Fill(_dataSet, "Instructors");
             instructorsDataGridView1.Refresh();
             _sqlConnection.Close();
         }
@@ -48,7 +50,7 @@ namespace lab1
             adapter.SelectCommand = new SqlCommand($"SELECT * FROM {vehiclesTableName} where InstructorCNP = {instructorCNP}", _sqlConnection);
             _dataSet.Tables["Vehicles"]?.Clear();
             adapter.Fill(_dataSet, "Vehicles");
-            
+            _lastInstructorCNPSelected = instructorCNP;
             vehiclesDataGridView.DataSource = _dataSet.Tables["Vehicles"];
             vehiclesDataGridView.Refresh();
             _sqlConnection.Close();
@@ -56,7 +58,7 @@ namespace lab1
 
         private void vehiclesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void instructorsDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -68,18 +70,53 @@ namespace lab1
                 {
                     var cellValue = instructorsDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     //MessageBox.Show(cellValue);
-                    DisplayVehiclesByInstructorId(cellValue);
+                    DisplayVehiclesByInstructorId(cellValue!);
                 }
             }
             catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Casuta invalida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
         }
 
         private void addCarButton_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(instructorCNPTextBox.Text) ||
+                String.IsNullOrWhiteSpace(carChasisTextBox.Text) ||
+                String.IsNullOrWhiteSpace(carPlateTextBox.Text))
+            {
+                //MessageBox.Show("Invalid text fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                displayMessageBoxError("Invalid text fields!");
+                return;
+            }
+
+            try
+            {
+                _sqlConnection.Open();
+                SqlCommand cmd = new SqlCommand($"Insert into Vehicles(InstructorCNP,CarChasis,CarPlate)" +
+                    $" values(" +
+                    $"{instructorCNPTextBox.Text}," +
+                    $"{carChasisTextBox.Text}," +
+                    $"'{carPlateTextBox.Text}')", _sqlConnection);
+
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            catch (Exception exception)
+            {
+                displayMessageBoxError(exception.Message);
+            }
+            finally
+            {
+                _sqlConnection.Close();
+                DisplayVehiclesByInstructorId(_lastInstructorCNPSelected);
+            }
+        }
+
+        private void displayMessageBoxError(string text)
+        {
+            MessageBox.Show(text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
     }

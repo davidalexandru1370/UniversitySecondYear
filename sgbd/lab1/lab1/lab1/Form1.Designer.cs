@@ -30,9 +30,9 @@
         {
             this.instructorsDataGridView1 = new System.Windows.Forms.DataGridView();
             this.vehiclesDataGridView = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.instructorCNPTextBox = new System.Windows.Forms.TextBox();
+            this.carPlateTextBox = new System.Windows.Forms.TextBox();
+            this.carChasisTextBox = new System.Windows.Forms.TextBox();
             this.addCarButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,26 +61,26 @@
             this.vehiclesDataGridView.TabIndex = 1;
             this.vehiclesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vehiclesDataGridView_CellClick);
             // 
-            // textBox1
+            // instructorCNPTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 352);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 23);
-            this.textBox1.TabIndex = 2;
+            this.instructorCNPTextBox.Location = new System.Drawing.Point(107, 352);
+            this.instructorCNPTextBox.Name = "instructorCNPTextBox";
+            this.instructorCNPTextBox.Size = new System.Drawing.Size(177, 23);
+            this.instructorCNPTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // carPlateTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 410);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 23);
-            this.textBox2.TabIndex = 3;
+            this.carPlateTextBox.Location = new System.Drawing.Point(107, 410);
+            this.carPlateTextBox.Name = "carPlateTextBox";
+            this.carPlateTextBox.Size = new System.Drawing.Size(177, 23);
+            this.carPlateTextBox.TabIndex = 3;
             // 
-            // textBox3
+            // carChasisTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(107, 381);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 23);
-            this.textBox3.TabIndex = 4;
+            this.carChasisTextBox.Location = new System.Drawing.Point(107, 381);
+            this.carChasisTextBox.Name = "carChasisTextBox";
+            this.carChasisTextBox.Size = new System.Drawing.Size(177, 23);
+            this.carChasisTextBox.TabIndex = 4;
             // 
             // addCarButton
             // 
@@ -129,9 +129,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addCarButton);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.carChasisTextBox);
+            this.Controls.Add(this.carPlateTextBox);
+            this.Controls.Add(this.instructorCNPTextBox);
             this.Controls.Add(this.vehiclesDataGridView);
             this.Controls.Add(this.instructorsDataGridView1);
             this.Name = "Form1";
@@ -148,9 +148,9 @@
 
         private DataGridView instructorsDataGridView1;
         private DataGridView vehiclesDataGridView;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox instructorCNPTextBox;
+        private TextBox carPlateTextBox;
+        private TextBox carChasisTextBox;
         private Button addCarButton;
         private Label label1;
         private Label label2;
