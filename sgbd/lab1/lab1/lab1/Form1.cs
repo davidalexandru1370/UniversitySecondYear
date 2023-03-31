@@ -41,7 +41,7 @@ namespace lab1
             _sqlConnection.Close();
         }
 
-        private void DisplayVehiclesByInstructorId(string instructorCNP)
+        private void displayVehiclesByInstructorId(string instructorCNP)
         {
             _sqlConnection.Open();
             string vehiclesTableName = "Vehicles";
@@ -70,7 +70,7 @@ namespace lab1
                 {
                     var cellValue = instructorsDataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     //MessageBox.Show(cellValue);
-                    DisplayVehiclesByInstructorId(cellValue!);
+                    displayVehiclesByInstructorId(cellValue!);
                 }
             }
             catch (ArgumentOutOfRangeException)
@@ -110,7 +110,7 @@ namespace lab1
             finally
             {
                 _sqlConnection.Close();
-                DisplayVehiclesByInstructorId(_lastInstructorCNPSelected);
+                displayVehiclesByInstructorId(_lastInstructorCNPSelected);
             }
         }
 
@@ -122,7 +122,37 @@ namespace lab1
 
         private void updateButton_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(carChasisUpdateTextField.Text) ||
+               String.IsNullOrWhiteSpace(carIdUpdateTextField.Text) ||
+               String.IsNullOrWhiteSpace(carPlateUpdateTextField.Text) ||
+               String.IsNullOrWhiteSpace(instructorCNPUpdateTextField.Text))
+            {
+                //MessageBox.Show("Invalid text fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                displayMessageBoxError("Invalid text fields!");
+                return;
+            }
 
+            try
+            {
+                _sqlConnection.Open();
+                SqlCommand cmd = new SqlCommand($"UPDATE Vehicles SET " +
+                    $"InstructorCNP = {instructorCNPUpdateTextField.Text}," +
+                    $"CarChasis = {carChasisUpdateTextField.Text}," +
+                    $"CarPlate = '{carPlateUpdateTextField.Text}' " +
+                    $"where Id = {carIdUpdateTextField.Text}", _sqlConnection);
+
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            catch (Exception exception)
+            {
+                displayMessageBoxError(exception.Message);
+            }
+            finally
+            {
+                _sqlConnection.Close();
+                displayVehiclesByInstructorId(_lastInstructorCNPSelected);
+            }
         }
     }
 }

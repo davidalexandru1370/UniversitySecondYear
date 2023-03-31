@@ -40,14 +40,14 @@
             this.vehiclesTabControl = new System.Windows.Forms.TabControl();
             this.addTab = new System.Windows.Forms.TabPage();
             this.updateTab = new System.Windows.Forms.TabPage();
-            this.instructorCNPTextField = new System.Windows.Forms.TextBox();
+            this.instructorCNPUpdateTextField = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.carPlateTextField = new System.Windows.Forms.TextBox();
+            this.carPlateUpdateTextField = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.carChasisTextField = new System.Windows.Forms.TextBox();
+            this.carChasisUpdateTextField = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
-            this.idUpdateTextField = new System.Windows.Forms.TextBox();
+            this.carIdUpdateTextField = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.instructorsDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesDataGridView)).BeginInit();
@@ -164,13 +164,13 @@
             // 
             // updateTab
             // 
-            this.updateTab.Controls.Add(this.idUpdateTextField);
+            this.updateTab.Controls.Add(this.carIdUpdateTextField);
             this.updateTab.Controls.Add(this.label7);
-            this.updateTab.Controls.Add(this.instructorCNPTextField);
+            this.updateTab.Controls.Add(this.instructorCNPUpdateTextField);
             this.updateTab.Controls.Add(this.label4);
-            this.updateTab.Controls.Add(this.carPlateTextField);
+            this.updateTab.Controls.Add(this.carPlateUpdateTextField);
             this.updateTab.Controls.Add(this.label5);
-            this.updateTab.Controls.Add(this.carChasisTextField);
+            this.updateTab.Controls.Add(this.carChasisUpdateTextField);
             this.updateTab.Controls.Add(this.label6);
             this.updateTab.Controls.Add(this.updateButton);
             this.updateTab.Location = new System.Drawing.Point(4, 24);
@@ -181,12 +181,12 @@
             this.updateTab.Text = "Update";
             this.updateTab.UseVisualStyleBackColor = true;
             // 
-            // instructorCNPTextField
+            // instructorCNPUpdateTextField
             // 
-            this.instructorCNPTextField.Location = new System.Drawing.Point(120, 59);
-            this.instructorCNPTextField.Name = "instructorCNPTextField";
-            this.instructorCNPTextField.Size = new System.Drawing.Size(177, 23);
-            this.instructorCNPTextField.TabIndex = 9;
+            this.instructorCNPUpdateTextField.Location = new System.Drawing.Point(120, 59);
+            this.instructorCNPUpdateTextField.Name = "instructorCNPUpdateTextField";
+            this.instructorCNPUpdateTextField.Size = new System.Drawing.Size(177, 23);
+            this.instructorCNPUpdateTextField.TabIndex = 9;
             // 
             // label4
             // 
@@ -197,12 +197,12 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Car Plate";
             // 
-            // carPlateTextField
+            // carPlateUpdateTextField
             // 
-            this.carPlateTextField.Location = new System.Drawing.Point(120, 117);
-            this.carPlateTextField.Name = "carPlateTextField";
-            this.carPlateTextField.Size = new System.Drawing.Size(177, 23);
-            this.carPlateTextField.TabIndex = 10;
+            this.carPlateUpdateTextField.Location = new System.Drawing.Point(120, 117);
+            this.carPlateUpdateTextField.Name = "carPlateUpdateTextField";
+            this.carPlateUpdateTextField.Size = new System.Drawing.Size(177, 23);
+            this.carPlateUpdateTextField.TabIndex = 10;
             // 
             // label5
             // 
@@ -213,12 +213,12 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Car Chasis";
             // 
-            // carChasisTextField
+            // carChasisUpdateTextField
             // 
-            this.carChasisTextField.Location = new System.Drawing.Point(120, 88);
-            this.carChasisTextField.Name = "carChasisTextField";
-            this.carChasisTextField.Size = new System.Drawing.Size(177, 23);
-            this.carChasisTextField.TabIndex = 11;
+            this.carChasisUpdateTextField.Location = new System.Drawing.Point(120, 88);
+            this.carChasisUpdateTextField.Name = "carChasisUpdateTextField";
+            this.carChasisUpdateTextField.Size = new System.Drawing.Size(177, 23);
+            this.carChasisUpdateTextField.TabIndex = 11;
             // 
             // label6
             // 
@@ -240,12 +240,12 @@
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
-            // idUpdateTextField
+            // carIdUpdateTextField
             // 
-            this.idUpdateTextField.Location = new System.Drawing.Point(120, 30);
-            this.idUpdateTextField.Name = "idUpdateTextField";
-            this.idUpdateTextField.Size = new System.Drawing.Size(177, 23);
-            this.idUpdateTextField.TabIndex = 16;
+            this.carIdUpdateTextField.Location = new System.Drawing.Point(120, 30);
+            this.carIdUpdateTextField.Name = "carIdUpdateTextField";
+            this.carIdUpdateTextField.Size = new System.Drawing.Size(177, 23);
+            this.carIdUpdateTextField.TabIndex = 16;
             // 
             // label7
             // 
@@ -292,13 +292,13 @@
         private TabControl vehiclesTabControl;
         private TabPage addTab;
         private TabPage updateTab;
-        private TextBox idUpdateTextField;
+        private TextBox carIdUpdateTextField;
         private Label label7;
-        private TextBox instructorCNPTextField;
+        private TextBox instructorCNPUpdateTextField;
         private Label label4;
-        private TextBox carPlateTextField;
+        private TextBox carPlateUpdateTextField;
         private Label label5;
-        private TextBox carChasisTextField;
+        private TextBox carChasisUpdateTextField;
         private Label label6;
         private Button updateButton;
     }
