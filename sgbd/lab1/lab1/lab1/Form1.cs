@@ -77,5 +77,10 @@ namespace lab1
             }
            
         }
+
+        private void addCarButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
