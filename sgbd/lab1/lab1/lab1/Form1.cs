@@ -154,5 +154,32 @@ namespace lab1
                 displayVehiclesByInstructorId(_lastInstructorCNPSelected);
             }
         }
+
+        private void deleteByIdButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(deleteByIdTextBox.Text))
+            {
+                displayMessageBoxError("Invalid text fields!");
+                return;
+            }
+
+            try
+            {
+                _sqlConnection.Open();
+                SqlCommand cmd = new SqlCommand($"Delete from Vehicles where Id = ${deleteByIdTextBox.Text}", _sqlConnection);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            
+            }
+            catch (Exception exception)
+            {
+                displayMessageBoxError(exception.Message);
+            }
+            finally
+            {
+                _sqlConnection.Close();
+                displayVehiclesByInstructorId(_lastInstructorCNPSelected);
+            }
+        }
     }
 }

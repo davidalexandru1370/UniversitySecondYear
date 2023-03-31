@@ -40,6 +40,8 @@
             this.vehiclesTabControl = new System.Windows.Forms.TabControl();
             this.addTab = new System.Windows.Forms.TabPage();
             this.updateTab = new System.Windows.Forms.TabPage();
+            this.carIdUpdateTextField = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.instructorCNPUpdateTextField = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.carPlateUpdateTextField = new System.Windows.Forms.TextBox();
@@ -47,13 +49,16 @@
             this.carChasisUpdateTextField = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
-            this.carIdUpdateTextField = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.deleteTab = new System.Windows.Forms.TabPage();
+            this.deleteByIdTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.deleteByIdButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.instructorsDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesDataGridView)).BeginInit();
             this.vehiclesTabControl.SuspendLayout();
             this.addTab.SuspendLayout();
             this.updateTab.SuspendLayout();
+            this.deleteTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // instructorsDataGridView1
@@ -139,6 +144,7 @@
             // 
             this.vehiclesTabControl.Controls.Add(this.addTab);
             this.vehiclesTabControl.Controls.Add(this.updateTab);
+            this.vehiclesTabControl.Controls.Add(this.deleteTab);
             this.vehiclesTabControl.Location = new System.Drawing.Point(2, 340);
             this.vehiclesTabControl.Name = "vehiclesTabControl";
             this.vehiclesTabControl.SelectedIndex = 0;
@@ -180,6 +186,22 @@
             this.updateTab.TabIndex = 1;
             this.updateTab.Text = "Update";
             this.updateTab.UseVisualStyleBackColor = true;
+            // 
+            // carIdUpdateTextField
+            // 
+            this.carIdUpdateTextField.Location = new System.Drawing.Point(120, 30);
+            this.carIdUpdateTextField.Name = "carIdUpdateTextField";
+            this.carIdUpdateTextField.Size = new System.Drawing.Size(177, 23);
+            this.carIdUpdateTextField.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 15);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Id";
             // 
             // instructorCNPUpdateTextField
             // 
@@ -240,21 +262,44 @@
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
-            // carIdUpdateTextField
+            // deleteTab
             // 
-            this.carIdUpdateTextField.Location = new System.Drawing.Point(120, 30);
-            this.carIdUpdateTextField.Name = "carIdUpdateTextField";
-            this.carIdUpdateTextField.Size = new System.Drawing.Size(177, 23);
-            this.carIdUpdateTextField.TabIndex = 16;
+            this.deleteTab.Controls.Add(this.deleteByIdTextBox);
+            this.deleteTab.Controls.Add(this.label8);
+            this.deleteTab.Controls.Add(this.deleteByIdButton);
+            this.deleteTab.Location = new System.Drawing.Point(4, 24);
+            this.deleteTab.Name = "deleteTab";
+            this.deleteTab.Size = new System.Drawing.Size(791, 200);
+            this.deleteTab.TabIndex = 2;
+            this.deleteTab.Text = "Delete";
+            this.deleteTab.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // deleteByIdTextBox
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(17, 15);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Id";
+            this.deleteByIdTextBox.Location = new System.Drawing.Point(72, 23);
+            this.deleteByIdTextBox.Name = "deleteByIdTextBox";
+            this.deleteByIdTextBox.Size = new System.Drawing.Size(177, 23);
+            this.deleteByIdTextBox.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(34, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(17, 15);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Id";
+            // 
+            // deleteByIdButton
+            // 
+            this.deleteByIdButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteByIdButton.Location = new System.Drawing.Point(72, 72);
+            this.deleteByIdButton.Name = "deleteByIdButton";
+            this.deleteByIdButton.Size = new System.Drawing.Size(177, 31);
+            this.deleteByIdButton.TabIndex = 18;
+            this.deleteByIdButton.Text = "Delete";
+            this.deleteByIdButton.UseVisualStyleBackColor = true;
+            this.deleteByIdButton.Click += new System.EventHandler(this.deleteByIdButton_Click);
             // 
             // Form1
             // 
@@ -274,6 +319,8 @@
             this.addTab.PerformLayout();
             this.updateTab.ResumeLayout(false);
             this.updateTab.PerformLayout();
+            this.deleteTab.ResumeLayout(false);
+            this.deleteTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +348,9 @@
         private TextBox carChasisUpdateTextField;
         private Label label6;
         private Button updateButton;
+        private TabPage deleteTab;
+        private TextBox deleteByIdTextBox;
+        private Label label8;
+        private Button deleteByIdButton;
     }
 }
