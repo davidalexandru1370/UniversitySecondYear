@@ -30,11 +30,11 @@ public class VehicleController : ControllerBase
     
     [HttpGet]
     [Route("get-all")]
-    public ActionResult<IEnumerable<Vehicle>> GetAllVehicles()
+    public async Task<ActionResult<IEnumerable<Vehicle>>> GetAllVehicles()
     {
         try
         {
-            var result = _vehicleService.GetAllVehicles();
+            var result = await _vehicleService.GetAllVehicles();
             return Ok(result);
         }
         catch (RepositoryException repositoryException)
@@ -76,7 +76,7 @@ public class VehicleController : ControllerBase
 
     [HttpDelete]
     [Route("delete/{vehicleId}")]
-    public async Task<ActionResult> DeleteVehicle([FromRoute] Guid vehicleId)
+    public async Task<IActionResult> DeleteVehicle([FromRoute] Guid vehicleId)
     {
         try
         {
