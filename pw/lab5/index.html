@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desktops</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!--    Solve the following task using only the jQuery library (production version, jquery.min.js, 
+    or developement version, jquery.js);
+    YOU ARE NOT ALLOWED TO USE ANY OTHER JS LIBRARY, PLUGIN OR EXTENSION BESIDES THE JQUERY LIBRARY.
+    Write a web page which displays a vertically sliding desktop like the ones used on the Android or iOS.
+    The web page should have 4 desktops, each desktop having a distinct transparent background color or image and having distinct textual and image content.
+    A desktop is a large div occupying (exactly or almost) the whole browser window.
+    By default, desktop no. 1 should be shown to the user.
+    If the user clicks somewhere on the desktop the desktop should be slided vertically to the bottom of the window and from the top of
+    the window desktop no. 2 should slide vertically and occupy the whole browser window.
+     Desktop sliding should be an animated transition and one desktop should not just instantly dissapear and the next desktop be displayed instead. -->
+    <div class="container">
+      <div class="desktop" id="desktop1">
+        <div class="content">
+          <h1 id="desktopText">Desktop 1</h1>
+          <img
+            id="desktopImage"
+            src="Resources/0.jpeg"
+            alt="image1"
+            class="image"
+          />
+        </div>
+      </div>
+      <div class="desktop" id="desktop2">
+        <div class="content">
+          <h1 id="desktopText">Desktop 2</h1>
+          <img
+            id="desktopImage"
+            src="Resources/1.jpeg"
+            alt="image2"
+            class="image"
+          />
+        </div>
+      </div>
+      <div class="desktop" id="desktop3">
+        <div class="content">
+          <h1 id="desktopText">Desktop 3</h1>
+          <img
+            id="desktopImage"
+            src="Resources/2.jpeg"
+            alt="image3"
+            class="image"
+          />
+        </div>
+      </div>
+      <div class="desktop" id="desktop4">
+        <div class="content">
+          <h1 id="desktopText">Desktop 4</h1>
+          <img
+            id="desktopImage"
+            src="Resources/3.jpeg"
+            alt="image4"
+            class="image"
+          />
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="button" id="buttonPrevious">Previous</button>
+        <button class="button" id="buttonNext">Next</button>
+      </div>
+    </div>
+  </body>
+</html>
