@@ -1,9 +1,15 @@
 $(function () {
   function populateWithDocumentData() {
-    $.getJSON("showAllDocuments.php", function (json) {
-      console.log(json);
-      json.forEach(function (document) {
-        $("table").append(`<tr>
+    $.getJSON(
+      "showAllDocuments.php",
+      {
+        type: $("#typeInput").val(),
+        name: $("formatInput").val(),
+      },
+      function (json) {
+        $("table tr:gt(0)").remove();
+        json.forEach(function (document) {
+          $("table").append(`<tr>
         <td>${document[1]}</td>
         <td>${document[2]}</td>
         <td>${document[3]}</td>
@@ -15,9 +21,14 @@ $(function () {
             <br/>
         </td>
         `);
-      });
-    });
+        });
+      }
+    );
   }
+
+  $("#typeInput, #formatInput").on("input", function () {
+    populateWithDocumentData();
+  });
 
   populateWithDocumentData();
 });
