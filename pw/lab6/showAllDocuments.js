@@ -9,6 +9,10 @@ $(function () {
         <td>${document[3]}</td>
         <td>${document[4]}</td>
         <td>${document[5]}</td>
+        <td>
+            <a href=deleteDocument.php?id=${document[0]}>Delete</a>
+            <a href=updateDocument.php?id=${document[0]}>Update</a>
+        </td>
         `);
       });
     });
