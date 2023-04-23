@@ -11,7 +11,9 @@ $(function () {
         <td>${document[5]}</td>
         <td>
             <a href=deleteDocument.php?id=${document[0]}>Delete</a>
+            <br/>
             <a href=updateDocument.php?id=${document[0]}>Update</a>
+            <br/>
         </td>
         `);
       });
