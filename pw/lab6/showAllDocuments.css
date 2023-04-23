@@ -24,3 +24,9 @@ td {
   min-width: 100px;
   text-align: center;
 }
+
+.filtersWrapper {
+  margin-block: 20px;
+  display: flex;
+  justify-content: space-between;
+}
