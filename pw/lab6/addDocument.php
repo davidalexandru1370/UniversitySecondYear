@@ -1,7 +1,4 @@
 <?php
-
-phpinfo();
-
 require_once "connection.php";
 global $connection;
 
