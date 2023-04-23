@@ -1,0 +1,26 @@
+.content {
+  width: min-content;
+  min-width: 50%;
+}
+
+.text {
+  justify-content: center;
+  display: flex;
+}
+
+.documentsTable {
+  border: 1px solid black;
+  justify-content: center;
+  border-spacing: 0;
+}
+
+th {
+  border: 2px solid black;
+}
+
+td {
+  border: 2px solid black;
+  gap: 0px;
+  min-width: 100px;
+  text-align: center;
+}
