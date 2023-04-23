@@ -8,5 +8,5 @@ create table document(
     title varchar(100) not null,
     number_of_pages int not null,
     type varchar(100) not null,
-    format varchar(100) not null,
+    format varchar(100) not null
 );
