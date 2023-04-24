@@ -21,4 +21,12 @@ $(function () {
 
     Helper.index -= 1;
   });
+  $("#buttonNext").hover(() => {
+    if (Helper.index === 4) {
+      return;
+    }
+    $(`#desktop${Helper.index}`).slideUp("slow");
+    $(`#desktop${Helper.index + 1}`).slideDown("slow");
+    Helper.index += 1;
+  });
 });
