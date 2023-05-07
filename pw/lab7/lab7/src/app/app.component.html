@@ -17,7 +17,15 @@ or format), should be displayed (do this in javascript).  -->
       <th>Type</th>
       <th>Format</th>
     </tr>
-    <tr></tr>
+    <tr *ngFor="let document of documents">
+      <td>{{ document.title }}</td>
+      <td>{{ document.author }}</td>
+      <td>{{ document.numberOfPages }}</td>
+      <td>{{ document.type }}</td>
+      <td>{{ document.format }}</td>
+      <td class="actionButtons">Update</td>
+      <td class="actionButtons">Delete</td>
+    </tr>
   </table>
 </div>
 

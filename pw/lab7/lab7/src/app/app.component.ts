@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DocumentService } from 'src/api/documentsApi/document.service';
+import { Document } from 'src/model/document';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,15 @@ import { DocumentService } from 'src/api/documentsApi/document.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  constructor(private documentService: DocumentService) {}
   documents: Document[] = [];
 
+  constructor(private documentService: DocumentService) {}
+
   ngOnInit(): void {
-    this.documentService.getAllDocuments().subscribe((documents) => {});
+    this.documentService.getAllDocuments().subscribe((documents) => {
+      console.log(documents);
+      this.documents = documents;
+    });
   }
   title = 'All documents';
 }

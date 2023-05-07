@@ -4,4 +4,5 @@ export interface Document {
   author: string;
   numberOfPages: number;
   type: string;
+  format: string;
 }

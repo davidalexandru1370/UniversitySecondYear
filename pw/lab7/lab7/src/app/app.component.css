@@ -23,3 +23,12 @@
 .table td:first-child {
   border-left: 1px solid white;
 }
+
+.actionButtons {
+  color: blue;
+  cursor: pointer;
+}
+
+.actionButtons:first-child {
+  border-top: 1px solid white;
+}
