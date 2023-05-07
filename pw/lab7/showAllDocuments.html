@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="showAllDocuments.js"></script>
+    <link rel="stylesheet" href="showAllDocuments.css" />
+  </head>
+  <body>
+    <div class="content">
+      <p class="text">All documents:</p>
+      <div class="filtersWrapper">
+        <input type="text" placeholder="Type" id="typeInput" />
+        <input type="text" placeholder="Format" id="formatInput" />
+      </div>
+      <table class="documentsTable">
+        <tr>
+          <th>Author</th>
+          <th>Title</th>
+          <th>Number of pages</th>
+          <th>Type</th>
+          <th>Format</th>
+        </tr>
+      </table>
+      <a href="addDocument.html">Add document</a>
+    </div>
+  </body>
+</html>
