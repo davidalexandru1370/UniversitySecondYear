@@ -8,20 +8,45 @@
   </p>
 
   <div class="formWrapper">
-    <input type="text" name="title" placeholder="Title:" #title />
+    <input
+      type="text"
+      name="title"
+      placeholder="Title:"
+      value="{{ document.title }}"
+      #title
+    />
     <br />
-    <input type="text" name="author" placeholder="Author:" #author />
+    <input
+      type="text"
+      name="author"
+      placeholder="Author:"
+      #author
+      value="{{ document.author }}"
+    />
     <br />
     <input
       type="number"
       name="numberOfPages"
       placeholder="Number of pages:"
       #numberOfPages
+      value="{{ document.numberOfPages }}"
     />
     <br />
-    <input type="text" name="type" placeholder="Type:" #type />
+    <input
+      type="text"
+      name="type"
+      placeholder="Type:"
+      #type
+      value="{{ document.type }}"
+    />
     <br />
-    <input type="text" name="format" placeholder="Format:" #format />
+    <input
+      type="text"
+      name="format"
+      placeholder="Format:"
+      #format
+      value="{{ document.format }}"
+    />
     <br />
     <div class="button_container">
       <button

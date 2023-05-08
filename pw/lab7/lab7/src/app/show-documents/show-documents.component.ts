@@ -28,9 +28,12 @@ export class ShowDocumentsComponent implements OnInit {
     });
   }
 
-  handleUpdateButton(documentId: number): void {
+  handleUpdateButton(documentId: number, document: Document): void {
     this.router.navigate(['updateDocument'], {
       queryParams: { id: documentId },
+      state: {
+        document: document,
+      },
     });
   }
 

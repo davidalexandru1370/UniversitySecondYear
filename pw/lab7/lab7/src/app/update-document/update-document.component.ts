@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DocumentService } from 'src/api/documentsApi/document.service';
+import { Document } from 'src/model/document';
 
 @Component({
   selector: 'app-update-document',
@@ -9,12 +10,17 @@ import { DocumentService } from 'src/api/documentsApi/document.service';
 })
 export class UpdateDocumentComponent implements OnInit {
   documentId: number = -1;
+  document: Document;
 
   constructor(
     private documentService: DocumentService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.document =
+      this.router.getCurrentNavigation()?.extras.state!['document'];
+    //document = this.route.snapshot
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
