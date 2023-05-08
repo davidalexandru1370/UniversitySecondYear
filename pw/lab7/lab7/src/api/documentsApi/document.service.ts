@@ -20,7 +20,10 @@ export class DocumentService {
   }
 
   deleteDocumentById(documentId: number) {
-    const url = this.baseUrl + `deleteDocument.php/${documentId}`;
-    return this.httpClient.delete(url);
+    const url = this.baseUrl + `deleteDocumentScript.php`;
+    return this.httpClient.delete(url, {
+      headers: this.header.headers,
+      body: JSON.stringify({ id: documentId }),
+    });
   }
 }

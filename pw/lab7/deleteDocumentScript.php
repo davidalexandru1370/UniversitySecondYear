@@ -1,16 +1,17 @@
 <?php
+header('Content-type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, DELETE");
+
 require_once "connection.php";
 global $connection;
-if (isset($_POST['id']) && !empty(trim($_POST['id']))) {
-    $id = $_POST['id'];
-    $sql_query = "delete from documents.document where id = '$id';";
-    $result = mysqli_query($connection, $sql_query);
-    if ($result) {
-        echo "Deleted successfully!";
-        header("Location: showAllDocuments.html");
-    } else {
-        echo "Invalid id";
-    }
-}
+
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+$id = $request->id;
+$sql_query = "delete from document where id = '$id';";
+$result = mysqli_query($connection, $sql_query);
 mysqli_close($connection);
+
 ?>
