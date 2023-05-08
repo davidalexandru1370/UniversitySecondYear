@@ -1,4 +1,20 @@
 <div class="content">
+  <div class="filterInputs">
+    <input
+      type="text"
+      name="type"
+      placeholder="Type:"
+      #type
+      (input)="refetch(type.value, format.value)"
+    />
+    <input
+      type="text"
+      name="format"
+      placeholder="Type:"
+      #format
+      (input)="refetch(type.value, format.value)"
+    />
+  </div>
   <table class="table">
     <tr>
       <th>Author</th>

@@ -40,6 +40,7 @@ export class UpdateDocumentComponent implements OnInit {
       })
       .subscribe(() => {
         this.router.navigate(['showDocuments']);
+        alert('Updated succesfully');
       });
   }
 

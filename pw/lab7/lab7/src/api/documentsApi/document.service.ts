@@ -15,8 +15,12 @@ export class DocumentService {
     }),
   };
 
-  getAllDocuments(): Observable<Document[]> {
-    const url = this.baseUrl + `showAllDocuments.php`;
+  getAllDocuments(
+    type: string = '',
+    format: string = ''
+  ): Observable<Document[]> {
+    const url =
+      this.baseUrl + `showAllDocuments.php?type=${type}&format=${format}`;
     return this.httpClient.get<Document[]>(url, this.header);
   }
 
@@ -38,16 +42,14 @@ export class DocumentService {
       type: 'pdf',
     };
     const url = this.baseUrl + 'updateDocumentScript.php';
-    console.log(JSON.stringify(document));
     return this.httpClient.post<Document>(url, JSON.stringify(document), {
       headers: this.header.headers,
     });
   }
 
   addDocument(documentDto: DocumentDto) {
-    console.log(JSON.stringify(documentDto));
     const url = this.baseUrl + 'addDocument.php';
-    return this.httpClient.put(url, documentDto, {
+    return this.httpClient.put(url, JSON.stringify(documentDto), {
       headers: this.header.headers,
     });
   }

@@ -34,5 +34,17 @@
 }
 
 .addDocumentButton {
+  display: flex;
+  width: fit-content;
+  padding: 1rem;
+  margin-block: 1rem;
+  background-color: darkmagenta;
   cursor: pointer;
+}
+
+.filterInputs {
+  padding-block: 1rem;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
 }

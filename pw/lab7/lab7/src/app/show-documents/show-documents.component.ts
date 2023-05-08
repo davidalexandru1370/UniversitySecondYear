@@ -34,6 +34,14 @@ export class ShowDocumentsComponent implements OnInit {
     });
   }
 
+  refetch(type: string = '', format: string = '') {
+    this.documentService
+      .getAllDocuments(type, format)
+      .subscribe((documents) => {
+        this.documents = documents;
+      });
+  }
+
   handlerAddNewDocument(): void {
     console.log('aici');
 

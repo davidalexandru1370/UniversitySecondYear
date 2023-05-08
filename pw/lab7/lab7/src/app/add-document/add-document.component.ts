@@ -32,6 +32,7 @@ export class AddDocumentComponent implements OnInit {
       })
       .subscribe((_) => {
         this.router.navigate(['showDocuments']);
+        alert('Added successfully');
       });
   }
 

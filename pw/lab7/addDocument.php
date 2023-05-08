@@ -15,6 +15,9 @@ $type = $request->type;
 $format = $request->format;
 
 $query = "INSERT INTO document(author,title,number_of_pages,type,format) values('$author','$title','$number_of_pages','$type','$format')";
+// $query = $connection->prepare("INSERT INTO document(author, title, number_of_pages, type, format) values (?, ?, ?, ?, ?)");
+// $query->bind_param("sssss", $author, $title, $number_of_pages, $type, $format);
+// $query->execute();
 $result = mysqli_query($connection, $query);
 
 mysqli_close($connection);
