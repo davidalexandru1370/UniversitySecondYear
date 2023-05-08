@@ -8,14 +8,19 @@ import { Document } from 'src/model/document';
 export class DocumentService {
   constructor(private httpClient: HttpClient) {}
   baseUrl = 'http://localhost:8000/';
+  header = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
 
   getAllDocuments(): Observable<Document[]> {
-    const header = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
     const url = this.baseUrl + `showAllDocuments.php`;
-    return this.httpClient.get<Document[]>(url, header);
+    return this.httpClient.get<Document[]>(url, this.header);
+  }
+
+  deleteDocumentById(documentId: number) {
+    const url = this.baseUrl + `deleteDocument.php/${documentId}`;
+    return this.httpClient.delete(url);
   }
 }

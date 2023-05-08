@@ -1,0 +1,22 @@
+<div class="content">
+  <table class="table">
+    <tr>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Number of pages</th>
+      <th>Type</th>
+      <th>Format</th>
+    </tr>
+    <tr *ngFor="let document of documents">
+      <td>{{ document.title }}</td>
+      <td>{{ document.author }}</td>
+      <td>{{ document.numberOfPages }}</td>
+      <td>{{ document.type }}</td>
+      <td>{{ document.format }}</td>
+      <td class="actionButtons">Update</td>
+      <td class="actionButtons" (click)="handleDeleteButton(document.id)">
+        Delete
+      </td>
+    </tr>
+  </table>
+</div>
