@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Update Document</h1>
+  <p>
+    <b
+      >Please fill this form and submit to update the Document from the
+      database.</b
+    >
+  </p>
+
+  <div class="formWrapper">
+    <input type="text" name="title" placeholder="Title:" #name />
+    <br />
+    <input type="text" name="author" placeholder="Author:" #username />
+    <br />
+    <input
+      type="password"
+      name="numberOfPages"
+      placeholder="Number of pages:"
+      #password
+    />
+    <br />
+    <input type="number" name="type" placeholder="Type:" #age />
+    <br />
+    <input type="text" name="format" placeholder="Format:" #role />
+    <br />
+    <div class="button_container">
+      <button
+        (click)="
+          handleUpdateDocument(
+            title.value,
+            author.value,
+            numberOfPages.value,
+            type.value,
+            format.value,
+          )
+        "
+      >
+        Update User
+      </button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>
