@@ -1,10 +1,7 @@
 <div class="container">
-  <h1>Update Document</h1>
+  <h1>Add Document</h1>
   <p>
-    <b
-      >Please fill this form and submit to update the Document from the
-      database.</b
-    >
+    <b>Please fill this form and submit to add the Document to the database.</b>
   </p>
 
   <div class="formWrapper">
@@ -26,7 +23,7 @@
     <div class="button_container">
       <button
         (click)="
-          handleUpdateDocument(
+          handleAddDocument(
             title.value,
             author.value,
             numberOfPages.value,
@@ -35,7 +32,7 @@
           )
         "
       >
-        Update Document
+        Add Document
       </button>
       <button (click)="onCancel()">Cancel</button>
     </div>

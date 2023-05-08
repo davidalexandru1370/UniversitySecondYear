@@ -29,7 +29,6 @@ export class DeleteDocumentComponent implements OnInit {
   }
 
   handleCancelButton(): void {
-    console.log('aici');
     this.router.navigate(['showDocuments']);
   }
 }

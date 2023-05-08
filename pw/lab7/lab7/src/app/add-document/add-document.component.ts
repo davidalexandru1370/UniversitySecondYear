@@ -1,44 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { DocumentService } from 'src/api/documentsApi/document.service';
 
 @Component({
-  selector: 'app-update-document',
-  templateUrl: './update-document.component.html',
-  styleUrls: ['./update-document.component.css'],
+  selector: 'app-add-document',
+  templateUrl: './add-document.component.html',
+  styleUrls: ['./add-document.component.css'],
 })
-export class UpdateDocumentComponent implements OnInit {
-  documentId: number = -1;
-
+export class AddDocumentComponent implements OnInit {
   constructor(
     private documentService: DocumentService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      this.documentId = params['id'];
-    });
-  }
+  ngOnInit(): void {}
 
-  handleUpdateDocument(
-    author: string,
+  handleAddDocument(
     title: string,
+    author: string,
     numberOfPages: string,
     type: string,
     format: string
-  ) {
+  ): void {
     this.documentService
-      .updateDocument({
-        id: this.documentId,
+      .addDocument({
         author: author,
         title: title,
         numberOfPages: parseInt(numberOfPages),
         type: type,
         format: format,
       })
-      .subscribe(() => {
+      .subscribe((_) => {
         this.router.navigate(['showDocuments']);
       });
   }

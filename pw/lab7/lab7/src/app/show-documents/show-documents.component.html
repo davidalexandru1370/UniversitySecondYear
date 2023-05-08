@@ -13,10 +13,16 @@
       <td>{{ document.numberOfPages }}</td>
       <td>{{ document.type }}</td>
       <td>{{ document.format }}</td>
-      <td class="actionButtons">Update</td>
+      <td class="actionButtons" (click)="handleUpdateButton(document.id)">
+        Update
+      </td>
       <td class="actionButtons" (click)="handleDeleteButton(document.id)">
         Delete
       </td>
     </tr>
   </table>
+
+  <span (click)="handlerAddNewDocument()" class="addDocumentButton"
+    >Add new Document</span
+  >
 </div>

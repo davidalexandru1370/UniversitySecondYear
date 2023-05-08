@@ -27,5 +27,18 @@ export class ShowDocumentsComponent implements OnInit {
       queryParams: { id: documentId },
     });
   }
+
+  handleUpdateButton(documentId: number): void {
+    this.router.navigate(['updateDocument'], {
+      queryParams: { id: documentId },
+    });
+  }
+
+  handlerAddNewDocument(): void {
+    console.log('aici');
+
+    this.router.navigate(['addDocument']);
+  }
+
   title = 'All documents';
 }

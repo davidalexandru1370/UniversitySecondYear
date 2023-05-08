@@ -1,24 +1,21 @@
 <?php
+header('Content-type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: *");
 require_once "connection.php";
 global $connection;
 
-$author = $_POST['author'];
-$title = $_POST['title'];
-$number_of_pages = $_POST['number_of_pages'];
-$type = $_POST['type'];
-$format = $_POST['format'];
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+$title = $request->title;
+$author = $request->author;
+$number_of_pages = (int) $request->numberOfPages;
+$type = $request->type;
+$format = $request->format;
 
-$query = "INSERT INTO documents.document(author,title,number_of_pages,type,format) values('$author','$title','$number_of_pages','$type','$format')";
-
-
+$query = "INSERT INTO document(author,title,number_of_pages,type,format) values('$author','$title','$number_of_pages','$type','$format')";
 $result = mysqli_query($connection, $query);
-
-if($result){
-    echo "Document added succesfully";
-}
-else{
-    echo "Failed adding document";
-}
 
 mysqli_close($connection);
 
