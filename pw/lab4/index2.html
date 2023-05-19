@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!--
+     Write an html document which contains 2 buttons and at least 10 links and a javascript so that when the user clicks the first button the page's
+     background will change (there are 5 background images which are rotated, one at a time)
+     and when the user clicks the second button the shape and color of all the links from the document will change. 
+     -->
+    <div class="content">
+      <button class="button" onclick="changeBackgroundImage()">
+        Change background
+      </button>
+      <button class="button" onclick="changeLinksColor()">Change Links</button>
+      <br />
+      <div>
+        <label for="myCheckbox">Change colors</label>
+        <input type="checkbox" onclick="changeLinksColor()" id="myCheckbox" />
+      </div>
+      <a href="#" class="link">Link 1</a>
+      <a href="#" class="link">Link 2</a>
+      <a href="#" class="link">Link 3</a>
+      <a href="#" class="link">Link 4</a>
+      <a href="#" class="link">Link 5</a>
+      <a href="#" class="link">Link 6</a>
+      <a href="#" class="link">Link 7</a>
+      <a href="#" class="link">Link 8</a>
+      <a href="#" class="link">Link 9</a>
+      <a href="#" class="link">Link 10</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.inline {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  cursor: pointer;
+  width: 80px;
+  padding: 10px;
+}
+
+.cancelButton {
+  background-color: red;
+  max-height: 40px;
+}
+
+.yesButton {
+  background-color: greenyellow;
+}

@@ -37,4 +37,5 @@ public class ClientService : IClientService
     {
         return await _clientRepository.GetClientById(id);
     }
+
 }

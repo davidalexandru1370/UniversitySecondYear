@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="addUser.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <p>Add new document</p>
+      <a href="showAllDocuments.html" style="padding: 10px"
+        >See all documents</a
+      >
+      <form method="post" action="addDocument.php" class="addUserForm">
+        <input type="text" name="author" placeholder="Author" />
+        <input type="text" name="title" placeholder="Title" />
+        <input
+          type="text"
+          name="number_of_pages"
+          placeholder="Number of pages"
+        />
+        <input type="text" name="type" placeholder="Type" />
+        <input type="text" name="format" placeholder="Format" />
+        <div class="sendButton">
+          <button type="submit">Add document</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

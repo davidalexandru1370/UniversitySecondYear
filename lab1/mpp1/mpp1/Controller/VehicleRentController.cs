@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using mpp1.Exceptions;
 using mpp1.Model;
-using mpp1.Repository;
+using mpp1.Model.DTO;
 using mpp1.Service.Interfaces;
 
 namespace mpp1.Controller;
@@ -93,6 +94,21 @@ public class VehicleRentController : ControllerBase
     try
     {
       var result = await _vehicleRentService.UpdateVehicleRent(vehicleRent);
+      return Ok(result);
+    }
+    catch (RepositoryException repositoryException)
+    {
+      return BadRequest(repositoryException.Message);
+    }
+  }
+
+  [HttpGet]
+  [Route("get-active-clients")]
+  public async Task<ActionResult<IEnumerable<ClientDTO>>> GetMostActiveClients()
+  {
+    try
+    {
+      var result = await _vehicleRentService.GetMostActiveClients();
       return Ok(result);
     }
     catch (RepositoryException repositoryException)

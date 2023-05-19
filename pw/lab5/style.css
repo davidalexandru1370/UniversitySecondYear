@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-y: hidden;
+}
+.buttons {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.desktop {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  height: 180px;
+}
+
+#desktop1 {
+  background-color: aqua;
+}
+
+#desktop2 {
+  background-color: tomato;
+}
+
+#desktop3 {
+  background-color: brown;
+}
+
+#desktop4 {
+  background-color: crimson;
+}
+
+.button {
+  background-color: rgb(41, 188, 211);
+  border: 0px;
+  border-radius: 10px;
+  width: 100px;
+  padding: 10px;
+  margin-inline: 10px;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

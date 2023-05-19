@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using mpp1.DatabaseContext;
+using mpp1.Exceptions;
 using mpp1.Model;
 using mpp1.Repository.Interfaces;
 
@@ -78,7 +79,6 @@ public class IncidentRepository : IIncidentsRepository
 
     public Task<IEnumerable<Incident>> GetIncidentsByVehicleId(Guid vehicleId)
     {
-        //throw new NotImplementedException();
         var incidents = _rentACarDbContext.Incidents.Where(v => v.VehicleId == vehicleId) as IEnumerable<Incident>;
         return Task.FromResult(incidents);
     }

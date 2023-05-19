@@ -13,4 +13,5 @@ public interface IClientService
     public Task<IEnumerable<Client>> GetAllClients();
 
     public Task<Client> GetClientById(Guid id);
+
 }

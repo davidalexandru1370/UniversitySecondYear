@@ -1,0 +1,47 @@
+<div class="content">
+  <div class="filterInputs">
+    <input
+      type="text"
+      name="type"
+      placeholder="Type:"
+      #type
+      (input)="refetch(type.value, format.value)"
+    />
+    <input
+      type="text"
+      name="format"
+      placeholder="Type:"
+      #format
+      (input)="refetch(type.value, format.value)"
+    />
+  </div>
+  <table class="table">
+    <tr>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Number of pages</th>
+      <th>Type</th>
+      <th>Format</th>
+    </tr>
+    <tr *ngFor="let document of documents">
+      <td>{{ document.title }}</td>
+      <td>{{ document.author }}</td>
+      <td>{{ document.numberOfPages }}</td>
+      <td>{{ document.type }}</td>
+      <td>{{ document.format }}</td>
+      <td
+        class="actionButtons"
+        (click)="handleUpdateButton(document.id, document)"
+      >
+        Update
+      </td>
+      <td class="actionButtons" (click)="handleDeleteButton(document.id)">
+        Delete
+      </td>
+    </tr>
+  </table>
+
+  <span (click)="handlerAddNewDocument()" class="addDocumentButton"
+    >Add new Document</span
+  >
+</div>

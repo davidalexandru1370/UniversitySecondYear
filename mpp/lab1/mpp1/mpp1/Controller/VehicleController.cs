@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using mpp1.Exceptions;
 using mpp1.Model;
 using mpp1.Model.DTO;
 using mpp1.Repository;
+using mpp1.Service;
 using mpp1.Service.Interfaces;
 
 namespace mpp1.Controller;
@@ -11,10 +13,11 @@ namespace mpp1.Controller;
 public class VehicleController : ControllerBase
 {
     private readonly IVehicleService _vehicleService;
-
-    public VehicleController(IVehicleService vehicleService)
+    private readonly IIncidentService _incidentService;
+    public VehicleController(IVehicleService vehicleService, IIncidentService incidentService)
     {
         _vehicleService = vehicleService;
+        _incidentService = incidentService;
     }
     
     [HttpPost]
@@ -27,11 +30,11 @@ public class VehicleController : ControllerBase
     
     [HttpGet]
     [Route("get-all")]
-    public ActionResult<IEnumerable<Vehicle>> GetAllVehicles()
+    public async Task<ActionResult<IEnumerable<Vehicle>>> GetAllVehicles()
     {
         try
         {
-            var result = _vehicleService.GetAllVehicles();
+            var result = await _vehicleService.GetAllVehicles();
             return Ok(result);
         }
         catch (RepositoryException repositoryException)
@@ -73,7 +76,7 @@ public class VehicleController : ControllerBase
 
     [HttpDelete]
     [Route("delete/{vehicleId}")]
-    public async Task<ActionResult> DeleteVehicle([FromRoute] Guid vehicleId)
+    public async Task<IActionResult> DeleteVehicle([FromRoute] Guid vehicleId)
     {
         try
         {
@@ -121,5 +124,19 @@ public class VehicleController : ControllerBase
     {
         var result = await _vehicleService.GetVehiclesOrderByNumberOfIncidents();
         return Ok(result);
+    }
+
+    [HttpPost("bulk-update/vehicle/{vehicleId}/incidents")]
+    public async Task<IActionResult> UpdateBulkOfIncidentsByVehicleId([FromRoute]Guid vehicleId, [FromBody]IEnumerable<Guid> incidentIds)
+    {
+        try
+        {
+            await _incidentService.ChangeIncidentsIdToAnotherVehicleId(vehicleId, incidentIds);
+            return Ok();
+        }
+        catch (RentACarException rentACarException)
+        {
+            return BadRequest(rentACarException.Message);
+        }
     }
 }
