@@ -31,6 +31,7 @@
             this.dataGridViewParentTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewChildTable = new System.Windows.Forms.DataGridView();
             this.buttonUpdateDatabase = new System.Windows.Forms.Button();
+            this.buttonRefreshDatabases = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParentTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChildTable)).BeginInit();
             this.SuspendLayout();
@@ -63,11 +64,22 @@
             this.buttonUpdateDatabase.UseVisualStyleBackColor = true;
             this.buttonUpdateDatabase.Click += new System.EventHandler(this.buttonUpdateDatabase_Click);
             // 
+            // buttonRefreshDatabases
+            // 
+            this.buttonRefreshDatabases.Location = new System.Drawing.Point(32, 406);
+            this.buttonRefreshDatabases.Name = "buttonRefreshDatabases";
+            this.buttonRefreshDatabases.Size = new System.Drawing.Size(134, 23);
+            this.buttonRefreshDatabases.TabIndex = 3;
+            this.buttonRefreshDatabases.Text = "Refresh Databases";
+            this.buttonRefreshDatabases.UseVisualStyleBackColor = true;
+            this.buttonRefreshDatabases.Click += new System.EventHandler(this.buttonRefreshDatabases_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRefreshDatabases);
             this.Controls.Add(this.buttonUpdateDatabase);
             this.Controls.Add(this.dataGridViewChildTable);
             this.Controls.Add(this.dataGridViewParentTable);
@@ -85,5 +97,6 @@
         private DataGridView dataGridViewParentTable;
         private DataGridView dataGridViewChildTable;
         private Button buttonUpdateDatabase;
+        private Button buttonRefreshDatabases;
     }
 }

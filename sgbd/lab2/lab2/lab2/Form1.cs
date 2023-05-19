@@ -58,6 +58,14 @@ namespace lab2
             _dataAdapterParentTable.Update(_dataSet, ConfigurationManager.AppSettings["ParentTableName"]!);
         }
 
+        private void buttonRefreshDatabases_Click(object sender, EventArgs e)
+        {
+            _dataSet.Tables[ConfigurationManager.AppSettings["ChildTableName"]]!.Clear();
+            _dataSet.Tables[ConfigurationManager.AppSettings["ParentTableName"]]!.Clear();
+            _dataAdapterParentTable.Fill(_dataSet, ConfigurationManager.AppSettings["ParentTableName"]!);
+            _dataAdapterChildTable.Fill(_dataSet, ConfigurationManager.AppSettings["ChildTableName"]!);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             InitializeDatabase();
