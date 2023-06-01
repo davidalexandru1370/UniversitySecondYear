@@ -1,1 +1,23 @@
-<p>all-documents works!</p>
+<div class="content">
+  <div class="filterInputs"></div>
+  <table class="table">
+    <tr>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Number of pages</th>
+      <th>Type</th>
+      <th>Format</th>
+    </tr>
+    <tr *ngFor="let document of documents">
+      <td>{{ document.title }}</td>
+      <td>{{ document.author }}</td>
+      <td>{{ document.numberOfPages }}</td>
+      <td>{{ document.type }}</td>
+      <td>{{ document.format }}</td>
+      <td class="actionButtons">Update</td>
+      <td class="actionButtons">Delete</td>
+    </tr>
+  </table>
+
+  <span class="addDocumentButton">Add new Document</span>
+</div>
