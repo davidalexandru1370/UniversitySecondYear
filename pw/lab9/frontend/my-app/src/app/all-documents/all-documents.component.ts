@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DocumentService } from 'src/api/document.service';
 import { Document } from 'src/model/Document';
 
@@ -10,11 +11,22 @@ import { Document } from 'src/model/Document';
 export class AllDocumentsComponent implements OnInit {
   documents: Document[] = [];
 
-  constructor(private documentService: DocumentService) {}
+  constructor(
+    private documentService: DocumentService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.documentService.getAllDocuments().subscribe((documents) => {
       this.documents = documents;
+    });
+  }
+
+  handleUpdateButton(document: Document): void {
+    this.router.navigate(['updateDocument'], {
+      state: {
+        document: document,
+      },
     });
   }
 }

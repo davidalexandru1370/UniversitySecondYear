@@ -18,12 +18,17 @@ export class DocumentService {
     }),
   };
 
-  getAllDocuments = (
-    type: string = '',
-    format: string = ''
-  ): Observable<Document[]> => {
+  getAllDocuments = (): Observable<Document[]> => {
     return this.httpClient.get<Document[]>(
       baseUrl + documentController + 'get-all-documents',
+      this.header
+    );
+  };
+
+  updateDocument = (document: Document) => {
+    return this.httpClient.put(
+      baseUrl + documentController + 'update-document',
+      document,
       this.header
     );
   };

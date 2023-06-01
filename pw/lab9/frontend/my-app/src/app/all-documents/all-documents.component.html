@@ -14,7 +14,9 @@
       <td>{{ document.numberOfPages }}</td>
       <td>{{ document.type }}</td>
       <td>{{ document.format }}</td>
-      <td class="actionButtons">Update</td>
+      <td class="actionButtons" (click)="handleUpdateButton(document)">
+        Update
+      </td>
       <td class="actionButtons">Delete</td>
     </tr>
   </table>
