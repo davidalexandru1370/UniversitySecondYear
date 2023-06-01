@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Add Document</h1>
+  <p>
+    <b>Please fill this form and submit to add the Document to the database.</b>
+  </p>
+
+  <div class="formWrapper">
+    <input type="text" name="title" placeholder="Title:" #title />
+    <br />
+    <input type="text" name="author" placeholder="Author:" #author />
+    <br />
+    <input
+      type="number"
+      name="numberOfPages"
+      placeholder="Number of pages:"
+      #numberOfPages
+    />
+    <br />
+    <input type="text" name="type" placeholder="Type:" #type />
+    <br />
+    <input type="text" name="format" placeholder="Format:" #format />
+    <br />
+    <div class="button_container">
+      <button
+        (click)="
+          handleAddDocument(
+            title.value,
+            author.value,
+            numberOfPages.value,
+            type.value,
+            format.value
+          )
+        "
+      >
+        Add Document
+      </button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

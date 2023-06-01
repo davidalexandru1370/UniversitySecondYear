@@ -35,4 +35,8 @@ export class AllDocumentsComponent implements OnInit {
       queryParams: { id: documentId },
     });
   }
+
+  handleAddDocument(): void {
+    this.router.navigate(['addDocument']);
+  }
 }

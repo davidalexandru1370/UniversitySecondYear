@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Document } from 'src/model/Document';
+import { DocumentDto } from 'src/model/DocumentDto';
 
 const baseUrl = 'http://localhost:5000/api/';
 const documentController = 'document/';
@@ -36,6 +37,14 @@ export class DocumentService {
   deleteDocumentById = (documentId: string) => {
     return this.httpClient.delete(
       baseUrl + documentController + 'delete-document/' + documentId
+    );
+  };
+
+  addDocument = (document: DocumentDto) => {
+    return this.httpClient.post(
+      baseUrl + documentController + 'add-document',
+      document,
+      this.header
     );
   };
 }

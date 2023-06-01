@@ -4,6 +4,7 @@ import { AllDocumentsComponent } from './all-documents/all-documents.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateDocumentComponent } from './update-document/update-document.component';
 import { DeleteDocumentComponent } from './delete-document/delete-document.component';
+import { AddDocumentComponent } from './add-document/add-document.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'deleteDocument',
     component: DeleteDocumentComponent,
+  },
+  {
+    path: 'addDocument',
+    component: AddDocumentComponent,
   },
 ];
 
