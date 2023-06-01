@@ -1,0 +1,22 @@
+<div
+  style="
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  "
+>
+  <div style="display: flex; flex-direction: column; max-width: 20vw">
+    <label for="username">Username</label>
+    <input id="username" name="username" #username />
+  </div>
+  <br />
+  <div style="display: flex; flex-direction: column; max-width: 20vw">
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" #password />
+  </div>
+  <button (click)="handleLogin(username.value, password.value)">Login</button>
+  <span style="color: red">{{ loginError }}</span>
+</div>

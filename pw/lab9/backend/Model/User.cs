@@ -6,8 +6,7 @@ namespace backend.Model;
 [Table("User")]
 public class User
 {
-    [Key] public Guid Id { get; set; }
-
+    [Key]
     [Column(TypeName = "varchar(100)")]
     [Required]
     public string Name { get; set; } = null!;

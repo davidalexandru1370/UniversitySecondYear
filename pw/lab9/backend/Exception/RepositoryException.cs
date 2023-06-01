@@ -6,11 +6,11 @@ public class RepositoryException : System.Exception
     {
     }
 
-    public static void ThrowIfNull(object? obj)
+    public static void ThrowIfNull(object? obj, string message = "")
     {
         if (obj is null)
         {
-            throw new RepositoryException($"{nameof(obj)} is null");
+            throw new RepositoryException(message == "" ? $"{nameof(obj)} is null" : message);
         }
     }
 }

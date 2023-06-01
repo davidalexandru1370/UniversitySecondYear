@@ -22,9 +22,9 @@ public class UserService : IUserService
 
     public Task<string> Login(LoginCredentials loginCredentials)
     {
-        var user = _documentDbContext.Set<User>().FirstOrDefault(u => u.Name == loginCredentials.Name);
+        var user = _documentDbContext.Set<User>().FirstOrDefault(u => u.Name == loginCredentials.Username);
 
-        RepositoryException.ThrowIfNull(user);
+        RepositoryException.ThrowIfNull(user, "Invalid user credentials");
 
         if (user.Password != loginCredentials.Password)
         {
@@ -45,7 +45,7 @@ public class UserService : IUserService
         {
             Subject = new ClaimsIdentity(new[]
             {
-                new Claim("Id", user.Id.ToString()),
+                new Claim("Id", user.Name.ToString()),
             }),
             Expires = DateTime.UtcNow.Add(tokenLifetime),
             Audience = _appSettings["JwtSettings:Audience"],

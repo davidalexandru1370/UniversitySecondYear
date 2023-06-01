@@ -18,12 +18,15 @@ public class UserController : ControllerBase
 
     [HttpPost]
     [Route("login")]
-    public async Task<ActionResult<string>> Login([FromBody] LoginCredentials loginCredentials)
+    public async Task<ActionResult<Token>> Login([FromBody] LoginCredentials loginCredentials)
     {
         try
         {
             var result = await _userService.Login(loginCredentials);
-            return Ok(result);
+            return Ok(new Token()
+            {
+                Jwt = result
+            });
         }
         catch (RepositoryException repositoryException)
         {
