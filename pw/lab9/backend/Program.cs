@@ -12,7 +12,7 @@ builder.Services.AddDbContext<DocumentDbContext>(options =>
     options.UseNpgsql(connectionString);
 });
 builder.Services.AddScoped<IDocumentService, DocumentService>();
-
+builder.Services.AddScoped<IUserService, UserService>();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
