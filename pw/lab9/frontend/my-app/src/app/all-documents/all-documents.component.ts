@@ -10,6 +10,8 @@ import { Document } from 'src/model/Document';
 })
 export class AllDocumentsComponent implements OnInit {
   documents: Document[] = [];
+  type: string = '';
+  format: string = '';
 
   constructor(
     private documentService: DocumentService,
@@ -38,5 +40,14 @@ export class AllDocumentsComponent implements OnInit {
 
   handleAddDocument(): void {
     this.router.navigate(['addDocument']);
+  }
+
+  updateType(type: string) {
+    console.log(type);
+    this.type = type;
+  }
+
+  updateFormat(format: string) {
+    this.format = format;
   }
 }

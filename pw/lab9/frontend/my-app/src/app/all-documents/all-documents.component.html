@@ -1,5 +1,22 @@
 <div class="content">
-  <div class="filterInputs"></div>
+  <div class="filterInputs">
+    <div>
+      <label for="filter-type">Type:</label>
+      <input
+        id="filter-type"
+        #filtertype
+        (change)="updateType(filtertype.value)"
+      />
+    </div>
+    <div>
+      <label for="filter-format">Format:</label>
+      <input
+        id="filter-format"
+        #filterformat
+        (change)="updateFormat(filterformat.value)"
+      />
+    </div>
+  </div>
   <table class="table">
     <tr>
       <th>Author</th>
@@ -9,15 +26,43 @@
       <th>Format</th>
     </tr>
     <tr *ngFor="let document of documents">
-      <td>{{ document.title }}</td>
-      <td>{{ document.author }}</td>
-      <td>{{ document.numberOfPages }}</td>
-      <td>{{ document.type }}</td>
-      <td>{{ document.format }}</td>
-      <td class="actionButtons" (click)="handleUpdateButton(document)">
+      <td
+        *ngIf="document.type.includes(type) && document.format.includes(format)"
+      >
+        {{ document.title }}
+      </td>
+      <td
+        *ngIf="document.type.includes(type) && document.format.includes(format)"
+      >
+        {{ document.author }}
+      </td>
+      <td
+        *ngIf="document.type.includes(type) && document.format.includes(format)"
+      >
+        {{ document.numberOfPages }}
+      </td>
+      <td
+        *ngIf="document.type.includes(type) && document.format.includes(format)"
+      >
+        {{ document.type }}
+      </td>
+      <td
+        *ngIf="document.type.includes(type) && document.format.includes(format)"
+      >
+        {{ document.format }}
+      </td>
+      <td
+        *ngIf="document.type.includes(type) && document.format.includes(format)"
+        class="actionButtons"
+        (click)="handleUpdateButton(document)"
+      >
         Update
       </td>
-      <td class="actionButtons" (click)="handleDeleteButton(document.id)">
+      <td
+        *ngIf="document.type.includes(type) && document.format.includes(format)"
+        class="actionButtons"
+        (click)="handleDeleteButton(document.id)"
+      >
         Delete
       </td>
     </tr>
