@@ -1,3 +1,4 @@
+using backend.Exception;
 using backend.Model;
 using backend.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,7 @@ public class DocumentController : ControllerBase
         return Ok(documents);
     }
 
+    [HttpPost("add-document")]
     public async Task<ActionResult<Document>> AddDocument(Document document)
     {
         try
@@ -32,6 +34,20 @@ public class DocumentController : ControllerBase
         catch (ArgumentNullException)
         {
             return BadRequest();
+        }
+    }
+
+    [HttpDelete("delete-document")]
+    public async Task<IActionResult> DeleteDocument(Guid documentId)
+    {
+        try
+        {
+            await _documentService.DeleteDocumentAsync(documentId);
+            return Ok();
+        }
+        catch (RepositoryException repositoryException)
+        {
+            return BadRequest(repositoryException.Message);
         }
     }
 }
