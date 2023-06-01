@@ -32,4 +32,10 @@ export class DocumentService {
       this.header
     );
   };
+
+  deleteDocumentById = (documentId: string) => {
+    return this.httpClient.delete(
+      baseUrl + documentController + 'delete-document/' + documentId
+    );
+  };
 }

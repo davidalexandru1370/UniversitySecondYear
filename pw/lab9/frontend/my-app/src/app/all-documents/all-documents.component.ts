@@ -29,4 +29,10 @@ export class AllDocumentsComponent implements OnInit {
       },
     });
   }
+
+  handleDeleteButton(documentId: string): void {
+    this.router.navigate(['deleteDocument'], {
+      queryParams: { id: documentId },
+    });
+  }
 }

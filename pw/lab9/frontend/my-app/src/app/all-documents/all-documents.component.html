@@ -17,7 +17,9 @@
       <td class="actionButtons" (click)="handleUpdateButton(document)">
         Update
       </td>
-      <td class="actionButtons">Delete</td>
+      <td class="actionButtons" (click)="handleDeleteButton(document.id)">
+        Delete
+      </td>
     </tr>
   </table>
 
