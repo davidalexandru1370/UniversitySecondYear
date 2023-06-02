@@ -170,4 +170,3 @@ SELECT * FROM TheoreticalExams
 SELECT * FROM Students
 SELECT * FROM Supervisors
 
-SET IDENTITY_INSERT TheoreticalExams ON
