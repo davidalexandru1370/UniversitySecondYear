@@ -1,0 +1,10 @@
+# pack-refs with: peeled fully-peeled sorted 
+32d9e5759959517693f95ce96c7fe7f52617ba34 refs/heads/IdentityOnFrontend
+68f77c4cae9a135912c16b062f5006ddfddfdedd refs/heads/chat.ml
+8dab8aa9be911a218aa77b0c3588ba4f12e45fef refs/heads/development
+a324340e4d358e20aa4e829914e8e53f23340b64 refs/heads/dockerize
+d8e11a945da28ec27439e980638362a70f0d0afe refs/heads/documentation
+37de335a66c0063b23efc32718657e170552072c refs/heads/fix-chat-deploy
+fd0edb556059c23a66b4d84f2f66f1ee8820f87b refs/heads/main
+8371725797dfe1bc70801140d91137b88f611fc4 refs/heads/signalr.chat
+71b95c05f7aa3e24e178fea73c1a5908b0475fa8 refs/heads/stress-tests
