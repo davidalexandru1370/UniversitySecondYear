@@ -37,17 +37,31 @@ public class DocumentController : ControllerBase
         }
     }
 
-    [HttpDelete("delete-document")]
-    public async Task<IActionResult> DeleteDocument(Guid documentId)
+    [HttpDelete("delete-document/{documentId}")]
+    public async Task<IActionResult> DeleteDocument([FromRoute] Guid documentId)
     {
         try
         {
             await _documentService.DeleteDocumentAsync(documentId);
-            return Ok();    
+            return Ok();
         }
         catch (RepositoryException repositoryException)
         {
             return BadRequest(repositoryException.Message);
+        }
+    }
+
+    [HttpPut("update-document")]
+    public async Task<IActionResult> UpdateDocument([FromBody] Document document)
+    {
+        try
+        {
+            await _documentService.UpdateDocumentAsync(document);
+            return Ok();
+        }
+        catch (RepositoryException)
+        {
+            return BadRequest();
         }
     }
 }

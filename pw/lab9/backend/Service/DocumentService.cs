@@ -45,7 +45,10 @@ public class DocumentService : IDocumentService
 
     public Task<IEnumerable<Document>> GetAllDocuments()
     {
-        var documents = _documentDbContext.Set<Document>().ToList() as IEnumerable<Document>;
+        var documents =
+            _documentDbContext.Set<Document>()
+                    .ToList()
+                as IEnumerable<Document>;
         return Task.FromResult(documents);
     }
 }
