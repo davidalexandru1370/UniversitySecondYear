@@ -1,6 +1,0 @@
-Buna ziua, revin cu mai multe intrebari :D
- Pretul unei vacante ar trebui sa fie public si in ce moneda? Ar trebui sa exista currency converter pt el?
-Aplicatia trebuie sa fie in engleza? (adica trebuie sa suportam mai multe limbi?)
-Ce criterii trebuie sa aibe parola(daca trebuie)? (numar minim de caractere, litere mari/mici, cifre, caractere speciale) 
-Cat timp poate sa stea un utilizator logat pana va trebui sa se logheze din nou? (durata unei sesiuni/token)
-Care ar fi un prag pentru vacantale cu costuri prea mari? Acesta ar trebui setat de admin?
