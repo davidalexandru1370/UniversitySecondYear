@@ -16,7 +16,7 @@ public class DBManager {
     public void connect() {
         try {
             Class.forName("org.postgresql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jsp", "postgres", "postgres");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/projectManagement", "postgres", "postgres");
             stmt = con.createStatement();
         } catch (Exception ex) {
             System.out.println("eroare la connect:" + ex.getMessage());
@@ -24,14 +24,22 @@ public class DBManager {
         }
     }
 
-    public User authenticate(String username, String password) {
+    private String quote(String str){
+        return new StringBuilder()
+                .append('\'')
+                .append(str)
+                .append('\'')
+                .toString();
+    }
+
+    public User authenticate(String username) {
         ResultSet rs;
         User u = null;
-        System.out.println(username + " " + password);
+        //System.out.println(username + " " + password);
         try {
-            rs = stmt.executeQuery("select * from users where user='" + username + "' and password='" + password + "'");
+            rs = stmt.executeQuery("select * from softwaredeveloper where name= "  + quote(username)  );
             if (rs.next()) {
-                u = new User(rs.getInt("id"), rs.getString("user"), rs.getString("password"));
+                u = new User(rs.getInt("id"), rs.getString("name"), rs.getInt("age"),rs.getString("skills"));
             }
             rs.close();
         } catch (SQLException e) {

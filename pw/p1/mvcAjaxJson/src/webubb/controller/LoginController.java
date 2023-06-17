@@ -25,11 +25,10 @@ public class LoginController extends HttpServlet {
                           HttpServletResponse response) throws ServletException, IOException {
 
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
         RequestDispatcher rd = null;
 
         DBManager dbmanager = new DBManager();
-        User user = dbmanager.authenticate(username, password);
+        User user = dbmanager.authenticate(username);
         if (user != null) {
             rd = request.getRequestDispatcher("/succes.jsp");
             //request.setAttribute("user", user);

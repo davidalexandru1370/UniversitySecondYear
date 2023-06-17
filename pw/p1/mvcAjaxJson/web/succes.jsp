@@ -37,36 +37,7 @@
         <section id="update-result-section"></section>
 
 
-        <script>
-            $(document).ready(function(){
-                $("#getAssetsbtn").click(function() {
-                    getUserAssets(<%= user.getId() %>, function(assets) {
-                        console.log(assets);
-                        $("#asset-table").html("");
-                        $("#asset-table").append("<tr style='background-color: mediumseagreen'><td>Id</td><td>Userid</td><td>Description</td><td>Value</td></tr>");
-                        for(var name in assets) {
-                            //console.log(assets[name].description);
-                            $("#asset-table").append("<tr><td class='asset-name'>"+assets[name].id+"</td>" +
-                                "<td>"+assets[name].userid+"</td>" +
-                                "<td>"+assets[name].description+"</td>" +
-                                "<td>"+assets[name].value+"</td></tr>");
-                        }
-                    })
-                })
 
-                $("#update-asset-btn").click(function() {
-                    updateAsset($("#asset-id").val(),
-                        $("#asset-userid").val(),
-                        $("#asset-description").val(),
-                        $("#asset-value").val(),
-                        function(response) {
-                            $("#update-result-section").html(response);
-                        }
-                    )
-                })
-
-            });
-        </script>
 <%
     }
 %>
