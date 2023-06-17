@@ -1,6 +1,7 @@
 package webubb.model;
 
 import webubb.domain.Asset;
+import webubb.domain.Project;
 import webubb.domain.User;
 
 import java.sql.*;
@@ -66,6 +67,29 @@ public class DBManager {
             e.printStackTrace();
         }
         return assets;
+    }
+
+    public ArrayList<Project> getAllProjects(){
+        ArrayList<Project> projects = new ArrayList<>();
+
+        ResultSet resultSet;
+
+        try{
+            resultSet = stmt.executeQuery("select * from project");
+            while(resultSet.next()){
+                projects.add(new Project(
+                        resultSet.getInt("id"),
+                        resultSet.getInt("projectmanagerid"),
+                        resultSet.getString("name"),
+                        resultSet.getString("description"),
+                        resultSet.getString("members")));
+            }
+        }
+        catch(SQLException sqlException){
+            sqlException.printStackTrace();
+        }
+
+        return projects;
     }
 
     public boolean updateAsset(Asset asset) {

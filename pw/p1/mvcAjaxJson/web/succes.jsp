@@ -1,3 +1,4 @@
+<%@ page import="webubb.domain.Project" %>
 <%@ page import="webubb.domain.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -21,26 +22,49 @@
         out.println("Welcome "+user.getUsername());
 %>
         <br/>
-        <p><button id="getAssetsbtn" type="button">Get Assets</button></p>
-        <section><table id="asset-table"></table></section>
-        <p style="height: 50px;"></p>
-        <section id="update-section">
-            <span style="font-weight: bold; background-color: mediumseagreen">Update asset</span><br/>
-            <table>
-                <tr><td>ID asset: </td><td><input type="text" id="asset-id"></td></tr>
-                <tr><td>Asset userid: </td><td><input type="text" id="asset-userid"></td></tr>
-                <tr><td>Asset description: </td><td><input type="text" id="asset-description"></td></tr>
-                <tr><td>Asset value: </td><td><input type="text" id="asset-value"></td></tr>
-                <tr><td><button type="button" id="update-asset-btn">Update asset</button></td><td></td></tr>
+        <div style="display: flex; gap: 20px">
+            <a href="succes.jsp">All projects</a>
+            <a href="myProjects.jsp">My projects</a>
+        </div>
+        <div>
+            <table id="all-projects">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>project manager id</td>
+                        <td>name</td>
+                        <td>description</td>
+                        <td>members</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
             </table>
-        </section>
-        <section id="update-result-section"></section>
-
-
-
+        </div>
 <%
     }
 %>
+
+<script>
+    $(document).ready(function(){
+        getAllProjects(function(projects) {
+            for(let project of projects){
+                console.log(project);
+                var tableRef = document.getElementById('all-projects').getElementsByTagName('tbody')[0];
+                var newRow = tableRef.insertRow(tableRef.rows.length)
+                const innerHtml = "<tr style=border: 1px solid black" +
+                    "<td>" + project.id +"</td>" +
+                    "<td>" +project.projectManagerId+"</td>" +
+                    "<td>"+ project.name + "</td>" +
+                    "<td>"+ project.description + "</td>" +
+                    "<td>"+ project.members + "</td>" +
+                    "</tr>"
+                newRow.innerHTML = innerHtml;
+            }
+        })
+    })
+</script>
 
 </body>
 </html>
