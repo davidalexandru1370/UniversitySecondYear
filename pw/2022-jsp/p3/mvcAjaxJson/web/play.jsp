@@ -19,10 +19,15 @@
 
     $("#next").click(function(){
         if(index >= questions.length - 1){
-            console.log("gata");
             const answer = $("#answer").val();
             answers.push({questionId: questions[index].id, answer: answer})
-            console.log(answers);
+            $.post("QuestionController",JSON.stringify(answers),function(data){
+                console.log(data);
+                sessionStorage.setItem("result",data.score);
+                alert("You obtained " + data.score + " points");
+                //window.location.replace("score.jsp");
+
+            });
         }
         else{
             const answer = $("#answer").val();
