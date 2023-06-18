@@ -17,8 +17,6 @@ $(document).ready(function () {
 
       // REPLACE HERE WITH INDEX.HTML
       location.href = "index.html";
-
-      // http://localhost/schelet-php/login.html
     });
   });
 });
