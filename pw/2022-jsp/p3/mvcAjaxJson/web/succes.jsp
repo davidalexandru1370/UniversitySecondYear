@@ -51,7 +51,7 @@
 
     $(document).ready(function () {
         getAllQuestions(function (data) {
-            console.log(data);
+            Helper.allQuestions = data;
             for (const question of data) {
                 const innerHtml = "<tr style=\"border: 1px solid black\">" +
                     "<td>" + question.id + "</td>" +
@@ -83,6 +83,18 @@
         const startQuizButton = "<button id=\"start-quiz\">start quiz</button>";
         parent.append(startQuizButton);
 
+    })
+
+    $(document).on("click","#start-quiz",function(){
+        const questions = []
+        for(let i = 0; i < Helper.number; i++){
+            const questionId =  parseInt($("#qid" + i).val());
+            const question = Helper.allQuestions.filter(q => q.id === questionId);
+            questions.push(question[0]);
+        }
+
+        sessionStorage.setItem("questions",JSON.stringify(questions));
+        window.location.replace("play.jsp");
     })
 </script>
 
