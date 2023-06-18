@@ -3,14 +3,14 @@ package webubb.domain;
 public class User {
     private int id;
     private String username;
-    private int age;
-    private String skills;
+    private String password;
+    private int role;
 
-    public User(int id, String username, int age, String skills) {
+    public User(int id, String username, String password, int role) {
         this.id = id;
         this.username = username;
-        this.age = age;
-        this.skills = skills;
+        this.password = password;
+        this.role = role;
 
     }
 
@@ -30,19 +30,19 @@ public class User {
         this.username = username;
     }
 
-    public int getAge() {
-        return age;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getSkills() {
-        return skills;
+    public int getRole() {
+        return role;
     }
 
-    public void setSkills(String skills) {
-        this.skills = skills;
+    public void setRole(int role) {
+        this.role = role;
     }
 }

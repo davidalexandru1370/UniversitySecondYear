@@ -1,4 +1,3 @@
-<%@ page import="webubb.domain.Project" %>
 <%@ page import="webubb.domain.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -20,11 +19,14 @@
 <%  user = (User) session.getAttribute("user");
     if (user != null) {
         out.println("Welcome "+user.getUsername());
+        if(user.getRole() == 1){
+            out.println("<a href=\"add.jsp\">All projects</a>");
+        }
+
 %>
         <br/>
         <div style="display: flex; gap: 20px">
-            <a href="succes.jsp">All projects</a>
-            <a href="myProjects.jsp">My projects</a>
+            <a href="allContent.jsp">All content</a>
         </div>
         <div>
             <table id="all-projects">
