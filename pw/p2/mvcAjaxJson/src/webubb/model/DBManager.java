@@ -63,6 +63,26 @@ public class DBManager {
         }
     }
 
+    public ArrayList<Content> getMostRecentFour(){
+        ArrayList<Content> contents = new ArrayList<Content>();
+        ResultSet rs;
+        try {
+            rs = stmt.executeQuery("select * from content order by id desc limit 4");
+            while (rs.next()) {
+                contents.add(new Content(rs.getInt("id"),
+                        rs.getString("date"),
+                        rs.getString("title"),
+                        rs.getString("description"),
+                        rs.getString("url"),
+                        rs.getInt("userid")));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return contents;
+    }
+
 //    public ArrayList<Asset> getUserAssets(int userid) {
 //        ArrayList<Asset> assets = new ArrayList<Asset>();
 //        ResultSet rs;

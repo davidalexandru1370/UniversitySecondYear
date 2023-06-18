@@ -4,6 +4,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -13,16 +14,33 @@ import webubb.domain.User;
 import webubb.model.DBManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ContentController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        DBManager dbManager = new DBManager();
+        response.setContentType("application/json");
+        ArrayList<Content> contests = dbManager.getMostRecentFour();
 
+        JSONArray jsonAssets = new JSONArray();
+        for(Content content: contests){
+            JSONObject jObj = new JSONObject();
+            jObj.put("id", content.getId());
+            jObj.put("date", content.getDate());
+            jObj.put("title",content.getTitle());
+            jObj.put("description",content.getDescription());
+            jObj.put("url", content.getUrl());
+            jObj.put("userid", content.getUserId());
+
+            jsonAssets.add(jObj);
+        }
+
+        PrintWriter out = new PrintWriter(response.getOutputStream());
+        out.println(jsonAssets.toJSONString());
+        out.flush();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
