@@ -26,6 +26,10 @@
                 if(data[0].id !== contents[0].id){
                     alert("New content was added");
                     contents = data;
+                    Helper.index = 0;
+                    $("#all-content").empty();
+                    const innerHtml = "<p>" + contents[Helper.number].date + contents[Helper.number].title + contents[Helper.number].description + contents[Helper.number].url+  "</p>"
+                    $("#all-content").append(innerHtml)
                 }
             })
         },3000)
