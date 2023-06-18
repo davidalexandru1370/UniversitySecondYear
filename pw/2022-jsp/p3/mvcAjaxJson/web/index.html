@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        form {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+        }
+    </style>
+    <script src="js/jquery-2.0.3.js"></script>
+</head>
+<body>
+    <form action="LoginController" method="post">
+        Enter username : <input type="text" name="username" id="enter-name"> <BR>
+         <button value="Login" type="submit">Enter</button>
+    </form>
+
+
+<script>
+    $("#enter").click(function(){
+        const textValue = $("#enter-name").val();
+        if(textValue.localeCompare("") === 0){
+            alert("username can not be empty!");
+        }
+    })
+</script>
+</body></html>
