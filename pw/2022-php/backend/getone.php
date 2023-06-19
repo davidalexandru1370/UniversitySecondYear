@@ -7,7 +7,6 @@ if (isset($_GET['name'])) {
     $result = pg_query($dbconn, $sql);
     $echoArray = array();
 
-
     while ($row = pg_fetch_assoc($result)) {
         if ($row['name1'] == $name || $row['name2'] == $name) {
             if ($row['name1'] != $name) {

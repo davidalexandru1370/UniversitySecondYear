@@ -16,7 +16,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $.ajax({
     type: "GET",
-    url: "backend/getone.php",
+    url: "backend/getsecond.php",
     data: {
       name: "david",
     },
