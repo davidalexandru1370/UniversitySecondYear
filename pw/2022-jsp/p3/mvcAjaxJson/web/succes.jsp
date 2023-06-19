@@ -70,7 +70,7 @@
         Helper.number = 0;
         const parent = $("#content");
         const numberOfFields = $("#number-of-questions").val();
-        parent.empty();
+        parent.empty();     
 
         for(let i = 0 ; i < numberOfFields; i++){
             const innerHtml = "<div style='margin-bottom: 10px' >" +
