@@ -12,3 +12,21 @@ $(document).ready(function () {
     },
   }).fail(console.error);
 });
+
+$(document).ready(function () {
+  $.ajax({
+    type: "GET",
+    url: "backend/getone.php",
+    data: {
+      name: "david",
+    },
+
+    success: (response) => {
+      response = JSON.parse(response);
+      console.log(response);
+      if (response.error) {
+        alert(response.error);
+      }
+    },
+  }).fail(console.error);
+});
