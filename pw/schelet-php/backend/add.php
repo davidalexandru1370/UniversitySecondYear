@@ -2,9 +2,10 @@
 
 include 'dbCon.php';
 
-if (isset($_POST['name']) && isset($_POST['date'])) {
-    $name = $_POST['name'];
-    $date = $_POST['date'];
+if (isset($_POST['userid']) && isset($_POST['mother']) && isset($_POST['father'])) {
+    $userid = $_POST['userid'];
+    $mother = $_POST['mother'];
+    $father = $_POST['father'];
 
     // --- check if it already exists - depends on the case - uncomment if necessary
     //$sql = "SELECT * FROM entities WHERE `Key` = '$key';";
@@ -18,10 +19,10 @@ if (isset($_POST['name']) && isset($_POST['date'])) {
     // }
 
     // if ($id == -1) {
-    $sql = "INSERT INTO entities(name, date) VALUES ('$name','$date');";
+    $sql = "INSERT INTO familyrelations(userid, mother, father) VALUES ('$userid','$mother', '$father');";
     //}
 
-    if (pg_query($con, $sql)) {
+    if (pg_query($dbconn, $sql)) {
         echo json_encode(['message' => "Added successfully!"]);
     } else {
         echo json_encode(['message' => "Opps...it was not added..."]);

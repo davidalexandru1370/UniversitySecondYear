@@ -12,6 +12,10 @@ $(document).ready(function () {
       if (data.error) {
         alert(data.error);
         return;
+      } else {
+        localStorage.setItem("mother", $("#mother").val());
+        localStorage.setItem("father", $("#father").val());
+        localStorage.setItem("user", $("#username").val());
       }
 
       // REPLACE HERE WITH INDEX.HTML
