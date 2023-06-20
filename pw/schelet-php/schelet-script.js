@@ -47,3 +47,55 @@ $(document).ready(function () {
     },
   }).fail(console.error);
 });
+
+$(document).ready(function () {
+  $.ajax({
+    type: "GET",
+    url: "backend/getFatherDescendents.php",
+    data: {
+      father: localStorage.getItem("father"),
+    },
+    success: (response) => {
+      response = JSON.parse(response);
+
+      console.log(response);
+
+      if (response.error) {
+        alert(response.error);
+      } else {
+        let descendants = "<p>" + localStorage.getItem("father");
+        for (const element of response) {
+          descendants += " -> " + element;
+        }
+        descendants += "</p>";
+        $("#fatherdescendents").append(descendants);
+      }
+    },
+  }).fail(console.error);
+});
+
+$(document).ready(function () {
+  $.ajax({
+    type: "GET",
+    url: "backend/getMotherDescendents.php",
+    data: {
+      mother: localStorage.getItem("mother"),
+    },
+    success: (response) => {
+      response = JSON.parse(response);
+
+      console.log(response);
+
+      if (response.error) {
+        alert(response.error);
+      } else {
+        let descendants = "<p>" + localStorage.getItem("mother");
+        for (const element of response) {
+          descendants += " -> " + element;
+        }
+        descendants += "</p>";
+        $("#motherdescendents").append(descendants);
+      }
+    },
+  }).fail(console.error);
+});
