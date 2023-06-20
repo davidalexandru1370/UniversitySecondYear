@@ -13,9 +13,9 @@ $(document).ready(function () {
         alert(data.error);
         return;
       } else {
-        localStorage.setItem("mother", $("#mother").val());
-        localStorage.setItem("father", $("#father").val());
-        localStorage.setItem("user", $("#username").val());
+        localStorage.setItem("user", data[0]);
+        localStorage.setItem("mother", data[1]);
+        localStorage.setItem("father", data[2]);
       }
 
       // REPLACE HERE WITH INDEX.HTML
