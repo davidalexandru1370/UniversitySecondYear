@@ -13,8 +13,6 @@ $(document).ready(function () {
         alert(data.error);
         return;
       }
-
-      // http://localhost/schelet-php/login.html
     });
   });
 });

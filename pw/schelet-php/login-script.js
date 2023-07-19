@@ -18,10 +18,7 @@ $(document).ready(function () {
         localStorage.setItem("father", data[2]);
       }
 
-      // REPLACE HERE WITH INDEX.HTML
       location.href = "schelet-index.html";
-
-      // http://localhost/schelet-php/login.html
     });
   });
 });
